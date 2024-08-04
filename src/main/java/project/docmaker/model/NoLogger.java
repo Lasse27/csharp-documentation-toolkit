@@ -1,5 +1,5 @@
 package project.docmaker.model;
 
-@interface NoLogger
+public @interface NoLogger
 {
 }

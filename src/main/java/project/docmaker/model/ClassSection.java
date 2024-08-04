@@ -22,7 +22,8 @@ public class ClassSection extends Section
 
 	public ClassSection (final FileContent fileContent)
 	{
-		super(getClassName(fileContent), getClassDescription(fileContent), getClassTags(fileContent));
+		super(new Header(Header.HeaderType.CLASS, getClassName(fileContent)),
+				new Description(getClassDescription(fileContent)), getClassTags(fileContent));
 		this.fields = getFieldSections();
 		this.methods = getMethodSections();
 	}

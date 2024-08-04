@@ -1,6 +1,6 @@
 package project.docmaker.model;
 
-
+@NoLogger
 public class MethodSection extends Section
 {
 
@@ -8,12 +8,4 @@ public class MethodSection extends Section
 	{
 		super(header, description);
 	}
-
-
-
-	protected MethodSection (final String headerText, final String descriptionText)
-	{
-		super(headerText, descriptionText);
-	}
-
 }

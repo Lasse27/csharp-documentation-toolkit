@@ -1,6 +1,8 @@
 package project.docmaker.utility.logging;
 
 
+import project.docmaker.model.NoLogger;
+
 /**
  * ConsoleColor is an enum that stores strings which can be printed into the console to display different colors.
  * <br>
@@ -20,6 +22,7 @@ package project.docmaker.utility.logging;
  * @author Vincent Wolf, Lasse-Leander Hillen, Timothy Hoegen-Jupp, Alexander Goethel
  * @version 1.0.0
  */
+@NoLogger
 public enum ConsoleColor
 {
 	/**

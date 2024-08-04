@@ -1,6 +1,8 @@
 package project.docmaker.utility.logging;
 
 
+import project.docmaker.model.NoLogger;
+
 /**
  * An interface that can be implemented to create a logger.
  * <br>
@@ -11,6 +13,7 @@ package project.docmaker.utility.logging;
  * @see Logger
  * @since 30.05.2024
  */
+@NoLogger
 public interface ILogger
 {
 
@@ -43,7 +46,7 @@ public interface ILogger
 	 * @param arguments The arguments that are applied to the message pattern before the message is logged.
 	 *
 	 * @precondition The logging level in form of a {@link ILogger.Level} and the logging message pattern have to be supplied as parameters.
-	 * Additionally, the arguments that are going to be formatted by the logging message pattern have to be supplied as parameter.
+	 * 		Additionally, the arguments that are going to be formatted by the logging message pattern have to be supplied as parameter.
 	 * @postcondition A message is logged at the specified logging level.
 	 */
 	void logf (final Level level, final String pattern, final Object... arguments);

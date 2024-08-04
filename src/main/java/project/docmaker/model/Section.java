@@ -24,15 +24,6 @@ public class Section
 
 
 
-	Section (final String headerText, final String descriptionText, final DocumentationTag... tags)
-	{
-		this.header = new Header(headerText);
-		this.description = new Description(descriptionText);
-		this.tags = tags;
-	}
-
-
-
 	public Header getHeader ()
 	{
 		return this.header;

@@ -3,7 +3,7 @@ package project.docmaker.model;
 
 import java.util.regex.Pattern;
 
-
+@NoLogger
 public class Regex
 {
 

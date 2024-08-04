@@ -1,6 +1,6 @@
 package project.docmaker.model;
 
-
+@NoLogger
 public class DocumentationTag
 {
 	public static final DocumentationTag EMPTY = new DocumentationTag(TagContentType.EMPTY, "");
@@ -19,6 +19,7 @@ public class DocumentationTag
 
 
 
+	@NoLogger
 	public enum TagContentType
 	{
 		SUMMARY(new Regex("")),

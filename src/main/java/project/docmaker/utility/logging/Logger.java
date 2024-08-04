@@ -1,6 +1,8 @@
 package project.docmaker.utility.logging;
 
 
+import project.docmaker.model.NoLogger;
+
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.time.Clock;
@@ -8,7 +10,7 @@ import java.time.Instant;
 import java.util.Date;
 import java.util.Locale;
 
-import static project.docmaker.utility.logging.ILogger.Level.NORMAL;
+import static project.docmaker.utility.logging.ILogger.Level.DEBUG;
 
 
 /**
@@ -21,6 +23,7 @@ import static project.docmaker.utility.logging.ILogger.Level.NORMAL;
  * @see Level
  * @since 28.05.2024
  */
+@NoLogger
 public class Logger implements ILogger
 {
 
@@ -60,7 +63,7 @@ public class Logger implements ILogger
 	 * The depth of the {@link Logger}. Represents how deep level of the {@link Logger#log(Level, String)} calls must be to be shown in the console
 	 * window.
 	 */
-	private static Level depth = NORMAL;
+	private static Level depth = DEBUG;
 
 
 	/**

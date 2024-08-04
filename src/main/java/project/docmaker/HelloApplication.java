@@ -7,18 +7,28 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import project.docmaker.model.ClassSection;
 import project.docmaker.model.FileContent;
+import project.docmaker.utility.logging.ILogger;
+import project.docmaker.utility.logging.Logger;
 
+import java.io.File;
 import java.io.IOException;
 
 
 public class HelloApplication extends Application
 {
+	private static final ILogger LOGGER = new Logger(HelloApplication.class.getSimpleName());
+
+
 
 	public static void main (final String[] args)
 	{
-		final ClassSection classSection = new ClassSection(new FileContent());
-		System.out.println(classSection);
-		// launch();
+		LOGGER.log(ILogger.Level.NORMAL, "Reading the test file:");
+		final FileContent fileContent = new FileContent(new File("src/main/resources/project/docmaker/testdocumentation.cs"));
+		LOGGER.log(ILogger.Level.DEBUG, fileContent.getAsString());
+
+		LOGGER.log(ILogger.Level.NORMAL, "Creating the classSection instance:");
+		final ClassSection classSection = new ClassSection(fileContent);
+		LOGGER.log(ILogger.Level.DEBUG, classSection.toString());
 
 	}
 
