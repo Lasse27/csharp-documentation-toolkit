@@ -9,8 +9,5 @@
         <module name="CS_DocumentationMaker" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="CS_DocumentationMaker" target="22" />
-    </bytecodeTargetLevel>
   </component>
 </project>

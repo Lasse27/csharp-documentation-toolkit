@@ -12,6 +12,13 @@ import java.io.IOException;
 public class HelloApplication extends Application
 {
 
+	public static void main (final String[] args)
+	{
+		launch();
+
+	}
+
+
 	@Override
 	public void start (final Stage stage) throws IOException
 	{
@@ -20,13 +27,6 @@ public class HelloApplication extends Application
 		stage.setTitle("Hello!");
 		stage.setScene(scene);
 		stage.show();
-	}
-
-
-	public static void main (final String[] args)
-	{
-		launch();
-
 	}
 
 }
