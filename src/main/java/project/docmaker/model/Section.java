@@ -14,12 +14,14 @@ public class Section
 	private final DocumentationTag[] tags;
 
 
+
 	Section (final Header header, final Description description, final DocumentationTag... tags)
 	{
 		this.header = header;
 		this.description = description;
 		this.tags = tags;
 	}
+
 
 
 	Section (final String headerText, final String descriptionText, final DocumentationTag... tags)
@@ -30,10 +32,12 @@ public class Section
 	}
 
 
+
 	public Header getHeader ()
 	{
 		return this.header;
 	}
+
 
 
 	public Description getDescription ()
@@ -42,11 +46,13 @@ public class Section
 	}
 
 
+
 	@Override
 	public String toString ()
 	{
 		return MessageFormat.format("Section'{'header={0}, description={1}'}'", this.header, this.description);
 	}
+
 
 
 	public DocumentationTag[] getTags ()

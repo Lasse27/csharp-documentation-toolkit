@@ -371,6 +371,7 @@ public enum ConsoleColor
 	private final String code;
 
 
+
 	/**
 	 * Constructs an instance of the ConsoleColor enum entry.
 	 *
@@ -383,6 +384,7 @@ public enum ConsoleColor
 	{
 		this.code = code;
 	}
+
 
 
 	/**

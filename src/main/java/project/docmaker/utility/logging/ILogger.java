@@ -17,8 +17,8 @@ public interface ILogger
 	/**
 	 * Logs a message at the specified logging level.
 	 * <br>
-	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least
-	 * at the same depth as the desired log level.
+	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least at the same depth as the desired
+	 * log level.
 	 *
 	 * @param level   The desired logging level.
 	 * @param message The message that's about to get logged.
@@ -29,13 +29,14 @@ public interface ILogger
 	void log (final Level level, final String message);
 
 
+
 	/**
 	 * Logs a message at the specified logging level.
 	 * <br>
 	 * This method uses message formatting to apply message patterns.
 	 * <br>
-	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least
-	 * at the same depth as the desired log level.
+	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least at the same depth as the desired
+	 * log level.
 	 *
 	 * @param level     The logging level.
 	 * @param pattern   The message pattern that's about to get logged.
@@ -46,6 +47,7 @@ public interface ILogger
 	 * @postcondition A message is logged at the specified logging level.
 	 */
 	void logf (final Level level, final String pattern, final Object... arguments);
+
 
 
 	/**
@@ -88,6 +90,7 @@ public interface ILogger
 		private final String colorCode;
 
 
+
 		/**
 		 * Constructs a level instance with the specified color code.
 		 *
@@ -100,6 +103,7 @@ public interface ILogger
 		{
 			this.colorCode = colorCode;
 		}
+
 
 
 		/**

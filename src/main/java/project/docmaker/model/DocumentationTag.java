@@ -3,10 +3,12 @@ package project.docmaker.model;
 
 public class DocumentationTag
 {
+	public static final DocumentationTag EMPTY = new DocumentationTag(TagContentType.EMPTY, "");
 
 	private final TagContentType contentType;
 
 	private final String content;
+
 
 
 	public DocumentationTag (final TagContentType contentType, final String content)
@@ -14,6 +16,7 @@ public class DocumentationTag
 		this.contentType = contentType;
 		this.content = content;
 	}
+
 
 
 	public enum TagContentType
@@ -36,16 +39,19 @@ public class DocumentationTag
 
 		CODE(new Regex("")),
 
-		EXAMPLE(new Regex(""));
+		EXAMPLE(new Regex("")),
+		EMPTY(new Regex(""));
 
 
 		private final Regex regex;
+
 
 
 		TagContentType (final Regex regex)
 		{
 			this.regex = regex;
 		}
+
 
 
 		public Regex getRegex ()

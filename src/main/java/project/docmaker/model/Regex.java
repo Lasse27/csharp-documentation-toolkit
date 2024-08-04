@@ -10,10 +10,12 @@ public class Regex
 	private final Pattern pattern;
 
 
+
 	public Regex (final String patternString)
 	{
 		this.pattern = Pattern.compile(patternString);
 	}
+
 
 
 	public Pattern getPattern ()

@@ -23,6 +23,7 @@ public class HelloApplication extends Application
 	}
 
 
+
 	@Override
 	public void start (final Stage stage) throws IOException
 	{

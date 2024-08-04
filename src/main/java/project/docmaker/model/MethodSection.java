@@ -10,6 +10,7 @@ public class MethodSection extends Section
 	}
 
 
+
 	protected MethodSection (final String headerText, final String descriptionText)
 	{
 		super(headerText, descriptionText);

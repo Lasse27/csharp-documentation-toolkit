@@ -10,6 +10,7 @@ public class FieldSection extends Section
 	}
 
 
+
 	protected FieldSection (final String headerText, final String descriptionText)
 	{
 		super(headerText, descriptionText);

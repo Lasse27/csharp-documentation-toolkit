@@ -1,8 +1,7 @@
 package project.docmaker.control;
 
-
-import project.docmaker.exception.RegexException;
 import project.docmaker.model.*;
+import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 
 import java.util.ArrayList;
@@ -10,68 +9,77 @@ import java.util.Collection;
 import java.util.List;
 
 import static project.docmaker.model.DocumentationTag.TagContentType;
-import static project.docmaker.utility.constant.MiscConstants.EMPTY_STRING;
-import static project.docmaker.utility.logging.ILogger.Level.ERROR;
 
 
+/**
+ * The {@code FileContentController} is used to analyze instances of {@link FileContent} and collect relevant information needed for the
+ * {@link Section} classes. It's heavily reliant on the {@link Regex} class and the API methods regarding regular expressions.
+ *
+ * @author Lasse-Leander Hillen
+ * @version 0.0.1
+ * @see java.util.regex.Pattern
+ * @see java.util.regex.Matcher
+ * @see Regex
+ * @see RegexController
+ * @see FileContent
+ * @see Section
+ * @since 04.08.2024
+ */
 public final class FileContentController
 {
+	/**
+	 * A {@link Logger} object, which is being used to write formatted outputs into the console.
+	 */
+	private static final ILogger LOGGER = new Logger(FileContentController.class.getSimpleName());
 
-	private static final Logger LOGGER = new Logger(FileContentController.class.getSimpleName());
-
+	/**
+	 * A {@link Regex} object, which can be used to collect the {@link String} of the class area from a file.
+	 */
 	private static final Regex CLASS_AREA_REGEX = new Regex("");
 
+	/**
+	 * A {@link Regex} object, which can be used to collect the {@link String} of the class name from the class area.
+	 */
 	private static final Regex CLASS_NAME_REGEX = new Regex("");
 
+	/**
+	 * A {@link Regex} object, which can be used to collect the {@link String} of the class description from the class area.
+	 */
 	private static final Regex CLASS_DESC_REGEX = new Regex("");
 
 
-	private FileContentController () {}
+
+	/**
+	 * Private constructor since controller class isn't supposed to be initialized ever.
+	 */
+	private FileContentController ()
+	{
+	}
+
 
 
 	private static String getClassArea (final FileContent fileContent)
 	{
-		try
-		{
-			final String fileContentString = fileContent.getAsString();
-			return RegexController.matchFirst(CLASS_AREA_REGEX, fileContentString);
-		}
-		catch (final RegexException e)
-		{
-			LOGGER.log(ERROR, e.getMessage());
-		}
-		return EMPTY_STRING;
+		final String fileContentString = fileContent.getAsString();
+		return RegexController.matchFirst(CLASS_AREA_REGEX, fileContentString);
 	}
+
 
 
 	public static String getClassName (final FileContent fileContent)
 	{
-		try
-		{
-			final String classArea = FileContentController.getClassArea(fileContent);
-			return RegexController.matchFirst(CLASS_NAME_REGEX, classArea);
-		}
-		catch (final RegexException e)
-		{
-			LOGGER.log(ERROR, e.getMessage());
-		}
-		return EMPTY_STRING;
+		final String classArea = FileContentController.getClassArea(fileContent);
+		return RegexController.matchFirst(CLASS_NAME_REGEX, classArea);
 	}
+
 
 
 	public static String getClassDescription (final FileContent fileContent)
 	{
-		try
-		{
-			final String classArea = FileContentController.getClassArea(fileContent);
-			return RegexController.matchFirst(CLASS_DESC_REGEX, classArea);
-		}
-		catch (final RegexException e)
-		{
-			LOGGER.log(ERROR, e.getMessage());
-		}
-		return EMPTY_STRING;
+		final String classArea = FileContentController.getClassArea(fileContent);
+		return RegexController.matchFirst(CLASS_DESC_REGEX, classArea);
 	}
+
 
 
 	public static DocumentationTag[] getClassTags (final FileContent fileContent)
@@ -81,33 +89,29 @@ public final class FileContentController
 
 		// Adding all the found tags to the returner collection
 		final Collection<DocumentationTag> tags = new ArrayList<>();
-		try
-		{
-			for (final TagContentType tagContentType : TagContentType.values())
-			{
-				tags.add(FileContentController.getDocumentationTag(tagContentType, classArea));
-			}
-		}
-		catch (final RegexException e)
-		{
-			LOGGER.log(ERROR, e.getMessage());
-		}
 
+		for (final TagContentType tagContentType : TagContentType.values())
+		{
+			tags.add(FileContentController.getDocumentationTag(tagContentType, classArea));
+		}
 		// Returning the finished collection.
 		return tags.toArray(DocumentationTag[]::new);
 	}
 
 
-	private static DocumentationTag getDocumentationTag (final TagContentType tagContentType, final CharSequence area) throws RegexException
+
+	private static DocumentationTag getDocumentationTag (final TagContentType tagContentType, final CharSequence area)
 	{
 		return new DocumentationTag(tagContentType, RegexController.matchFirst(tagContentType.getRegex(), area));
 	}
+
 
 
 	public static List<FieldSection> getFieldSections ()
 	{
 		return null;
 	}
+
 
 
 	public static List<MethodSection> getMethodSections ()

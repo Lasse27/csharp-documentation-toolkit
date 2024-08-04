@@ -12,10 +12,8 @@ import static project.docmaker.utility.logging.ILogger.Level.NORMAL;
 
 
 /**
- * The {@code Logger} class provides a logging utility with different levels of log messages, which are all formatted
- * in their respective way. The
- * provided levels are {@link Level#DEBUG},{@link Level#NORMAL},{@link Level#WARNING} and {@link Level#ERROR} and
- * represent the different types of
+ * The {@code Logger} class provides a logging utility with different levels of log messages, which are all formatted in their respective way. The
+ * provided levels are {@link Level#DEBUG},{@link Level#NORMAL},{@link Level#WARNING} and {@link Level#ERROR} and represent the different types of
  * logging messages.
  *
  * @author Vincent Wolf, Lasse-Leander Hillen, Timothy Hoegen-Jupp, Alexander Goethel
@@ -27,8 +25,7 @@ public class Logger implements ILogger
 {
 
 	/**
-	 * The {@link String} pattern which is used in the {@link Logger#toString()} method and formats the logger
-	 * properties.
+	 * The {@link String} pattern which is used in the {@link Logger#toString()} method and formats the logger properties.
 	 */
 	private static final String TO_STRING_PATTERN = "Logger[\"{0}\" | depth = \"{1}\"]";
 
@@ -46,8 +43,9 @@ public class Logger implements ILogger
 
 
 	/**
-	 * The prefix for the logging message. The first parameter is the time, the second parameter is the class name
-	 * and the third parameter is the name of the current method.
+	 * The prefix for the logging message. The first parameter is the time, the second parameter is the class name and the third parameter is the
+	 * name
+	 * of the current method.
 	 */
 	private static final String LOG_MESSAGE_PREFIX = "[{0} | {1}.{2}] ";
 
@@ -59,8 +57,7 @@ public class Logger implements ILogger
 
 
 	/**
-	 * The depth of the {@link Logger}. Represents how deep level of the {@link Logger#log(Level, String)} calls must
-	 * be to be shown in the console
+	 * The depth of the {@link Logger}. Represents how deep level of the {@link Logger#log(Level, String)} calls must be to be shown in the console
 	 * window.
 	 */
 	private static Level depth = NORMAL;
@@ -70,6 +67,7 @@ public class Logger implements ILogger
 	 * The name of the class, which the {@link Logger} is applied to.
 	 */
 	private final String className;
+
 
 
 	/**
@@ -86,6 +84,7 @@ public class Logger implements ILogger
 	}
 
 
+
 	/**
 	 * Generates a timestamp for the current date and time.
 	 *
@@ -98,6 +97,7 @@ public class Logger implements ILogger
 	{
 		return DATETIME_FORMAT.format(Date.from(Instant.now(Clock.systemDefaultZone())));
 	}
+
 
 
 	/**
@@ -114,6 +114,7 @@ public class Logger implements ILogger
 	}
 
 
+
 	/**
 	 * Sets the logging depth to the supplied logging level.
 	 *
@@ -126,6 +127,7 @@ public class Logger implements ILogger
 	{
 		Logger.depth = depth;
 	}
+
 
 
 	/**
@@ -142,6 +144,7 @@ public class Logger implements ILogger
 	}
 
 
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -153,6 +156,7 @@ public class Logger implements ILogger
 			System.out.println(level + this.createPrefix() + message + COLOR_RESET);
 		}
 	}
+
 
 
 	/**
@@ -171,6 +175,7 @@ public class Logger implements ILogger
 	}
 
 
+
 	/**
 	 * Generates a prefix for log messages including timestamp and class name.
 	 *
@@ -183,6 +188,7 @@ public class Logger implements ILogger
 	{
 		return MessageFormat.format(LOG_MESSAGE_PREFIX, getTimestamp(), this.className, getMethodName());
 	}
+
 
 
 	/**
