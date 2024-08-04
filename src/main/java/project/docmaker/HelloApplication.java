@@ -6,7 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import project.docmaker.model.ClassSection;
-import project.docmaker.model.DocumentationTag;
+import project.docmaker.model.FileContent;
 
 import java.io.IOException;
 
@@ -16,8 +16,8 @@ public class HelloApplication extends Application
 
 	public static void main (final String[] args)
 	{
-		final ClassSection classSection = new ClassSection("Klassenname", "Selbst geschriebenes Kommentar", new DocumentationTag());
-
+		final ClassSection classSection = new ClassSection(new FileContent());
+		System.out.println(classSection);
 		// launch();
 
 	}

@@ -3,24 +3,34 @@ package project.docmaker.model;
 
 import java.util.List;
 
+import static project.docmaker.control.FileContentController.*;
+
 
 public class ClassSection extends Section
 {
 
-	private List<FieldSection> fields;
+	private final List<FieldSection> fields;
 
-	private List<MethodSection> methods;
+	private final List<MethodSection> methods;
 
 
-	public ClassSection (final Header header, final Description description)
+	public ClassSection (final FileContent fileContent)
 	{
-		super(header, description);
+		super(getClassName(fileContent), getClassDescription(fileContent), getClassTags(fileContent));
+		this.fields = getFieldSections();
+		this.methods = getMethodSections();
 	}
 
 
-	public ClassSection (final String headerText, final String descriptionText, final DocumentationTag... tags)
+	public List<FieldSection> getFields ()
 	{
-		super(headerText, descriptionText, tags);
+		return this.fields;
+	}
+
+
+	public List<MethodSection> getMethods ()
+	{
+		return this.methods;
 	}
 
 }
