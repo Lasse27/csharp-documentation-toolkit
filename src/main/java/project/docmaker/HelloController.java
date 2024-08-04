@@ -1,4 +1,4 @@
-package project.doc_maker;
+package project.docmaker;
 
 
 import javafx.fxml.FXML;
