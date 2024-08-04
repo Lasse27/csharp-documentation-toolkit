@@ -13,7 +13,7 @@ public class Regex
 
 	public Regex (final String patternString)
 	{
-		this.pattern = Pattern.compile(patternString);
+		this.pattern = Pattern.compile(patternString, Pattern.MULTILINE);
 	}
 
 

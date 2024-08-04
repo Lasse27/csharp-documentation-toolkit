@@ -3,10 +3,9 @@ package project.docmaker.model;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 
 @NoLogger
 public class FileContent
@@ -24,21 +23,21 @@ public class FileContent
 	/**
 	 * An array of bytes, which represents the content of the {@code FileContent} instance.
 	 */
-	private final byte[] content;
+	private String content;
 
 
 
 	public FileContent (final File file)
 	{
-		try (final BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(file)))
+		this.file = file;
+		this.content = "";
+		try
 		{
-			this.file = file;
-			this.content = inputStream.readAllBytes();
+			this.content = new String(Files.readAllBytes(file.toPath()));
 		}
 		catch (final IOException e)
 		{
-			LOGGER.log(ILogger.Level.ERROR, e.getMessage());
-			throw new RuntimeException();
+			e.printStackTrace();
 		}
 	}
 
@@ -46,24 +45,14 @@ public class FileContent
 
 	public String getAsString ()
 	{
-		final StringBuilder builder = new StringBuilder();
-		for (final byte b : this.content)
-		{
-			builder.append((char) b);
-		}
-		return builder.toString();
+		return this.content;
 	}
 
 
 
 	public char[] getAsCharArray ()
 	{
-		final char[] chars = new char[this.content.length];
-		for (int i = 0; i < this.content.length; i++)
-		{
-			chars[i] = (char) this.content[i];
-		}
-		return chars;
+		return this.content.toCharArray();
 	}
 
 
@@ -76,17 +65,5 @@ public class FileContent
 	public File getFile ()
 	{
 		return this.file;
-	}
-
-
-
-	/**
-	 * Getter-Method for the content byte[] attribute of the instance.
-	 *
-	 * @return A {@link File} representing the content byte[] attribute of the instance
-	 **/
-	public byte[] getContent ()
-	{
-		return this.content;
 	}
 }

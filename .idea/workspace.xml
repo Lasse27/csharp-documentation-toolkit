@@ -2,31 +2,22 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="All Places" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Build: added a lot more capability to the controller classes and started with some Javadoc and formatting">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Build: added a few small tests to see how it's already going -&gt; more toString() methods.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/RegexConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/exception/RegexException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/exception/RegexException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/ClassSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/ClassSection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/CodeSnippet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/CodeSnippet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Description.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Description.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/DocumentationTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/DocumentationTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/FieldSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/FieldSection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/FileContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/FileContentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/FileContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/FileContent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/MethodSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/MethodSection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/NoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/NoLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Regex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Section.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/ConsoleColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/ConsoleColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/ILogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/ILogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/docmaker/testdocumentation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/docmaker/testdocumentation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -133,7 +124,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722776585939</updated>
-      <workItem from="1722776586996" duration="14970000" />
+      <workItem from="1722776586996" duration="18611000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -215,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722794807259</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Build: added a few small tests to see how it's already going -&gt; more toString() methods.">
+      <option name="closed" value="true" />
+      <created>1722797734047</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1722797734047</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +249,19 @@
     <MESSAGE value="Build: added the first relevant classes for Markdown and HTML generation." />
     <MESSAGE value="Build: added the logging folder from the VAULT project and added a bunch of classes that are momentarily bare bone but will be further implemented later." />
     <MESSAGE value="Build: added a lot more capability to the controller classes and started with some Javadoc and formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Build: added a lot more capability to the controller classes and started with some Javadoc and formatting" />
+    <MESSAGE value="Build: added a few small tests to see how it's already going -&gt; more toString() methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="Build: added a few small tests to see how it's already going -&gt; more toString() methods." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/project/docmaker/control/FileContentController.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

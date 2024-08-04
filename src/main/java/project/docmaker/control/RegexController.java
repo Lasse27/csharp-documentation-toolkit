@@ -2,7 +2,6 @@ package project.docmaker.control;
 
 
 import project.docmaker.model.Regex;
-import project.docmaker.utility.constant.MiscConstants;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 
@@ -10,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static project.docmaker.utility.constant.MiscConstants.EMPTY_STRING;
 
 
 /**
@@ -33,16 +34,19 @@ public final class RegexController
 
 
 
-	public static String matchFirst (final Regex regex, final CharSequence content)
+	public static String matchFirst (final Regex regex, final String content)
 	{
+		final String editedContent = content.replaceAll("\r", "").replaceAll("\n", "");
 		final Pattern pattern = regex.getPattern();
-		final Matcher matcher = pattern.matcher(content);
+		final Matcher matcher = pattern.matcher(editedContent);
+
+		String result = EMPTY_STRING;
 		if (matcher.find())
 		{
-			LOGGER.log(ILogger.Level.DEBUG, (String) content.subSequence(matcher.start(), matcher.end()));
-			return (String) content.subSequence(matcher.start(), matcher.end());
+			LOGGER.log(ILogger.Level.DEBUG, "Match: " + matcher.group());
+			result = matcher.group();
 		}
-		return MiscConstants.EMPTY_STRING;
+		return result;
 	}
 
 

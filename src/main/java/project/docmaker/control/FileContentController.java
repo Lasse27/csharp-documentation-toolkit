@@ -9,6 +9,8 @@ import java.util.Collection;
 import java.util.List;
 
 import static project.docmaker.model.DocumentationTag.TagContentType;
+import static project.docmaker.utility.constant.RegexConstants.CLASS_NAME_REGEX;
+import static project.docmaker.utility.constant.RegexConstants.PUBLIC_CLASS_REGEX;
 
 
 /**
@@ -33,16 +35,6 @@ public final class FileContentController
 	private static final ILogger LOGGER = new Logger(FileContentController.class.getSimpleName());
 
 	/**
-	 * A {@link Regex} object, which can be used to collect the {@link String} of the class area from a file.
-	 */
-	private static final Regex CLASS_AREA_REGEX = new Regex("");
-
-	/**
-	 * A {@link Regex} object, which can be used to collect the {@link String} of the class name from the class area.
-	 */
-	private static final Regex CLASS_NAME_REGEX = new Regex("");
-
-	/**
 	 * A {@link Regex} object, which can be used to collect the {@link String} of the class description from the class area.
 	 */
 	private static final Regex CLASS_DESC_REGEX = new Regex("");
@@ -61,15 +53,15 @@ public final class FileContentController
 	private static String getClassArea (final FileContent fileContent)
 	{
 		final String fileContentString = fileContent.getAsString();
-		return RegexController.matchFirst(CLASS_AREA_REGEX, fileContentString);
+		return RegexController.matchFirst(PUBLIC_CLASS_REGEX, fileContentString);
 	}
 
 
 
 	public static String getClassName (final FileContent fileContent)
 	{
-		final String classArea = FileContentController.getClassArea(fileContent);
-		return RegexController.matchFirst(CLASS_NAME_REGEX, classArea);
+		final String fileContentString = fileContent.getAsString();
+		return RegexController.matchFirst(CLASS_NAME_REGEX, fileContentString).replace("class ", "");
 	}
 
 
@@ -100,7 +92,7 @@ public final class FileContentController
 
 
 
-	private static DocumentationTag getDocumentationTag (final TagContentType tagContentType, final CharSequence area)
+	private static DocumentationTag getDocumentationTag (final TagContentType tagContentType, final String area)
 	{
 		return new DocumentationTag(tagContentType, RegexController.matchFirst(tagContentType.getRegex(), area));
 	}
