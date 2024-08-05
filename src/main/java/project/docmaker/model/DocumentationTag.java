@@ -3,15 +3,15 @@ package project.docmaker.model;
 @NoLogger
 public class DocumentationTag
 {
-	public static final DocumentationTag EMPTY = new DocumentationTag(TagContentType.EMPTY, "");
+	public static final DocumentationTag EMPTY = new DocumentationTag(TagContentType.EMPTY, null);
 
 	private final TagContentType contentType;
 
-	private final String content;
+	private final TagContent content;
 
 
 
-	public DocumentationTag (final TagContentType contentType, final String content)
+	public DocumentationTag (final TagContentType contentType, final TagContent content)
 	{
 		this.contentType = contentType;
 		this.content = content;

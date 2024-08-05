@@ -5,23 +5,16 @@ import java.text.MessageFormat;
 @NoLogger
 public class Header
 {
-	private final HeaderType type;
+	private final Class<? extends Section> sectionClass;
 
 	private final String content;
 
 
 
-	public Header (final HeaderType type, final String content)
+	public Header (final Class<? extends Section> sectionClass, final String content)
 	{
-		this.type = type;
+		this.sectionClass = sectionClass;
 		this.content = content;
-	}
-
-
-
-	public HeaderType getType ()
-	{
-		return this.type;
 	}
 
 
@@ -36,16 +29,6 @@ public class Header
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format("Header'{'type={0}, content=''{1}'''}'", this.type, this.content);
-	}
-
-
-
-	@NoLogger
-	public static enum HeaderType
-	{
-		CLASS,
-		FIELD,
-		METHOD
+		return MessageFormat.format("Header'{'sectionClass={0}, content=''{1}'''}'", this.sectionClass.getSimpleName(), this.content);
 	}
 }

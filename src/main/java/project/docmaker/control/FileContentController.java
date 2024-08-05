@@ -1,5 +1,6 @@
 package project.docmaker.control;
 
+import org.jetbrains.annotations.NotNull;
 import project.docmaker.model.*;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
@@ -69,7 +70,8 @@ public final class FileContentController
 	public static String getClassDescription (final FileContent fileContent)
 	{
 		final String classArea = FileContentController.getClassArea(fileContent);
-		return RegexController.matchFirst(CLASS_DESC_REGEX, classArea);
+		final String summaryNonFormatted = RegexController.matchSummary(classArea);
+		return FormatController.removeDocumentationMarks(summaryNonFormatted);
 	}
 
 
@@ -84,7 +86,7 @@ public final class FileContentController
 
 		for (final TagContentType tagContentType : TagContentType.values())
 		{
-			tags.add(FileContentController.getDocumentationTag(tagContentType, classArea));
+			tags.addAll(FileContentController.getDocumentationTag(tagContentType, classArea));
 		}
 		// Returning the finished collection.
 		return tags.toArray(DocumentationTag[]::new);
@@ -92,9 +94,69 @@ public final class FileContentController
 
 
 
-	private static DocumentationTag getDocumentationTag (final TagContentType tagContentType, final String area)
+	private static Collection<DocumentationTag> getDocumentationTag (@NotNull final TagContentType tagContentType, final String area)
 	{
-		return new DocumentationTag(tagContentType, RegexController.matchFirst(tagContentType.getRegex(), area));
+		final ArrayList<DocumentationTag> tags = new ArrayList<>();
+		switch (tagContentType)
+		{
+			case PARAM -> tags.addAll(FileContentController.getParameters(area));
+			case RETURNS -> tags.addAll(FileContentController.getReturns(area));
+			case EXCEPTION -> tags.addAll(FileContentController.getExceptions(area));
+			case REMARKS -> tags.addAll(FileContentController.getRemarks(area));
+			case EXAMPLE -> tags.addAll(FileContentController.getExamples(area));
+			case CODE -> tags.addAll(FileContentController.getCodes(area));
+			default -> tags.addAll(null);
+		}
+		return tags;
+	}
+
+
+
+	private static List<DocumentationTag> getParameters (final String area)
+	{
+		final List<DocumentationTag> documentationTags = new ArrayList<>();
+		final String[][] matches = RegexController.matchParams(area);
+		for (final String[] match : matches)
+		{
+			documentationTags.add(new ParamTag(match[0], match[1]));
+		}
+		return documentationTags;
+	}
+
+
+
+	private static Collection<? extends DocumentationTag> getReturns (final String area)
+	{
+		final List<DocumentationTag> documentationTags = new ArrayList<>();
+		final String[][] matches = RegexController.matchParams(area);
+	}
+
+
+
+	private static Collection<? extends DocumentationTag> getExceptions (final String area)
+	{
+		return null;
+	}
+
+
+
+	private static Collection<? extends DocumentationTag> getRemarks (final String area)
+	{
+		return null;
+	}
+
+
+
+	private static Collection<? extends DocumentationTag> getCodes (final String area)
+	{
+		return null;
+	}
+
+
+
+	private static Collection<? extends DocumentationTag> getExamples (final String area)
+	{
+		return null;
 	}
 
 

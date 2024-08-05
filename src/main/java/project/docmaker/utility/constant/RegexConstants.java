@@ -4,7 +4,7 @@ import project.docmaker.model.Regex;
 
 public interface RegexConstants
 {
-	String PUBLIC_CLASS_PATTERN = "(/// *<summary>.*?)(?=\\s*public\\s+class\\s+\\w+)";
+	String PUBLIC_CLASS_PATTERN = "(/// *<summary>.*?)(?=\\s*(public|private)\\s+class\\s+\\w+)";
 
 	/**
 	 * A {@link Regex} object, which can be used to collect the {@link String} of the class area from a file.
