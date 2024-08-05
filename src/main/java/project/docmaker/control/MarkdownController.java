@@ -24,6 +24,8 @@ public class MarkdownController
 
 	public static String generateSection (final Section section)
 	{
+		LOGGER.log(ILogger.Level.NORMAL, "Generating section: " + section.getHeader());
+
 		final String header = section.getHeader().getContent();
 		final String description = section.getDescription().getDescriptionText();
 		final StringBuilder output = new StringBuilder();
@@ -47,14 +49,15 @@ public class MarkdownController
 		final StringBuilder output = new StringBuilder();
 		for (final DocumentationTag<?> tag : tags)
 		{
-			output.append(H3_HEADER).append(tag.getContentType()).append(NEW_LINE).append(CARRIAGE_RETURN);
-			output.append(QUOTE).append(WHITESPACE);
+			output.append(H4_HEADER).append(WHITESPACE).append(tag.getContentType().name()).append(NEW_LINE).append(CARRIAGE_RETURN);
+			output.append(MINUS).append(WHITESPACE);
 			switch (tag.getContentType())
 			{
 				case PARAM -> output.append(generateParamTag((ParamTag) tag));
 				case RETURNS -> output.append(generateReturnTag((ReturnTag) tag));
 				default -> output.append(EMPTY_STRING);
 			}
+			output.append(NEW_LINE).append(CARRIAGE_RETURN);
 		}
 		return output.toString();
 	}
@@ -63,7 +66,7 @@ public class MarkdownController
 
 	private static String generateReturnTag (final ReturnTag tag)
 	{
-		return null;
+		return tag.getTagContent().content();
 	}
 
 
@@ -71,9 +74,8 @@ public class MarkdownController
 	private static String generateParamTag (final ParamTag tag)
 	{
 		final StringBuilder output = new StringBuilder();
-		output.append(tag.getTagContent().paramName()).append(NEW_LINE).append(CARRIAGE_RETURN);
-		output.append(QUOTE).append(WHITESPACE).append(NEW_LINE).append(CARRIAGE_RETURN);
-		output.append(QUOTE).append(WHITESPACE).append(tag.getTagContent().paramValue());
+		output.append(tag.getTagContent().paramName()).append(WHITESPACE);
+		output.append(MINUS).append(WHITESPACE).append(tag.getTagContent().paramValue());
 		return output.toString();
 	}
 
@@ -82,7 +84,7 @@ public class MarkdownController
 	private static String generateSectionHeader (final String header)
 	{
 		final StringBuilder output = new StringBuilder();
-		output.append(H2_HEADER).append(WHITESPACE).append(header).append(NEW_LINE).append(CARRIAGE_RETURN);
+		output.append(H1_HEADER).append(WHITESPACE).append(header).append(NEW_LINE).append(CARRIAGE_RETURN);
 		return output.toString();
 	}
 
@@ -91,7 +93,7 @@ public class MarkdownController
 	private static String generateSectionDescription (final String description)
 	{
 		final StringBuilder output = new StringBuilder();
-		output.append(QUOTE).append(WHITESPACE).append(description).append(NEW_LINE).append(CARRIAGE_RETURN);
+		output.append(MINUS).append(WHITESPACE).append(description).append(NEW_LINE).append(CARRIAGE_RETURN);
 		return output.toString();
 	}
 }

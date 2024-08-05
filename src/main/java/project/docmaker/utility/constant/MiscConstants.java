@@ -15,4 +15,6 @@ public interface MiscConstants
 	String TAB = "\t";
 
 	String NEW_LINE = "\n";
+
+	String MINUS = "-";
 }

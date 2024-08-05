@@ -9,21 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Build: added regular expressions for the return and param tag. Also added a FormatController-class, which is supposed to handle formatting actions.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/ReturnTag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/TagContentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/MarkdownConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Change: changed some classes to interfaces because the &quot;abstract class method&quot; was too restricting.&#10;&#10;Build: added classes used to create MarkDown-Formatting.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/markdown.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/FileContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/FileContentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/ClassSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/ClassSection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Description.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Description.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/DocumentationTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/DocumentationTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/ParamTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/ParamTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Section.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/TagContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/TagContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/MiscConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/MiscConstants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +123,7 @@
       <option name="presentableId" value="Default" />
       <updated>1722776585939</updated>
       <workItem from="1722776586996" duration="19971000" />
-      <workItem from="1722886140378" duration="6846000" />
+      <workItem from="1722886140378" duration="7809000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -239,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722890263177</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Change: changed some classes to interfaces because the &quot;abstract class method&quot; was too restricting.&#10;&#10;Build: added classes used to create MarkDown-Formatting.">
+      <option name="closed" value="true" />
+      <created>1722893181278</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1722893181278</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +275,8 @@
     <MESSAGE value="Build: added a few small tests to see how it's already going -&gt; more toString() methods." />
     <MESSAGE value="Build: added the first RegEx Patterns to get the name and area of the class." />
     <MESSAGE value="Build: added regular expressions for the return and param tag. Also added a FormatController-class, which is supposed to handle formatting actions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Build: added regular expressions for the return and param tag. Also added a FormatController-class, which is supposed to handle formatting actions." />
+    <MESSAGE value="Change: changed some classes to interfaces because the &quot;abstract class method&quot; was too restricting.&#10;&#10;Build: added classes used to create MarkDown-Formatting." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change: changed some classes to interfaces because the &quot;abstract class method&quot; was too restricting.&#10;&#10;Build: added classes used to create MarkDown-Formatting." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import project.docmaker.control.MarkdownController;
 import project.docmaker.model.ClassSection;
 import project.docmaker.model.FileContent;
 import project.docmaker.utility.logging.ILogger;
@@ -29,6 +30,8 @@ public class HelloApplication extends Application
 		LOGGER.log(ILogger.Level.NORMAL, "Creating the classSection instance:");
 		final ClassSection classSection = new ClassSection(fileContent);
 		LOGGER.log(ILogger.Level.DEBUG, classSection.toString());
+
+		System.out.println(MarkdownController.generateSection(classSection));
 
 	}
 
