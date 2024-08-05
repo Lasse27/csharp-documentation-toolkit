@@ -1,6 +1,8 @@
 package project.docmaker.model;
 
 
+import project.docmaker.model.tag.DocumentationTag;
+
 import java.text.MessageFormat;
 
 
@@ -11,11 +13,11 @@ public class Section
 
 	private final Description description;
 
-	private final DocumentationTag[] tags;
+	private final DocumentationTag<?>[] tags;
 
 
 
-	Section (final Header header, final Description description, final DocumentationTag... tags)
+	Section (final Header header, final Description description, final DocumentationTag<?>... tags)
 	{
 		this.header = header;
 		this.description = description;

@@ -2,6 +2,10 @@ package project.docmaker.control;
 
 import org.jetbrains.annotations.NotNull;
 import project.docmaker.model.*;
+import project.docmaker.model.tag.DocumentationTag;
+import project.docmaker.model.tag.ParamTag;
+import project.docmaker.model.tag.ReturnTag;
+import project.docmaker.model.tag.TagContentType;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 
@@ -9,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import static project.docmaker.model.DocumentationTag.TagContentType;
+import static project.docmaker.model.tag.TagContentType.values;
 import static project.docmaker.utility.constant.RegexConstants.CLASS_NAME_REGEX;
 import static project.docmaker.utility.constant.RegexConstants.PUBLIC_CLASS_REGEX;
 
@@ -84,7 +88,7 @@ public final class FileContentController
 		// Adding all the found tags to the returner collection
 		final Collection<DocumentationTag> tags = new ArrayList<>();
 
-		for (final TagContentType tagContentType : TagContentType.values())
+		for (final TagContentType tagContentType : values())
 		{
 			tags.addAll(FileContentController.getDocumentationTag(tagContentType, classArea));
 		}
@@ -96,7 +100,7 @@ public final class FileContentController
 
 	private static Collection<DocumentationTag> getDocumentationTag (@NotNull final TagContentType tagContentType, final String area)
 	{
-		final ArrayList<DocumentationTag> tags = new ArrayList<>();
+		final List<DocumentationTag> tags = new ArrayList<>();
 		switch (tagContentType)
 		{
 			case PARAM -> tags.addAll(FileContentController.getParameters(area));
@@ -105,7 +109,7 @@ public final class FileContentController
 			case REMARKS -> tags.addAll(FileContentController.getRemarks(area));
 			case EXAMPLE -> tags.addAll(FileContentController.getExamples(area));
 			case CODE -> tags.addAll(FileContentController.getCodes(area));
-			default -> tags.addAll(null);
+			default -> tags.addAll(new ArrayList<>());
 		}
 		return tags;
 	}
@@ -128,49 +132,54 @@ public final class FileContentController
 	private static Collection<? extends DocumentationTag> getReturns (final String area)
 	{
 		final List<DocumentationTag> documentationTags = new ArrayList<>();
-		final String[][] matches = RegexController.matchParams(area);
+		final String[] matches = RegexController.matchReturns(area);
+		for (final String match : matches)
+		{
+			documentationTags.add(new ReturnTag(match));
+		}
+		return documentationTags;
 	}
 
 
 
 	private static Collection<? extends DocumentationTag> getExceptions (final String area)
 	{
-		return null;
+		return new ArrayList<>();
 	}
 
 
 
 	private static Collection<? extends DocumentationTag> getRemarks (final String area)
 	{
-		return null;
+		return new ArrayList<>();
 	}
 
 
 
 	private static Collection<? extends DocumentationTag> getCodes (final String area)
 	{
-		return null;
+		return new ArrayList<>();
 	}
 
 
 
 	private static Collection<? extends DocumentationTag> getExamples (final String area)
 	{
-		return null;
+		return new ArrayList<>();
 	}
 
 
 
 	public static List<FieldSection> getFieldSections ()
 	{
-		return null;
+		return new ArrayList<>();
 	}
 
 
 
 	public static List<MethodSection> getMethodSections ()
 	{
-		return null;
+		return new ArrayList<>();
 	}
 
 }

@@ -36,6 +36,7 @@ public class Description
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format("Description'{'sectionClass={0}, descriptionText=''{1}'''}'", this.sectionClass.getSimpleName(), this.descriptionText);
+		return MessageFormat.format("Description'{'sectionClass={0}, descriptionText=''{1}'''}'", this.sectionClass.getSimpleName(),
+				this.descriptionText);
 	}
 }

@@ -2,6 +2,7 @@ package project.docmaker.model;
 
 
 import java.text.MessageFormat;
+import java.util.Arrays;
 import java.util.List;
 
 import static project.docmaker.control.FileContentController.*;
@@ -62,7 +63,7 @@ public class ClassSection extends Section
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format("ClassSection'{'header={0}, description={1}, fields={2}, methods={3}'}'", this.getHeader(),
-				this.getDescription(), this.fields, this.methods);
+		return MessageFormat.format("ClassSection'{'header={0}, description={1}, tags={2} fields={3}, methods={4}'}'", this.getHeader(),
+				this.getDescription(), Arrays.deepToString(this.getTags()), this.fields, this.methods);
 	}
 }

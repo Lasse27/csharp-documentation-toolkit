@@ -6,6 +6,8 @@ public interface MiscConstants
 
 	String EMPTY_STRING = "";
 
+	String WHITESPACE = " ";
+
 	String SLASH = "/";
 
 	String CARRIAGE_RETURN = "\r";

@@ -100,7 +100,7 @@ public final class RegexController
 	public static String[] matchReturns (final String content)
 	{
 		final String editedContent = FormatController.removeLineBreaks(content);
-		final Pattern returnsPattern = Pattern.compile("/// <returns>([\\s\\S]*?)</returns>");
+		final Pattern returnsPattern = Pattern.compile("(?<=/// <returns>)([\\s\\S]*?)(?=</returns>)");
 		final Matcher returnsMatcher = returnsPattern.matcher(editedContent);
 		final Collection<String> results = new ArrayList<>();
 		while (returnsMatcher.find())
