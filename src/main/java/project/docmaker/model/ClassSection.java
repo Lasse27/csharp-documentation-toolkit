@@ -64,6 +64,8 @@ public class ClassSection extends Section
 	public String toString ()
 	{
 		return MessageFormat.format("ClassSection'{'header={0}, description={1}, tags={2} fields={3}, methods={4}'}'", this.getHeader(),
-				this.getDescription(), Arrays.deepToString(this.getTags()), this.fields, this.methods);
+				this.getDescription(), this.getTags(), this.fields, this.methods);
+
+
 	}
 }

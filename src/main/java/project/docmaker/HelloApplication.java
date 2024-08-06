@@ -21,7 +21,7 @@ public class HelloApplication extends Application
 
 
 
-	public static void main (final String[] args)
+	public static void main (final String[] args) throws Exception
 	{
 		LOGGER.log(ILogger.Level.NORMAL, "Reading the test file:");
 		final FileContent fileContent = new FileContent(new File("src/main/resources/project/docmaker/testdocumentation.cs"));

@@ -13,7 +13,7 @@ public class Section
 
 	private final Description description;
 
-	private final DocumentationTag<?>[] tags;
+	private final DocumentationTagList tags;
 
 
 
@@ -21,7 +21,7 @@ public class Section
 	{
 		this.header = header;
 		this.description = description;
-		this.tags = tags;
+		this.tags = new DocumentationTagList(tags);
 	}
 
 
@@ -40,17 +40,16 @@ public class Section
 
 
 
+	public DocumentationTagList getTags ()
+	{
+		return this.tags;
+	}
+
+
+
 	@Override
 	public String toString ()
 	{
 		return MessageFormat.format("Section'{'header={0}, description={1}'}'", this.header, this.description);
 	}
-
-
-
-	public DocumentationTag[] getTags ()
-	{
-		return this.tags;
-	}
-
 }
