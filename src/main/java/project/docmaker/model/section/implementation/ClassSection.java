@@ -1,8 +1,10 @@
-package project.docmaker.model.section;
+package project.docmaker.model.section.implementation;
 
 
 import project.docmaker.model.FileContent;
 import project.docmaker.model.NoLogger;
+import project.docmaker.model.section.Header;
+import project.docmaker.model.section.Section;
 
 import java.text.MessageFormat;
 import java.util.List;
@@ -67,7 +69,6 @@ public class ClassSection extends Section
 	{
 		return MessageFormat.format("ClassSection'{'header={0}, description={1}, tags={2} fields={3}, methods={4}'}'", this.getHeader(),
 				this.getDescription(), this.getTags(), this.fields, this.methods);
-
 
 	}
 }

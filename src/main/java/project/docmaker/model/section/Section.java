@@ -12,6 +12,7 @@ import java.text.MessageFormat;
 @NoLogger
 public abstract class Section
 {
+
 	/** {@link MessageFormat} pattern, which is used, when the {@link Section#toString()} method gets called */
 	private static final String TO_STRING_PATTERN = "Section'{'header={0}, body={1}, footer={2}'}'";
 
@@ -56,6 +57,7 @@ public abstract class Section
 	}
 
 
+
 	/**
 	 * Getter-Method for the {@link Section#body} attribute of the instance.
 	 *
@@ -65,6 +67,7 @@ public abstract class Section
 	{
 		return this.body;
 	}
+
 
 
 	/**
@@ -78,7 +81,11 @@ public abstract class Section
 	}
 
 
-
+	/**
+	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
+	 *
+	 * @return A formatted {@link String} which represents the object in its current state.
+	 */
 	@Override
 	public String toString ()
 	{

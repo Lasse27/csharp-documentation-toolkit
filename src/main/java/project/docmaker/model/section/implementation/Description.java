@@ -1,6 +1,7 @@
-package project.docmaker.model.section;
+package project.docmaker.model.section.implementation;
 
 import project.docmaker.model.NoLogger;
+import project.docmaker.model.section.Section;
 
 import java.text.MessageFormat;
 
