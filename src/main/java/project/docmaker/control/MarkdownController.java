@@ -1,7 +1,7 @@
 package project.docmaker.control;
 
 import project.docmaker.model.DocumentationTagList;
-import project.docmaker.model.Section;
+import project.docmaker.model.section.Section;
 import project.docmaker.model.tag.DocumentationTag;
 import project.docmaker.model.tag.ParamTag;
 import project.docmaker.model.tag.ReturnTag;

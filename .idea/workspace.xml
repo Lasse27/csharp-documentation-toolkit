@@ -9,21 +9,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Build: first markdown-Strings can be generated.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/HelloApplication_structure.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/DocumentationTagList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Section_structure.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Fix: error in module-info.java fixed">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/section/Body.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/section/FieldSection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/section/Footer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/section/MethodSection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/HelloApplication_structure.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/FileContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/FileContentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/ClassSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/ClassSection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Section.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/ClassSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/section/ClassSection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Description.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/section/Description.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/FieldSection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/section/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/MethodSection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/section/Section.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Section_structure.puml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/markdown.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/markdown.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/docmaker/markdown.md" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/docmaker/markdown.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/project/docmaker/testdocumentation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/docmaker/testdocumentation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +45,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Class-Structure-Rework" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,33 +81,34 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.HelloApplication.executor": "Run",
-    "Application.Standard Configuration.executor": "Run",
-    "OverrideImplement.generate.javadoc": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last.edited.regexp": "",
-    "last_opened_file_path": "C:/Users/Lasse/IdeaProjects/VAULT_EA",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.371063",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "Errors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Standard Configuration.executor&quot;: &quot;Run&quot;,
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last.edited.regexp&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lasse/IdeaProjects/VAULT_EA&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.371063&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="project.docmaker.model.section" />
       <recent name="project.docmaker.model" />
       <recent name="project.docmaker.exception" />
       <recent name="project.docmaker.control" />
@@ -137,7 +141,9 @@
       <updated>1722776585939</updated>
       <workItem from="1722776586996" duration="19971000" />
       <workItem from="1722886140378" duration="8317000" />
-      <workItem from="1722968318872" duration="7672000" />
+      <workItem from="1722968318872" duration="8397000" />
+      <workItem from="1724498885531" duration="5000" />
+      <workItem from="1724591799251" duration="941000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -267,7 +273,23 @@
       <option name="project" value="LOCAL" />
       <updated>1722894140841</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Change: changed the formatting of the generated Markdown code.&#10;&#10;Build:&#10;added a few new methods so that documentation tags are now generated in groups and not as standalone.&#10;Added a new datatype to provide better handling of the documentation tags.">
+      <option name="closed" value="true" />
+      <created>1722976302425</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1722976302425</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fix: error in module-info.java fixed">
+      <option name="closed" value="true" />
+      <created>1722976381557</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1722976381557</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +306,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="Class-Structure-Rework" />
                       </list>
                     </value>
                   </entry>
@@ -307,7 +329,9 @@
     <MESSAGE value="Build: added regular expressions for the return and param tag. Also added a FormatController-class, which is supposed to handle formatting actions." />
     <MESSAGE value="Change: changed some classes to interfaces because the &quot;abstract class method&quot; was too restricting.&#10;&#10;Build: added classes used to create MarkDown-Formatting." />
     <MESSAGE value="Build: first markdown-Strings can be generated." />
-    <option name="LAST_COMMIT_MESSAGE" value="Build: first markdown-Strings can be generated." />
+    <MESSAGE value="Change: changed the formatting of the generated Markdown code.&#10;&#10;Build:&#10;added a few new methods so that documentation tags are now generated in groups and not as standalone.&#10;Added a new datatype to provide better handling of the documentation tags." />
+    <MESSAGE value="Fix: error in module-info.java fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: error in module-info.java fixed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

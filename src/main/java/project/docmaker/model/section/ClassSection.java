@@ -1,8 +1,10 @@
-package project.docmaker.model;
+package project.docmaker.model.section;
 
+
+import project.docmaker.model.FileContent;
+import project.docmaker.model.NoLogger;
 
 import java.text.MessageFormat;
-import java.util.Arrays;
 import java.util.List;
 
 import static project.docmaker.control.FileContentController.*;
