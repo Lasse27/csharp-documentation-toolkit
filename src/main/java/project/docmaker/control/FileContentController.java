@@ -2,6 +2,9 @@ package project.docmaker.control;
 
 import org.jetbrains.annotations.NotNull;
 import project.docmaker.model.*;
+import project.docmaker.model.section.FieldSection;
+import project.docmaker.model.section.MethodSection;
+import project.docmaker.model.section.Section;
 import project.docmaker.model.tag.DocumentationTag;
 import project.docmaker.model.tag.ParamTag;
 import project.docmaker.model.tag.ReturnTag;
