@@ -4,33 +4,54 @@ import project.docmaker.model.NoLogger;
 
 import java.text.MessageFormat;
 
+/**
+ * The abstract class {@code Header} represents the header of one {@link Section} instance.
+ */
 @NoLogger
-public class Header
+public abstract class Header
 {
-	private final Class<? extends Section> sectionClass;
 
-	private final String content;
+	/** {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called */
+	private static final String TO_STRING_PATTERN = "Header'{'title=''{0}'''}'";
+
+
+	/** The string instance of the abstract section instance which represents the title */
+	private final String title;
 
 
 
-	public Header (final Class<? extends Section> sectionClass, final String content)
+	/**
+	 * Standard constructor, which initializes the object with all the necessary instance fields.
+	 *
+	 * @param title The header instance of the abstract section instance
+	 */
+	protected Header (final String title)
 	{
-		this.sectionClass = sectionClass;
-		this.content = content;
+		this.title = title;
 	}
 
 
 
-	public String getContent ()
+	/**
+	 * Getter-Method for the {@link Header#title} attribute of the instance.
+	 *
+	 * @return Returns the {@link String} instance of the calling instance.
+	 */
+	public String getTitle ()
 	{
-		return this.content;
+		return this.title;
 	}
 
 
 
+	/**
+	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
+	 *
+	 * @return A formatted {@link String} which represents the object in its current state.
+	 */
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format("Header'{'sectionClass={0}, content=''{1}'''}'", this.sectionClass.getSimpleName(), this.content);
+		return MessageFormat.format(TO_STRING_PATTERN, this.title);
 	}
 }

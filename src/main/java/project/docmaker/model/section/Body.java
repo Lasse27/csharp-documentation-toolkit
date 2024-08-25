@@ -3,6 +3,7 @@ package project.docmaker.model.section;
 import project.docmaker.model.CodeSnippet;
 import project.docmaker.model.DocumentationTagList;
 import project.docmaker.model.NoLogger;
+import project.docmaker.model.section.implementation.Description;
 
 import java.text.MessageFormat;
 
@@ -12,6 +13,7 @@ import java.text.MessageFormat;
 @NoLogger
 public abstract class Body
 {
+
 	/** {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called */
 	private static final String TO_STRING_PATTERN = "Body'{'description={0}, documentationTags={1}, codeSnippet={2}'}'";
 
@@ -28,12 +30,13 @@ public abstract class Body
 	private final CodeSnippet codeSnippet;
 
 
+
 	/**
 	 * Standard constructor, which initializes the object with all the necessary instance fields.
 	 *
-	 * @param description The header instance of the abstract section instance
-	 * @param documentationTags   The body instance of the abstract section instance
-	 * @param codeSnippet The footer instance of the abstract section instance
+	 * @param description       The header instance of the abstract section instance
+	 * @param documentationTags The body instance of the abstract section instance
+	 * @param codeSnippet       The footer instance of the abstract section instance
 	 */
 	protected Body (final Description description, final DocumentationTagList documentationTags, final CodeSnippet codeSnippet)
 	{
@@ -44,6 +47,47 @@ public abstract class Body
 
 
 
+	/**
+	 * Getter-Method for the {@link Body#description} attribute of the instance.
+	 *
+	 * @return Returns the {@link Description} instance of the calling instance.
+	 */
+	public Description getDescription ()
+	{
+		return this.description;
+	}
+
+
+
+	/**
+	 * Getter-Method for the {@link Body#documentationTags} attribute of the instance.
+	 *
+	 * @return Returns the {@link DocumentationTagList} instance of the calling instance.
+	 */
+	public DocumentationTagList getDocumentationTags ()
+	{
+		return this.documentationTags;
+	}
+
+
+
+	/**
+	 * Getter-Method for the {@link Body#codeSnippet} attribute of the instance.
+	 *
+	 * @return Returns the {@link CodeSnippet} instance of the calling instance.
+	 */
+	public CodeSnippet getCodeSnippet ()
+	{
+		return this.codeSnippet;
+	}
+
+
+
+	/**
+	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
+	 *
+	 * @return A formatted {@link String} which represents the object in its current state.
+	 */
 	@Override
 	public String toString ()
 	{

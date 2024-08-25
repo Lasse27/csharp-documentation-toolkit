@@ -6,7 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import project.docmaker.control.MarkdownController;
-import project.docmaker.model.section.ClassSection;
+import project.docmaker.model.section.implementation.ClassSection;
 import project.docmaker.model.FileContent;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
