@@ -3,13 +3,13 @@ package project.docmaker.model.tag;
 import project.docmaker.model.NoLogger;
 
 @NoLogger
-public interface DocumentationTag<V>
+public interface DocumentationTag
 {
 	TagContentType getContentType ();
 
 
 
-	V getTagContent ();
+	TagContent getTagContent ();
 
 
 

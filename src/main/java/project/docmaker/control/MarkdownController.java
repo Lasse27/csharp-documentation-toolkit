@@ -3,7 +3,7 @@ package project.docmaker.control;
 import project.docmaker.model.DocumentationTagList;
 import project.docmaker.model.section.Section;
 import project.docmaker.model.tag.DocumentationTag;
-import project.docmaker.model.tag.ParamTag;
+import project.docmaker.model.tag.ParameterTag;
 import project.docmaker.model.tag.ReturnTag;
 import project.docmaker.model.tag.TagContentType;
 import project.docmaker.utility.logging.ILogger;
@@ -15,10 +15,16 @@ import static project.docmaker.utility.constant.MiscConstants.*;
 
 public class MarkdownController
 {
-	private static final ILogger LOGGER = new Logger(MarkdownController.class.getSimpleName());
+	/**
+	 * A {@link Logger} object, which is being used to write formatted outputs into the console.
+	 */
+	private static final ILogger LOGGER = new Logger(SectionFactory.class.getSimpleName());
 
 
 
+	/**
+	 * Private constructor since controller class isn't supposed to be initialized ever.
+	 */
 	private MarkdownController ()
 	{
 	}
@@ -27,22 +33,7 @@ public class MarkdownController
 
 	public static String generateSection (final Section section)
 	{
-		LOGGER.log(ILogger.Level.NORMAL, "Generating section: " + section.getHeader());
-
-		final String header = section.getHeader().getContent();
-		final String description = section.getDescription().getDescriptionText();
-		final StringBuilder output = new StringBuilder();
-
-		// Create the header
-		output.append(generateSectionHeader(header));
-
-		// Create the description
-		output.append(generateSectionDescription(description));
-
-		// Create the description
-		output.append(generateSectionTags(section.getTags()));
-
-		return output.toString();
+		return "";
 	}
 
 
@@ -64,11 +55,11 @@ public class MarkdownController
 
 
 
-	private static String generateReturnTag (final DocumentationTag<?>[] tags)
+	private static String generateReturnTag (final DocumentationTag[] tags)
 	{
 		final StringBuilder output = new StringBuilder();
 		output.append(generatedTagHeader(TagContentType.RETURNS));
-		for (final DocumentationTag<?> tag : tags)
+		for (final DocumentationTag tag : tags)
 		{
 			final ReturnTag returnTag = (ReturnTag) tag;
 			output.append(MINUS).append(WHITESPACE);
@@ -88,17 +79,17 @@ public class MarkdownController
 
 
 
-	private static String generateWithParamsFormatting (final DocumentationTag<?>[] tags)
+	private static String generateWithParamsFormatting (final DocumentationTag[] tags)
 	{
 		final StringBuilder output = new StringBuilder();
 		output.append(generatedTagHeader(TagContentType.PARAM));
 
-		for (final DocumentationTag<?> tag : tags)
+		for (final DocumentationTag tag : tags)
 		{
-			final ParamTag paramTag = (ParamTag) tag;
+			final ParameterTag parameterTag = (ParameterTag) tag;
 			output.append(MINUS).append(WHITESPACE);
-			output.append(paramTag.getTagContent().paramName()).append(WHITESPACE);
-			output.append(MINUS).append(WHITESPACE).append(paramTag.getTagContent().paramValue()).append(NEW_LINE).append(CARRIAGE_RETURN);
+			output.append(parameterTag.getTagContent().paramName()).append(WHITESPACE);
+			output.append(MINUS).append(WHITESPACE).append(parameterTag.getTagContent().paramValue()).append(NEW_LINE).append(CARRIAGE_RETURN);
 		}
 		return output.toString();
 	}

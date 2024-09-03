@@ -26,7 +26,7 @@ public class FormatController
 
 
 
-	public static String removeDocumentationMarks (final String content)
+	public static String removeDocMarks (final String content)
 	{
 		String modified = content.replaceAll(SLASH, EMPTY_STRING);
 		LOGGER.log(ILogger.Level.DEBUG, "Removed Documentation-Marks: " + modified);

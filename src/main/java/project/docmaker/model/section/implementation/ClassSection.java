@@ -1,15 +1,14 @@
 package project.docmaker.model.section.implementation;
 
 
-import project.docmaker.model.FileContent;
 import project.docmaker.model.NoLogger;
+import project.docmaker.model.section.Body;
+import project.docmaker.model.section.Footer;
 import project.docmaker.model.section.Header;
 import project.docmaker.model.section.Section;
 
-import java.text.MessageFormat;
 import java.util.List;
 
-import static project.docmaker.control.FileContentController.*;
 
 
 /**
@@ -19,18 +18,15 @@ import static project.docmaker.control.FileContentController.*;
 public class ClassSection extends Section
 {
 
-	private final List<FieldSection> fields;
+	private List<FieldSection> fields;
 
-	private final List<MethodSection> methods;
+	private List<MethodSection> methods;
 
 
 
-	public ClassSection (final FileContent fileContent)
+	public ClassSection (final Header header, final Body body, final Footer footer)
 	{
-		super(new Header(ClassSection.class, getClassName(fileContent)), new Description(ClassSection.class, getClassDescription(fileContent)),
-				getClassTags(fileContent));
-		this.fields = getFieldSections();
-		this.methods = getMethodSections();
+		super(header, body, footer);
 	}
 
 
@@ -67,8 +63,6 @@ public class ClassSection extends Section
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format("ClassSection'{'header={0}, description={1}, tags={2} fields={3}, methods={4}'}'", this.getHeader(),
-				this.getDescription(), this.getTags(), this.fields, this.methods);
-
+		return super.toString();
 	}
 }

@@ -6,9 +6,12 @@ import java.text.MessageFormat;
 
 /**
  * The abstract class {@code Header} represents the header of one {@link Section} instance.
+ *
+ * @author Lasse-Leander Hillen
+ * @since 02.09.2024
  */
 @NoLogger
-public abstract class Header
+public class Header
 {
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called */
@@ -25,7 +28,7 @@ public abstract class Header
 	 *
 	 * @param title The header instance of the abstract section instance
 	 */
-	protected Header (final String title)
+	public Header (final String title)
 	{
 		this.title = title;
 	}

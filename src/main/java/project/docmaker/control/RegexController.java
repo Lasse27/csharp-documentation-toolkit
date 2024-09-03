@@ -89,8 +89,8 @@ public final class RegexController
 		final Collection<String[]> results = new ArrayList<>();
 		while (paramMatcher.find())
 		{
-			results.add(new String[]{FormatController.removeDocumentationMarks(paramMatcher.group(1)),
-					FormatController.removeDocumentationMarks(paramMatcher.group(2))});
+			results.add(new String[]{FormatController.removeDocMarks(paramMatcher.group(1)),
+					FormatController.removeDocMarks(paramMatcher.group(2))});
 		}
 		return results.toArray(String[][]::new);
 	}
@@ -105,7 +105,7 @@ public final class RegexController
 		final Collection<String> results = new ArrayList<>();
 		while (returnsMatcher.find())
 		{
-			results.add(FormatController.removeDocumentationMarks(returnsMatcher.group()));
+			results.add(FormatController.removeDocMarks(returnsMatcher.group()));
 		}
 		return results.toArray(String[]::new);
 	}
