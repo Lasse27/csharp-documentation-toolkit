@@ -15,10 +15,10 @@ import java.util.stream.Stream;
  * {@inheritDoc}
  */
 @NoLogger
-public class DocumentationTagList implements Collection<DocumentationTag<?>>
+public class DocumentationTagList implements Collection<DocumentationTag>
 {
 
-	private final List<DocumentationTag<?>> tags;
+	private final List<DocumentationTag> tags;
 
 
 
@@ -35,7 +35,7 @@ public class DocumentationTagList implements Collection<DocumentationTag<?>>
 	/**
 	 * {@inheritDoc}
 	 */
-	public DocumentationTagList (final DocumentationTag<?>... tags)
+	public DocumentationTagList (final DocumentationTag... tags)
 	{
 		this.tags = new ArrayList<>();
 		this.tags.addAll(List.of(tags));
@@ -81,20 +81,9 @@ public class DocumentationTagList implements Collection<DocumentationTag<?>>
 	 */
 	@NotNull
 	@Override
-	public Iterator<DocumentationTag<?>> iterator ()
+	public Iterator<DocumentationTag> iterator ()
 	{
 		return this.tags.iterator();
-	}
-
-
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public void forEach (final Consumer<? super DocumentationTag<?>> action)
-	{
-		Collection.super.forEach(action);
 	}
 
 
@@ -136,7 +125,7 @@ public class DocumentationTagList implements Collection<DocumentationTag<?>>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean add (final DocumentationTag<?> documentationTag)
+	public boolean add (final DocumentationTag documentationTag)
 	{
 		return this.tags.add(documentationTag);
 	}
@@ -169,7 +158,7 @@ public class DocumentationTagList implements Collection<DocumentationTag<?>>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean addAll (@NotNull final Collection<? extends DocumentationTag<?>> collection)
+	public boolean addAll (@NotNull final Collection<? extends DocumentationTag> collection)
 	{
 		return this.tags.addAll(collection);
 	}
@@ -191,7 +180,7 @@ public class DocumentationTagList implements Collection<DocumentationTag<?>>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean removeIf (final Predicate<? super DocumentationTag<?>> filter)
+	public boolean removeIf (final Predicate<? super DocumentationTag> filter)
 	{
 		return Collection.super.removeIf(filter);
 	}
@@ -224,7 +213,7 @@ public class DocumentationTagList implements Collection<DocumentationTag<?>>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Spliterator<DocumentationTag<?>> spliterator ()
+	public Spliterator<DocumentationTag> spliterator ()
 	{
 		return Collection.super.spliterator();
 	}
@@ -235,7 +224,7 @@ public class DocumentationTagList implements Collection<DocumentationTag<?>>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Stream<DocumentationTag<?>> stream ()
+	public Stream<DocumentationTag> stream ()
 	{
 		return Collection.super.stream();
 	}
@@ -246,9 +235,20 @@ public class DocumentationTagList implements Collection<DocumentationTag<?>>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Stream<DocumentationTag<?>> parallelStream ()
+	public Stream<DocumentationTag> parallelStream ()
 	{
 		return Collection.super.parallelStream();
+	}
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void forEach (final Consumer<? super DocumentationTag> action)
+	{
+		Collection.super.forEach(action);
 	}
 
 
@@ -264,9 +264,9 @@ public class DocumentationTagList implements Collection<DocumentationTag<?>>
 
 
 
-	public DocumentationTag<?>[] getTagGroup (final TagContentType type)
+	public DocumentationTag[] getTagGroup (final TagContentType type)
 	{
-		final List<DocumentationTag<?>> list = this.tags.stream().filter(tag -> tag.getContentType() == type).toList();
+		final List<DocumentationTag> list = this.tags.stream().filter(tag -> tag.getContentType() == type).toList();
 		return list.toArray(DocumentationTag[]::new);
 	}
 }

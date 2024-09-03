@@ -10,7 +10,7 @@ import java.text.MessageFormat;
  * The {@code Section} class represents an abstract section of the generated document.
  */
 @NoLogger
-public abstract class Section
+public class Section
 {
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Section#toString()} method gets called */
@@ -37,7 +37,7 @@ public abstract class Section
 	 * @param body   The body instance of the abstract section instance
 	 * @param footer The footer instance of the abstract section instance
 	 */
-	Section (final Header header, final Body body, final Footer footer)
+	protected Section (final Header header, final Body body, final Footer footer)
 	{
 		this.header = header;
 		this.body = body;
@@ -79,6 +79,7 @@ public abstract class Section
 	{
 		return this.footer;
 	}
+
 
 
 	/**

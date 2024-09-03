@@ -6,8 +6,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import project.docmaker.control.MarkdownController;
-import project.docmaker.model.section.implementation.ClassSection;
+import project.docmaker.control.SectionFactory;
+import project.docmaker.model.CodeSnippet;
+import project.docmaker.model.DocumentationTagList;
 import project.docmaker.model.FileContent;
+import project.docmaker.model.section.Body;
+import project.docmaker.model.section.Footer;
+import project.docmaker.model.section.Header;
+import project.docmaker.model.section.implementation.ClassSection;
+import project.docmaker.model.section.implementation.Description;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 
@@ -21,18 +28,17 @@ public class HelloApplication extends Application
 
 
 
-	public static void main (final String[] args) throws Exception
+	public static void main (final String[] args)
 	{
 		LOGGER.log(ILogger.Level.NORMAL, "Reading the test file:");
 		final FileContent fileContent = new FileContent(new File("src/main/resources/project/docmaker/testdocumentation.cs"));
 		LOGGER.log(ILogger.Level.DEBUG, fileContent.getAsString());
 
 		LOGGER.log(ILogger.Level.NORMAL, "Creating the classSection instance:");
-		final ClassSection classSection = new ClassSection(fileContent);
+		final ClassSection classSection = SectionFactory.CreateClassSection(fileContent);
 		LOGGER.log(ILogger.Level.DEBUG, classSection.toString());
 
 		System.out.println(MarkdownController.generateSection(classSection));
-
 	}
 
 

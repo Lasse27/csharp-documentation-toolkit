@@ -5,7 +5,7 @@
 /// <param name="email"> Description </param>
 /// <returns> Return description </returns>
 /// <returns> Return description </returns>
-public class UserAuthentificator
+public class UserAuthentificator : Executor, Maker, Builder
 {
     private static final Logger _Logger = new Logger();
 

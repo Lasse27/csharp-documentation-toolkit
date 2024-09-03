@@ -4,10 +4,8 @@ import project.docmaker.model.NoLogger;
 
 import java.text.MessageFormat;
 
-import static project.docmaker.model.tag.ReturnTag.ReturnTagContent;
-
 @NoLogger
-public class ReturnTag implements DocumentationTag<ReturnTagContent>
+public class ReturnTag implements DocumentationTag
 {
 
 	private final ReturnTagContent tagContent;

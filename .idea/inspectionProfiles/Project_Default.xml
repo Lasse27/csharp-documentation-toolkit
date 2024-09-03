@@ -276,6 +276,7 @@
           <item value="me.vault.game.utility.constant.ConstantInterface" />
           <item value="me.vault.vaultgame.utility.ConstantInterface" />
           <item value="me.vault.vaultgame.utility.constant.ConstantInterface" />
+          <item value="project.docmaker.model.NoLogger" />
         </value>
       </option>
     </inspection_tool>

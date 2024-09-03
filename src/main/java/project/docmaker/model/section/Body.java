@@ -11,7 +11,7 @@ import java.text.MessageFormat;
  * The abstract class {@code Body} represents the body of one instance of {@link Section}
  */
 @NoLogger
-public abstract class Body
+public class Body
 {
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called */
@@ -38,7 +38,7 @@ public abstract class Body
 	 * @param documentationTags The body instance of the abstract section instance
 	 * @param codeSnippet       The footer instance of the abstract section instance
 	 */
-	protected Body (final Description description, final DocumentationTagList documentationTags, final CodeSnippet codeSnippet)
+	public Body (final Description description, final DocumentationTagList documentationTags, final CodeSnippet codeSnippet)
 	{
 		this.description = description;
 		this.documentationTags = documentationTags;

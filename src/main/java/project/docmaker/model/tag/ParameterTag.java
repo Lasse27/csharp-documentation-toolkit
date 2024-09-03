@@ -1,16 +1,14 @@
 package project.docmaker.model.tag;
 
-import project.docmaker.model.tag.ParamTag.ParamTagContent;
-
 import java.text.MessageFormat;
 
-public class ParamTag implements DocumentationTag<ParamTagContent>
+public class ParameterTag implements DocumentationTag
 {
 	private ParamTagContent tagContent = null;
 
 
 
-	public ParamTag (final String contentType, final String paramText)
+	public ParameterTag (final String contentType, final String paramText)
 	{
 		this.tagContent = new ParamTagContent(contentType, paramText);
 	}
