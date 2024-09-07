@@ -1,14 +1,13 @@
-package project.docmaker.model.section.implementation;
+package project.docmaker.model.structure.section.implementation;
 
 
 import project.docmaker.model.NoLogger;
-import project.docmaker.model.section.Body;
-import project.docmaker.model.section.Footer;
-import project.docmaker.model.section.Header;
-import project.docmaker.model.section.Section;
+import project.docmaker.model.structure.Body;
+import project.docmaker.model.structure.Footer;
+import project.docmaker.model.structure.Header;
+import project.docmaker.model.structure.section.Section;
 
 import java.util.List;
-
 
 
 /**

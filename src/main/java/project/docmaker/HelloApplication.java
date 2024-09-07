@@ -7,14 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import project.docmaker.control.MarkdownController;
 import project.docmaker.control.SectionFactory;
-import project.docmaker.model.CodeSnippet;
-import project.docmaker.model.DocumentationTagList;
 import project.docmaker.model.FileContent;
-import project.docmaker.model.section.Body;
-import project.docmaker.model.section.Footer;
-import project.docmaker.model.section.Header;
-import project.docmaker.model.section.implementation.ClassSection;
-import project.docmaker.model.section.implementation.Description;
+import project.docmaker.model.structure.section.implementation.ClassSection;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 
