@@ -1,7 +1,7 @@
 package project.docmaker.utility.logging;
 
 
-import project.docmaker.model.NoLogger;
+import project.docmaker.utility.annotation.NoLogger;
 
 /**
  * An interface that can be implemented to create a logger.

@@ -3,6 +3,7 @@ package project.docmaker.model;
 import org.jetbrains.annotations.NotNull;
 import project.docmaker.model.tag.Tag;
 import project.docmaker.model.tag.TagType;
+import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
 import java.util.*;

@@ -1,7 +1,7 @@
 package project.docmaker.utility.constant;
 
 import org.jetbrains.annotations.NonNls;
-import project.docmaker.model.ConstantInterface;
+import project.docmaker.utility.annotation.ConstantInterface;
 
 /**
  * The interface {@code LoggingConstants} contains mainly logging messages for the output in the console.

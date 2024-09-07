@@ -1,6 +1,8 @@
 package project.docmaker.model;
 
 
+import project.docmaker.utility.annotation.NoLogger;
+
 import java.util.regex.Pattern;
 
 @NoLogger

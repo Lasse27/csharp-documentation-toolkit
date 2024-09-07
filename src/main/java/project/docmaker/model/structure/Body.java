@@ -1,7 +1,7 @@
 package project.docmaker.model.structure;
 
 import project.docmaker.model.DocumentationTagList;
-import project.docmaker.model.NoLogger;
+import project.docmaker.utility.annotation.NoLogger;
 import project.docmaker.model.structure.section.Section;
 
 import java.text.MessageFormat;

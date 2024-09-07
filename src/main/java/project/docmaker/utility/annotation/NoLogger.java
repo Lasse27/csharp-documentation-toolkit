@@ -1,4 +1,4 @@
-package project.docmaker.model;
+package project.docmaker.utility.annotation;
 
 import project.docmaker.utility.logging.Logger;
 

@@ -1,6 +1,6 @@
 package project.docmaker.utility.constant;
 
-import project.docmaker.model.ConstantInterface;
+import project.docmaker.utility.annotation.ConstantInterface;
 
 /**
  * The interface {@code LoggingConstants} contains mainly Markdown formats for the creation of Markdown documents.
