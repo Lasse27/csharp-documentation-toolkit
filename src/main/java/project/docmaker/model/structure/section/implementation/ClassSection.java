@@ -1,7 +1,7 @@
 package project.docmaker.model.structure.section.implementation;
 
 
-import project.docmaker.model.NoLogger;
+import project.docmaker.utility.annotation.NoLogger;
 import project.docmaker.model.structure.section.MetaData;
 import project.docmaker.model.structure.section.Section;
 

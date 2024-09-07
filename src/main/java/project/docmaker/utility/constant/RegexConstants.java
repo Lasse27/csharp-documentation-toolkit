@@ -2,7 +2,7 @@ package project.docmaker.utility.constant;
 
 import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NonNls;
-import project.docmaker.model.NoLogger;
+import project.docmaker.utility.annotation.NoLogger;
 import project.docmaker.model.Regex;
 import project.docmaker.model.structure.Snippet;
 

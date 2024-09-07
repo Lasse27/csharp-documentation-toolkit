@@ -1,15 +1,23 @@
-package project.docmaker.model.structure;
+package project.docmaker.model;
 
+import project.docmaker.model.structure.Body;
 import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
 
+/**
+ * A Record which represents one token the C#-File will be analyzed by.
+ *
+ * @param content The string value of the token as a content.
+ *
+ * @author Lasse-Leander Hillen
+ */
 @NoLogger
-public record Footer(String content)
+public record Token(String content)
 {
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called */
-	private static final String TEXT_DISPLAY_PATTERN = Footer.class.getSimpleName() + "[content={0}]";
+	private static final String TEXT_DISPLAY_PATTERN = Token.class.getSimpleName() + "[content={0}]";
 
 
 

@@ -16,9 +16,9 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class HelloApplication extends Application
+public class Program extends Application
 {
-	private static final ILogger LOGGER = new Logger(HelloApplication.class.getSimpleName());
+	private static final ILogger LOGGER = new Logger(Program.class.getSimpleName());
 
 
 
@@ -40,7 +40,7 @@ public class HelloApplication extends Application
 	@Override
 	public void start (final Stage stage) throws IOException
 	{
-		final FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+		final FXMLLoader fxmlLoader = new FXMLLoader(Program.class.getResource("hello-view.fxml"));
 		final Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 		stage.setTitle("Hello!");
 		stage.setScene(scene);

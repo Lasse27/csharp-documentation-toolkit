@@ -1,5 +1,6 @@
 package project.docmaker.model;
 
+import project.docmaker.utility.annotation.NoLogger;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 

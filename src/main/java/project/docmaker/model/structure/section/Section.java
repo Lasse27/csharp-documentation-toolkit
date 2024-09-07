@@ -1,7 +1,7 @@
 package project.docmaker.model.structure.section;
 
 
-import project.docmaker.model.NoLogger;
+import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
 
