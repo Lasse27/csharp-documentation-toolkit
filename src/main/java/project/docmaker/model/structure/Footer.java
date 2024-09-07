@@ -7,6 +7,7 @@ import java.text.MessageFormat;
 @NoLogger
 public record Footer(String content)
 {
+
 	/** {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called */
 	private static final String TEXT_DISPLAY_PATTERN = Footer.class.getSimpleName() + "[content={0}]";
 

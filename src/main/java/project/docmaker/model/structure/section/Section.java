@@ -2,85 +2,37 @@ package project.docmaker.model.structure.section;
 
 
 import project.docmaker.model.NoLogger;
-import project.docmaker.model.structure.Body;
-import project.docmaker.model.structure.Footer;
-import project.docmaker.model.structure.Header;
 
 import java.text.MessageFormat;
 
 
 /**
- * The {@code Section} class represents an abstract section of the generated document.
+ * The {@code Section} class represents a section of the read c# file.
+ *
+ * @author Lasse-Leander Hillen
+ * @since 07.09.2024
  */
 @NoLogger
 public class Section
 {
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Section#toString()} method gets called */
-	private static final String TO_STRING_PATTERN = "Section'{'header={0}, body={1}, footer={2}'}'";
+	private static final String TEXT_DISPLAY_PATTERN = Section.class.getSimpleName() + "[metaData={0}]";
 
 
-	/** The header instance of the abstract section instance */
-	private final Header header;
-
-
-	/** The body instance of the abstract section instance */
-	private final Body body;
-
-
-	/** The footer instance of the abstract section instance */
-	private final Footer footer;
+	/** The metadata information about the {@link Section} instance. */
+	private final MetaData metaData;
 
 
 
 	/**
 	 * Standard constructor, which initializes the object with all the necessary instance fields.
 	 *
-	 * @param header The header instance of the abstract section instance
-	 * @param body   The body instance of the abstract section instance
-	 * @param footer The footer instance of the abstract section instance
+	 * @param metaData The metadata information about the {@link Section} instance.
 	 */
-	protected Section (final Header header, final Body body, final Footer footer)
+	protected Section (final MetaData metaData)
 	{
-		this.header = header;
-		this.body = body;
-		this.footer = footer;
-	}
-
-
-
-	/**
-	 * Getter-Method for the {@link Section#header} attribute of the instance.
-	 *
-	 * @return Returns the {@link Header} instance of the calling instance.
-	 */
-	public Header getHeader ()
-	{
-		return this.header;
-	}
-
-
-
-	/**
-	 * Getter-Method for the {@link Section#body} attribute of the instance.
-	 *
-	 * @return Returns the {@link Body} instance of the calling instance.
-	 */
-	public Body getBody ()
-	{
-		return this.body;
-	}
-
-
-
-	/**
-	 * Getter-Method for the {@link Section#footer} attribute of the instance.
-	 *
-	 * @return Returns the {@link Footer} instance of the calling instance.
-	 */
-	public Footer getFooter ()
-	{
-		return this.footer;
+		this.metaData = metaData;
 	}
 
 
@@ -93,6 +45,6 @@ public class Section
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format(TO_STRING_PATTERN, this.header, this.body, this.footer);
+		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.metaData);
 	}
 }

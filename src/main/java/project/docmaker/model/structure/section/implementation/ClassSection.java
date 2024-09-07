@@ -10,16 +10,14 @@ import project.docmaker.model.structure.section.Section;
 import java.util.List;
 
 
-/**
- *
- */
 @NoLogger
 public class ClassSection extends Section
 {
+	private List<ClassSection> subClasses;
 
-	private List<FieldSection> fields;
+	private List<FieldSection> subFields;
 
-	private List<MethodSection> methods;
+	private List<MethodSection> subMethods;
 
 
 
@@ -35,9 +33,9 @@ public class ClassSection extends Section
 	 *
 	 * @return A {@link List} of {@link FieldSection} objects representing the methods of the class section.
 	 */
-	public List<FieldSection> getFields ()
+	public List<FieldSection> getSubFields ()
 	{
-		return this.fields;
+		return this.subFields;
 	}
 
 
@@ -47,9 +45,9 @@ public class ClassSection extends Section
 	 *
 	 * @return A {@link List} of {@link MethodSection} objects representing the methods of the class section.
 	 */
-	public List<MethodSection> getMethods ()
+	public List<MethodSection> getSubMethods ()
 	{
-		return this.methods;
+		return this.subMethods;
 	}
 
 

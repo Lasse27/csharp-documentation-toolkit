@@ -5,11 +5,11 @@ import project.docmaker.model.NoLogger;
 import java.text.MessageFormat;
 
 @NoLogger
-public record Description(String content)
+public record Snippet(String content)
 {
 
-	/** {@link MessageFormat} pattern, which is used, when the {@link Description#toString()} method gets called */
-	private static final String TEXT_DISPLAY_PATTERN = Description.class.getSimpleName() + "[content={0}]";
+	/** {@link MessageFormat} pattern, which is used, when the {@link Snippet#toString()} method gets called */
+	private static final String TEXT_DISPLAY_PATTERN = Snippet.class.getSimpleName() + "[content={0}]";
 
 
 

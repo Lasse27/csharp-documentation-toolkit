@@ -6,7 +6,7 @@ import project.docmaker.model.Regex;
 import java.text.MessageFormat;
 
 @NoLogger
-public enum TagContentType
+public enum TagType
 {
 	SUMMARY(new Regex("")),
 
@@ -34,7 +34,7 @@ public enum TagContentType
 
 
 
-	TagContentType (final Regex regex)
+	TagType (final Regex regex)
 	{
 		this.regex = regex;
 	}
