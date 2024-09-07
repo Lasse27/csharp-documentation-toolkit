@@ -13,14 +13,10 @@ import java.util.regex.Pattern;
 import static project.docmaker.utility.constant.MiscConstants.EMPTY_STRING;
 
 
-/**
- *
- */
 public final class RegexController
 {
-	/**
-	 * A {@link Logger} object, which is being used to write formatted outputs into the console.
-	 */
+
+	/** A {@link Logger} object, which is being used to write formatted outputs into the console. */
 	private static final ILogger LOGGER = new Logger(RegexController.class.getSimpleName());
 
 

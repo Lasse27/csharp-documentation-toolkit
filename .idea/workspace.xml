@@ -9,24 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Change: Changed some classes to records since they only hold/group information">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/MetaData.java" afterDir="false" />
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Change: Changed some more classes to records and added the metadata class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/ConstantInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/FileContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/FileContentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/SectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/SectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/CodeSnippet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Snippet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/DocumentationTagList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/DocumentationTagList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/NoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/NoLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Description.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Description.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Footer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Footer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/Section.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/implementation/ClassSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/implementation/ClassSection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/DocumentationTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Tag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/ParameterTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/ParameterTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/ReturnTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/ReturnTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/TagContentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/TagType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/implementation/FieldSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/implementation/FieldSection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/implementation/MethodSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/implementation/MethodSection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/LoggingConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/LoggingConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/MarkdownConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/MarkdownConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/RegexConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/RegexConstants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,9 +31,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="AnnotationType" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -119,6 +113,7 @@
       <recent name="project.docmaker.control" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
+      <recent name="project.docmaker.utility.constant.RegexConstants" />
       <recent name="project.docmaker.utility.constant.LoggingConstants" />
     </key>
   </component>
@@ -154,7 +149,7 @@
       <workItem from="1724591799251" duration="2722000" />
       <workItem from="1725308850718" duration="4970000" />
       <workItem from="1725382905983" duration="2653000" />
-      <workItem from="1725719096272" duration="2265000" />
+      <workItem from="1725719096272" duration="3577000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -332,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725720098858</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Change: Changed some more classes to records and added the metadata class">
+      <option name="closed" value="true" />
+      <created>1725721411103</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1725721411103</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +381,8 @@
     <MESSAGE value="Add: Added the code for the abstract body class" />
     <MESSAGE value="Add: Added the code for the abstract header class and changed class structure" />
     <MESSAGE value="Change: Changed some classes to records since they only hold/group information" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change: Changed some classes to records since they only hold/group information" />
+    <MESSAGE value="Change: Changed some more classes to records and added the metadata class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change: Changed some more classes to records and added the metadata class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
