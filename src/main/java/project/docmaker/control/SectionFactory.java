@@ -1,13 +1,13 @@
 package project.docmaker.control;
 
 import project.docmaker.model.FileContent;
-import project.docmaker.model.section.Body;
-import project.docmaker.model.section.Footer;
-import project.docmaker.model.section.Header;
-import project.docmaker.model.section.Section;
-import project.docmaker.model.section.implementation.ClassSection;
-import project.docmaker.model.section.implementation.FieldSection;
-import project.docmaker.model.section.implementation.MethodSection;
+import project.docmaker.model.structure.Body;
+import project.docmaker.model.structure.Footer;
+import project.docmaker.model.structure.Header;
+import project.docmaker.model.structure.section.Section;
+import project.docmaker.model.structure.section.implementation.ClassSection;
+import project.docmaker.model.structure.section.implementation.FieldSection;
+import project.docmaker.model.structure.section.implementation.MethodSection;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 

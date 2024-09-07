@@ -1,7 +1,10 @@
-package project.docmaker.model.section;
+package project.docmaker.model.structure.section;
 
 
 import project.docmaker.model.NoLogger;
+import project.docmaker.model.structure.Body;
+import project.docmaker.model.structure.Footer;
+import project.docmaker.model.structure.Header;
 
 import java.text.MessageFormat;
 

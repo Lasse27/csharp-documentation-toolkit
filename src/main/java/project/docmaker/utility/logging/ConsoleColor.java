@@ -26,152 +26,152 @@ import project.docmaker.model.NoLogger;
 public enum ConsoleColor
 {
 	/**
-	 * Represents the ANSI code for a reset text and background color.
+	 * Represents the ANSI code for a reset content and background color.
 	 * <br>
 	 * Printing this character resets the printed color to the default color.
 	 */
 	RESET("\033[0m"),
 
 	/**
-	 * Represents the ANSI code for a black text color.
+	 * Represents the ANSI code for a black content color.
 	 */
 	BLACK("\033[0;30m"),
 
 
 	/**
-	 * Represents the ANSI code for a red text color.
+	 * Represents the ANSI code for a red content color.
 	 */
 	RED("\033[0;31m"),
 
 
 	/**
-	 * Represents the ANSI code for a green text color.
+	 * Represents the ANSI code for a green content color.
 	 */
 	GREEN("\033[0;32m"),
 
 
 	/**
-	 * Represents the ANSI code for a yellow text color.
+	 * Represents the ANSI code for a yellow content color.
 	 */
 	YELLOW("\033[0;33m"),
 
 
 	/**
-	 * Represents the ANSI code for a blue text color.
+	 * Represents the ANSI code for a blue content color.
 	 */
 	BLUE("\033[0;34m"),
 
 
 	/**
-	 * Represents the ANSI code for a magenta text color.
+	 * Represents the ANSI code for a magenta content color.
 	 */
 	MAGENTA("\033[0;35m"),
 
 
 	/**
-	 * Represents the ANSI code for a cyan text color.
+	 * Represents the ANSI code for a cyan content color.
 	 */
 	CYAN("\033[0;36m"),
 
 
 	/**
-	 * Represents the ANSI code for a white text color.
+	 * Represents the ANSI code for a white content color.
 	 */
 	WHITE("\033[0;37m"),
 
 
 	/**
-	 * Represents the ANSI code for a black text color with bold formatting.
+	 * Represents the ANSI code for a black content color with bold formatting.
 	 */
 	BLACK_BOLD("\033[1;30m"),
 
 
 	/**
-	 * Represents the ANSI code for a red text color with bold formatting.
+	 * Represents the ANSI code for a red content color with bold formatting.
 	 */
 	RED_BOLD("\033[1;31m"),
 
 
 	/**
-	 * Represents the ANSI code for a green text color with bold formatting.
+	 * Represents the ANSI code for a green content color with bold formatting.
 	 */
 	GREEN_BOLD("\033[1;32m"),
 
 
 	/**
-	 * Represents the ANSI code for a yellow text color with bold formatting.
+	 * Represents the ANSI code for a yellow content color with bold formatting.
 	 */
 	YELLOW_BOLD("\033[1;33m"),
 
 
 	/**
-	 * Represents the ANSI code for a blue text color with bold formatting.
+	 * Represents the ANSI code for a blue content color with bold formatting.
 	 */
 	BLUE_BOLD("\033[1;34m"),
 
 
 	/**
-	 * Represents the ANSI code for a magenta text color with bold formatting.
+	 * Represents the ANSI code for a magenta content color with bold formatting.
 	 */
 	MAGENTA_BOLD("\033[1;35m"),
 
 
 	/**
-	 * Represents the ANSI code for a cyan text color with bold formatting.
+	 * Represents the ANSI code for a cyan content color with bold formatting.
 	 */
 	CYAN_BOLD("\033[1;36m"),
 
 
 	/**
-	 * Represents the ANSI code for a white text color with bold formatting.
+	 * Represents the ANSI code for a white content color with bold formatting.
 	 */
 	WHITE_BOLD("\033[1;37m"),
 
 
 	/**
-	 * Represents the ANSI code for a black text color with underlined formatting.
+	 * Represents the ANSI code for a black content color with underlined formatting.
 	 */
 	BLACK_UNDERLINED("\033[4;30m"),
 
 
 	/**
-	 * Represents the ANSI code for a red text color with underlined formatting.
+	 * Represents the ANSI code for a red content color with underlined formatting.
 	 */
 	RED_UNDERLINED("\033[4;31m"),
 
 
 	/**
-	 * Represents the ANSI code for a green text color with underlined formatting.
+	 * Represents the ANSI code for a green content color with underlined formatting.
 	 */
 	GREEN_UNDERLINED("\033[4;32m"),
 
 
 	/**
-	 * Represents the ANSI code for a yellow text color with underlined formatting.
+	 * Represents the ANSI code for a yellow content color with underlined formatting.
 	 */
 	YELLOW_UNDERLINED("\033[4;33m"),
 
 
 	/**
-	 * Represents the ANSI code for a blue text color with underlined formatting.
+	 * Represents the ANSI code for a blue content color with underlined formatting.
 	 */
 	BLUE_UNDERLINED("\033[4;34m"),
 
 
 	/**
-	 * Represents the ANSI code for a magenta text color with underlined formatting.
+	 * Represents the ANSI code for a magenta content color with underlined formatting.
 	 */
 	MAGENTA_UNDERLINED("\033[4;35m"),
 
 
 	/**
-	 * Represents the ANSI code for a cyan text color with underlined formatting.
+	 * Represents the ANSI code for a cyan content color with underlined formatting.
 	 */
 	CYAN_UNDERLINED("\033[4;36m"),
 
 
 	/**
-	 * Represents the ANSI code for a white text color with underlined formatting.
+	 * Represents the ANSI code for a white content color with underlined formatting.
 	 */
 	WHITE_UNDERLINED("\033[4;37m"),
 
@@ -225,97 +225,97 @@ public enum ConsoleColor
 
 
 	/**
-	 * Represents the ANSI code for a black text color with bright formatting.
+	 * Represents the ANSI code for a black content color with bright formatting.
 	 */
 	BLACK_BRIGHT("\033[0;90m"),
 
 
 	/**
-	 * Represents the ANSI code for a red text color with bright formatting.
+	 * Represents the ANSI code for a red content color with bright formatting.
 	 */
 	RED_BRIGHT("\033[0;91m"),
 
 
 	/**
-	 * Represents the ANSI code for a green text color with bright formatting.
+	 * Represents the ANSI code for a green content color with bright formatting.
 	 */
 	GREEN_BRIGHT("\033[0;92m"),
 
 
 	/**
-	 * Represents the ANSI code for a yellow text color with bright formatting.
+	 * Represents the ANSI code for a yellow content color with bright formatting.
 	 */
 	YELLOW_BRIGHT("\033[0;93m"),
 
 
 	/**
-	 * Represents the ANSI code for a blue text color with bright formatting.
+	 * Represents the ANSI code for a blue content color with bright formatting.
 	 */
 	BLUE_BRIGHT("\033[0;94m"),
 
 
 	/**
-	 * Represents the ANSI code for a magenta text color with bright formatting.
+	 * Represents the ANSI code for a magenta content color with bright formatting.
 	 */
 	MAGENTA_BRIGHT("\033[0;95m"),
 
 
 	/**
-	 * Represents the ANSI code for a cyan text color with bright formatting.
+	 * Represents the ANSI code for a cyan content color with bright formatting.
 	 */
 	CYAN_BRIGHT("\033[0;96m"),
 
 
 	/**
-	 * Represents the ANSI code for a white text color with bright formatting.
+	 * Represents the ANSI code for a white content color with bright formatting.
 	 */
 	WHITE_BRIGHT("\033[0;97m"),
 
 
 	/**
-	 * Represents the ANSI code for a black text color with bold and bright formatting.
+	 * Represents the ANSI code for a black content color with bold and bright formatting.
 	 */
 	BLACK_BOLD_BRIGHT("\033[1;90m"),
 
 
 	/**
-	 * Represents the ANSI code for a red text color with bold and bright formatting.
+	 * Represents the ANSI code for a red content color with bold and bright formatting.
 	 */
 	RED_BOLD_BRIGHT("\033[1;91m"),
 
 
 	/**
-	 * Represents the ANSI code for a green text color with bold and bright formatting.
+	 * Represents the ANSI code for a green content color with bold and bright formatting.
 	 */
 	GREEN_BOLD_BRIGHT("\033[1;92m"),
 
 
 	/**
-	 * Represents the ANSI code for a yellow text color with bold and bright formatting.
+	 * Represents the ANSI code for a yellow content color with bold and bright formatting.
 	 */
 	YELLOW_BOLD_BRIGHT("\033[1;93m"),
 
 
 	/**
-	 * Represents the ANSI code for a blue text color with bold and bright formatting.
+	 * Represents the ANSI code for a blue content color with bold and bright formatting.
 	 */
 	BLUE_BOLD_BRIGHT("\033[1;94m"),
 
 
 	/**
-	 * Represents the ANSI code for a magenta text color with bold and bright formatting.
+	 * Represents the ANSI code for a magenta content color with bold and bright formatting.
 	 */
 	MAGENTA_BOLD_BRIGHT("\033[1;95m"),
 
 
 	/**
-	 * Represents the ANSI code for a cyan text color with bold and bright formatting.
+	 * Represents the ANSI code for a cyan content color with bold and bright formatting.
 	 */
 	CYAN_BOLD_BRIGHT("\033[1;96m"),
 
 
 	/**
-	 * Represents the ANSI code for a white text color with bold and bright formatting.
+	 * Represents the ANSI code for a white content color with bold and bright formatting.
 	 */
 	WHITE_BOLD_BRIGHT("\033[1;97m"),
 
