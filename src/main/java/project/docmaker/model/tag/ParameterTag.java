@@ -2,9 +2,9 @@ package project.docmaker.model.tag;
 
 import java.text.MessageFormat;
 
-public class ParameterTag implements DocumentationTag
+public class ParameterTag implements Tag
 {
-	private ParamTagContent tagContent = null;
+	private final ParamTagContent tagContent;
 
 
 
@@ -16,15 +16,15 @@ public class ParameterTag implements DocumentationTag
 
 
 	@Override
-	public TagContentType getContentType ()
+	public TagType getType ()
 	{
-		return TagContentType.PARAM;
+		return TagType.PARAM;
 	}
 
 
 
 	@Override
-	public ParamTagContent getTagContent ()
+	public ParamTagContent getContent ()
 	{
 		return this.tagContent;
 	}

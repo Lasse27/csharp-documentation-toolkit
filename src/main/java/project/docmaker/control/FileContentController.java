@@ -1,6 +1,6 @@
 package project.docmaker.control;
 
-import project.docmaker.model.CodeSnippet;
+import project.docmaker.model.structure.Snippet;
 import project.docmaker.model.DocumentationTagList;
 import project.docmaker.model.FileContent;
 import project.docmaker.model.Regex;
@@ -11,7 +11,7 @@ import project.docmaker.model.structure.section.Section;
 import project.docmaker.model.structure.Description;
 import project.docmaker.model.tag.ParameterTag;
 import project.docmaker.model.tag.ReturnTag;
-import project.docmaker.model.tag.TagContentType;
+import project.docmaker.model.tag.TagType;
 import project.docmaker.utility.constant.RegexConstants;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
@@ -99,11 +99,11 @@ public final class FileContentController
 
 		// Getting the code snippet
 		final String codeStr = FormatController.removeDocMarks(RegexController.matchFirst(RegexConstants.CLASS_CODE_REGEX, fileContentString));
-		final CodeSnippet codeSnippet = new CodeSnippet(codeStr);
+		final Snippet snippet = new Snippet(codeStr);
 		LOGGER.log(ILogger.Level.DEBUG, MessageFormat.format(INSTANCE_CREATED_PTN, description));
 
 		// Returning the finished product
-		return new Body(description, documentationTags, codeSnippet);
+		return new Body(description, documentationTags, snippet);
 	}
 
 
@@ -118,12 +118,12 @@ public final class FileContentController
 	private static DocumentationTagList GetDocumentationTagList (final String regexArea)
 	{
 		final DocumentationTagList documentationTags = new DocumentationTagList();
-		for (final TagContentType tagContentType : TagContentType.values())
+		for (final TagType tagType : TagType.values())
 		{
-			switch (tagContentType)
+			switch (tagType)
 			{
-				case TagContentType.PARAM -> documentationTags.addAll(FileContentController.GetParameterTags(regexArea));
-				case TagContentType.RETURNS -> documentationTags.addAll(FileContentController.GetReturnTags(regexArea));
+				case TagType.PARAM -> documentationTags.addAll(FileContentController.GetParameterTags(regexArea));
+				case TagType.RETURNS -> documentationTags.addAll(FileContentController.GetReturnTags(regexArea));
 			}
 		}
 		return documentationTags;

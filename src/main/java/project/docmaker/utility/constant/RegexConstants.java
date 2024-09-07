@@ -3,6 +3,7 @@ package project.docmaker.utility.constant;
 import org.intellij.lang.annotations.Language;
 import project.docmaker.model.NoLogger;
 import project.docmaker.model.Regex;
+import project.docmaker.model.structure.Snippet;
 
 /**
  * The {@code RegexConstants} class contains certain patterns and {@link Regex} objects, which can be used to analyze C#-Code files.
@@ -34,24 +35,24 @@ public interface RegexConstants
 	Regex CLASS_NAME_REGEX = new Regex(CLASS_NAME_PATTERN);
 
 	/**
-	 * A {@link String} pattern, which can be used to collect the {@link project.docmaker.model.CodeSnippet} of the class.
+	 * A {@link String} pattern, which can be used to collect the {@link Snippet} of the class.
 	 */
 	String CLASS_CODE_PATTERN = "(public|private|protected|internal|sealed|abstract|partial)\\s*(class|struct|interface|record)\\s+\\w+" +
 	                            "(\\s*:\\s*[\\w\\s,]+)?\\s*?";
 
 	/**
-	 * A {@link Regex} object, which can be used to collect the {@link project.docmaker.model.CodeSnippet} of the class.
+	 * A {@link Regex} object, which can be used to collect the {@link Snippet} of the class.
 	 */
 	Regex CLASS_CODE_REGEX = new Regex(CLASS_CODE_PATTERN);
 
 	/**
-	 * A {@link String} pattern, which can be used to collect the {@link project.docmaker.model.CodeSnippet} of the class.
+	 * A {@link String} pattern, which can be used to collect the {@link Snippet} of the class.
 	 */
 	@Language ("RegExp")
 	String CLASS_DESCRIPTION_PATTERN = "<summary>([\\s\\S]*?)</summary>";
 
 	/**
-	 * A {@link Regex} object, which can be used to collect the {@link project.docmaker.model.CodeSnippet} of the class.
+	 * A {@link Regex} object, which can be used to collect the {@link Snippet} of the class.
 	 */
 	Regex CLASS_DESCRIPTION_REGEX = new Regex(CLASS_DESCRIPTION_PATTERN);
 }

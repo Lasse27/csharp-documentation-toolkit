@@ -1,8 +1,8 @@
 package project.docmaker.model;
 
 import org.jetbrains.annotations.NotNull;
-import project.docmaker.model.tag.DocumentationTag;
-import project.docmaker.model.tag.TagContentType;
+import project.docmaker.model.tag.Tag;
+import project.docmaker.model.tag.TagType;
 
 import java.text.MessageFormat;
 import java.util.*;
@@ -15,10 +15,10 @@ import java.util.stream.Stream;
  * {@inheritDoc}
  */
 @NoLogger
-public class DocumentationTagList implements Collection<DocumentationTag>
+public class DocumentationTagList implements Collection<Tag>
 {
 
-	private final List<DocumentationTag> tags;
+	private final List<Tag> tags;
 
 
 
@@ -35,7 +35,7 @@ public class DocumentationTagList implements Collection<DocumentationTag>
 	/**
 	 * {@inheritDoc}
 	 */
-	public DocumentationTagList (final DocumentationTag... tags)
+	public DocumentationTagList (final Tag... tags)
 	{
 		this.tags = new ArrayList<>();
 		this.tags.addAll(List.of(tags));
@@ -81,7 +81,7 @@ public class DocumentationTagList implements Collection<DocumentationTag>
 	 */
 	@NotNull
 	@Override
-	public Iterator<DocumentationTag> iterator ()
+	public Iterator<Tag> iterator ()
 	{
 		return this.tags.iterator();
 	}
@@ -125,9 +125,9 @@ public class DocumentationTagList implements Collection<DocumentationTag>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean add (final DocumentationTag documentationTag)
+	public boolean add (final Tag tag)
 	{
-		return this.tags.add(documentationTag);
+		return this.tags.add(tag);
 	}
 
 
@@ -158,7 +158,7 @@ public class DocumentationTagList implements Collection<DocumentationTag>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean addAll (@NotNull final Collection<? extends DocumentationTag> collection)
+	public boolean addAll (@NotNull final Collection<? extends Tag> collection)
 	{
 		return this.tags.addAll(collection);
 	}
@@ -180,7 +180,7 @@ public class DocumentationTagList implements Collection<DocumentationTag>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean removeIf (final Predicate<? super DocumentationTag> filter)
+	public boolean removeIf (final Predicate<? super Tag> filter)
 	{
 		return Collection.super.removeIf(filter);
 	}
@@ -213,7 +213,7 @@ public class DocumentationTagList implements Collection<DocumentationTag>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Spliterator<DocumentationTag> spliterator ()
+	public Spliterator<Tag> spliterator ()
 	{
 		return Collection.super.spliterator();
 	}
@@ -224,7 +224,7 @@ public class DocumentationTagList implements Collection<DocumentationTag>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Stream<DocumentationTag> stream ()
+	public Stream<Tag> stream ()
 	{
 		return Collection.super.stream();
 	}
@@ -235,7 +235,7 @@ public class DocumentationTagList implements Collection<DocumentationTag>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Stream<DocumentationTag> parallelStream ()
+	public Stream<Tag> parallelStream ()
 	{
 		return Collection.super.parallelStream();
 	}
@@ -246,7 +246,7 @@ public class DocumentationTagList implements Collection<DocumentationTag>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void forEach (final Consumer<? super DocumentationTag> action)
+	public void forEach (final Consumer<? super Tag> action)
 	{
 		Collection.super.forEach(action);
 	}
@@ -264,9 +264,9 @@ public class DocumentationTagList implements Collection<DocumentationTag>
 
 
 
-	public DocumentationTag[] getTagGroup (final TagContentType type)
+	public Tag[] getTagGroup (final TagType type)
 	{
-		final List<DocumentationTag> list = this.tags.stream().filter(tag -> tag.getContentType() == type).toList();
-		return list.toArray(DocumentationTag[]::new);
+		final List<Tag> list = this.tags.stream().filter(tag -> tag.getType() == type).toList();
+		return list.toArray(Tag[]::new);
 	}
 }

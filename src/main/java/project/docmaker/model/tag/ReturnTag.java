@@ -5,7 +5,7 @@ import project.docmaker.model.NoLogger;
 import java.text.MessageFormat;
 
 @NoLogger
-public class ReturnTag implements DocumentationTag
+public class ReturnTag implements Tag
 {
 
 	private final ReturnTagContent tagContent;
@@ -20,15 +20,15 @@ public class ReturnTag implements DocumentationTag
 
 
 	@Override
-	public TagContentType getContentType ()
+	public TagType getType ()
 	{
-		return TagContentType.RETURNS;
+		return TagType.RETURNS;
 	}
 
 
 
 	@Override
-	public ReturnTagContent getTagContent ()
+	public ReturnTagContent getContent ()
 	{
 		return this.tagContent;
 	}

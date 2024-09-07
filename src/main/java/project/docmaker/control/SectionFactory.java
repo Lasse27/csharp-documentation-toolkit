@@ -6,6 +6,7 @@ import project.docmaker.model.structure.Footer;
 import project.docmaker.model.structure.Header;
 import project.docmaker.model.structure.section.Section;
 import project.docmaker.model.structure.section.implementation.ClassSection;
+import project.docmaker.model.structure.section.implementation.ClassSectionBuilder;
 import project.docmaker.model.structure.section.implementation.FieldSection;
 import project.docmaker.model.structure.section.implementation.MethodSection;
 import project.docmaker.utility.logging.ILogger;
@@ -47,7 +48,7 @@ public final class SectionFactory
 	 */
 	public static ClassSection CreateClassSection (final Header header, final Body body, final Footer footer)
 	{
-		final ClassSection classSection = new ClassSection(header, body, footer);
+		final ClassSection classSection = new ClassSectionBuilder().setHeader(header).setBody(body).setFooter(footer).createClassSection();
 
 		LOGGER.log(ILogger.Level.DEBUG, classSection.toString());
 		return classSection;

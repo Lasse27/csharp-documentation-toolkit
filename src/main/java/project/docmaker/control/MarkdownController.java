@@ -2,10 +2,10 @@ package project.docmaker.control;
 
 import project.docmaker.model.DocumentationTagList;
 import project.docmaker.model.structure.section.Section;
-import project.docmaker.model.tag.DocumentationTag;
+import project.docmaker.model.tag.Tag;
 import project.docmaker.model.tag.ParameterTag;
 import project.docmaker.model.tag.ReturnTag;
-import project.docmaker.model.tag.TagContentType;
+import project.docmaker.model.tag.TagType;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 
@@ -41,7 +41,7 @@ public class MarkdownController
 	private static String generateSectionTags (final DocumentationTagList tags)
 	{
 		final StringBuilder output = new StringBuilder();
-		for (final TagContentType type : TagContentType.values())
+		for (final TagType type : TagType.values())
 		{
 			switch (type)
 			{
@@ -55,15 +55,15 @@ public class MarkdownController
 
 
 
-	private static String generateReturnTag (final DocumentationTag[] tags)
+	private static String generateReturnTag (final Tag[] tags)
 	{
 		final StringBuilder output = new StringBuilder();
-		output.append(generatedTagHeader(TagContentType.RETURNS));
-		for (final DocumentationTag tag : tags)
+		output.append(generatedTagHeader(TagType.RETURNS));
+		for (final Tag tag : tags)
 		{
 			final ReturnTag returnTag = (ReturnTag) tag;
 			output.append(MINUS).append(WHITESPACE);
-			output.append(returnTag.getTagContent().content()).append(WHITESPACE);
+			output.append(returnTag.getContent().content()).append(WHITESPACE);
 			output.append(NEW_LINE).append(CARRIAGE_RETURN);
 		}
 		return output.toString();
@@ -71,25 +71,25 @@ public class MarkdownController
 
 
 
-	private static String generatedTagHeader (final TagContentType tagContentType)
+	private static String generatedTagHeader (final TagType tagType)
 	{
-		return new StringBuilder().append(H4_HEADER).append(WHITESPACE).append(tagContentType.name()).append(NEW_LINE).append(CARRIAGE_RETURN)
+		return new StringBuilder().append(H4_HEADER).append(WHITESPACE).append(tagType.name()).append(NEW_LINE).append(CARRIAGE_RETURN)
 				.toString();
 	}
 
 
 
-	private static String generateWithParamsFormatting (final DocumentationTag[] tags)
+	private static String generateWithParamsFormatting (final Tag[] tags)
 	{
 		final StringBuilder output = new StringBuilder();
-		output.append(generatedTagHeader(TagContentType.PARAM));
+		output.append(generatedTagHeader(TagType.PARAM));
 
-		for (final DocumentationTag tag : tags)
+		for (final Tag tag : tags)
 		{
 			final ParameterTag parameterTag = (ParameterTag) tag;
 			output.append(MINUS).append(WHITESPACE);
-			output.append(parameterTag.getTagContent().paramName()).append(WHITESPACE);
-			output.append(MINUS).append(WHITESPACE).append(parameterTag.getTagContent().paramValue()).append(NEW_LINE).append(CARRIAGE_RETURN);
+			output.append(parameterTag.getContent().paramName()).append(WHITESPACE);
+			output.append(MINUS).append(WHITESPACE).append(parameterTag.getContent().paramValue()).append(NEW_LINE).append(CARRIAGE_RETURN);
 		}
 		return output.toString();
 	}

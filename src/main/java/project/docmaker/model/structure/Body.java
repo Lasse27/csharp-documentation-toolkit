@@ -1,6 +1,5 @@
 package project.docmaker.model.structure;
 
-import project.docmaker.model.CodeSnippet;
 import project.docmaker.model.DocumentationTagList;
 import project.docmaker.model.NoLogger;
 import project.docmaker.model.structure.section.Section;
@@ -12,13 +11,13 @@ import java.text.MessageFormat;
  *
  * @param description       The {@link Description} instance of the abstract section instance
  * @param documentationTags The {@link DocumentationTagList} instance of the abstract section instance
- * @param codeSnippet       The header {@link CodeSnippet} of the abstract section instance
+ * @param snippet           The header {@link Snippet} of the abstract section instance
  *
  * @author Lasse-Leander Hillen
  * @since 2024-09-07
  */
 @NoLogger
-public record Body(Description description, DocumentationTagList documentationTags, CodeSnippet codeSnippet)
+public record Body(Description description, DocumentationTagList documentationTags, Snippet snippet)
 {
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called */
@@ -53,14 +52,14 @@ public record Body(Description description, DocumentationTagList documentationTa
 
 
 	/**
-	 * Getter-Method for the {@link Body#codeSnippet} attribute of the instance.
+	 * Getter-Method for the {@link Body#snippet} attribute of the instance.
 	 *
-	 * @return Returns the {@link CodeSnippet} instance of the calling instance.
+	 * @return Returns the {@link Snippet} instance of the calling instance.
 	 */
 	@Override
-	public CodeSnippet codeSnippet ()
+	public Snippet snippet ()
 	{
-		return this.codeSnippet;
+		return this.snippet;
 	}
 
 
@@ -73,6 +72,6 @@ public record Body(Description description, DocumentationTagList documentationTa
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.description, this.documentationTags, this.codeSnippet);
+		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.description, this.documentationTags, this.snippet);
 	}
 }
