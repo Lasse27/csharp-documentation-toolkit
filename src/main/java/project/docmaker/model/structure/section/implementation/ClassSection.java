@@ -2,28 +2,38 @@ package project.docmaker.model.structure.section.implementation;
 
 
 import project.docmaker.model.NoLogger;
-import project.docmaker.model.structure.Body;
-import project.docmaker.model.structure.Footer;
-import project.docmaker.model.structure.Header;
+import project.docmaker.model.structure.section.MetaData;
 import project.docmaker.model.structure.section.Section;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 @NoLogger
 public class ClassSection extends Section
 {
-	private List<ClassSection> subClasses;
 
-	private List<FieldSection> subFields;
-
-	private List<MethodSection> subMethods;
+	/** {@link List} of {@link ClassSection} of the instance. */
+	private final List<ClassSection> subClasses = new ArrayList<ClassSection>();
 
 
+	/** {@link List} of {@link FieldSection} of the instance. */
+	private final List<FieldSection> subFields = new ArrayList<FieldSection>();
 
-	public ClassSection (final Header header, final Body body, final Footer footer)
+
+	/** {@link List} of {@link MethodSection} of the instance. */
+	private final List<MethodSection> subMethods = new ArrayList<MethodSection>();
+
+
+
+	/**
+	 * Standard constructor, which initializes the object with all the necessary instance fields.
+	 *
+	 * @param metaData The metadata information about the {@link ClassSection} instance.
+	 */
+	public ClassSection (final MetaData metaData)
 	{
-		super(header, body, footer);
+		super(metaData);
 	}
 
 
@@ -53,6 +63,27 @@ public class ClassSection extends Section
 
 
 	/**
+	 * Getter-Method for the {@link List} of {@link ClassSection} of the instance.
+	 *
+	 * @return A {@link List} of {@link ClassSection} objects representing the methods of the class section.
+	 */
+	public List<ClassSection> getSubClasses ()
+	{
+		return this.subClasses;
+	}
+
+
+
+	/** {@inheritDoc} **/
+	@Override
+	public String getMarkdownFormat ()
+	{
+		return ""; // TODO: IMPLEMENT
+	}
+
+
+
+	/**
 	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
 	 *
 	 * @return A formatted {@link String} which represents the object in its current state.
@@ -62,4 +93,5 @@ public class ClassSection extends Section
 	{
 		return super.toString();
 	}
+
 }

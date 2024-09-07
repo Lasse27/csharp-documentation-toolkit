@@ -1,5 +1,14 @@
 package project.docmaker.utility.constant;
 
+import project.docmaker.model.ConstantInterface;
+
+/**
+ * The interface {@code LoggingConstants} contains mainly Markdown formats for the creation of Markdown documents.
+ *
+ * @author Lasse-Leander Hillen
+ * @since 07.09.2024
+ */
+@ConstantInterface
 public interface MarkdownConstants
 {
 	String MARKDOWN_FILE_EXTENSION = ".md";

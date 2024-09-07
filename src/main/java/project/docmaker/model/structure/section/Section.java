@@ -13,7 +13,7 @@ import java.text.MessageFormat;
  * @since 07.09.2024
  */
 @NoLogger
-public class Section
+public abstract class Section
 {
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Section#toString()} method gets called */
@@ -34,6 +34,15 @@ public class Section
 	{
 		this.metaData = metaData;
 	}
+
+
+
+	/**
+	 * Getter-Method for the Markdown format of the section instance.
+	 *
+	 * @return A String that represents the Markdown format of the section instance.
+	 */
+	public abstract String getMarkdownFormat ();
 
 
 

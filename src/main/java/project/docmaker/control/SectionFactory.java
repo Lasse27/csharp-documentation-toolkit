@@ -4,9 +4,9 @@ import project.docmaker.model.FileContent;
 import project.docmaker.model.structure.Body;
 import project.docmaker.model.structure.Footer;
 import project.docmaker.model.structure.Header;
+import project.docmaker.model.structure.section.MetaData;
 import project.docmaker.model.structure.section.Section;
 import project.docmaker.model.structure.section.implementation.ClassSection;
-import project.docmaker.model.structure.section.implementation.ClassSectionBuilder;
 import project.docmaker.model.structure.section.implementation.FieldSection;
 import project.docmaker.model.structure.section.implementation.MethodSection;
 import project.docmaker.utility.logging.ILogger;
@@ -40,16 +40,13 @@ public final class SectionFactory
 	/**
 	 * Factory method for the {@link ClassSection}-Class
 	 *
-	 * @param header The header of the new {@code ClassSection} instance.
-	 * @param body   The body of the new {@code ClassSection} instance.
-	 * @param footer The footer of the new {@code ClassSection} instance.
+	 * @param metaData The metadata information about the {@link Section} instance.
 	 *
 	 * @return A new instance of the {@code ClassSection} class.
 	 */
-	public static ClassSection CreateClassSection (final Header header, final Body body, final Footer footer)
+	public static ClassSection CreateClassSection (final MetaData metaData)
 	{
-		final ClassSection classSection = new ClassSectionBuilder().setHeader(header).setBody(body).setFooter(footer).createClassSection();
-
+		final ClassSection classSection = new ClassSection(metaData);
 		LOGGER.log(ILogger.Level.DEBUG, classSection.toString());
 		return classSection;
 	}
@@ -68,7 +65,7 @@ public final class SectionFactory
 		final Header header = FileContentController.GetClassHeader(fileContent);
 		final Body body = FileContentController.GetClassBody(fileContent);
 		final Footer footer = FileContentController.GetClassFooter(fileContent);
-		return CreateClassSection(header, body, footer);
+		return CreateClassSection(new MetaData(header, body, footer));
 	}
 
 
