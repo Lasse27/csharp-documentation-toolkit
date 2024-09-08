@@ -7,5 +7,10 @@ module project.cs_documentationmaker {
 	requires org.jetbrains.annotations;
 
 	opens project.docmaker to javafx.fxml;
+	opens project.docmaker.control to javafx.fxml;
 	exports project.docmaker;
+	exports project.docmaker.control;
+	exports project.docmaker.model.structure;
+	exports project.docmaker.model.structure.section;
+	exports project.docmaker.model.structure.section.implementation;
 }

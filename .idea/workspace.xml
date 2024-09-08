@@ -2,7 +2,6 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_INJECTED_CODE" value="false" />
-    <option name="SCOPE_TYPE" value="8" />
     <option name="CUSTOM_SCOPE_NAME" value="All Places" />
   </component>
   <component name="AutoImportSettings">
@@ -10,37 +9,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Add: Added some javadoc messages and added an ConstantInterface.java annotation interface">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Token.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/FileAnalyzer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/TokenConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/exception/RegexException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/exception/RegexException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/ConstantInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/annotation/ConstantInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/DocumentationTagList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/DocumentationTagList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/FileContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/FileContent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/NoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/annotation/NoLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Regex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/FileContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/FileContentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/SectionFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Description.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Description.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Footer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Footer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Footer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Snippet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Snippet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/MetaData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/MetaData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/Section.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/implementation/ClassSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/implementation/ClassSection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/implementation/FieldSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/implementation/FieldSection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/implementation/MethodSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/section/implementation/MethodSection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/ReturnTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/ReturnTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Tag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/TagType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/TagType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/LoggingConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/LoggingConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/MarkdownConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/MarkdownConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/RegexConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/RegexConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/ConsoleColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/ConsoleColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/ILogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/ILogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/docmaker/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/docmaker/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/project/docmaker/testdocumentation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/project/docmaker/testdocumentation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -121,13 +111,14 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.371063&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="project.docmaker.model.section" />
+      <recent name="project.docmaker" />
       <recent name="project.docmaker.model" />
       <recent name="project.docmaker.exception" />
       <recent name="project.docmaker.control" />
@@ -169,7 +160,9 @@
       <workItem from="1724591799251" duration="2722000" />
       <workItem from="1725308850718" duration="4970000" />
       <workItem from="1725382905983" duration="2653000" />
-      <workItem from="1725719096272" duration="4337000" />
+      <workItem from="1725719096272" duration="5578000" />
+      <workItem from="1725724731570" duration="8230000" />
+      <workItem from="1725830026126" duration="2942000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -363,7 +356,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725722756239</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Add: Added some javadoc messages and added an ConstantInterface.java annotation interface">
+      <option name="closed" value="true" />
+      <created>1725723509782</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1725723509782</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

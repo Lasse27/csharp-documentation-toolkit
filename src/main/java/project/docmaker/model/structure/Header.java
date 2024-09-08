@@ -1,7 +1,7 @@
 package project.docmaker.model.structure;
 
-import project.docmaker.utility.annotation.NoLogger;
 import project.docmaker.model.structure.section.Section;
+import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
 
@@ -14,7 +14,7 @@ import java.text.MessageFormat;
  * @since 02.09.2024
  */
 @NoLogger
-public record Header(String content)
+public record Header(String modifier, String type, String content)
 {
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Header#toString()} method gets called */

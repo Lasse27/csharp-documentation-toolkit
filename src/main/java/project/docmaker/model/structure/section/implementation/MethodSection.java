@@ -1,8 +1,8 @@
 package project.docmaker.model.structure.section.implementation;
 
-import project.docmaker.utility.annotation.NoLogger;
 import project.docmaker.model.structure.section.MetaData;
 import project.docmaker.model.structure.section.Section;
+import project.docmaker.utility.annotation.NoLogger;
 
 @NoLogger
 public class MethodSection extends Section

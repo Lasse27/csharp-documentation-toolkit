@@ -1,9 +1,8 @@
 package project.docmaker.model.structure.section;
 
-import project.docmaker.utility.annotation.NoLogger;
 import project.docmaker.model.structure.Body;
-import project.docmaker.model.structure.Footer;
 import project.docmaker.model.structure.Header;
+import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
 
@@ -13,17 +12,16 @@ import java.text.MessageFormat;
  *
  * @param header The header instance of the abstract section instance
  * @param body   The body instance of the abstract section instance
- * @param footer The footer instance of the abstract section instance
  *
  * @author Lasse-Leander Hillen
  * @since 07.09.2024
  */
 @NoLogger
-public record MetaData(Header header, Body body, Footer footer)
+public record MetaData(Header header, Body body)
 {
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Section#toString()} method gets called */
-	private static final String TEXT_DISPLAY_PATTERN = MetaData.class.getSimpleName() + "[header={0}, body={1}, footer={2}]";
+	private static final String TEXT_DISPLAY_PATTERN = MetaData.class.getSimpleName() + "[header={0}, body={1}]";
 
 
 
@@ -54,19 +52,6 @@ public record MetaData(Header header, Body body, Footer footer)
 
 
 	/**
-	 * Getter-Method for the {@link MetaData#footer} attribute of the instance.
-	 *
-	 * @return Returns the {@link Footer} instance of the calling instance.
-	 */
-	@Override
-	public Footer footer ()
-	{
-		return this.footer;
-	}
-
-
-
-	/**
 	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
 	 *
 	 * @return A formatted {@link String} which represents the object in its current state.
@@ -74,6 +59,6 @@ public record MetaData(Header header, Body body, Footer footer)
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.header, this.body, this.footer);
+		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.header, this.body);
 	}
 }
