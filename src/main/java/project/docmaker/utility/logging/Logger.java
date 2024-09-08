@@ -156,7 +156,7 @@ public class Logger implements ILogger
 	{
 		if (level.ordinal() >= depth.ordinal())
 		{
-			System.out.println(level + this.createPrefix() + message + COLOR_RESET);
+			System.out.printf("%s %s %40s %s %n", level, this.createPrefix(), message, COLOR_RESET);
 		}
 	}
 
@@ -173,7 +173,7 @@ public class Logger implements ILogger
 		if (level.ordinal() >= depth.ordinal())
 		{
 			final String message = MessageFormat.format(pattern, arguments);
-			System.out.println(level + this.createPrefix() + message + COLOR_RESET);
+			System.out.printf("%s %s %40s %s %n", level, this.createPrefix(), message, COLOR_RESET);
 		}
 	}
 

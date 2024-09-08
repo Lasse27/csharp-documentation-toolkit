@@ -18,7 +18,7 @@ public record Header(String modifier, String type, String content)
 {
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Header#toString()} method gets called */
-	private static final String TEXT_DISPLAY_PATTERN = Header.class.getSimpleName() + " [content={0}]";
+	private static final String TEXT_DISPLAY_PATTERN = Header.class.getSimpleName() + "[content={0}]";
 
 
 
