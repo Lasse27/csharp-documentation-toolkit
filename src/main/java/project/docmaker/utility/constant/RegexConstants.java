@@ -4,7 +4,9 @@ import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NonNls;
 import project.docmaker.model.Regex;
 import project.docmaker.model.structure.Snippet;
-import project.docmaker.utility.annotation.NoLogger;
+import project.docmaker.utility.annotation.ConstantInterface;
+
+import java.util.regex.Pattern;
 
 /**
  * The {@code RegexConstants} class contains certain patterns and {@link Regex} objects, which can be used to analyze C#-Code files.
@@ -12,42 +14,41 @@ import project.docmaker.utility.annotation.NoLogger;
  * @author Lasse-Leander Hillen
  * @since 02.09.2024
  */
-@NoLogger
+@ConstantInterface
 public interface RegexConstants
 {
 
-	/** The language code for the @Language annotation and regex. */
+	/**
+	 * The language code for the @Language annotation and regex.
+	 */
 	@NonNls
 	String REG_EXP = "RegExp";
 
-
-	/** A {@link String} pattern, which can be used to collect the {@link String} of the class area from a file. */
+	/**
+	 * A {@link String} pattern, which can be used to collect the {@link String} of the class area from a file.
+	 */
 	@Language (REG_EXP)
-	String PUBLIC_CLASS_PATTERN = "(///)(.|\\R)*?(public|private|protected|internal|sealed|abstract|partial)?\\s*(static)?\\s*" +
-	                              "(class|record|struct|interface)\\s+(\\S*)\\s*:*\\s*(.*?)\\s*(?=\\{)";
+	String CLASS_WITH_DOC = "(///)(.|\\R)*?(public|private|protected|internal|sealed|abstract|partial)?\\s*(static)?\\s*" +
+	                        "(class|record|struct|interface)\\s+(\\S*)\\s*:*\\s*(.*?)\\s*(?=\\{)";
+
+	/**
+	 * A {@link Regex} object, which can be used to collect the {@link String} of the class area from a file.
+	 */
+	Pattern CLASS_WITH_DOC_PATTERN = Pattern.compile(CLASS_WITH_DOC, Pattern.MULTILINE);
 
 
-	/** A {@link Regex} object, which can be used to collect the {@link String} of the class area from a file. */
-	Regex PUBLIC_CLASS_REGEX = new Regex(PUBLIC_CLASS_PATTERN);
-
-
-	/** A {@link String} pattern, which can be used to collect the {@link String} of the class name from the class area. */
+	/**
+	 * A {@link String} pattern, which can be used to collect the {@link Snippet} of the class.
+	 */
 	@Language (REG_EXP)
-	String CLASS_NAME_PATTERN = "class\\s+([a-zA-Z_]\\w*)";
+	String CLASS_WITHOUT_DOC =
+			"(public|private|protected|internal|sealed|abstract|partial)?\\s*(static)?\\s*(class|record|struct|interface)\\s+(\\S*)\\s*:*\\s*" +
+			"(.*?)\\s*(?=\\{)";
 
-
-	/** A {@link Regex} object, which can be used to collect the {@link String} of the class name from the class area. */
-	Regex CLASS_NAME_REGEX = new Regex(CLASS_NAME_PATTERN);
-
-
-	/** A {@link String} pattern, which can be used to collect the {@link Snippet} of the class. */
-	@Language (REG_EXP)
-	String CLASS = "(public|private|protected|internal|sealed|abstract|partial)?\\s*(static)?\\s*(class|record|struct|interface)\\s+(\\S*)\\s*:*\\s*" +
-	               "(.*?)\\s*(?=\\{)";
-
-
-	/** A {@link Regex} object, which can be used to collect the {@link Snippet} of the class. */
-	Regex CLASS_REGEX = new Regex(CLASS);
+	/**
+	 * A {@link Regex} object, which can be used to collect the {@link Snippet} of the class.
+	 */
+	Pattern CLASS_WITHOUT_DOC_REGEX = Pattern.compile(CLASS_WITHOUT_DOC, Pattern.MULTILINE);
 
 
 	/**
