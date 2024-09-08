@@ -1,8 +1,8 @@
 package project.docmaker.model.structure;
 
 import project.docmaker.model.DocumentationTagList;
-import project.docmaker.utility.annotation.NoLogger;
 import project.docmaker.model.structure.section.Section;
+import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
 
@@ -19,6 +19,8 @@ import java.text.MessageFormat;
 @NoLogger
 public record Body(Description description, DocumentationTagList documentationTags, Snippet snippet)
 {
+
+	public static final Body EMPTY = null; //TODO:
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called */
 	private static final String TEXT_DISPLAY_PATTERN = Body.class.getSimpleName() + "[description={0}, documentationTags={1}, codeSnippet={2}]";

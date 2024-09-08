@@ -2,9 +2,9 @@ package project.docmaker.utility.constant;
 
 import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NonNls;
-import project.docmaker.utility.annotation.NoLogger;
 import project.docmaker.model.Regex;
 import project.docmaker.model.structure.Snippet;
+import project.docmaker.utility.annotation.NoLogger;
 
 /**
  * The {@code RegexConstants} class contains certain patterns and {@link Regex} objects, which can be used to analyze C#-Code files.
@@ -23,7 +23,8 @@ public interface RegexConstants
 
 	/** A {@link String} pattern, which can be used to collect the {@link String} of the class area from a file. */
 	@Language (REG_EXP)
-	String PUBLIC_CLASS_PATTERN = "(/// *<summary>.*?)(?=\\s*(public|private|internal)\\s+class\\s+\\w+)";
+	String PUBLIC_CLASS_PATTERN = "(///)(.|\\R)*?(public|private|protected|internal|sealed|abstract|partial)?\\s*(static)?\\s*" +
+	                              "(class|record|struct|interface)\\s+(\\S*)\\s*:*\\s*(.*?)\\s*(?=\\{)";
 
 
 	/** A {@link Regex} object, which can be used to collect the {@link String} of the class area from a file. */
@@ -41,12 +42,12 @@ public interface RegexConstants
 
 	/** A {@link String} pattern, which can be used to collect the {@link Snippet} of the class. */
 	@Language (REG_EXP)
-	String CLASS_CODE_PATTERN = "(public|private|protected|internal|sealed|abstract|partial)\\s*(class|struct|interface|record)\\s+\\w+" +
-	                            "(\\s*:\\s*[\\w\\s,]+)?\\s*?";
+	String CLASS = "(public|private|protected|internal|sealed|abstract|partial)?\\s*(static)?\\s*(class|record|struct|interface)\\s+(\\S*)\\s*:*\\s*" +
+	               "(.*?)\\s*(?=\\{)";
 
 
 	/** A {@link Regex} object, which can be used to collect the {@link Snippet} of the class. */
-	Regex CLASS_CODE_REGEX = new Regex(CLASS_CODE_PATTERN);
+	Regex CLASS_REGEX = new Regex(CLASS);
 
 
 	/**
@@ -61,3 +62,5 @@ public interface RegexConstants
 	 */
 	Regex CLASS_DESCRIPTION_REGEX = new Regex(CLASS_DESCRIPTION_PATTERN);
 }
+
+// (\/\/\/*)(.*)(?=(public|private|protected|internal|sealed|abstract|partial)\s+(class|record|struct|interface))(.*)\{

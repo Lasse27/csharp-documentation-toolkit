@@ -1,8 +1,8 @@
 package project.docmaker.model.structure.section.implementation;
 
-import project.docmaker.utility.annotation.NoLogger;
 import project.docmaker.model.structure.section.MetaData;
 import project.docmaker.model.structure.section.Section;
+import project.docmaker.utility.annotation.NoLogger;
 
 @NoLogger
 public class FieldSection extends Section
@@ -30,6 +30,8 @@ public class FieldSection extends Section
 	{
 		return "";
 	}
+
+
 
 	/**
 	 * Generates and returns a formatted {@link String} which represents the instance in its current state.

@@ -125,7 +125,7 @@
       <option name="ignoreSuperLoggers" value="false" />
       <option name="annotations">
         <value>
-          <item value="project.docmaker.model.NoLogger" />
+          <item value="project.docmaker.utility.annotation.NoLogger" />
         </value>
       </option>
     </inspection_tool>

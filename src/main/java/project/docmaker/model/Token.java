@@ -1,6 +1,5 @@
 package project.docmaker.model;
 
-import project.docmaker.model.structure.Body;
 import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
@@ -8,16 +7,36 @@ import java.text.MessageFormat;
 /**
  * A Record which represents one token the C#-File will be analyzed by.
  *
- * @param content The string value of the token as a content.
- *
  * @author Lasse-Leander Hillen
  */
 @NoLogger
 public record Token(String content)
 {
 
-	/** {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called */
+	/** {@link MessageFormat} pattern, which is used, when the {@link Token#toString()} method gets called */
 	private static final String TEXT_DISPLAY_PATTERN = Token.class.getSimpleName() + "[content={0}]";
+
+
+
+	/**
+	 * @param content The string value of the token as a content.
+	 */
+	public Token
+	{
+	}
+
+
+
+	/** {@inheritDoc} **/
+	@Override
+	public boolean equals (final Object obj)
+	{
+		if (obj instanceof final Token other)
+		{
+			return this == other || this.content.equals(other.content());
+		}
+		return false;
+	}
 
 
 
@@ -29,6 +48,7 @@ public record Token(String content)
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.content);
+		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.content());
 	}
+
 }
