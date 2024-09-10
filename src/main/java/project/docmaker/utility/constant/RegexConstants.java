@@ -37,6 +37,18 @@ public interface RegexConstants
 	Pattern CLASS_WITH_DOC_PATTERN = Pattern.compile(CLASS_WITH_DOC, Pattern.MULTILINE);
 
 
+	@Language (REG_EXP)
+	String DOCUMENTATION_CODE_REGEX = "///([\\s\\S]*?)([{;}])";
+
+	Pattern DOCUMENTATION_CODE_PATTERN = Pattern.compile(DOCUMENTATION_CODE_REGEX, Pattern.MULTILINE);
+
+
+	@Language (REG_EXP)
+	String DOCUMENTATION_SINGLE_LINE_REGEX = "/{3}(.*)";
+
+	Pattern DOCUMENTATION_SINGLE_LINE_PATTERN = Pattern.compile(DOCUMENTATION_SINGLE_LINE_REGEX, Pattern.MULTILINE);
+
+
 	/**
 	 * A {@link String} pattern, which can be used to collect the {@link Snippet} of the class.
 	 */

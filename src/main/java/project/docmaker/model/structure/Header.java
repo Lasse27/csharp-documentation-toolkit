@@ -6,7 +6,7 @@ import project.docmaker.utility.annotation.NoLogger;
 import java.text.MessageFormat;
 
 /**
- * The abstract class {@code Header} represents the header of one {@link Section} instance.
+ * The record {@code Header} represents the header of one {@link Section} instance.
  *
  * @param content The string instance of the abstract section instance which represents the content
  *
@@ -19,19 +19,6 @@ public record Header(String modifier, String type, String content)
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Header#toString()} method gets called */
 	private static final String TEXT_DISPLAY_PATTERN = Header.class.getSimpleName() + "[content={0}]";
-
-
-
-	/**
-	 * Getter-Method for the {@link Header#content} attribute of the instance.
-	 *
-	 * @return Returns the {@link String} instance of the calling instance.
-	 */
-	@Override
-	public String content ()
-	{
-		return this.content;
-	}
 
 
 
