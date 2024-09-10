@@ -5,6 +5,7 @@ import project.docmaker.model.Regex;
 import project.docmaker.model.structure.Description;
 import project.docmaker.model.structure.Header;
 import project.docmaker.model.structure.Snippet;
+import project.docmaker.utility.FormatController;
 import project.docmaker.utility.constant.LoggingConstants;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
@@ -76,7 +77,7 @@ public final class RegexController
 		{
 			descriptionContent = summaryMatcher.group(1);
 		}
-		return new Description(descriptionContent);
+		return new Description(FormatController.removeDocMarks(descriptionContent));
 	}
 
 

@@ -1,4 +1,4 @@
-package project.docmaker.control;
+package project.docmaker.utility;
 
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
@@ -28,7 +28,7 @@ public class FormatController
 
 	public static String removeDocMarks (final String content)
 	{
-		String modified = content.replaceAll(SLASH, EMPTY_STRING);
+		String modified = content.replaceAll(TRIPLE_SLASH, EMPTY_STRING);
 		LOGGER.log(ILogger.Level.DEBUG, "Removed Documentation-Marks: " + modified);
 		modified = stripString(modified);
 		return modified;
