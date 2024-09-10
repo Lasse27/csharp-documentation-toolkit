@@ -20,49 +20,10 @@ import java.text.MessageFormat;
 public record Body(Description description, DocumentationTagList documentationTags, Snippet snippet)
 {
 
-	public static final Body EMPTY = null; //TODO:
-
-	/** {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called */
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called
+	 */
 	private static final String TEXT_DISPLAY_PATTERN = Body.class.getSimpleName() + "[description={0}, documentationTags={1}, codeSnippet={2}]";
-
-
-
-	/**
-	 * Getter-Method for the {@link Body#description} attribute of the instance.
-	 *
-	 * @return Returns the {@link Description} instance of the calling instance.
-	 */
-	@Override
-	public Description description ()
-	{
-		return this.description;
-	}
-
-
-
-	/**
-	 * Getter-Method for the {@link Body#documentationTags} attribute of the instance.
-	 *
-	 * @return Returns the {@link DocumentationTagList} instance of the calling instance.
-	 */
-	@Override
-	public DocumentationTagList documentationTags ()
-	{
-		return this.documentationTags;
-	}
-
-
-
-	/**
-	 * Getter-Method for the {@link Body#snippet} attribute of the instance.
-	 *
-	 * @return Returns the {@link Snippet} instance of the calling instance.
-	 */
-	@Override
-	public Snippet snippet ()
-	{
-		return this.snippet;
-	}
 
 
 

@@ -4,57 +4,44 @@ package project.docmaker.model.structure.section;
 import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Collection;
 
 
 /**
- * The {@code Section} class represents a section of the read c# file.
+ * The {@code Section} class represents a section in the generated Markdown document.
+ *
+ * @param metaData The metadata information about the {@link Section} instance.
  *
  * @author Lasse-Leander Hillen
- * @since 07.09.2024
+ * @since 10.09.2024
  */
 @NoLogger
-public abstract class Section
+public record Section(MetaData metaData)
 {
 
-	/** {@link MessageFormat} pattern, which is used, when the {@link Section#toString()} method gets called */
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link Section#toString()} method gets called
+	 */
 	private static final String TEXT_DISPLAY_PATTERN = Section.class.getSimpleName() + "[metaData={0}]";
 
 
-	/** The metadata information about the {@link Section} instance. */
-	private final MetaData metaData;
-
-
 
 	/**
-	 * Standard constructor, which initializes the object with all the necessary instance fields.
+	 * Generates and returns a {@link Collection} of {@link String} which represents the instance in its current state.
 	 *
-	 * @param metaData The metadata information about the {@link Section} instance.
+	 * @return A {@link Collection} of {@link String} which represents the object in its current state.
 	 */
-	protected Section (final MetaData metaData)
+	public Collection<String> toStringCollection ()
 	{
-		this.metaData = metaData;
+		final Collection<String> objectInformation = new ArrayList<>();
+		objectInformation.add("Class: " + this.getClass().getSimpleName());
+		objectInformation.add("Header: " + this.metaData().header());
+		objectInformation.add("Description: " + this.metaData().body().description());
+		objectInformation.add("Tags: " + this.metaData().body().documentationTags());
+		objectInformation.add("Code: " + this.metaData().body().snippet());
+		return objectInformation;
 	}
-
-
-
-	public MetaData getMetaData ()
-	{
-		return this.metaData;
-	}
-
-
-
-	/**
-	 * Getter-Method for the Markdown format of the section instance.
-	 *
-	 * @return A String that represents the Markdown format of the section instance.
-	 */
-	public abstract String getMarkdownFormat ();
-
-
-
-	public abstract Collection<String> getSectionInformation ();
 
 
 

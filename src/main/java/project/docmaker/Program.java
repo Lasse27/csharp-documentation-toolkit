@@ -5,14 +5,17 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import project.docmaker.control.FileController;
-import project.docmaker.model.structure.section.implementation.ClassSection;
+import project.docmaker.control.RegexController;
+import project.docmaker.model.structure.section.Section;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Iterator;
+import java.nio.file.Files;
+import java.util.Collection;
+
+import static project.docmaker.utility.constant.MiscConstants.NEW_LINE;
 
 
 public class Program extends Application
@@ -24,10 +27,13 @@ public class Program extends Application
 	public static void main (final String[] args) throws IOException
 	{
 		LOGGER.log(ILogger.Level.NORMAL, "Read the test file: \"src/main/resources/project/docmaker/testdocumentation.cs\"");
-		final File file = new File("src/main/resources/project/docmaker/testdocumentation.cs");
-
-		final ClassSection classDocumentation = FileController.getDocumentation(file);
-		classDocumentation.getSectionInformation().forEach(info -> LOGGER.log(ILogger.Level.NORMAL, info));
+		final File file = new File("src/main/resources/project/docmaker/testdocumentation_2.cs");
+		final Collection<CharSequence> docs = RegexController.findAllDocumentations(Files.readString(file.toPath()));
+		for (final CharSequence doc : docs)
+		{
+			final Section section = RegexController.getSectionFromCharSequence((String) doc);
+			section.toStringCollection().forEach(info -> LOGGER.log(ILogger.Level.NORMAL, info));
+		}
 	}
 
 
