@@ -4,6 +4,9 @@ import project.docmaker.model.structure.section.MetaData;
 import project.docmaker.model.structure.section.Section;
 import project.docmaker.utility.annotation.NoLogger;
 
+import java.util.Collection;
+import java.util.List;
+
 @NoLogger
 public class FieldSection extends Section
 {
@@ -29,6 +32,17 @@ public class FieldSection extends Section
 	public String getMarkdownFormat ()
 	{
 		return "";
+	}
+
+
+
+	/**
+	 * @return
+	 */
+	@Override
+	public Collection<String> getSectionInformation ()
+	{
+		return List.of();
 	}
 
 

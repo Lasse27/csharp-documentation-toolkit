@@ -8,7 +8,7 @@ public interface MiscConstants
 
 	String WHITESPACE = " ";
 
-	String SLASH = "/";
+	String TRIPLE_SLASH = "///";
 
 	String CARRIAGE_RETURN = "\r";
 

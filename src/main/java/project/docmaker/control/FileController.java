@@ -15,14 +15,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 
 
-public final class FileAnalyzer
+public final class FileController
 {
 
-	private static final ILogger LOGGER = new Logger(FileAnalyzer.class.getSimpleName());
+	private static final ILogger LOGGER = new Logger(FileController.class.getSimpleName());
 
 
 
-	private FileAnalyzer ()
+	private FileController ()
 	{
 	}
 

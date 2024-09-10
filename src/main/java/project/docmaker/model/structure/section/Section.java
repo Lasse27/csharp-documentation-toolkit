@@ -4,6 +4,7 @@ package project.docmaker.model.structure.section;
 import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
+import java.util.Collection;
 
 
 /**
@@ -37,12 +38,23 @@ public abstract class Section
 
 
 
+	public MetaData getMetaData ()
+	{
+		return this.metaData;
+	}
+
+
+
 	/**
 	 * Getter-Method for the Markdown format of the section instance.
 	 *
 	 * @return A String that represents the Markdown format of the section instance.
 	 */
 	public abstract String getMarkdownFormat ();
+
+
+
+	public abstract Collection<String> getSectionInformation ();
 
 
 

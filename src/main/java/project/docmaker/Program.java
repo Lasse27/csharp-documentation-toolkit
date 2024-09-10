@@ -5,13 +5,14 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import project.docmaker.control.FileAnalyzer;
+import project.docmaker.control.FileController;
 import project.docmaker.model.structure.section.implementation.ClassSection;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Iterator;
 
 
 public class Program extends Application
@@ -24,7 +25,9 @@ public class Program extends Application
 	{
 		LOGGER.log(ILogger.Level.NORMAL, "Read the test file: \"src/main/resources/project/docmaker/testdocumentation.cs\"");
 		final File file = new File("src/main/resources/project/docmaker/testdocumentation.cs");
-		final ClassSection classDocumentation = FileAnalyzer.getDocumentation(file);
+
+		final ClassSection classDocumentation = FileController.getDocumentation(file);
+		classDocumentation.getSectionInformation().forEach(info -> LOGGER.log(ILogger.Level.NORMAL, info));
 	}
 
 

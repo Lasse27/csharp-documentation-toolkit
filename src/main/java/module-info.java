@@ -13,4 +13,6 @@ module project.cs_documentationmaker {
 	exports project.docmaker.model.structure;
 	exports project.docmaker.model.structure.section;
 	exports project.docmaker.model.structure.section.implementation;
+	exports project.docmaker.utility;
+	opens project.docmaker.utility to javafx.fxml;
 }

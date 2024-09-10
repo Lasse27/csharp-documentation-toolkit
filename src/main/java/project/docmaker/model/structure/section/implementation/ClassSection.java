@@ -6,23 +6,37 @@ import project.docmaker.model.structure.section.Section;
 import project.docmaker.utility.annotation.NoLogger;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
+/**
+ * The {@code ClassSection} class represents a section in the Markdown document that represents a class.
+ *
+ * @author Lasse-Leander Hillen
+ * @see Section
+ * @since 10.09.2024
+ */
 @NoLogger
 public class ClassSection extends Section
 {
 
-	/** {@link List} of {@link ClassSection} of the instance. */
-	private final List<ClassSection> subClasses = new ArrayList<ClassSection>();
+	/**
+	 * {@link List} of {@link ClassSection} of the instance.
+	 */
+	private final List<ClassSection> subClasses = new ArrayList<>();
 
 
-	/** {@link List} of {@link FieldSection} of the instance. */
-	private final List<FieldSection> subFields = new ArrayList<FieldSection>();
+	/**
+	 * {@link List} of {@link FieldSection} of the instance.
+	 */
+	private final List<FieldSection> subFields = new ArrayList<>();
 
 
-	/** {@link List} of {@link MethodSection} of the instance. */
-	private final List<MethodSection> subMethods = new ArrayList<MethodSection>();
+	/**
+	 * {@link List} of {@link MethodSection} of the instance.
+	 */
+	private final List<MethodSection> subMethods = new ArrayList<>();
 
 
 
@@ -92,6 +106,25 @@ public class ClassSection extends Section
 	public String toString ()
 	{
 		return super.toString();
+	}
+
+
+
+	/**
+	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
+	 *
+	 * @return A formatted {@link String} which represents the object in its current state.
+	 */
+	@Override
+	public Collection<String> getSectionInformation ()
+	{
+		final Collection<String> objectInformation = new ArrayList<>();
+		objectInformation.add("Class: " + this.getClass().getSimpleName());
+		objectInformation.add("Header: " + this.getMetaData().header());
+		objectInformation.add("Description: " + this.getMetaData().body().description());
+		objectInformation.add("Tags: " + this.getMetaData().body().documentationTags());
+		objectInformation.add("Code: " + this.getMetaData().body().snippet());
+		return objectInformation;
 	}
 
 }
