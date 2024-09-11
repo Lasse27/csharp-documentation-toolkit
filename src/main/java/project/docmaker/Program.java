@@ -27,7 +27,7 @@ public class Program extends Application
 	public static void main (final String[] args) throws IOException
 	{
 		LOGGER.log(ILogger.Level.NORMAL, "Read the test file: \"src/main/resources/project/docmaker/testdocumentation.cs\"");
-		final File file = new File("src/main/resources/project/docmaker/testdocumentation_2.cs");
+		final File file = new File("src/main/resources/project/docmaker/testdocumentation.cs");
 		final Collection<CharSequence> docs = RegexController.findAllDocumentations(Files.readString(file.toPath()));
 		for (final CharSequence doc : docs)
 		{

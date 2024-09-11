@@ -1,17 +1,20 @@
 package project.docmaker.control;
 
 
+import project.docmaker.model.format.FormatOption;
+import project.docmaker.model.format.StringFormat;
 import project.docmaker.model.structure.Body;
-import project.docmaker.model.structure.Description;
 import project.docmaker.model.structure.Header;
 import project.docmaker.model.structure.Snippet;
 import project.docmaker.model.structure.section.MetaData;
 import project.docmaker.model.structure.section.Section;
+import project.docmaker.model.structure.tag.Parameter;
+import project.docmaker.model.structure.tag.Return;
+import project.docmaker.model.structure.tag.Summary;
 import project.docmaker.utility.constant.LoggingConstants;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 
-import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.regex.Matcher;
@@ -28,6 +31,8 @@ public final class RegexController
 	 * A {@link Logger} object, which is being used to write formatted outputs into the console.
 	 */
 	private static final ILogger LOGGER = new Logger(RegexController.class.getSimpleName());
+
+	private static final StringFormat STRING_FORMAT = new StringFormat(FormatOption.NORMALIZE, FormatOption.REMOVE_MARKS);
 
 
 
@@ -70,9 +75,11 @@ public final class RegexController
 		final Header header = getClassHeaderFromArea(charSequence);
 
 		// Getting the body of the section
-		final Description description = RegexController.getClassDescriptionFromArea(charSequence);
+		final Collection<Summary> summaryCollection = RegexController.getSummariesFromCharSequence(charSequence);
+		final Collection<Parameter> parameterCollection = RegexController.getParametersFromCharSequence(charSequence);
+		final Collection<Return> returnCollection = RegexController.getReturnsFromCharSequence(charSequence);
 		final Snippet snippet = RegexController.getSnippetFromCharSequence(charSequence);
-		final Body body = new Body(description, null, snippet);
+		final Body body = new Body(summaryCollection, parameterCollection, returnCollection, snippet);
 
 		// Creating the metadata and creating the section.
 		final Section section = new Section(new MetaData(header, body));
@@ -86,7 +93,7 @@ public final class RegexController
 	{
 		// Cleanes the sequence of all documentations and tabs / newlines etc.
 		String cleansedSequence = area.replaceAll(DOCUMENTATION_SINGLE_LINE_REGEX, "");
-		cleansedSequence = Formatter.removeSpecialCharacters(cleansedSequence);
+		cleansedSequence = STRING_FORMAT.apply(cleansedSequence);
 
 		final Matcher matcher = CLASS_WITHOUT_DOC_REGEX.matcher(cleansedSequence);
 		if (!matcher.find())
@@ -113,7 +120,7 @@ public final class RegexController
 	{
 		// Cleanes the sequence of all documentations and tabs / newlines etc.
 		String cleansedSequence = string.replaceAll(DOCUMENTATION_SINGLE_LINE_REGEX, "");
-		cleansedSequence = Formatter.removeSpecialCharacters(cleansedSequence);
+		cleansedSequence = STRING_FORMAT.apply(cleansedSequence);
 
 		// Creating the snippet instance and returning the result.
 		final Snippet snippet = new Snippet(cleansedSequence);
@@ -123,48 +130,44 @@ public final class RegexController
 
 
 
-	private static Description getClassDescriptionFromArea (final String area)
+	private static Collection<Summary> getSummariesFromCharSequence (final CharSequence sequence)
 	{
-		final String editedContent = Formatter.removeSpecialCharacters(area);
 		final Pattern summaryPattern = Pattern.compile("///\\s*<summary>([\\s\\S]*?)</summary>");
-		final Matcher summaryMatcher = summaryPattern.matcher(editedContent);
-		String descriptionContent = EMPTY_STRING;
-		if (summaryMatcher.find())
+		final Matcher summaryMatcher = summaryPattern.matcher(sequence);
+		final Collection<Summary> summaryCollection = new ArrayList<>();
+		while (summaryMatcher.find())
 		{
-			descriptionContent = summaryMatcher.group(1);
+			summaryCollection.add(new Summary(STRING_FORMAT.apply(summaryMatcher.group(1))));
 		}
-		return new Description(Formatter.removeDocMarks(descriptionContent));
+		return summaryCollection;
 	}
 
 
 
-	private static String[][] matchParams (final String content)
+	private static Collection<Return> getReturnsFromCharSequence (final CharSequence sequence)
 	{
-		final String editedContent = Formatter.removeSpecialCharacters(content);
-		final Pattern paramPattern = Pattern.compile("///\\s*<param name=\"([^\"]+)\">([\\s\\S]*?)</param>");
-		final Matcher paramMatcher = paramPattern.matcher(editedContent);
-		final Collection<String[]> results = new ArrayList<>();
-		while (paramMatcher.find())
-		{
-			results.add(new String[]{Formatter.removeDocMarks(paramMatcher.group(1)),
-					Formatter.removeDocMarks(paramMatcher.group(2))});
-		}
-		return results.toArray(String[][]::new);
-	}
-
-
-
-	private static String[] matchReturns (final String content)
-	{
-		final String editedContent = Formatter.removeSpecialCharacters(content);
 		final Pattern returnsPattern = Pattern.compile("(?<=///\\s<returns>)([\\s\\S]*?)(?=</returns>)");
-		final Matcher returnsMatcher = returnsPattern.matcher(editedContent);
-		final Collection<String> results = new ArrayList<>();
+		final Matcher returnsMatcher = returnsPattern.matcher(sequence);
+		final Collection<Return> returnCollection = new ArrayList<>();
 		while (returnsMatcher.find())
 		{
-			results.add(Formatter.removeDocMarks(returnsMatcher.group()));
+			returnCollection.add(new Return(STRING_FORMAT.apply(returnsMatcher.group())));
 		}
-		return results.toArray(String[]::new);
+		return returnCollection;
+	}
+
+
+
+	private static Collection<Parameter> getParametersFromCharSequence (final CharSequence sequence)
+	{
+		final Pattern paramPattern = Pattern.compile("///\\s*<param name=\"([^\"]+)\">([\\s\\S]*?)</param>");
+		final Matcher paramMatcher = paramPattern.matcher(sequence);
+		final Collection<Parameter> parameterCollection = new ArrayList<>();
+		while (paramMatcher.find())
+		{
+			parameterCollection.add(new Parameter(STRING_FORMAT.apply(paramMatcher.group(1)), STRING_FORMAT.apply(paramMatcher.group(2))));
+		}
+		return parameterCollection;
 	}
 
 
