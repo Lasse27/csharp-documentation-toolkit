@@ -44,10 +44,12 @@ public class Program extends Application
 	@Override
 	public void start (final Stage stage) throws IOException
 	{
-		final FXMLLoader fxmlLoader = new FXMLLoader(Program.class.getResource("hello-view.fxml"));
-		final Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+		final FXMLLoader fxmlLoader = new FXMLLoader(Program.class.getResource("MasterFormView.fxml"));
+		final Scene scene = new Scene(fxmlLoader.load());
 		stage.setTitle("Hello!");
 		stage.setScene(scene);
+		stage.setResizable(false);
+		stage.setTitle("C# Documentation Maker");
 		stage.show();
 	}
 
