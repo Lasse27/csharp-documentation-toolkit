@@ -2,26 +2,44 @@ package project.docmaker.model.structure;
 
 import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NotNull;
-import project.docmaker.model.section.Section;
-import project.docmaker.utility.annotation.NoLogger;
-import project.docmaker.utility.constant.MiscConstants;
+import project.docmaker.utility.NoLogger;
+import project.docmaker.utility.MiscConstants;
 
 import java.text.MessageFormat;
 
 /**
- * The record {@code Header} represents the header of one {@link Section} instance.
+ * The record {@code Header} represents a {@link MarkdownStructure} that acts like a the header of each Markdown section. It's split into a descriptor
+ * {@link String} that contains the modifier of the section and a content {@link String} that contains the name of the section.
  *
- * @param content The string instance of the abstract section instance which represents the content
+ * @param content    Content {@link String} that contains the name of the section.
+ * @param descriptor Descriptor {@link String} that contains the modifier of the section
  *
  * @author Lasse-Leander Hillen
- * @since 02.09.2024
+ * @see Record
+ * @see MarkdownStructure
+ * @since 11.09.2024
  */
 @NoLogger
 public record Header(String descriptor, String content) implements MarkdownStructure
 {
 
-	/** {@link MessageFormat} pattern, which is used, when the {@link Header#toString()} method gets called */
+	/**
+	 * An empty {@link Header} instance that contains placeholder attributes and can be used to fill missing matches.
+	 */
+	public static final Header EMPTY = new Header("{Empty}", "{Empty}");
+
+
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link Header#toString()} method gets called
+	 */
 	private static final String TEXT_DISPLAY_PATTERN = Header.class.getSimpleName() + "[content={0}]";
+
+
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link CodeSnippet#toMarkdown()} method gets called
+	 */
+	@Language (MiscConstants.MARKDOWN)
+	private static final String MARKDOWN_PATTERN = "# _{0} {1}_\r\n";
 
 
 
@@ -31,8 +49,7 @@ public record Header(String descriptor, String content) implements MarkdownStruc
 	@Override
 	public @NotNull String toMarkdown ()
 	{
-		@Language (MiscConstants.MARKDOWN) final String markdown = "# _{0}:_ {1}\r\n";
-		return MessageFormat.format(markdown, this.descriptor, this.content);
+		return MessageFormat.format(MARKDOWN_PATTERN, this.descriptor, this.content);
 	}
 
 

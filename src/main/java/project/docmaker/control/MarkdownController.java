@@ -1,7 +1,8 @@
 package project.docmaker.control;
 
-import project.docmaker.model.section.Section;
-import project.docmaker.utility.constant.MiscConstants;
+import project.docmaker.model.structure.Section;
+import project.docmaker.model.structure.Header;
+import project.docmaker.utility.MiscConstants;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -21,10 +22,14 @@ public class MarkdownController
 		{
 			for (final Section section : sections)
 			{
-				fileWriter.append(section.metaData().header().toMarkdown());
+				if (section.header() == Header.EMPTY)
+				{
+					continue;
+				}
+				fileWriter.append(section.header().toMarkdown());
 				fileWriter.append(MiscConstants.NEW_LINE);
-				fileWriter.append(section.metaData().body().toMarkdown());
-				fileWriter.append(section.metaData().footer().toMarkdown());
+				fileWriter.append(section.body().toMarkdown());
+				fileWriter.append(section.codeSnippet().toMarkdown());
 				fileWriter.append(MiscConstants.NEW_LINE).append("---").append(MiscConstants.NEW_LINE);
 			}
 		}

@@ -1,8 +1,7 @@
-package project.docmaker.utility.constant;
+package project.docmaker.utility;
 
 import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NonNls;
-import project.docmaker.utility.annotation.ConstantInterface;
 
 import java.util.regex.Pattern;
 

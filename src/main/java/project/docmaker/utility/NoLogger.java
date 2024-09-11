@@ -1,6 +1,4 @@
-package project.docmaker.utility.annotation;
-
-import project.docmaker.utility.logging.Logger;
+package project.docmaker.utility;
 
 /**
  * Marker-annotation-interface which is used to turn off warnings about {@link Logger} instances missing in model classes.

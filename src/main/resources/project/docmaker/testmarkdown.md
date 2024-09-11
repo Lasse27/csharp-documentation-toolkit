@@ -1,83 +1,126 @@
-# _public class :_ RoboCopyJob 
+# _public enum AccessibilityRole : ushort_
 
 ### _Summary:_
-Die <b><c>RoboCopyJob</c></b>-Klasse soll einen RoboCopy-Auftrag darstellen, der in einer Powershell-Konsole ausgeführt werden soll/kann.  <br></br> Der <b><c>RoboCopyJob</c></b> bietet dabei noch keine Funktionalität und soll lediglich als Datenklasse bzw. als Modell dienen.  <br></br> Ein <b><c>RoboCopyJob</c></b> kann in Verknüpfung mit der <b><c>StartJob</c></b>-Methode aus der <b><c>RoboCopyController</c>  </b>-Klasse gestartet werden.
-### _Code-Snippet:_ ``public class RoboCopyJob {``
+Role of an accessibility node.
+### _Code-Snippet:_ ``[NativeHeader("Modules/Accessibility/Native/AccessibilityNodeData.h")] [Flags] public enum AccessibilityRole : ushort {``
 
 ---
-# _private readonly :_ string source
+# _public enum AccessibilityState : ushort_
 
 ### _Summary:_
-Der Quellpfad des RoboCopy-Jobs. Dies ist der Pfad, aus dem die Dateien kopiert werden (copy).
-### _Code-Snippet:_ ``private readonly string source;``
+State of an accessibility node.
+### _Code-Snippet:_ ``[NativeHeader("Modules/Accessibility/Native/AccessibilityNodeData.h")] [Flags] public enum AccessibilityState : ushort {``
 
 ---
-# _private readonly :_ string destination
+# _internal struct AccessibilityNodeData_
 
 ### _Summary:_
-Der Quellpfad des RoboCopy-Jobs. Dies ist der Pfad, in den die Dateien eingesetzt werden (paste).
-### _Code-Snippet:_ ``private readonly string destination;``
+The data stored in an accessibility node.
+### _Code-Snippet:_ ``[RequiredByNativeCode] [StructLayout(LayoutKind.Sequential)] [NativeType(CodegenOptions.Custom, "MonoAccessibilityNodeData")] [NativeHeader("Modules/Accessibility/Bindings/AccessibilityNodeData.bindings.h")] [NativeHeader("Modules/Accessibility/Native/AccessibilityNodeData.h")] internal struct AccessibilityNodeData {``
 
 ---
-# _private readonly :_ List<FileInfo> files
+# _public int id_
 
 ### _Summary:_
-Der Liste von Dateien, die definiert welche Dateien übertragen werden sollen. Wird die Liste frei gelassen, so wird das gesamte  Quellverzeichnis übertragen
-### _Code-Snippet:_ ``private readonly List<FileInfo> files;``
+The ID of the accessibility node.
+### _Code-Snippet:_ ``public int id {``
 
 ---
-# _private readonly :_ RoboCopyOptions options
+# _public bool isActive_
 
 ### _Summary:_
-Die Optionen des RoboCopy-Befehls, die als PowerShellParameter angehangen werden. Sie verändern den ablauf der Übertragung und/oder beschränken  die Übertragung indem sie besondere Bedingungen setzen.
-### _Code-Snippet:_ ``private readonly RoboCopyOptions options;``
+Whether the node fires accessibility events and can be accessed by  assistive technology.
+### _Code-Snippet:_ ``public bool isActive {``
 
 ---
-# _public :_ RoboCopyJob
+# _public string label_
 
 ### _Summary:_
-Hauptkonstruktor der <b><c>RoboCopyJob</c></b>-Klasse, der die genannten PowerShellParameter benötigt, um einen RoboCopy-Befehl in der Powershell-  Umgebung zu generieren. <br></br> Dabei können die PowerShellParameter <b><c>files</c></b> und <b><c>options</c></b> freigelassen werden, wenn diese nicht  benötigt werden. <br></br> In diesem Falle von bewirkt dies, dass grundsätzlich alle Dateien vom Ursprung ins Ziel kopiert werden.
-### _Parameters:_
-#### _source:_ ``Stellt den Quellpfad bzw. den Ursprung des RoboCopy-Befehls dar, dieser legt fest, aus welchem Verzeichnis kopiert wird.``
-#### _destination:_ ``Stellt den Zielpfad bzw. das Ziel des RoboCopy-Befehls dar, dieser legt fest, in welches Verzeichnis kopiert wird.``
-#### _files:_ ``Stellt eine Liste von Dateien dar, die definiert werden kann, wenn nur bestimmte Dateien kopiert werden sollen.``
-#### _options:_ ``Stellt die Optionen des RoboCopy-Befehls dar, dazu gehören alle PowerShellParameter, die die Übertragung beeinflussen können.``
-### _Code-Snippet:_ ``public RoboCopyJob(string source, string destination, List<FileInfo> files, RoboCopyOptions options) {``
+A succinct description of the accessibility node.
+### _Code-Snippet:_ ``public string label {``
 
 ---
-# _public :_ string GetSource
+# _public string value_
 
 ### _Summary:_
-Diese Methode spiegelt eine Getter-Funktion für den Quellpfad des RoboCopy-Befehls wieder. Dieser definiert den Ursprungsort des Kopiervorgangs,  also von wo die Daten kopiert werden sollen.
-### _Returns:_
-Gibt einen <b><c>String</c></b> zurück, der den Systempfad zum Ursprungsort des Kopiervorgangs beschreibt.
-### _Code-Snippet:_ ``public string GetSource() {``
+The current value of the accessibility node.
+### _Code-Snippet:_ ``public string value {``
 
 ---
-# _public :_ string GetDestination
+# _public string hint_
 
 ### _Summary:_
-Diese Methode spiegelt eine Getter-Funktion für den Zielpfad des RoboCopy-Befehls wieder. Dieser definiert den Zielort des Kopiervorgangs,  also wo die Daten hin kopiert werden sollen.
-### _Returns:_
-Gibt einen <b><c>String</c></b> zurück, der den Systempfad zum Zielort des Kopiervorgangs beschreibt.
-### _Code-Snippet:_ ``public string GetDestination() {``
+Additional information about the accessibility node.  For example, the result of performing an action on the node.
+### _Code-Snippet:_ ``public string hint {``
 
 ---
-# _public :_ List<FileInfo> GetFiles
+# _public AccessibilityRole role_
 
 ### _Summary:_
-Diese Methode spiegelt eine Getter-Funktion für die Dateien des RoboCopy-Befehls wieder. Diese definieren die Dateinamen der übertragenen  Dateien des Befehls.
-### _Returns:_
-Gibt eine <b><c>List</c></b> zurück, in der alle Dateinamen des Kopiervorgangs beschrieben werden.
-### _Code-Snippet:_ ``public List<FileInfo> GetFiles() {``
+The role of the accessibility node.
+### _Code-Snippet:_ ``public AccessibilityRole role {``
 
 ---
-# _public :_ RoboCopyOptions GetOptions
+# _public bool allowsDirectInteraction_
 
 ### _Summary:_
-Diese Methode speigelt eine Getter-Funktion für die Optionen des RoboCopy-Jobs wieder. Es sind die PowerShellParameter, die definieren, unter welchen  Bedingung ein/e Datei/Ordner kopiert wird und wann nicht.
-### _Returns:_
-Gibt ein <b><c>RoboCopyOptions</c></b>-Objekt zurück, welches die einzelnen Optionen in gekapselter Form enthält. Die enthaltenen Optionen  sind ein weiteres Mal gekapselt und von Typ <b><c>IOptions</c></b>
-### _Code-Snippet:_ ``public RoboCopyOptions GetOptions() {``
+Whether the accessibility node allows direct touch interaction.
+### _Code-Snippet:_ ``public bool allowsDirectInteraction {``
+
+---
+# _public AccessibilityState state_
+
+### _Summary:_
+The state of the accessibility node.
+### _Code-Snippet:_ ``public AccessibilityState state {``
+
+---
+# _public Rect frame_
+
+### _Summary:_
+The frame of the accessibility node in screen coordinates.
+### _Code-Snippet:_ ``public Rect frame {``
+
+---
+# _public int parentId_
+
+### _Summary:_
+The ID of the node that contains the accessibility node.
+### _Code-Snippet:_ ``public int parentId {``
+
+---
+# _public int[] childIds_
+
+### _Summary:_
+The IDs of the nodes contained by the accessibility node.
+### _Code-Snippet:_ ``public int[] childIds {``
+
+---
+# _public bool isFocused_
+
+### _Summary:_
+Whether an assistive technology is focused on the accessibility  node.
+### _Code-Snippet:_ ``public bool isFocused {``
+
+---
+# _internal SystemLanguage language_
+
+### _Summary:_
+The language to use when voicing the accessibility node's label,  value, and hint (can differ from the system or application  language).
+### _Code-Snippet:_ ``internal SystemLanguage language {``
+
+---
+# _public bool implementsSelected_
+
+### _Summary:_
+Whether the accessibility node implements the  <see cref="AccessibilityNode.selected"/> callback.
+### _Code-Snippet:_ ``public bool implementsSelected {``
+
+---
+# _public bool implementsDismissed_
+
+### _Summary:_
+Whether the accessibility node implements the  <see cref="AccessibilityNode.dismissed"/> callback.
+### _Code-Snippet:_ ``public bool implementsDismissed {``
 
 ---

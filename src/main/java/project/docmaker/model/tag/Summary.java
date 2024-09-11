@@ -1,6 +1,6 @@
 package project.docmaker.model.tag;
 
-import project.docmaker.utility.annotation.NoLogger;
+import project.docmaker.utility.NoLogger;
 
 import java.text.MessageFormat;
 

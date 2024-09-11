@@ -7,9 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import project.docmaker.control.MarkdownController;
 import project.docmaker.control.RegexController;
-import project.docmaker.model.section.Section;
-import project.docmaker.utility.logging.ILogger;
-import project.docmaker.utility.logging.Logger;
+import project.docmaker.model.structure.Section;
+import project.docmaker.utility.ILogger;
+import project.docmaker.utility.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class Program extends Application
 	public static void main (final String[] args) throws IOException
 	{
 		LOGGER.log(ILogger.Level.NORMAL, "Read the test file: \"src/main/resources/project/docmaker/testdocumentation.cs\"");
-		final File file = new File("src/main/resources/project/docmaker/robocopyjob.cs");
+		final File file = new File("src/main/resources/project/docmaker/testdocumentation.cs");
 		final Collection<Section> sections = new ArrayList<>();
 		for (final CharSequence doc : RegexController.findAllDocumentations(Files.readString(file.toPath())))
 		{

@@ -1,27 +1,25 @@
 package project.docmaker.control;
 
 
-import project.docmaker.model.format.StringFormat;
-import project.docmaker.model.section.MetaData;
-import project.docmaker.model.section.Section;
+import project.docmaker.model.structure.Section;
 import project.docmaker.model.structure.Body;
-import project.docmaker.model.structure.Footer;
+import project.docmaker.model.structure.CodeSnippet;
 import project.docmaker.model.structure.Header;
-import project.docmaker.model.structure.Snippet;
 import project.docmaker.model.tag.Parameter;
 import project.docmaker.model.tag.Return;
 import project.docmaker.model.tag.Summary;
-import project.docmaker.utility.constant.LoggingConstants;
-import project.docmaker.utility.logging.ILogger;
-import project.docmaker.utility.logging.Logger;
+import project.docmaker.utility.StringFormat;
+import project.docmaker.utility.LoggingConstants;
+import project.docmaker.utility.ILogger;
+import project.docmaker.utility.Logger;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static project.docmaker.model.format.StringFormat.FormatOption;
-import static project.docmaker.utility.constant.RegexConstants.*;
+import static project.docmaker.utility.StringFormat.FormatOption;
+import static project.docmaker.utility.RegexConstants.*;
 
 
 public final class RegexController
@@ -32,6 +30,10 @@ public final class RegexController
 	 */
 	private static final ILogger LOGGER = new Logger(RegexController.class.getSimpleName());
 
+
+	/**
+	 * The {@link StringFormat} object used to normalize the {@link String} of the read file.
+	 */
 	private static final StringFormat STRING_FORMAT = new StringFormat(FormatOption.NORMALIZE, FormatOption.REMOVE_MARKS);
 
 
@@ -89,13 +91,12 @@ public final class RegexController
 		final Body body = new Body(summaryCollection, parameterCollection, returnCollection);
 		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, body);
 
-		// Collecting the code snippet and creating the footer of the section.
-		final Snippet snippet = RegexController.getSnippetFromCharSequence(charSequence);
-		final Footer footer = new Footer(snippet);
-		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, footer);
+		// Collecting the code snippet and creating the codeSnippet of the section.
+		final CodeSnippet codeSnippet = RegexController.getSnippetFromCharSequence(charSequence);
+		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, codeSnippet);
 
 		// Creating the metadata and creating the section.
-		final Section section = new Section(new MetaData(header, body, footer));
+		final Section section = new Section(header, body, codeSnippet);
 		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, section);
 		return section;
 	}
@@ -118,32 +119,32 @@ public final class RegexController
 		final Matcher matcher = CLASS_WITHOUT_DOC_REGEX.matcher(cleansedSequence);
 		if (matcher.find())
 		{
-			final Header header = new Header(matcher.group(1), matcher.group(2));
+			final Header header = new Header(STRING_FORMAT.apply(matcher.group(1)), STRING_FORMAT.apply(matcher.group(2)));
 			LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, header);
 			return header;
 		}
-		return new Header("Not Found", "Not Found");
+		return Header.EMPTY;
 	}
 
 
 
 	/**
-	 * Parses the given String multiple times with different regular expressions and creates a {@link Snippet} instance from the found matches.
+	 * Parses the given String multiple times with different regular expressions and creates a {@link CodeSnippet} instance from the found matches.
 	 *
 	 * @param charSequence The input {@link String} which is parsed within the method.
 	 *
-	 * @return A {@link Snippet} instance, that could be generated from the given {@link String}.
+	 * @return A {@link CodeSnippet} instance, that could be generated from the given {@link String}.
 	 */
-	private static Snippet getSnippetFromCharSequence (final String charSequence)
+	private static CodeSnippet getSnippetFromCharSequence (final String charSequence)
 	{
 		// Cleanes the sequence of all documentations and tabs / newlines etc.
 		String cleansedSequence = charSequence.replaceAll(DOCUMENTATION_SINGLE_LINE_REGEX, "");
 		cleansedSequence = STRING_FORMAT.apply(cleansedSequence);
 
 		// Creating the snippet instance and returning the result.
-		final Snippet snippet = new Snippet(cleansedSequence);
-		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, snippet);
-		return snippet;
+		final CodeSnippet codeSnippet = new CodeSnippet(cleansedSequence);
+		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, codeSnippet);
+		return codeSnippet;
 	}
 
 

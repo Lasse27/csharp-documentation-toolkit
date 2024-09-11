@@ -1,7 +1,5 @@
-package project.docmaker.utility.logging;
+package project.docmaker.utility;
 
-
-import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
@@ -10,7 +8,7 @@ import java.time.Instant;
 import java.util.Date;
 import java.util.Locale;
 
-import static project.docmaker.utility.logging.ILogger.Level.DEBUG;
+import static project.docmaker.utility.ILogger.Level.DEBUG;
 
 
 /**

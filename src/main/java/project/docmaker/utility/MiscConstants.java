@@ -1,4 +1,4 @@
-package project.docmaker.utility.constant;
+package project.docmaker.utility;
 
 
 import org.jetbrains.annotations.NonNls;

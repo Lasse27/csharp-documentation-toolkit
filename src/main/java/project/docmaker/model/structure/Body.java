@@ -5,13 +5,25 @@ import org.jetbrains.annotations.NotNull;
 import project.docmaker.model.tag.Parameter;
 import project.docmaker.model.tag.Return;
 import project.docmaker.model.tag.Summary;
-import project.docmaker.utility.annotation.NoLogger;
-import project.docmaker.utility.constant.MiscConstants;
+import project.docmaker.utility.NoLogger;
+import project.docmaker.utility.MiscConstants;
 
 import java.text.MessageFormat;
 import java.util.Collection;
 
-
+/**
+ * The record {@code Body} represents a {@link MarkdownStructure} that acts like the body of each Markdown section. It contains the description of the
+ * section as well as several collections of different parameters that can be found in C#-Documentation.
+ *
+ * @param parameters The {@link Collection} of {@link Summary} that resembles the summary of the {@code Body}.
+ * @param returns    The {@link Collection} of {@link Return} that resembles the returns of the {@code Body}.
+ * @param summaries  The {@link Collection} of {@link Parameter} that resembles the parameters of the {@code Body}.
+ *
+ * @author Lasse-Leander Hillen
+ * @see Record
+ * @see MarkdownStructure
+ * @since 11.09.2024
+ */
 @NoLogger
 public record Body(Collection<Summary> summaries, Collection<Parameter> parameters, Collection<Return> returns) implements MarkdownStructure
 {
@@ -20,6 +32,48 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called
 	 */
 	private static final String TEXT_DISPLAY_PATTERN = Body.class.getSimpleName() + "[summaries={0}, parameters={1}, returns={2}]";
+
+
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
+	 */
+	@Language (MiscConstants.MARKDOWN)
+	private static final String SUMMARY_MARKDOWN_HEADER = "### _Summary:_\r\n";
+
+
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
+	 */
+	@Language (MiscConstants.MARKDOWN)
+	private static final String SUMMARY_MARKDOWN_PATTERN = "{0}\r\n";
+
+
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
+	 */
+	@Language (MiscConstants.MARKDOWN)
+	private static final String PARAMETER_MARKDOWN_HEADER = "### _Parameters:_\r\n";
+
+
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
+	 */
+	@Language (MiscConstants.MARKDOWN)
+	private static final String PARAMETER_MARKDOWN_PATTERN = "#### _{0}:_ ``{1}``\r\n";
+
+
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
+	 */
+	@Language (MiscConstants.MARKDOWN)
+	private static final String RETURNS_MARKDOWN_HEADER = "### _Returns:_\r\n";
+
+
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
+	 */
+	@Language (MiscConstants.MARKDOWN)
+	private static final String RETURNS_MARKDOWN_PATTERN = "{0}\r\n";
 
 
 
@@ -33,32 +87,21 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 
 		if (!this.summaries.isEmpty())
 		{
-			stringBuilder.append("### _Summary:_\r\n");
-			for (final Summary summary : this.summaries)
-			{
-				@Language (MiscConstants.MARKDOWN) final String summaryMarkdown = "{0}\r\n";
-				stringBuilder.append(MessageFormat.format(summaryMarkdown, summary.content()));
-			}
+			stringBuilder.append(SUMMARY_MARKDOWN_HEADER);
+			this.summaries.stream().map(summary -> MessageFormat.format(SUMMARY_MARKDOWN_PATTERN, summary.content())).forEach(stringBuilder::append);
 		}
 
 		if (!this.parameters.isEmpty())
 		{
-			stringBuilder.append("### _Parameters:_\r\n");
-			for (final Parameter parameter : this.parameters)
-			{
-				@Language (MiscConstants.MARKDOWN) final String parameterMarkdown = "#### _{0}:_ ``{1}``\r\n";
-				stringBuilder.append(MessageFormat.format(parameterMarkdown, parameter.name(), parameter.content()));
-			}
+			stringBuilder.append(PARAMETER_MARKDOWN_HEADER);
+			this.parameters.stream().map(parameter -> MessageFormat.format(PARAMETER_MARKDOWN_PATTERN, parameter.name(), parameter.content()))
+					.forEach(stringBuilder::append);
 		}
 
 		if (!this.returns.isEmpty())
 		{
-			stringBuilder.append("### _Returns:_\r\n");
-			for (final Return returns : this.returns)
-			{
-				@Language (MiscConstants.MARKDOWN) final String returnsMarkdown = "{0}\r\n";
-				stringBuilder.append(MessageFormat.format(returnsMarkdown, returns.content()));
-			}
+			stringBuilder.append(RETURNS_MARKDOWN_HEADER);
+			this.returns.stream().map(returns -> MessageFormat.format(RETURNS_MARKDOWN_PATTERN, returns.content())).forEach(stringBuilder::append);
 		}
 
 

@@ -1,7 +1,5 @@
-package project.docmaker.utility.logging;
+package project.docmaker.utility;
 
-
-import project.docmaker.utility.annotation.NoLogger;
 
 /**
  * ConsoleColor is an enum that stores strings which can be printed into the console to display different colors.

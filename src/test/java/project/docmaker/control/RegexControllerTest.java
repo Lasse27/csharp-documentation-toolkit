@@ -2,8 +2,8 @@ package project.docmaker.control;
 
 import org.jetbrains.annotations.NonNls;
 import org.junit.jupiter.api.Test;
-import project.docmaker.utility.logging.ILogger;
-import project.docmaker.utility.logging.Logger;
+import project.docmaker.utility.ILogger;
+import project.docmaker.utility.Logger;
 
 import java.io.File;
 import java.io.IOException;
