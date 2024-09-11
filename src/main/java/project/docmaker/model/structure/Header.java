@@ -1,7 +1,10 @@
 package project.docmaker.model.structure;
 
+import org.intellij.lang.annotations.Language;
+import org.jetbrains.annotations.NotNull;
 import project.docmaker.model.section.Section;
 import project.docmaker.utility.annotation.NoLogger;
+import project.docmaker.utility.constant.MiscConstants;
 
 import java.text.MessageFormat;
 
@@ -14,11 +17,23 @@ import java.text.MessageFormat;
  * @since 02.09.2024
  */
 @NoLogger
-public record Header(String modifier, String type, String content)
+public record Header(String descriptor, String content) implements MarkdownStructure
 {
 
 	/** {@link MessageFormat} pattern, which is used, when the {@link Header#toString()} method gets called */
 	private static final String TEXT_DISPLAY_PATTERN = Header.class.getSimpleName() + "[content={0}]";
+
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public @NotNull String toMarkdown ()
+	{
+		@Language (MiscConstants.MARKDOWN) final String markdown = "# _{0}:_ {1}\r\n";
+		return MessageFormat.format(markdown, this.descriptor, this.content);
+	}
 
 
 

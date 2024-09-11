@@ -36,9 +36,7 @@ public interface RegexConstants
 
 
 	@Language (REG_EXP)
-	String CLASS_WITHOUT_DOC =
-			"(public|private|protected|internal|sealed|abstract|partial)?\\s*(static)?\\s*(class|record|struct|interface)\\s+(\\S*)\\s*:*\\s*" +
-			"(.*?)\\s*(?=\\{)";
+	String CLASS_WITHOUT_DOC = "((?:(?:public|private|internal|class|static|readonly|sealed)\\s+){1,5})(.*?)([();{])";
 
 	Pattern CLASS_WITHOUT_DOC_REGEX = Pattern.compile(CLASS_WITHOUT_DOC, Pattern.MULTILINE);
 

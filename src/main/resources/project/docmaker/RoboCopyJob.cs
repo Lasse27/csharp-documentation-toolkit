@@ -8,8 +8,8 @@ namespace Pronto_Tool.Model.RoboCopy
 	/// <summary>	Die <b><c>RoboCopyJob</c></b>-Klasse soll einen RoboCopy-Auftrag darstellen, der in einer Powershell-Konsole ausgeführt werden soll/kann.
 	///				<br></br> Der <b><c>RoboCopyJob</c></b> bietet dabei noch keine Funktionalität und soll lediglich als Datenklasse bzw. als Modell dienen. 
 	///				<br></br> Ein <b><c>RoboCopyJob</c></b> kann in Verknüpfung mit der <b><c>StartJob</c></b>-Methode aus der <b><c>RoboCopyController</c>
-	///				</b>-Klasse gestartet werden. </summary>
-	///				
+	///				</b>-Klasse gestartet werden.
+	/// </summary>
 	public class RoboCopyJob
 	{
 

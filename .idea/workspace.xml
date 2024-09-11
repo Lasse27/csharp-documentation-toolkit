@@ -8,10 +8,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Change: moved some files and reformatted the whole project">
-      <change afterPath="$PROJECT_DIR$/src/test/java/project/docmaker/control/RegexControllerTest.java" afterDir="false" />
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Add: added better regex for section header">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/MarkdownStructure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/testmarkdown.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/format/FormatOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/format/FormatOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/format/StringFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/format/StringFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/section/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/section/Section.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Footer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Footer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/MiscConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/MiscConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/RegexConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/constant/RegexConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/ILogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/logging/ILogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/RoboCopyJob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/RoboCopyJob.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +36,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Record" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -82,6 +96,11 @@
     "Application.Standard Configuration.executor": "Run",
     "INTRODUCE_CONSTANT_NONNLS": "true",
     "JUnit.RegexControllerTest.executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:help].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-resources-plugin:2.6:testResources].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:help].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test].executor": "Run",
     "OverrideImplement.generate.javadoc": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -116,6 +135,7 @@
       <recent name="" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
+      <recent name="project.docmaker.utility.constant.MiscConstants" />
       <recent name="project.docmaker.control.RegexControllerTest" />
       <recent name="project.docmaker.utility.constant.RegexConstants" />
       <recent name="project.docmaker.utility.constant.LoggingConstants" />
@@ -446,7 +466,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726076975671</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Add: created and added testing environment">
+      <option name="closed" value="true" />
+      <created>1726078223828</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1726078223828</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +530,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="initial commit" />
     <MESSAGE value="Build: added the first relevant classes for Markdown and HTML generation." />
     <MESSAGE value="Build: added the logging folder from the VAULT project and added a bunch of classes that are momentarily bare bone but will be further implemented later." />
     <MESSAGE value="Build: added a lot more capability to the controller classes and started with some Javadoc and formatting" />
@@ -526,7 +553,9 @@
     <MESSAGE value="Change: moved some Regex Patterns to ConstantInterfaces." />
     <MESSAGE value="Remove: removed some older unused files from before the rework" />
     <MESSAGE value="Change: moved some files and reformatted the whole project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change: moved some files and reformatted the whole project" />
+    <MESSAGE value="Add: created and added testing environment" />
+    <MESSAGE value="Add: added better regex for section header" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: added better regex for section header" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

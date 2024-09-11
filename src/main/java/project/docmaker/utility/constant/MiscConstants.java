@@ -1,6 +1,8 @@
 package project.docmaker.utility.constant;
 
 
+import org.jetbrains.annotations.NonNls;
+
 public interface MiscConstants
 {
 
@@ -17,4 +19,7 @@ public interface MiscConstants
 	String NEW_LINE = "\n";
 
 	String MINUS = "-";
+
+	@NonNls
+	String MARKDOWN = "Markdown";
 }

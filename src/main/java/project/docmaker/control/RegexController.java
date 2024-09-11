@@ -1,7 +1,6 @@
 package project.docmaker.control;
 
 
-import project.docmaker.model.format.FormatOption;
 import project.docmaker.model.format.StringFormat;
 import project.docmaker.model.section.MetaData;
 import project.docmaker.model.section.Section;
@@ -21,7 +20,7 @@ import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static project.docmaker.utility.constant.MiscConstants.EMPTY_STRING;
+import static project.docmaker.model.format.StringFormat.FormatOption;
 import static project.docmaker.utility.constant.RegexConstants.*;
 
 
@@ -117,22 +116,13 @@ public final class RegexController
 		cleansedSequence = STRING_FORMAT.apply(cleansedSequence);
 
 		final Matcher matcher = CLASS_WITHOUT_DOC_REGEX.matcher(cleansedSequence);
-		if (!matcher.find())
+		if (matcher.find())
 		{
-			return new Header(EMPTY_STRING, EMPTY_STRING, EMPTY_STRING);
+			final Header header = new Header(matcher.group(1), matcher.group(2));
+			LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, header);
+			return header;
 		}
-
-		String classModifier = matcher.group(1);
-		if (matcher.group(2) != null)
-		{
-			classModifier += " " + matcher.group(2);
-		}
-		final String classType = matcher.group(3);
-		final String className = matcher.group(4);
-
-		final Header header = new Header(classModifier, classType, className);
-		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, header);
-		return header;
+		return new Header("Not Found", "Not Found");
 	}
 
 
