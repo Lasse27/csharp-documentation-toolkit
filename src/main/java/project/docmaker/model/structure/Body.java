@@ -10,14 +10,13 @@ import java.util.Collection;
 
 
 @NoLogger
-public record Body(Collection<Summary> summaryCollection, Collection<Parameter> parameterCollection, Collection<Return> returnCollection,
-                   Snippet snippet)
+public record Body(Collection<Summary> summaryCollection, Collection<Parameter> parameterCollection, Collection<Return> returnCollection)
 {
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called
 	 */
-	private static final String TEXT_DISPLAY_PATTERN = Body.class.getSimpleName() + "[summary={0}, documentationTags={1}, codeSnippet={2}]";
+	private static final String TEXT_DISPLAY_PATTERN = Body.class.getSimpleName() + "[summaries={0}, parameters={1}, returns={2}]";
 
 
 
@@ -29,6 +28,6 @@ public record Body(Collection<Summary> summaryCollection, Collection<Parameter> 
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.summaryCollection, this.parameterCollection, this.snippet);
+		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.summaryCollection, this.parameterCollection, this.returnCollection);
 	}
 }

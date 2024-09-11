@@ -40,19 +40,19 @@ public record Section(MetaData metaData)
 		final Collection<String> objectInformation = new ArrayList<>();
 		objectInformation.add("Class: " + this.getClass().getSimpleName());
 		objectInformation.add("Header: " + this.metaData().header());
-		for (Summary summary : this.metaData.body().summaryCollection())
+		for (final Summary summary : this.metaData.body().summaryCollection())
 		{
 			objectInformation.add("Summary: " + summary);
 		}
-		for (Parameter parameter : this.metaData.body().parameterCollection())
+		for (final Parameter parameter : this.metaData.body().parameterCollection())
 		{
 			objectInformation.add("Parameter: " + parameter);
 		}
-		for (Return returns : this.metaData.body().returnCollection())
+		for (final Return returns : this.metaData.body().returnCollection())
 		{
 			objectInformation.add("Returns: " + returns);
 		}
-		objectInformation.add("Code: " + this.metaData().body().snippet());
+		objectInformation.add("Code: " + this.metaData().footer().snippet());
 		return objectInformation;
 	}
 

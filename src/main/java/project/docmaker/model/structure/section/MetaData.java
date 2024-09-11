@@ -1,23 +1,15 @@
 package project.docmaker.model.structure.section;
 
 import project.docmaker.model.structure.Body;
+import project.docmaker.model.structure.Footer;
 import project.docmaker.model.structure.Header;
 import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
 
-/**
- * The  {@code MetaData} record represents the metadata of a section. So basically the information the user gets by just looking at the documentation
- * in the c# file.
- *
- * @param header The header instance of the metadata instance
- * @param body   The body instance of the metadata instance
- *
- * @author Lasse-Leander Hillen
- * @since 10.09.2024
- */
+
 @NoLogger
-public record MetaData(Header header, Body body)
+public record MetaData(Header header, Body body, Footer footer)
 {
 
 	/**

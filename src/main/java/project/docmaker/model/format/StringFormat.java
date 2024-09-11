@@ -61,15 +61,12 @@ public class StringFormat
 
 	private static String NormalizeString (final String input)
 	{
-		final StringTokenizer tokenizer = new StringTokenizer(input);
+		final String configured = input.trim().replaceAll(" +", " ");
+		final StringTokenizer tokenizer = new StringTokenizer(configured);
 		final StringBuilder stringBuilder = new StringBuilder();
 		while (tokenizer.hasMoreTokens())
 		{
-			stringBuilder.append(tokenizer.nextToken());
-			if (tokenizer.hasMoreTokens())
-			{
-				stringBuilder.append(" ");
-			}
+			stringBuilder.append(" ").append(tokenizer.nextToken());
 		}
 		return stringBuilder.toString();
 	}

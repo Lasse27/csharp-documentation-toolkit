@@ -4,6 +4,7 @@ package project.docmaker.control;
 import project.docmaker.model.format.FormatOption;
 import project.docmaker.model.format.StringFormat;
 import project.docmaker.model.structure.Body;
+import project.docmaker.model.structure.Footer;
 import project.docmaker.model.structure.Header;
 import project.docmaker.model.structure.Snippet;
 import project.docmaker.model.structure.section.MetaData;
@@ -69,30 +70,50 @@ public final class RegexController
 
 
 
+	/**
+	 * Parses the given String multiple times with different regular expressions and creates a {@link Section} instance from the found matches.
+	 *
+	 * @param charSequence The input {@link String} which is parsed within the method.
+	 *
+	 * @return A {@link Section} instance, that could be generated from the given {@link String}.
+	 */
 	public static Section getSectionFromCharSequence (final String charSequence)
 	{
 		// Getting the header of the section
 		final Header header = getClassHeaderFromArea(charSequence);
+		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, header);
 
-		// Getting the body of the section
+		// Collecting the tags from the documentation and creating the body of the section
 		final Collection<Summary> summaryCollection = RegexController.getSummariesFromCharSequence(charSequence);
 		final Collection<Parameter> parameterCollection = RegexController.getParametersFromCharSequence(charSequence);
 		final Collection<Return> returnCollection = RegexController.getReturnsFromCharSequence(charSequence);
+		final Body body = new Body(summaryCollection, parameterCollection, returnCollection);
+		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, body);
+
+		// Collecting the code snippet and creating the footer of the section.
 		final Snippet snippet = RegexController.getSnippetFromCharSequence(charSequence);
-		final Body body = new Body(summaryCollection, parameterCollection, returnCollection, snippet);
+		final Footer footer = new Footer(snippet);
+		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, footer);
 
 		// Creating the metadata and creating the section.
-		final Section section = new Section(new MetaData(header, body));
-		LOGGER.logf(ILogger.Level.NORMAL, LoggingConstants.INSTANCE_CREATED_PTN, section);
+		final Section section = new Section(new MetaData(header, body, footer));
+		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, section);
 		return section;
 	}
 
 
 
-	private static Header getClassHeaderFromArea (final String area)
+	/**
+	 * Parses the given String multiple times with different regular expressions and creates a {@link Header} instance from the found matches.
+	 *
+	 * @param charSequence The input {@link String} which is parsed within the method.
+	 *
+	 * @return A {@link Header} instance, that could be generated from the given {@link String}.
+	 */
+	private static Header getClassHeaderFromArea (final String charSequence)
 	{
 		// Cleanes the sequence of all documentations and tabs / newlines etc.
-		String cleansedSequence = area.replaceAll(DOCUMENTATION_SINGLE_LINE_REGEX, "");
+		String cleansedSequence = charSequence.replaceAll(DOCUMENTATION_SINGLE_LINE_REGEX, "");
 		cleansedSequence = STRING_FORMAT.apply(cleansedSequence);
 
 		final Matcher matcher = CLASS_WITHOUT_DOC_REGEX.matcher(cleansedSequence);
@@ -116,10 +137,17 @@ public final class RegexController
 
 
 
-	private static Snippet getSnippetFromCharSequence (final String string)
+	/**
+	 * Parses the given String multiple times with different regular expressions and creates a {@link Snippet} instance from the found matches.
+	 *
+	 * @param charSequence The input {@link String} which is parsed within the method.
+	 *
+	 * @return A {@link Snippet} instance, that could be generated from the given {@link String}.
+	 */
+	private static Snippet getSnippetFromCharSequence (final String charSequence)
 	{
 		// Cleanes the sequence of all documentations and tabs / newlines etc.
-		String cleansedSequence = string.replaceAll(DOCUMENTATION_SINGLE_LINE_REGEX, "");
+		String cleansedSequence = charSequence.replaceAll(DOCUMENTATION_SINGLE_LINE_REGEX, "");
 		cleansedSequence = STRING_FORMAT.apply(cleansedSequence);
 
 		// Creating the snippet instance and returning the result.
@@ -130,10 +158,9 @@ public final class RegexController
 
 
 
-	private static Collection<Summary> getSummariesFromCharSequence (final CharSequence sequence)
+	private static Collection<Summary> getSummariesFromCharSequence (final CharSequence charSequence)
 	{
-		final Pattern summaryPattern = Pattern.compile("///\\s*<summary>([\\s\\S]*?)</summary>");
-		final Matcher summaryMatcher = summaryPattern.matcher(sequence);
+		final Matcher summaryMatcher = SUMMARY_PATTERN.matcher(charSequence);
 		final Collection<Summary> summaryCollection = new ArrayList<>();
 		while (summaryMatcher.find())
 		{
@@ -146,12 +173,11 @@ public final class RegexController
 
 	private static Collection<Return> getReturnsFromCharSequence (final CharSequence sequence)
 	{
-		final Pattern returnsPattern = Pattern.compile("(?<=///\\s<returns>)([\\s\\S]*?)(?=</returns>)");
-		final Matcher returnsMatcher = returnsPattern.matcher(sequence);
+		final Matcher returnsMatcher = RETURN_PATTERN.matcher(sequence);
 		final Collection<Return> returnCollection = new ArrayList<>();
 		while (returnsMatcher.find())
 		{
-			returnCollection.add(new Return(STRING_FORMAT.apply(returnsMatcher.group())));
+			returnCollection.add(new Return(STRING_FORMAT.apply(returnsMatcher.group(1))));
 		}
 		return returnCollection;
 	}
