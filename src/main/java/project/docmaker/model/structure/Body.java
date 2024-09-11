@@ -1,29 +1,23 @@
 package project.docmaker.model.structure;
 
-import project.docmaker.model.DocumentationTagList;
-import project.docmaker.model.structure.section.Section;
+import project.docmaker.model.structure.tag.Parameter;
+import project.docmaker.model.structure.tag.Return;
+import project.docmaker.model.structure.tag.Summary;
 import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
+import java.util.Collection;
 
-/**
- * The record {@code Body} represents the body of one instance of {@link Section}
- *
- * @param description       The {@link Description} instance of the abstract section instance
- * @param documentationTags The {@link DocumentationTagList} instance of the abstract section instance
- * @param snippet           The header {@link Snippet} of the abstract section instance
- *
- * @author Lasse-Leander Hillen
- * @since 2024-09-07
- */
+
 @NoLogger
-public record Body(Description description, DocumentationTagList documentationTags, Snippet snippet)
+public record Body(Collection<Summary> summaryCollection, Collection<Parameter> parameterCollection, Collection<Return> returnCollection,
+                   Snippet snippet)
 {
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called
 	 */
-	private static final String TEXT_DISPLAY_PATTERN = Body.class.getSimpleName() + "[description={0}, documentationTags={1}, codeSnippet={2}]";
+	private static final String TEXT_DISPLAY_PATTERN = Body.class.getSimpleName() + "[summary={0}, documentationTags={1}, codeSnippet={2}]";
 
 
 
@@ -35,6 +29,6 @@ public record Body(Description description, DocumentationTagList documentationTa
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.description, this.documentationTags, this.snippet);
+		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.summaryCollection, this.parameterCollection, this.snippet);
 	}
 }

@@ -1,6 +1,9 @@
 package project.docmaker.model.structure.section;
 
 
+import project.docmaker.model.structure.tag.Parameter;
+import project.docmaker.model.structure.tag.Return;
+import project.docmaker.model.structure.tag.Summary;
 import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
@@ -37,8 +40,18 @@ public record Section(MetaData metaData)
 		final Collection<String> objectInformation = new ArrayList<>();
 		objectInformation.add("Class: " + this.getClass().getSimpleName());
 		objectInformation.add("Header: " + this.metaData().header());
-		objectInformation.add("Description: " + this.metaData().body().description());
-		objectInformation.add("Tags: " + this.metaData().body().documentationTags());
+		for (Summary summary : this.metaData.body().summaryCollection())
+		{
+			objectInformation.add("Summary: " + summary);
+		}
+		for (Parameter parameter : this.metaData.body().parameterCollection())
+		{
+			objectInformation.add("Parameter: " + parameter);
+		}
+		for (Return returns : this.metaData.body().returnCollection())
+		{
+			objectInformation.add("Returns: " + returns);
+		}
 		objectInformation.add("Code: " + this.metaData().body().snippet());
 		return objectInformation;
 	}
