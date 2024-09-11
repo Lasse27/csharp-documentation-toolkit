@@ -1,9 +1,9 @@
-package project.docmaker.model.structure.section;
+package project.docmaker.model.section;
 
 
-import project.docmaker.model.structure.tag.Parameter;
-import project.docmaker.model.structure.tag.Return;
-import project.docmaker.model.structure.tag.Summary;
+import project.docmaker.model.tag.Parameter;
+import project.docmaker.model.tag.Return;
+import project.docmaker.model.tag.Summary;
 import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;

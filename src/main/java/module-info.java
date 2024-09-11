@@ -11,6 +11,6 @@ module project.cs_documentationmaker {
 	exports project.docmaker;
 	exports project.docmaker.control;
 	exports project.docmaker.model.structure;
-	exports project.docmaker.model.structure.section;
-	exports project.docmaker.model.structure.tag;
+	exports project.docmaker.model.section;
+	exports project.docmaker.model.tag;
 }

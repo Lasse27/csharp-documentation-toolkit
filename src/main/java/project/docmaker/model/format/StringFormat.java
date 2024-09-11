@@ -19,24 +19,6 @@ public class StringFormat
 
 
 
-	public String apply (final String input)
-	{
-		String adjustedString = input;
-		for (final FormatOption option : this.options)
-		{
-			switch (option)
-			{
-				case NORMALIZE -> adjustedString = NormalizeString(adjustedString);
-				case REMOVE_MARKS -> adjustedString = RemoveMarks(adjustedString);
-				case TO_LOWER -> adjustedString = LowerString(adjustedString);
-				case TO_UPPER -> adjustedString = UpperString(adjustedString);
-			}
-		}
-		return adjustedString;
-	}
-
-
-
 	private static String RemoveMarks (final String input)
 	{
 		return input.replaceAll("/{3}", EMPTY_STRING).strip();
@@ -69,6 +51,24 @@ public class StringFormat
 			stringBuilder.append(" ").append(tokenizer.nextToken());
 		}
 		return stringBuilder.toString();
+	}
+
+
+
+	public String apply (final String input)
+	{
+		String adjustedString = input;
+		for (final FormatOption option : this.options)
+		{
+			switch (option)
+			{
+				case NORMALIZE -> adjustedString = NormalizeString(adjustedString);
+				case REMOVE_MARKS -> adjustedString = RemoveMarks(adjustedString);
+				case TO_LOWER -> adjustedString = LowerString(adjustedString);
+				case TO_UPPER -> adjustedString = UpperString(adjustedString);
+			}
+		}
+		return adjustedString;
 	}
 
 

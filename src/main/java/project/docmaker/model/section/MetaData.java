@@ -1,4 +1,4 @@
-package project.docmaker.model.structure.section;
+package project.docmaker.model.section;
 
 import project.docmaker.model.structure.Body;
 import project.docmaker.model.structure.Footer;

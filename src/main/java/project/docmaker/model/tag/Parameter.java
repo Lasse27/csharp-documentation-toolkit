@@ -1,4 +1,4 @@
-package project.docmaker.model.structure.tag;
+package project.docmaker.model.tag;
 
 import project.docmaker.utility.annotation.NoLogger;
 

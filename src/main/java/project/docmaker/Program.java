@@ -6,7 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import project.docmaker.control.RegexController;
-import project.docmaker.model.structure.section.Section;
+import project.docmaker.model.section.Section;
 import project.docmaker.utility.logging.ILogger;
 import project.docmaker.utility.logging.Logger;
 
@@ -14,8 +14,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Collection;
-
-import static project.docmaker.utility.constant.MiscConstants.NEW_LINE;
 
 
 public class Program extends Application

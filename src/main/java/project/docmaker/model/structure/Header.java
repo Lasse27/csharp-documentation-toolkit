@@ -1,6 +1,6 @@
 package project.docmaker.model.structure;
 
-import project.docmaker.model.structure.section.Section;
+import project.docmaker.model.section.Section;
 import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;

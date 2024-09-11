@@ -1,15 +1,16 @@
-package project.docmaker.model.structure.tag;
+package project.docmaker.model.tag;
 
 import project.docmaker.utility.annotation.NoLogger;
 
 import java.text.MessageFormat;
 
 @NoLogger
-public record Summary(String content)
+public record Return(String content)
 {
-
-	/** {@link MessageFormat} pattern, which is used, when the {@link Summary#toString()} method gets called */
-	private static final String TEXT_DISPLAY_PATTERN = Summary.class.getSimpleName() + "[content={0}]";
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link Return#toString()} method gets called
+	 */
+	private static final String TEXT_DISPLAY_PATTERN = Return.class.getSimpleName() + "[content={0}]";
 
 
 
