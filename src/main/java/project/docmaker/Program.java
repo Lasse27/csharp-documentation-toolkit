@@ -32,6 +32,7 @@ public class Program extends Application
 			final Section section = RegexController.getSectionFromCharSequence((String) doc);
 			section.toStringCollection().forEach(info -> LOGGER.log(ILogger.Level.NORMAL, info));
 		}
+		Application.launch(args);
 	}
 
 
