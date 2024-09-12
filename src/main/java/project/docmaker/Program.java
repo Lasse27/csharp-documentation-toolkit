@@ -22,6 +22,8 @@ public class Program extends Application
 {
 	private static final ILogger LOGGER = new Logger(Program.class.getSimpleName());
 
+	public static Stage stage = null;
+
 
 
 	public static void main (final String[] args) throws IOException
@@ -46,11 +48,11 @@ public class Program extends Application
 	{
 		final FXMLLoader fxmlLoader = new FXMLLoader(Program.class.getResource("MasterFormView.fxml"));
 		final Scene scene = new Scene(fxmlLoader.load());
-		stage.setTitle("Hello!");
-		stage.setScene(scene);
-		stage.setResizable(false);
-		stage.setTitle("C# Documentation Maker");
-		stage.show();
+		Program.stage = stage;
+		Program.stage.setScene(scene);
+		Program.stage.setResizable(false);
+		Program.stage.setTitle("C# Documentation Maker");
+		Program.stage.show();
 	}
 
 }

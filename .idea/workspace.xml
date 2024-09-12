@@ -8,14 +8,278 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="change: packet structure simplified and documentation renewed and added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationPattern.java" afterDir="false" />
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Add: full implementation of the markdown generation into the GUI">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.CLI/Backend.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.CLI/Client/Legacy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.CLI/Client/Pipelines.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.CLI/ConfigConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.CLI/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.CLI/Shadowsocks.CLI.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/Settings/InteropSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/Shadowsocks.Interop.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/SsRust/Config.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/Utils/JsonHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/ApiObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Config.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Dns/ServerObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/DnsObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/FakeDnsObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Inbound/AllocateObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Inbound/SniffingObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/InboundObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/LogObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Outbound/MuxObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Outbound/ProxySettingsObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/OutboundObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Policy/LevelPolicyObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Policy/SystemPolicyObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/PolicyObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/AccountObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/Freedom/OutboundConfigurationObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/Shadowsocks/InboundConfigurationObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/Shadowsocks/OutboundConfigurationObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/Shadowsocks/ServerObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/Socks/InboundConfigurationObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/Socks/OutboundConfigurationObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/Socks/ServerObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/Trojan/ClientObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/Trojan/FallbackObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/Trojan/InboundConfigurationObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/Trojan/OutboundConfigurationObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/Trojan/ServerObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/UserObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/VMess/DetourObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/VMess/InboundConfigurationObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/VMess/OutboundConfigurationObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/VMess/ServerObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Protocols/VMess/UserObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Reverse/BridgeObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Reverse/PortalObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/ReverseObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Routing/BalancerObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Routing/RuleObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/RoutingObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/StatsObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/CertificateObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/DomainSocketObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/Header/HeaderObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/Header/Http/HttpRequestObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/Header/Http/HttpResponseObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/Header/HttpHeaderObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/HttpObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/KcpObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/QuicObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/SockoptObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/StreamSettingsObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/TcpObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/TlsObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/Transport/WebSocketObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Interop/V2Ray/TransportObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/CachedNetworkStream.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/AEAD/AEADCrypto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/AEAD/AEADCryptoBaseCrypto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/CipherInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/CryptoBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/CryptoFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/CryptoUtils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/Exception/CryptoException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/ICrypto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/RNG.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/Stream/StreamCrypto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/Stream/StreamCryptoBaseCrypto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/Stream/StreamPlainNativeCrypto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Crypto/TCPInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Proxy/DirectConnect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Proxy/HttpProxy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Proxy/IProxy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Proxy/LineReader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Proxy/Socks5Proxy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Settings/ForwardProxySettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Settings/NetSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/Shadowsocks.Net.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/SystemProxy/ProxyException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/TCPListener.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/TCPRelay.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/UDPListener.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Net/UDPRelay.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.PAC/GeositeUpdater.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.PAC/PACDaemon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.PAC/PACServer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.PAC/PACSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.PAC/Properties/Resources.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.PAC/Properties/Resources.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.PAC/Resources/abp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.PAC/Resources/dlc.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.PAC/Resources/user-rule.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.PAC/Shadowsocks.PAC.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protobuf/Geosite.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protobuf/Shadowsocks.Protobuf.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protobuf/geosite.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Direct/PortForwardService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/DuplexPipe.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/IProtocolMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/IStreamClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/IStreamService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/PipePair.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/ProtocolMessagePipe.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks.Protocol.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/AeadBlockMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/AeadClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/Crypto/AeadAesGcmCrypto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/Crypto/AeadChaCha20Poly1305Crypto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/Crypto/AeadCrypto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/Crypto/AeadXChaCha20Poly1305Crypto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/Crypto/CryptoParameter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/Crypto/CryptoProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/Crypto/CryptoUtils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/Crypto/UnsafeNoneCrypto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/ICrypto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/PayloadProtocolClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/SaltMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/ShadowsocksClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Shadowsocks/UnsafeClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Socks5/Socks5Client.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Socks5/Socks5Message.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Socks5/Socks5MethodSelectionMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Socks5/Socks5RequestReplyMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Socks5/Socks5Service.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Socks5/Socks5UdpMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Socks5/Socks5UserPasswordRequestMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Socks5/Socks5UserPasswordResponseMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Socks5/Socks5VersionIdentifierMessage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/TcpPipeClient.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/TcpPipeListener.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Protocol/Util.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Tests/Shadowsocks.Tests.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.Tests/UrlTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF.Tests/DataUsageTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF.Tests/Shadowsocks.WPF.Tests.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/App.manifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/App.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/App.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/AssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/FodyWeavers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/FodyWeavers.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/LocalizationProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.fr.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.ja.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.ko.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.ru.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.zh-Hans.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.zh-Hant.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Models/AppSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Models/Group.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Models/Server.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Models/Settings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/PublishProfiles/FolderProfile.pubxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/PublishProfiles/win-arm.pubxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/PublishProfiles/win-x64.pubxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/PublishProfiles/win-x64.pubxml.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/PublishProfiles/win-x86.pubxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/PublishProfiles/win-x86.pubxml.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/Resources.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/Resources.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-ExtraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-ExtraLightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-MediumItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-SemiBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-SemiBoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-ThinItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/privoxy.exe.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/privoxy_conf.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ss128.pdn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ss32.pdn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ss32Fill.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ss32In.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ss32Out.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ss32Outline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ssw128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/OnlineConfigService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/PortForwarder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/PrivoxyRunner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/Sip003Plugin.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/SystemProxy/RAS.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/SystemProxy/WinINet.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/UpdateChecker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Shadowsocks.WPF.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Utils/AutoStartup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Utils/FileManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Utils/IPCService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Utils/ProtocolHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Utils/SystemProxy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Utils/Utilities.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/DashboardViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/ForwardProxyViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/MainWindowViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/OnlineConfigViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/RoutingViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/ServerSharingViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/ServersViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/SettingsViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/VersionUpdatePromptViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/DashboardView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/DashboardView.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/ForwardProxyView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/ForwardProxyView.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/MainWindow.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/MainWindow.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/OnlineConfigView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/OnlineConfigView.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/RoutingView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/RoutingView.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/ServerSharingView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/ServerSharingView.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/ServersView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/ServersView.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/SettingsView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/SettingsView.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/VersionUpdatePromptView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/VersionUpdatePromptView.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/shadowsocks.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Group.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Group.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IGroup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IGroup.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IServer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IServer.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/JsonSnakeCaseNamingPolicy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/JsonSnakeCaseNamingPolicy.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Server.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Server.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Shadowsocks.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Utilities/Base64Url.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterForm.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterFormView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/markdown.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationPattern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Parameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Parameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Return.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Return.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Summary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Summary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterFormView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterFormView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/RoboCopyJob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/RoboCopyJob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation_2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation_2.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testmarkdown.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/testmarkdown.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +308,8 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationPattern.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/CodeSnippet.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" root0="FORCE_HIGHLIGHTING" />
@@ -115,11 +381,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="project.docmaker.model.generation" />
       <recent name="project.docmaker.model.structure.section" />
       <recent name="project.docmaker.model.section" />
       <recent name="project.docmaker" />
       <recent name="project.docmaker.model" />
-      <recent name="project.docmaker.exception" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -191,6 +457,7 @@
       <workItem from="1725830026126" duration="4524000" />
       <workItem from="1725985513555" duration="17624000" />
       <workItem from="1726071195282" duration="3456000" />
+      <workItem from="1726159654341" duration="9642000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -536,7 +803,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Build: added the logging folder from the VAULT project and added a bunch of classes that are momentarily bare bone but will be further implemented later." />
     <MESSAGE value="Build: added a lot more capability to the controller classes and started with some Javadoc and formatting" />
     <MESSAGE value="Build: added a few small tests to see how it's already going -&gt; more toString() methods." />
     <MESSAGE value="Build: added the first RegEx Patterns to get the name and area of the class." />
@@ -561,7 +827,8 @@
     <MESSAGE value="Add: created and added testing environment" />
     <MESSAGE value="Add: added better regex for section header" />
     <MESSAGE value="change: packet structure simplified and documentation renewed and added" />
-    <option name="LAST_COMMIT_MESSAGE" value="change: packet structure simplified and documentation renewed and added" />
+    <MESSAGE value="Add: full implementation of the markdown generation into the GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: full implementation of the markdown generation into the GUI" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

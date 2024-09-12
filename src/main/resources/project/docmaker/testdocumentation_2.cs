@@ -1,171 +1,126 @@
-// Unity C# reference source
-// Copyright (c) Unity Technologies. For terms of use, see
-// https://unity3d.com/legal/licenses/Unity_Reference_Only_License
+# _public enum AccessibilityRole : ushort_
 
-using System;
-using System.Runtime.InteropServices;
-using UnityEngine.Bindings;
-using UnityEngine.Scripting;
+### _Summary:_
+Role of an accessibility node.
+### _Code-Snippet:_ ``[NativeHeader("Modules/Accessibility/Native/AccessibilityNodeData.h")] [Flags] public enum AccessibilityRole : ushort {``
 
-namespace UnityEngine.Accessibility
-{
-    /// <summary>
-    /// Role of an accessibility node.
-    /// </summary>
-    [NativeHeader("Modules/Accessibility/Native/AccessibilityNodeData.h")]
-    [Flags]
-    public enum AccessibilityRole : ushort
-    {
-        /// The accessibility node has no roles.
-        None                    = 0,
+---
+# _public enum AccessibilityState : ushort_
 
-        /// The accessibility node behaves like a button.
-        Button                  = 1 << 0,
+### _Summary:_
+State of an accessibility node.
+### _Code-Snippet:_ ``[NativeHeader("Modules/Accessibility/Native/AccessibilityNodeData.h")] [Flags] public enum AccessibilityState : ushort {``
 
-        /// The accessibility node behaves like an image.
-        Image                   = 1 << 1,
+---
+# _internal struct AccessibilityNodeData_
 
-        /// The accessibility node behaves like static text that can't change.
-        StaticText              = 1 << 2,
+### _Summary:_
+The data stored in an accessibility node.
+### _Code-Snippet:_ ``[RequiredByNativeCode] [StructLayout(LayoutKind.Sequential)] [NativeType(CodegenOptions.Custom, "MonoAccessibilityNodeData")] [NativeHeader("Modules/Accessibility/Bindings/AccessibilityNodeData.bindings.h")] [NativeHeader("Modules/Accessibility/Native/AccessibilityNodeData.h")] internal struct AccessibilityNodeData {``
 
-        /// The accessibility node behaves like a search field.
-        SearchField             = 1 << 3,
+---
+# _public int id_
 
-        /// The accessibility node behaves like a keyboard key.
-        KeyboardKey             = 1 << 4,
+### _Summary:_
+The ID of the accessibility node.
+### _Code-Snippet:_ ``public int id {``
 
-        /// The accessibility node is a header that divides content into
-        /// sections, such as the title of a navigation bar.
-        Header                  = 1 << 5,
+---
+# _public bool isActive_
 
-        /// The accessibility node behaves like a tab bar.
-        TabBar                  = 1 << 6,
+### _Summary:_
+Whether the node fires accessibility events and can be accessed by  assistive technology.
+### _Code-Snippet:_ ``public bool isActive {``
 
-        /// The accessibility node behaves like a slider, allowing continuous
-        /// adjustment through a range of values.
-        Slider                  = 1 << 7,
+---
+# _public string label_
 
-        /// The accessibility node behaves like a toggle.
-        Toggle                  = 1 << 8,
-    }
+### _Summary:_
+A succinct description of the accessibility node.
+### _Code-Snippet:_ ``public string label {``
 
-    /// <summary>
-    /// State of an accessibility node.
-    /// </summary>
-    [NativeHeader("Modules/Accessibility/Native/AccessibilityNodeData.h")]
-    [Flags]
-    public enum AccessibilityState : ushort
-    {
-        /// The accessibility node is in none of the other states.
-        None            = 0,
+---
+# _public string value_
 
-        /// The accessibility node is currently in a disabled state and does not
-        /// respond to user interaction.
-        Disabled        = 1 << 0,
+### _Summary:_
+The current value of the accessibility node.
+### _Code-Snippet:_ ``public string value {``
 
-        /// The accessibility node is currently in a selected state.
-        Selected        = 1 << 1,
-    }
+---
+# _public string hint_
 
-    /// <summary>
-    /// The data stored in an accessibility node.
-    /// </summary>
-    [RequiredByNativeCode]
-    [StructLayout(LayoutKind.Sequential)]
-    [NativeType(CodegenOptions.Custom, "MonoAccessibilityNodeData")]
-    [NativeHeader("Modules/Accessibility/Bindings/AccessibilityNodeData.bindings.h")]
-    [NativeHeader("Modules/Accessibility/Native/AccessibilityNodeData.h")]
-    internal struct AccessibilityNodeData
-    {
-        /// <summary>
-        /// The ID of the accessibility node.
-        /// </summary>
-        public int id { get; set; }
+### _Summary:_
+Additional information about the accessibility node.  For example, the result of performing an action on the node.
+### _Code-Snippet:_ ``public string hint {``
 
-        /// <summary>
-        /// Whether the node fires accessibility events and can be accessed by
-        /// assistive technology.
-        /// </summary>
-        public bool isActive { get; set; }
+---
+# _public AccessibilityRole role_
 
-        /// <summary>
-        /// A succinct description of the accessibility node.
-        /// </summary>
-        public string label { get; set; }
+### _Summary:_
+The role of the accessibility node.
+### _Code-Snippet:_ ``public AccessibilityRole role {``
 
-        /// <summary>
-        /// The current value of the accessibility node.
-        /// </summary>
-        public string value { get; set; }
+---
+# _public bool allowsDirectInteraction_
 
-        /// <summary>
-        /// Additional information about the accessibility node.
-        /// For example, the result of performing an action on the node.
-        /// </summary>
-        public string hint { get; set; }
+### _Summary:_
+Whether the accessibility node allows direct touch interaction.
+### _Code-Snippet:_ ``public bool allowsDirectInteraction {``
 
-        /// <summary>
-        /// The role of the accessibility node.
-        /// </summary>
-        public AccessibilityRole role { get; set; }
+---
+# _public AccessibilityState state_
 
-        /// <summary>
-        /// Whether the accessibility node allows direct touch interaction.
-        /// </summary>
-        /// <remarks>
-        /// This is only supported on iOS.
-        /// </remarks>
-        public bool allowsDirectInteraction { get; set; }
+### _Summary:_
+The state of the accessibility node.
+### _Code-Snippet:_ ``public AccessibilityState state {``
 
-        /// <summary>
-        /// The state of the accessibility node.
-        /// </summary>
-        public AccessibilityState state { get; set; }
+---
+# _public Rect frame_
 
-        /// <summary>
-        /// The frame of the accessibility node in screen coordinates.
-        /// </summary>
-        public Rect frame { get; set; }
+### _Summary:_
+The frame of the accessibility node in screen coordinates.
+### _Code-Snippet:_ ``public Rect frame {``
 
-        /// <summary>
-        /// The ID of the node that contains the accessibility node.
-        /// </summary>
-        public int parentId { get; set; }
+---
+# _public int parentId_
 
-        /// <summary>
-        /// The IDs of the nodes contained by the accessibility node.
-        /// </summary>
-        public int[] childIds { get; set; }
+### _Summary:_
+The ID of the node that contains the accessibility node.
+### _Code-Snippet:_ ``public int parentId {``
 
-        /// <summary>
-        /// Whether an assistive technology is focused on the accessibility
-        /// node.
-        /// </summary>
-        public bool isFocused { get; }
+---
+# _public int[] childIds_
 
-        /// <summary>
-        /// The language to use when voicing the accessibility node's label,
-        /// value, and hint (can differ from the system or application
-        /// language).
-        /// </summary>
-        internal SystemLanguage language { get; set; }
+### _Summary:_
+The IDs of the nodes contained by the accessibility node.
+### _Code-Snippet:_ ``public int[] childIds {``
 
-        /// <summary>
-        /// Whether the accessibility node implements the
-        /// <see cref="AccessibilityNode.selected"/> callback.
-        /// </summary>
-        /// <remarks>
-        /// Adds the Click action to nodes on Android.
-        /// </remarks>
-        public bool implementsSelected { get; set; }
+---
+# _public bool isFocused_
 
-        /// <summary>
-        /// Whether the accessibility node implements the
-        /// <see cref="AccessibilityNode.dismissed"/> callback.
-        /// </summary>
-        /// <remarks>
-        /// Adds the Dismiss action to nodes on Android.
-        /// </remarks>
-        public bool implementsDismissed { get; set; }
-    }
-}
+### _Summary:_
+Whether an assistive technology is focused on the accessibility  node.
+### _Code-Snippet:_ ``public bool isFocused {``
+
+---
+# _internal SystemLanguage language_
+
+### _Summary:_
+The language to use when voicing the accessibility node's label,  value, and hint (can differ from the system or application  language).
+### _Code-Snippet:_ ``internal SystemLanguage language {``
+
+---
+# _public bool implementsSelected_
+
+### _Summary:_
+Whether the accessibility node implements the  <see cref="AccessibilityNode.selected"/> callback.
+### _Code-Snippet:_ ``public bool implementsSelected {``
+
+---
+# _public bool implementsDismissed_
+
+### _Summary:_
+Whether the accessibility node implements the  <see cref="AccessibilityNode.dismissed"/> callback.
+### _Code-Snippet:_ ``public bool implementsDismissed {``
+
+---

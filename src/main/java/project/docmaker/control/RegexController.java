@@ -1,25 +1,25 @@
 package project.docmaker.control;
 
 
-import project.docmaker.model.structure.Section;
 import project.docmaker.model.structure.Body;
 import project.docmaker.model.structure.CodeSnippet;
 import project.docmaker.model.structure.Header;
+import project.docmaker.model.structure.Section;
 import project.docmaker.model.tag.Parameter;
 import project.docmaker.model.tag.Return;
 import project.docmaker.model.tag.Summary;
-import project.docmaker.utility.StringFormat;
-import project.docmaker.utility.LoggingConstants;
 import project.docmaker.utility.ILogger;
 import project.docmaker.utility.Logger;
+import project.docmaker.utility.LoggingConstants;
+import project.docmaker.utility.StringFormat;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static project.docmaker.utility.StringFormat.FormatOption;
 import static project.docmaker.utility.RegexConstants.*;
+import static project.docmaker.utility.StringFormat.FormatOption;
 
 
 public final class RegexController

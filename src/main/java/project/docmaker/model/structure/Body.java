@@ -5,8 +5,8 @@ import org.jetbrains.annotations.NotNull;
 import project.docmaker.model.tag.Parameter;
 import project.docmaker.model.tag.Return;
 import project.docmaker.model.tag.Summary;
-import project.docmaker.utility.NoLogger;
 import project.docmaker.utility.MiscConstants;
+import project.docmaker.utility.NoLogger;
 
 import java.text.MessageFormat;
 import java.util.Collection;

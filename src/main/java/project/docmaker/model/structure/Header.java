@@ -2,8 +2,8 @@ package project.docmaker.model.structure;
 
 import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NotNull;
-import project.docmaker.utility.NoLogger;
 import project.docmaker.utility.MiscConstants;
+import project.docmaker.utility.NoLogger;
 
 import java.text.MessageFormat;
 

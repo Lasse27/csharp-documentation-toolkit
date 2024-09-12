@@ -8,7 +8,9 @@ import java.text.MessageFormat;
 public record Summary(String content)
 {
 
-	/** {@link MessageFormat} pattern, which is used, when the {@link Summary#toString()} method gets called */
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link Summary#toString()} method gets called
+	 */
 	private static final String TEXT_DISPLAY_PATTERN = Summary.class.getSimpleName() + "[content={0}]";
 
 

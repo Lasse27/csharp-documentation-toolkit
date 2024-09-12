@@ -7,6 +7,7 @@ import java.text.MessageFormat;
 @NoLogger
 public record Parameter(String name, String content)
 {
+
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Parameter#toString()} method gets called
 	 */

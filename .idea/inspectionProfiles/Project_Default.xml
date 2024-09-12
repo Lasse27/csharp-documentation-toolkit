@@ -126,6 +126,7 @@
       <option name="annotations">
         <value>
           <item value="project.docmaker.utility.annotation.NoLogger" />
+          <item value="project.docmaker.utility.NoLogger" />
         </value>
       </option>
     </inspection_tool>
@@ -158,6 +159,7 @@
       <option name="ignoreLocalVariables" value="false" />
       <option name="ignorePrivateMethodsAndFields" value="false" />
     </inspection_tool>
+    <inspection_tool class="Deprecation" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="DialogTitleCapitalization" enabled="true" level="INFORMATION" enabled_by_default="true" editorAttributes="INFORMATION_ATTRIBUTES" />
     <inspection_tool class="DisjointPackage" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="DollarSignInName" enabled="true" level="WARNING" enabled_by_default="true" />

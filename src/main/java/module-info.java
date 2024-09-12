@@ -5,6 +5,7 @@ module project.cs_documentationmaker {
 	requires org.controlsfx.controls;
 	requires org.kordamp.ikonli.javafx;
 	requires org.jetbrains.annotations;
+	requires java.desktop;
 
 	opens project.docmaker to javafx.fxml;
 	opens project.docmaker.control to javafx.fxml;

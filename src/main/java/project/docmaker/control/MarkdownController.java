@@ -1,7 +1,7 @@
 package project.docmaker.control;
 
-import project.docmaker.model.structure.Section;
 import project.docmaker.model.structure.Header;
+import project.docmaker.model.structure.Section;
 import project.docmaker.utility.MiscConstants;
 
 import java.io.File;
