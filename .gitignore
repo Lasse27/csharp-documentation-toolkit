@@ -8,7 +8,7 @@
 *.ctxt
 
 # Dir
-test/
+src/test/
 target/
 .idea/
 
