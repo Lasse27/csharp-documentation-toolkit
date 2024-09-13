@@ -1,3 +1,10 @@
+# _public interface IGroup<T>_
+
+### _Summary:_
+
+### _Code-Snippet:_ ``public interface IGroup<T> {``
+
+---
 # _public int Version_
 
 ### _Summary:_

@@ -1,3 +1,10 @@
+# _public class Server : IServer_
+
+### _Summary:_
+
+### _Code-Snippet:_ ``public class Server : IServer {``
+
+---
 # _public string Host_
 
 ### _Code-Snippet:_ ``[JsonPropertyName("server")] public string Host {``

@@ -5,6 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace Shadowsocks.Models
 {
+    /// <summary>
+    ///
+    /// </summary>
     public class Server : IServer
     {
         /// <inheritdoc/>

@@ -10,6 +10,9 @@ using System.Text.Json;
 
 namespace Shadowsocks.Models
 {
+    /// <summary>
+    ///
+    /// </summary>
     public class JsonSnakeCaseNamingPolicy : JsonNamingPolicy
     {
         internal enum SnakeCaseState
@@ -20,6 +23,9 @@ namespace Shadowsocks.Models
             NewWord
         }
 
+        /// <summary>
+        ///
+        /// </summary>
         public override string ConvertName(string name)
         {
             if (string.IsNullOrEmpty(name))

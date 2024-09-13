@@ -8,18 +8,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Removed big part of testing environment">
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Lotta staff">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterFormView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterFormView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/docmaker/control/RegexControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/docmaker/control/RegexControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Group.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Group.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IServer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/JsonSnakeCaseNamingPolicy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/JsonSnakeCaseNamingPolicy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Server.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Server.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,40 +89,40 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Standard Configuration.executor&quot;: &quot;Run&quot;,
-    &quot;INTRODUCE_CONSTANT_NONNLS&quot;: &quot;true&quot;,
-    &quot;JUnit.RegexControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-resources-plugin:2.6:testResources].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test].executor&quot;: &quot;Run&quot;,
-    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last.edited.regexp&quot;: &quot;public class UserAuthentificator : Execitpr, wiajda, woadkaw, ana{\n    private static final Logger _Logger = new Logger();\n\n    public String toString()\n    {\n        super.toString();\n    }\n}&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lasse/IdeaProjects/VAULT_EA&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.371063&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.HelloApplication.executor": "Run",
+    "Application.Standard Configuration.executor": "Run",
+    "INTRODUCE_CONSTANT_NONNLS": "true",
+    "JUnit.RegexControllerTest.executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:help].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-resources-plugin:2.6:testResources].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:help].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test].executor": "Run",
+    "OverrideImplement.generate.javadoc": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last.edited.regexp": "public class UserAuthentificator : Execitpr, wiajda, woadkaw, ana{\n    private static final Logger _Logger = new Logger();\n\n    public String toString()\n    {\n        super.toString();\n    }\n}",
+    "last_opened_file_path": "C:/Users/Lasse/IdeaProjects/VAULT_EA",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.371063",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="project.docmaker.model.generation" />
@@ -207,7 +205,7 @@
       <workItem from="1725985513555" duration="17624000" />
       <workItem from="1726071195282" duration="3456000" />
       <workItem from="1726159654341" duration="10391000" />
-      <workItem from="1726243589685" duration="2996000" />
+      <workItem from="1726243589685" duration="3791000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -521,7 +519,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726171310985</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Lotta staff">
+      <option name="closed" value="true" />
+      <created>1726246640765</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1726246640765</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +583,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Build: added regular expressions for the return and param tag. Also added a FormatController-class, which is supposed to handle formatting actions." />
     <MESSAGE value="Change: changed some classes to interfaces because the &quot;abstract class method&quot; was too restricting.&#10;&#10;Build: added classes used to create MarkDown-Formatting." />
     <MESSAGE value="Build: first markdown-Strings can be generated." />
     <MESSAGE value="Change: changed the formatting of the generated Markdown code.&#10;&#10;Build:&#10;added a few new methods so that documentation tags are now generated in groups and not as standalone.&#10;Added a new datatype to provide better handling of the documentation tags." />
@@ -602,7 +607,8 @@
     <MESSAGE value="Updated gitignore" />
     <MESSAGE value="Add testing environment" />
     <MESSAGE value="Removed big part of testing environment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed big part of testing environment" />
+    <MESSAGE value="Lotta staff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lotta staff" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

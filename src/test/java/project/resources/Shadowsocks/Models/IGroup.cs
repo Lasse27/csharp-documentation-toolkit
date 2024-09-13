@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 namespace Shadowsocks.Models
 {
+    /// <summary>
+    ///
+    /// </summary>
     public interface IGroup<T>
     {
         /// <summary>

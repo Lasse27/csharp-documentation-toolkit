@@ -1,3 +1,10 @@
+# _public interface IServer : IEquatable<IServer>_
+
+### _Summary:_
+
+### _Code-Snippet:_ ``public interface IServer : IEquatable<IServer> {``
+
+---
 # _public string Host_
 
 ### _Summary:_

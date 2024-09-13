@@ -1,3 +1,10 @@
+# _public class Group : IGroup<Server>_
+
+### _Summary:_
+
+### _Code-Snippet:_ ``public class Group : IGroup<Server> {``
+
+---
 # _public string Name_
 
 ### _Summary:_

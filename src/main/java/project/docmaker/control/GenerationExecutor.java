@@ -17,9 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
-/**
- *
- */
+
 public final class GenerationExecutor implements Runnable
 {
 
@@ -116,6 +114,7 @@ public final class GenerationExecutor implements Runnable
 			// Creating the target Markdown file
 			final String targetFileName = file.getName().replaceFirst("[.][^.]+$", ".md");
 			MarkdownController.createMarkdownFile(new File(this.job.targetFile(), targetFileName), sections);
+			LOGGER.log(ILogger.Level.NORMAL, targetFileName + "created...");
 		}
 	}
 

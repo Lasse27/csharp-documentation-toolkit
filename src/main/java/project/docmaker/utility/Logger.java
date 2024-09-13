@@ -61,7 +61,7 @@ public class Logger implements ILogger
 	 * The depth of the {@link Logger}. Represents how deep level of the {@link Logger#log(Level, String)} calls must be to be shown in the console
 	 * window.
 	 */
-	private static Level depth = DEBUG;
+	private static Level depth = Level.NORMAL;
 
 
 	/**
