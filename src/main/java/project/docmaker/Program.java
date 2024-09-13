@@ -31,9 +31,9 @@ public class Program extends Application
 		LOGGER.log(ILogger.Level.NORMAL, "Read the test file: \"src/main/resources/project/docmaker/testdocumentation.cs\"");
 		final File file = new File("src/main/resources/project/docmaker/testdocumentation.cs");
 		final Collection<Section> sections = new ArrayList<>();
-		for (final CharSequence doc : RegexController.findAllDocumentations(Files.readString(file.toPath())))
+		for (final CharSequence doc : RegexController.findDocumentations(Files.readString(file.toPath())))
 		{
-			final Section section = RegexController.getSectionFromCharSequence((String) doc);
+			final Section section = RegexController.getSectionFromString((String) doc);
 			section.toStringCollection().forEach(info -> LOGGER.log(ILogger.Level.NORMAL, info));
 			sections.add(section);
 		}

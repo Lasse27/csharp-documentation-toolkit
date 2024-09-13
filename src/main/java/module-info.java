@@ -10,6 +10,7 @@ module project.cs_documentationmaker {
 	opens project.docmaker to javafx.fxml;
 	opens project.docmaker.control to javafx.fxml;
 	exports project.docmaker;
+	exports project.docmaker.model.generation;
 	exports project.docmaker.control;
 	exports project.docmaker.model.structure;
 	exports project.docmaker.model.tag;

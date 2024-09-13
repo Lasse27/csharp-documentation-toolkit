@@ -9,7 +9,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
-import project.docmaker.model.generation.GenerationExecutor;
+import project.docmaker.control.GenerationExecutor;
 import project.docmaker.model.generation.GenerationJob;
 import project.docmaker.model.generation.GenerationJobFactory;
 import project.docmaker.model.generation.GenerationPattern;
@@ -19,6 +19,8 @@ import project.docmaker.utility.NoLogger;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.util.Objects;
 
 
 /**
@@ -34,10 +36,10 @@ import java.io.IOException;
 public class MasterFormController
 {
 	@FXML
-	private ListView<?> finishedFoldersLV;
+	private ListView<String> finishedFoldersLV;
 
 	@FXML
-	private ListView<?> foundFilesLV;
+	private ListView<String> foundFilesLV;
 
 	@FXML
 	private ComboBox<String> sourceFolderCB;
@@ -69,6 +71,10 @@ public class MasterFormController
 			alert.setHeaderText("Exception occurred while trying to generate Markdown.");
 			alert.setContentText(e.getMessage());
 			alert.showAndWait();
+		}
+		finally
+		{
+			this.finishedFoldersLV.getItems().add(this.sourceFolderCB.getValue());
 		}
 
 	}
@@ -140,6 +146,11 @@ public class MasterFormController
 		if (chosenFile != null)
 		{
 			this.sourceFolderCB.setValue(chosenFile.getAbsolutePath());
+			this.foundFilesLV.getItems().clear();
+			for (final String fileName : Objects.requireNonNull(chosenFile.list((_, fileName) -> fileName.endsWith(".cs"))))
+			{
+				this.foundFilesLV.getItems().add(fileName);
+			}
 		}
 	}
 

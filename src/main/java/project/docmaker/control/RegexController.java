@@ -54,7 +54,7 @@ public final class RegexController
 	 *
 	 * @return A {@link Collection} if {@link String} representing all occurring documentations within the {@code CharSequence}
 	 */
-	public static Collection<CharSequence> findAllDocumentations (final CharSequence charSequence)
+	public static Collection<CharSequence> findDocumentations (final CharSequence charSequence)
 	{
 		// Creating a matcher from the DOCUMENTATION_PATTERN - Pattern and collecting all occurring documentations.
 		final Matcher matcher = DOCUMENTATION_CODE_PATTERN.matcher(charSequence);
@@ -78,7 +78,7 @@ public final class RegexController
 	 *
 	 * @return A {@link Section} instance, that could be generated from the given {@link String}.
 	 */
-	public static Section getSectionFromCharSequence (final String charSequence)
+	public static Section getSectionFromString (final String charSequence)
 	{
 		// Getting the header of the section
 		final Header header = getClassHeaderFromArea(charSequence);

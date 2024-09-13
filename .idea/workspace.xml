@@ -8,9 +8,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Add testing environment">
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Removed big part of testing environment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.CLI/Backend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.CLI/Backend.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterFormView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterFormView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/docmaker/control/RegexControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/docmaker/control/RegexControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +54,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationExecutor.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationPattern.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/CodeSnippet.java" root0="FORCE_HIGHLIGHTING" />
@@ -63,7 +73,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -132,6 +142,9 @@
       <recent name="project.docmaker.utility.constant.RegexConstants" />
       <recent name="project.docmaker.utility.constant.LoggingConstants" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="project.docmaker.control" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="project.docmaker.control" />
     </key>
@@ -193,7 +206,8 @@
       <workItem from="1725830026126" duration="4524000" />
       <workItem from="1725985513555" duration="17624000" />
       <workItem from="1726071195282" duration="3456000" />
-      <workItem from="1726159654341" duration="10059000" />
+      <workItem from="1726159654341" duration="10391000" />
+      <workItem from="1726243589685" duration="2996000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -499,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726171063512</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Removed big part of testing environment">
+      <option name="closed" value="true" />
+      <created>1726171310985</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1726171310985</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,7 +577,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Build: added the first RegEx Patterns to get the name and area of the class." />
     <MESSAGE value="Build: added regular expressions for the return and param tag. Also added a FormatController-class, which is supposed to handle formatting actions." />
     <MESSAGE value="Change: changed some classes to interfaces because the &quot;abstract class method&quot; was too restricting.&#10;&#10;Build: added classes used to create MarkDown-Formatting." />
     <MESSAGE value="Build: first markdown-Strings can be generated." />
@@ -580,7 +601,8 @@
     <MESSAGE value="Add: full implementation of the markdown generation into the GUI" />
     <MESSAGE value="Updated gitignore" />
     <MESSAGE value="Add testing environment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add testing environment" />
+    <MESSAGE value="Removed big part of testing environment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed big part of testing environment" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

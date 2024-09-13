@@ -29,20 +29,20 @@ class RegexControllerTest
 	@Test
 	void findAllDocumentations () throws IOException
 	{
-		final Collection<CharSequence> docs = RegexController.findAllDocumentations(Files.readString(TEST_FILE_1.toPath()));
+		final Collection<CharSequence> docs = RegexController.findDocumentations(Files.readString(TEST_FILE_1.toPath()));
 		assert docs.size() == 10 : MessageFormat.format(INCORRECT_DOC_AMOUNT, TEST_FILE_1);
 
-		final Collection<CharSequence> docs1 = RegexController.findAllDocumentations(Files.readString(TEST_FILE_2.toPath()));
+		final Collection<CharSequence> docs1 = RegexController.findDocumentations(Files.readString(TEST_FILE_2.toPath()));
 		assert docs1.size() == 3 : MessageFormat.format(INCORRECT_DOC_AMOUNT, TEST_FILE_2);
 
-		final Collection<CharSequence> docs2 = RegexController.findAllDocumentations(Files.readString(TEST_FILE_3.toPath()));
+		final Collection<CharSequence> docs2 = RegexController.findDocumentations(Files.readString(TEST_FILE_3.toPath()));
 		assert docs2.size() == 20 : MessageFormat.format(INCORRECT_DOC_AMOUNT, TEST_FILE_3);
 	}
 
 
 
 	@Test
-	void getSectionFromCharSequence ()
+	void getSectionFromString ()
 	{
 	}
 }

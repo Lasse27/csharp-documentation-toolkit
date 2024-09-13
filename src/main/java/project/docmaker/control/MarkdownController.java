@@ -7,6 +7,7 @@ import project.docmaker.utility.MiscConstants;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collection;
 
 public class MarkdownController
 {
@@ -16,8 +17,12 @@ public class MarkdownController
 
 
 
-	public static void createMarkdownFile (final File targetFile, final Iterable<Section> sections)
+	public static void createMarkdownFile (final File targetFile, final Collection<Section> sections)
 	{
+		if (sections.isEmpty())
+		{
+			return;
+		}
 		try (final FileWriter fileWriter = new FileWriter(targetFile))
 		{
 			for (final Section section : sections)

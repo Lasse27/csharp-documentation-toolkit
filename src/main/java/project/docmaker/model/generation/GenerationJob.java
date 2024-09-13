@@ -1,8 +1,9 @@
 package project.docmaker.model.generation;
 
-import java.nio.file.Path;
+import java.io.File;
+import java.text.MessageFormat;
 
-public record GenerationJob(Path sourcePath, Path targetPath)
+public record GenerationJob(File sourceFile, File targetFile)
 {
 	/**
 	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
@@ -12,6 +13,6 @@ public record GenerationJob(Path sourcePath, Path targetPath)
 	@Override
 	public String toString ()
 	{
-		return "GenerationJob{" + "sourcePath=" + this.sourcePath + ", targetPath=" + this.targetPath + '}';
+		return MessageFormat.format("GenerationJob'{'sourceFile={0}, targetFile={1}'}'", this.sourceFile, this.targetFile);
 	}
 }
