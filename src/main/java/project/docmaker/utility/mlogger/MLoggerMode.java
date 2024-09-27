@@ -6,11 +6,6 @@ import org.jetbrains.annotations.NotNull;
 import java.text.MessageFormat;
 
 
-/**
- * @param name
- * @param consoleColor
- * @param enableTimestamps
- */
 @NoLogger
 public record MLoggerMode(String name, ConsoleColor consoleColor, boolean enableTimestamps)
 {
@@ -28,7 +23,7 @@ public record MLoggerMode(String name, ConsoleColor consoleColor, boolean enable
 	 * The debug {@code MLoggerMode} level is used to display the finest information in cyan formatting.
 	 */
 	@NotNull
-	public static final MLoggerMode DEBUG = new MLoggerMode("DEBUGGING ", ConsoleColor.CYAN, true);
+	public static final MLoggerMode DEBUG = new MLoggerMode("DEBUGGING", ConsoleColor.CYAN, true);
 
 	/**
 	 * The default {@code MLoggerMode} level.
@@ -59,44 +54,6 @@ public record MLoggerMode(String name, ConsoleColor consoleColor, boolean enable
 	 */
 	@NotNull
 	private static final String TO_STRING_PATTERN = "MLoggerMode'{'name=''{0}'', consoleColor={1}, enableTimestamps={2}'}'";
-
-	private static int identifierLength = 11;
-
-
-	public MLoggerMode (final String name, final ConsoleColor consoleColor, final boolean enableTimestamps)
-	{
-		if (name.length() < getIdentifierLength())
-		{
-			this.name = padString(name, getIdentifierLength());
-		}
-		else
-		{
-			this.name = name.substring(0, getIdentifierLength());
-		}
-
-		this.consoleColor = consoleColor;
-		this.enableTimestamps = enableTimestamps;
-	}
-
-
-	private static String padString (final String str, final int length)
-	{
-		final StringBuilder stringBuilder = new StringBuilder(str);
-		stringBuilder.append(" ".repeat(Math.max(0, length - stringBuilder.length())));
-		return stringBuilder.toString();
-	}
-
-
-	public static int getIdentifierLength ()
-	{
-		return identifierLength;
-	}
-
-
-	public static void setIdentifierLength (final int identifierLength)
-	{
-		MLoggerMode.identifierLength = identifierLength;
-	}
 
 
 	/**

@@ -1,11 +1,13 @@
 package project.docmaker;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.net.URL;
@@ -58,8 +60,6 @@ public class MasterFormPresenter implements Initializable
 	@Override
 	public void initialize (final URL location, final ResourceBundle resources)
 	{
-		this.minimizeMenuButton.setOnAction(_ -> Program.stage.setIconified(true));
-		this.closeMenuButton.setOnAction(_ -> Program.stage.close());
 	}
 
 
@@ -69,6 +69,22 @@ public class MasterFormPresenter implements Initializable
 		final Window window = ((Node) mouseEvent.getSource()).getParent().getScene().getWindow();
 		window.setY(mouseEvent.getScreenY() - this.screenY);
 		window.setX(mouseEvent.getScreenX() - this.screenX);
+	}
+
+
+	@FXML
+	void onMinimizeMenuButtonClicked (final ActionEvent event)
+	{
+		final Stage stage = (Stage) ((Node) event.getSource()).getParent().getScene().getWindow();
+		stage.setIconified(true);
+	}
+
+
+	@FXML
+	void onCloseMenuButtonClicked (final ActionEvent event)
+	{
+		final Stage stage = (Stage) ((Node) event.getSource()).getParent().getScene().getWindow();
+		stage.close();
 	}
 
 

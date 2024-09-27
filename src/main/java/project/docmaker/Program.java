@@ -2,43 +2,37 @@ package project.docmaker;
 
 
 import javafx.application.Application;
+import javafx.css.Match;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import project.docmaker.control.MarkdownController;
-import project.docmaker.control.RegexController;
-import project.docmaker.model.structure.Section;
-import project.docmaker.utility.mlogger.MLogger;
+import org.intellij.lang.annotations.Language;
+import org.intellij.lang.annotations.RegExp;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.Collection;
-
-import static project.docmaker.utility.mlogger.MLoggerMode.INFORMATION;
 
 
 public class Program extends Application
 {
 
-	public static Stage stage = null;
-
-
 	public static void main (final String[] args) throws IOException
 	{
-		MLogger.logLn(INFORMATION, "Read the test file: \"src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.cs\"");
-		final File file = new File("src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.cs");
-		final Collection<Section> sections = new ArrayList<>();
-		for (final CharSequence doc : RegexController.findDocumentations(Files.readString(file.toPath())))
+		@Language("RegExp")
+		String method_pattern = "\\b(public|private|internal|protected)\\s*\\b(static|virtual|abstract)?\\s*[a-zA-Z]*(?<method>\\s[a-zA-Z]+\\s*)" + @
+		"\"(([a-zA-Z\[\]\<\>]*\s*[a-zA-Z]*\s*)[,]?\s*)+\)";
+		while ((line = file.ReadLine()) != null)
 		{
-			final Section section = RegexController.getSectionFromString((String) doc);
-			section.toStringCollection().forEach(info -> MLogger.logLn(INFORMATION, info));
-			sections.add(section);
+			Regex expression = new Regex(method_pattern);
+			Match match = expression.Match(line);
+			if (match.Success)
+			{
+				string result = match.Groups["method"].Value;
+				MessageBox.Show(result);
+			}
 		}
-		MarkdownController.createMarkdownFile(new File("src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.md"),
-				sections);
+
+
 		Application.launch(args);
 	}
 
@@ -48,12 +42,11 @@ public class Program extends Application
 	{
 		final FXMLLoader fxmlLoader = new FXMLLoader(Program.class.getResource("Wireframing.fxml"));
 		final Scene scene = new Scene(fxmlLoader.load());
-		Program.stage = stage;
-		Program.stage.setScene(scene);
-		Program.stage.setResizable(false);
-		Program.stage.sizeToScene();
-		Program.stage.initStyle(StageStyle.UNDECORATED);
-		Program.stage.show();
+		stage.setScene(scene);
+		stage.setResizable(false);
+		stage.sizeToScene();
+		stage.initStyle(StageStyle.UNDECORATED);
+		stage.show();
 	}
 
 }

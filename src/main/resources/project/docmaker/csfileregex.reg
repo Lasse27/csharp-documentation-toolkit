@@ -1,0 +1,1 @@
+(?<keywords>(?:(?:public|private|static|readonly|protected|override|struct|class|interface)\s+)+)(?<type>.*?)\s+(?:.*)\s+(?:;|=|>|\{|\R)
