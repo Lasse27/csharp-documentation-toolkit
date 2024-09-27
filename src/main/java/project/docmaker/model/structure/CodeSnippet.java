@@ -1,12 +1,14 @@
 package project.docmaker.model.structure;
 
+
 import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NotNull;
-import project.docmaker.utility.NoLogger;
+import project.docmaker.utility.mlogger.NoLogger;
 
 import java.text.MessageFormat;
 
 import static project.docmaker.utility.MiscConstants.MARKDOWN;
+
 
 /**
  * The record {@code CodeSnippet} represents a {@link MarkdownStructure} that acts like a code snippet at the end of each Markdown section. It's
@@ -36,7 +38,6 @@ public record CodeSnippet(String content) implements MarkdownStructure
 	private static final String MARKDOWN_PATTERN = "### _Code-Snippet:_ ``{0}``\r\n";
 
 
-
 	/**
 	 * {@inheritDoc}
 	 */
@@ -45,7 +46,6 @@ public record CodeSnippet(String content) implements MarkdownStructure
 	{
 		return MessageFormat.format(MARKDOWN_PATTERN, this.content);
 	}
-
 
 
 	/**

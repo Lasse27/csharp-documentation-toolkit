@@ -8,10 +8,9 @@ import project.docmaker.model.structure.Section;
 import project.docmaker.model.tag.Parameter;
 import project.docmaker.model.tag.Return;
 import project.docmaker.model.tag.Summary;
-import project.docmaker.utility.ILogger;
-import project.docmaker.utility.Logger;
 import project.docmaker.utility.LoggingConstants;
 import project.docmaker.utility.StringFormat;
+import project.docmaker.utility.mlogger.MLogger;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,22 +19,17 @@ import java.util.regex.Pattern;
 
 import static project.docmaker.utility.RegexConstants.*;
 import static project.docmaker.utility.StringFormat.FormatOption;
+import static project.docmaker.utility.mlogger.MLoggerMode.DEBUG;
+import static project.docmaker.utility.mlogger.MLoggerMode.INFORMATION;
 
 
 public final class RegexController
 {
 
 	/**
-	 * A {@link Logger} object, which is being used to write formatted outputs into the console.
-	 */
-	private static final ILogger LOGGER = new Logger(RegexController.class.getSimpleName());
-
-
-	/**
 	 * The {@link StringFormat} object used to normalize the {@link String} of the read file.
 	 */
 	private static final StringFormat STRING_FORMAT = new StringFormat(FormatOption.NORMALIZE, FormatOption.REMOVE_MARKS);
-
 
 
 	/**
@@ -44,7 +38,6 @@ public final class RegexController
 	private RegexController ()
 	{
 	}
-
 
 
 	/**
@@ -65,10 +58,9 @@ public final class RegexController
 		}
 
 		// Logging the number of matches and returning the generated collection.
-		LOGGER.logf(ILogger.Level.DEBUG, "Matcher has found {0} for Pattern: {1}", matches.size(), DOCUMENTATION_CODE_PATTERN);
+		MLogger.logLnf(INFORMATION, "Matcher has found {0} for Pattern: {1}", matches.size(), DOCUMENTATION_CODE_PATTERN);
 		return matches;
 	}
-
 
 
 	/**
@@ -82,25 +74,24 @@ public final class RegexController
 	{
 		// Getting the header of the section
 		final Header header = getClassHeaderFromArea(charSequence);
-		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, header);
+		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, header);
 
 		// Collecting the tags from the documentation and creating the body of the section
 		final Collection<Summary> summaryCollection = RegexController.getSummariesFromCharSequence(charSequence);
 		final Collection<Parameter> parameterCollection = RegexController.getParametersFromCharSequence(charSequence);
 		final Collection<Return> returnCollection = RegexController.getReturnsFromCharSequence(charSequence);
 		final Body body = new Body(summaryCollection, parameterCollection, returnCollection);
-		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, body);
+		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, body);
 
 		// Collecting the code snippet and creating the codeSnippet of the section.
 		final CodeSnippet codeSnippet = RegexController.getSnippetFromCharSequence(charSequence);
-		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, codeSnippet);
+		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, codeSnippet);
 
 		// Creating the metadata and creating the section.
 		final Section section = new Section(header, body, codeSnippet);
-		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, section);
+		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, section);
 		return section;
 	}
-
 
 
 	/**
@@ -120,12 +111,11 @@ public final class RegexController
 		if (matcher.find())
 		{
 			final Header header = new Header(STRING_FORMAT.apply(matcher.group(1)), STRING_FORMAT.apply(matcher.group(2)));
-			LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, header);
+			MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, header);
 			return header;
 		}
 		return Header.EMPTY;
 	}
-
 
 
 	/**
@@ -143,10 +133,9 @@ public final class RegexController
 
 		// Creating the snippet instance and returning the result.
 		final CodeSnippet codeSnippet = new CodeSnippet(cleansedSequence);
-		LOGGER.logf(ILogger.Level.DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, codeSnippet);
+		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, codeSnippet);
 		return codeSnippet;
 	}
-
 
 
 	private static Collection<Summary> getSummariesFromCharSequence (final CharSequence charSequence)
@@ -161,7 +150,6 @@ public final class RegexController
 	}
 
 
-
 	private static Collection<Return> getReturnsFromCharSequence (final CharSequence sequence)
 	{
 		final Matcher returnsMatcher = RETURN_PATTERN.matcher(sequence);
@@ -172,7 +160,6 @@ public final class RegexController
 		}
 		return returnCollection;
 	}
-
 
 
 	private static Collection<Parameter> getParametersFromCharSequence (final CharSequence sequence)
@@ -186,7 +173,6 @@ public final class RegexController
 		}
 		return parameterCollection;
 	}
-
 
 
 	private static boolean areaContainsClassDoc (final CharSequence area)

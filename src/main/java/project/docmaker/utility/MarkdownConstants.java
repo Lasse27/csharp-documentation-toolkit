@@ -1,5 +1,6 @@
 package project.docmaker.utility;
 
+
 /**
  * The interface {@code LoggingConstants} contains mainly Markdown formats for the creation of Markdown documents.
  *

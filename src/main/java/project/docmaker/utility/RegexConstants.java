@@ -1,9 +1,11 @@
 package project.docmaker.utility;
 
+
 import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NonNls;
 
 import java.util.regex.Pattern;
+
 
 /**
  * The {@code RegexConstants} class contains certain String patterns and {@link Pattern} objects, which can be used to analyze C#-Code files.
@@ -16,10 +18,9 @@ public interface RegexConstants
 {
 
 	/**
-	 * The language code for the @Language annotation and regex.
+	 * The language code for the {@link Language} annotation of regular expressions.
 	 */
-	@NonNls
-	String REG_EXP = "RegExp";
+	@NonNls String REG_EXP = "RegExp";
 
 
 	@Language (REG_EXP)
@@ -35,7 +36,7 @@ public interface RegexConstants
 
 
 	@Language (REG_EXP)
-	String CLASS_WITHOUT_DOC = "((?:(?:public|private|internal|class|static|readonly|sealed)\\s+){1,5})(.*?)([();{])";
+	String CLASS_WITHOUT_DOC = "((?:(?:public|private|internal|class|static|struct|record|readonly|sealed)\\s+){1,5})(.*?)([();{])";
 
 	Pattern CLASS_WITHOUT_DOC_REGEX = Pattern.compile(CLASS_WITHOUT_DOC, Pattern.MULTILINE);
 

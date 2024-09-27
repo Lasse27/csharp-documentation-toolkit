@@ -1,5 +1,8 @@
 package project.docmaker.utility;
 
+
+import project.docmaker.utility.mlogger.NoLogger;
+
 import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.Locale;
@@ -18,12 +21,10 @@ public record StringFormat(FormatOption... options)
 	private static final String TEXT_DISPLAY_PATTERN = StringFormat.class.getSimpleName() + "[options={0}]";
 
 
-
 	private static String removeMarks (final String input)
 	{
 		return input.replaceAll("/{3}", EMPTY_STRING).strip();
 	}
-
 
 
 	private static String upperString (final String input)
@@ -32,13 +33,11 @@ public record StringFormat(FormatOption... options)
 	}
 
 
-
 	private static String lowerString (final String input)
 	{
 
 		return input.toLowerCase(Locale.ROOT);
 	}
-
 
 
 	private static String normalizeString (final String input)
@@ -52,7 +51,6 @@ public record StringFormat(FormatOption... options)
 		}
 		return stringBuilder.toString();
 	}
-
 
 
 	public String apply (final String input)
@@ -72,7 +70,6 @@ public record StringFormat(FormatOption... options)
 	}
 
 
-
 	/**
 	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
 	 *
@@ -83,7 +80,6 @@ public record StringFormat(FormatOption... options)
 	{
 		return MessageFormat.format(TEXT_DISPLAY_PATTERN, Arrays.toString(this.options));
 	}
-
 
 
 	public enum FormatOption
@@ -101,7 +97,6 @@ public record StringFormat(FormatOption... options)
 		 * {@link MessageFormat} pattern, which is used, when the {@link FormatOption#toString()} method gets called
 		 */
 		private static final String TEXT_DISPLAY_PATTERN = FormatOption.class.getSimpleName() + "[value={0}]";
-
 
 
 		/**

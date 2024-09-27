@@ -1,8 +1,10 @@
 package project.docmaker.model.tag;
 
-import project.docmaker.utility.NoLogger;
+
+import project.docmaker.utility.mlogger.NoLogger;
 
 import java.text.MessageFormat;
+
 
 @NoLogger
 public record Parameter(String name, String content)
@@ -12,7 +14,6 @@ public record Parameter(String name, String content)
 	 * {@link MessageFormat} pattern, which is used, when the {@link Parameter#toString()} method gets called
 	 */
 	private static final String TEXT_DISPLAY_PATTERN = Parameter.class.getSimpleName() + "[name={0}, content={1}]";
-
 
 
 	/**

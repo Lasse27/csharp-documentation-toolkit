@@ -1,12 +1,12 @@
 package project.docmaker.control;
 
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import project.docmaker.model.generation.GenerationJob;
 import project.docmaker.model.structure.Section;
 import project.docmaker.model.tag.Parameter;
-import project.docmaker.utility.ILogger;
-import project.docmaker.utility.Logger;
+import project.docmaker.utility.mlogger.MLogger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,14 +17,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
+import static project.docmaker.utility.mlogger.MLoggerMode.ERROR;
+import static project.docmaker.utility.mlogger.MLoggerMode.INFORMATION;
+
 
 public final class GenerationExecutor implements Runnable
 {
-
-	/**
-	 * A {@link Logger} object, which is being used to write formatted outputs into the console.
-	 */
-	private static final ILogger LOGGER = new Logger(GenerationExecutor.class.getSimpleName());
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Parameter#toString()} method gets called
@@ -35,7 +33,6 @@ public final class GenerationExecutor implements Runnable
 	 * The {@link GenerationJob} that contains the necessary information for the execution of the {@link GenerationExecutor}.
 	 */
 	private final GenerationJob job;
-
 
 
 	/**
@@ -49,10 +46,10 @@ public final class GenerationExecutor implements Runnable
 	}
 
 
-
 	/**
-	 * {@inheritDoc} Executes the {@link GenerationJob} that contains the necessary information for the generation.
-	 * Displays an alert on the screen if the generation has failed.
+	 * {@inheritDoc} Executes the {@link GenerationJob} that contains the necessary information for the generation. Displays an alert on the
+	 * screen if
+	 * the generation has failed.
 	 */
 	@Override
 	public void run ()
@@ -67,11 +64,10 @@ public final class GenerationExecutor implements Runnable
 		}
 		catch (final IOException ex)
 		{
-			LOGGER.log(ILogger.Level.ERROR, "Error occurred");
+			MLogger.logLn(ERROR, "Error occurred");
 			new Alert(Alert.AlertType.ERROR, ex.getLocalizedMessage(), ButtonType.OK).showAndWait();
 		}
 	}
-
 
 
 	/**
@@ -90,7 +86,6 @@ public final class GenerationExecutor implements Runnable
 		}
 		return Arrays.stream(sourceFileStrings).map(file -> new File(this.job.sourceFile(), file)).toArray(File[]::new);
 	}
-
 
 
 	/**
@@ -114,10 +109,9 @@ public final class GenerationExecutor implements Runnable
 			// Creating the target Markdown file
 			final String targetFileName = file.getName().replaceFirst("[.][^.]+$", ".md");
 			MarkdownController.createMarkdownFile(new File(this.job.targetFile(), targetFileName), sections);
-			LOGGER.log(ILogger.Level.NORMAL, targetFileName + "created...");
+			MLogger.logLn(INFORMATION, STR."\{targetFileName} created...");
 		}
 	}
-
 
 
 	/**

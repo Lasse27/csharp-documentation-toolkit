@@ -1,8 +1,10 @@
 package project.docmaker.model.generation;
 
-import project.docmaker.utility.NoLogger;
+
+import project.docmaker.utility.mlogger.NoLogger;
 
 import java.text.MessageFormat;
+
 
 /**
  * The record {@code GenerationPattern} represents a Pattern, that can be used to create instances of {@link GenerationJob} with the
@@ -25,7 +27,6 @@ public record GenerationPattern(String sourceFolderPath, String targetFolderPath
 	 * {@link MessageFormat} pattern, which is used, when the {@link GenerationPattern#toString()} method gets called
 	 */
 	private static final String TEXT_DISPLAY_PATTERN = GenerationPattern.class.getSimpleName() + "[sourceFolderPath={0}, targetFolderPath={1}]";
-
 
 
 	/**

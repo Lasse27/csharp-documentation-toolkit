@@ -9,15 +9,174 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Lotta staff">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLoggerMode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJobFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJob.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJobFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/DBTransfer/DBTransferJob.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/DBTransfer/DBTransferJobFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/DBTransfer/DBTransferResources.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Installation/InstallationJob.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Installation/InstallationJobFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Installation/InstallationPattern.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Powershell/ImplementationRessources.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Powershell/PowershellJob.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Powershell/RobocopyJob.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Tool/AppConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Tool/IExecutor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Tool/IJob.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Translator/TranslationContainer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Translator/TranslationJob.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Translator/TranslationJobFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Translator/TranslationLanguage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Translator/TranslationMode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Translator/TranslationResources.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/imgs/green_check.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/stylesheets/stylesheet_dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Group.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Group.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IServer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/JsonSnakeCaseNamingPolicy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/JsonSnakeCaseNamingPolicy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Server.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Server.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationPattern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/CodeSnippet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/CodeSnippet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/MarkdownStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/MarkdownStructure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Section.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Parameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Parameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Return.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Return.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Summary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Summary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/ConsoleColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/ConsoleColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/ConstantInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/ConstantInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/ILogger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/Logger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/LoggingConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/LoggingConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/MarkdownConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/MarkdownConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/MiscConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/MiscConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/NoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/NoLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/RegexConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/RegexConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/StringFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/StringFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterFormView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterFormView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/docmaker/control/RegexControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/App.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/App.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/App.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/FodyWeavers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/FodyWeavers.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/LocalizationProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.fr.resx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Powershell/ImplementationRessources.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.ja.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.ko.resx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/DBTransfer/DBTransferResources.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.ru.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.zh-Hans.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Localization/Strings.zh-Hant.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Models/AppSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Models/Group.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Models/Server.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Models/Settings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/PublishProfiles/FolderProfile.pubxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/PublishProfiles/win-arm.pubxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/PublishProfiles/win-x64.pubxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/PublishProfiles/win-x64.pubxml.user" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/PublishProfiles/win-x86.pubxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/PublishProfiles/win-x86.pubxml.user" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/Resources.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Properties/Resources.resx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Translator/TranslationResources.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/RobotoMono/RobotoMono-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/privoxy.exe.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/privoxy_conf.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ss128.pdn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ss32.pdn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ss32Fill.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ss32In.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ss32Out.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ss32Outline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Resources/ssw128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/OnlineConfigService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/PortForwarder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/PrivoxyRunner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/Sip003Plugin.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/SystemProxy/RAS.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/SystemProxy/WinINet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Services/UpdateChecker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Shadowsocks.WPF.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Utils/AutoStartup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Utils/FileManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Utils/IPCService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Utils/ProtocolHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Utils/SystemProxy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Utils/Utilities.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/DashboardViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/ForwardProxyViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/MainWindowViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/OnlineConfigViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/RoutingViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/ServerSharingViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/ServersViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/SettingsViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/ViewModels/VersionUpdatePromptViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/DashboardView.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/DashboardView.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/ForwardProxyView.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/ForwardProxyView.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/MainWindow.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/MainWindow.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/OnlineConfigView.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/OnlineConfigView.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/RoutingView.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/RoutingView.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/ServerSharingView.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/ServerSharingView.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/ServersView.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/ServersView.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/SettingsView.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/SettingsView.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/VersionUpdatePromptView.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/Views/VersionUpdatePromptView.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks.WPF/shadowsocks.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Group.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Group.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IGroup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IGroup.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IServer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/IServer.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/JsonSnakeCaseNamingPolicy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/JsonSnakeCaseNamingPolicy.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Server.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Models/Server.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Shadowsocks.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/resources/Shadowsocks/Utilities/Base64Url.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +193,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Record" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="CSS File" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -51,7 +211,7 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationExecutor.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationPattern.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" root0="FORCE_HIGHLIGHTING" />
@@ -60,18 +220,15 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/MarkdownStructure.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Section.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/utility/ConstantInterface.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/utility/NoLogger.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/utility/RegexConstants.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLogger.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/NoLogger.java" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -92,8 +249,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.GluonStart.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "Application.Standard Configuration.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
     "INTRODUCE_CONSTANT_NONNLS": "true",
     "JUnit.RegexControllerTest.executor": "Run",
     "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor": "Run",
@@ -101,22 +260,32 @@
     "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-resources-plugin:2.6:testResources].executor": "Run",
     "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:help].executor": "Run",
     "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test].executor": "Run",
+    "Maven.CS_Documentation_Toolkit [com.gluonhq:gluonfx-maven-plugin:1.0.24:run].executor": "Run",
+    "Maven.CS_Documentation_Toolkit [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor": "Run",
+    "Maven.CS_Documentation_Toolkit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "OverrideImplement.generate.javadoc": "true",
+    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
     "last.edited.regexp": "public class UserAuthentificator : Execitpr, wiajda, woadkaw, ana{\n    private static final Logger _Logger = new Logger();\n\n    public String toString()\n    {\n        super.toString();\n    }\n}",
-    "last_opened_file_path": "C:/Users/Lasse/IdeaProjects/VAULT_EA",
+    "last_opened_file_path": "C:/Users/lh/IdeaProjects/CSharpDocumentationToolkit",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.371063",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "Errors",
@@ -125,14 +294,21 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="project.docmaker.utility.logging" />
       <recent name="project.docmaker.model.generation" />
       <recent name="project.docmaker.model.structure.section" />
       <recent name="project.docmaker.model.section" />
       <recent name="project.docmaker" />
-      <recent name="project.docmaker.model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lh\IdeaProjects\cs-docmaker\src\main\resources\project\docmaker" />
+      <recent name="C:\Users\lh\IdeaProjects\cs-docmaker\src\main\java\project\docmaker" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lh\IdeaProjects\cs-docmaker\src\main\resources\project\docmaker" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
       <recent name="project.docmaker.utility.constant.MiscConstants" />
@@ -144,19 +320,27 @@
       <recent name="project.docmaker.control" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="project.docmaker.utility.mlogger" />
       <recent name="project.docmaker.control" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Standard Configuration">
+    <configuration name="GluonStart" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="project.docmaker.HelloFXML" />
+      <module name="CSharpDocumentationToolkit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Standard Configuration" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="project.docmaker.Program" />
-      <module name="CS_DocumentationMaker" />
+      <module name="CSharpDocumentationToolkit" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="RegexControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CS_DocumentationMaker" />
+      <module name="CSharpDocumentationToolkit" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="project.docmaker.control.*" />
@@ -170,6 +354,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="CSharpDocumentationToolkit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="CSharpDocumentationToolkit" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Standard Configuration" />
+      <item itemvalue="Application.GluonStart" />
+      <item itemvalue="JUnit.RegexControllerTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.RegexControllerTest" />
@@ -179,8 +381,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="jdk-17.0.10-graalvm-jdk-17.0.10-4caba194b151-6d8b2ca1" />
+        <option value="jdk-17.0.9-jbr-17.0.9-4caba194b151-51f1b679" />
       </set>
     </attachedChunks>
   </component>
@@ -206,6 +408,14 @@
       <workItem from="1726071195282" duration="3456000" />
       <workItem from="1726159654341" duration="10391000" />
       <workItem from="1726243589685" duration="3791000" />
+      <workItem from="1727334786392" duration="363000" />
+      <workItem from="1727335206934" duration="1131000" />
+      <workItem from="1727338084747" duration="1070000" />
+      <workItem from="1727349273714" duration="675000" />
+      <workItem from="1727350276187" duration="174000" />
+      <workItem from="1727355901535" duration="625000" />
+      <workItem from="1727421645181" duration="227000" />
+      <workItem from="1727421930466" duration="19812000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />

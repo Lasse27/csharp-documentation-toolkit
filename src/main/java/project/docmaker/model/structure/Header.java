@@ -1,11 +1,13 @@
 package project.docmaker.model.structure;
 
+
 import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NotNull;
 import project.docmaker.utility.MiscConstants;
-import project.docmaker.utility.NoLogger;
+import project.docmaker.utility.mlogger.NoLogger;
 
 import java.text.MessageFormat;
+
 
 /**
  * The record {@code Header} represents a {@link MarkdownStructure} that acts like a the header of each Markdown section. It's split into a descriptor
@@ -42,7 +44,6 @@ public record Header(String descriptor, String content) implements MarkdownStruc
 	private static final String MARKDOWN_PATTERN = "# _{0} {1}_\r\n";
 
 
-
 	/**
 	 * {@inheritDoc}
 	 */
@@ -51,7 +52,6 @@ public record Header(String descriptor, String content) implements MarkdownStruc
 	{
 		return MessageFormat.format(MARKDOWN_PATTERN, this.descriptor, this.content);
 	}
-
 
 
 	/**

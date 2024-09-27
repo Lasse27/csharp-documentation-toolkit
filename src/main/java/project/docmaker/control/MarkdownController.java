@@ -1,5 +1,6 @@
 package project.docmaker.control;
 
+
 import project.docmaker.model.structure.Header;
 import project.docmaker.model.structure.Section;
 import project.docmaker.utility.MiscConstants;
@@ -9,12 +10,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collection;
 
+
 public class MarkdownController
 {
 	private MarkdownController ()
 	{
 	}
-
 
 
 	public static void createMarkdownFile (final File targetFile, final Collection<Section> sections)

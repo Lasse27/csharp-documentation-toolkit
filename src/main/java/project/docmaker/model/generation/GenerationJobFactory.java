@@ -1,5 +1,6 @@
 package project.docmaker.model.generation;
 
+
 import java.io.File;
 import java.nio.file.Path;
 
@@ -9,7 +10,6 @@ public final class GenerationJobFactory
 	private GenerationJobFactory ()
 	{
 	}
-
 
 
 	public static GenerationJob createJob (final GenerationPattern pattern)

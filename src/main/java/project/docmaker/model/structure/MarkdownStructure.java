@@ -1,6 +1,8 @@
 package project.docmaker.model.structure;
 
+
 import org.jetbrains.annotations.NotNull;
+
 
 /**
  * The interface {@code MarkdownStructure} is implemented as an {@link FunctionalInterface} that only provides a method and resembles a single

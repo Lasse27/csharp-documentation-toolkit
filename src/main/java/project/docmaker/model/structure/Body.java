@@ -1,15 +1,17 @@
 package project.docmaker.model.structure;
 
+
 import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NotNull;
 import project.docmaker.model.tag.Parameter;
 import project.docmaker.model.tag.Return;
 import project.docmaker.model.tag.Summary;
 import project.docmaker.utility.MiscConstants;
-import project.docmaker.utility.NoLogger;
+import project.docmaker.utility.mlogger.NoLogger;
 
 import java.text.MessageFormat;
 import java.util.Collection;
+
 
 /**
  * The record {@code Body} represents a {@link MarkdownStructure} that acts like the body of each Markdown section. It contains the description of the
@@ -76,7 +78,6 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 	private static final String RETURNS_MARKDOWN_PATTERN = "{0}\r\n";
 
 
-
 	/**
 	 * {@inheritDoc}
 	 */
@@ -85,20 +86,20 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 	{
 		final StringBuilder stringBuilder = new StringBuilder();
 
-		if (!this.summaries.isEmpty())
+		if (! this.summaries.isEmpty())
 		{
 			stringBuilder.append(SUMMARY_MARKDOWN_HEADER);
 			this.summaries.stream().map(summary -> MessageFormat.format(SUMMARY_MARKDOWN_PATTERN, summary.content())).forEach(stringBuilder::append);
 		}
 
-		if (!this.parameters.isEmpty())
+		if (! this.parameters.isEmpty())
 		{
 			stringBuilder.append(PARAMETER_MARKDOWN_HEADER);
 			this.parameters.stream().map(parameter -> MessageFormat.format(PARAMETER_MARKDOWN_PATTERN, parameter.name(), parameter.content()))
 					.forEach(stringBuilder::append);
 		}
 
-		if (!this.returns.isEmpty())
+		if (! this.returns.isEmpty())
 		{
 			stringBuilder.append(RETURNS_MARKDOWN_HEADER);
 			this.returns.stream().map(returns -> MessageFormat.format(RETURNS_MARKDOWN_PATTERN, returns.content())).forEach(stringBuilder::append);
@@ -107,7 +108,6 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 
 		return stringBuilder.toString();
 	}
-
 
 
 	/**

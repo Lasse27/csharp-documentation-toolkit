@@ -1,8 +1,10 @@
 package project.docmaker.model.tag;
 
-import project.docmaker.utility.NoLogger;
+
+import project.docmaker.utility.mlogger.NoLogger;
 
 import java.text.MessageFormat;
+
 
 @NoLogger
 public record Summary(String content)
@@ -12,7 +14,6 @@ public record Summary(String content)
 	 * {@link MessageFormat} pattern, which is used, when the {@link Summary#toString()} method gets called
 	 */
 	private static final String TEXT_DISPLAY_PATTERN = Summary.class.getSimpleName() + "[content={0}]";
-
 
 
 	/**

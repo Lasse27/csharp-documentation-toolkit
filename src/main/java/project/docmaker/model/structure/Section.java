@@ -1,7 +1,7 @@
 package project.docmaker.model.structure;
 
 
-import project.docmaker.utility.NoLogger;
+import project.docmaker.utility.mlogger.NoLogger;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -17,7 +17,6 @@ public record Section(Header header, Body body, CodeSnippet codeSnippet)
 	 * {@link MessageFormat} pattern, which is used, when the {@link Section#toString()} method gets called
 	 */
 	private static final String TEXT_DISPLAY_PATTERN = Section.class.getSimpleName() + "[header={0}, body={1}, codesnippet={2}]";
-
 
 
 	/**
@@ -44,7 +43,6 @@ public record Section(Header header, Body body, CodeSnippet codeSnippet)
 		return objectInformation;
 
 	}
-
 
 
 	/**

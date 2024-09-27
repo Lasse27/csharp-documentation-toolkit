@@ -1,7 +1,9 @@
 package project.docmaker.model.generation;
 
+
 import java.io.File;
 import java.text.MessageFormat;
+
 
 public record GenerationJob(File sourceFile, File targetFile)
 {
