@@ -38,7 +38,7 @@ public record Header(String descriptor, String content) implements MarkdownStruc
 
 
 	/**
-	 * {@link MessageFormat} pattern, which is used, when the {@link CodeSnippet#toMarkdown()} method gets called
+	 * {@link MessageFormat} pattern, which is used, when the {@link Code#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
 	private static final String MARKDOWN_PATTERN = "# _{0} {1}_\r\n";

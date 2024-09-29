@@ -2,7 +2,7 @@ package project.docmaker.control;
 
 
 import project.docmaker.model.structure.Body;
-import project.docmaker.model.structure.CodeSnippet;
+import project.docmaker.model.structure.Code;
 import project.docmaker.model.structure.Header;
 import project.docmaker.model.structure.Section;
 import project.docmaker.model.tag.Parameter;
@@ -84,11 +84,11 @@ public final class RegexController
 		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, body);
 
 		// Collecting the code snippet and creating the codeSnippet of the section.
-		final CodeSnippet codeSnippet = RegexController.getSnippetFromCharSequence(charSequence);
-		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, codeSnippet);
+		final Code code = RegexController.getSnippetFromCharSequence(charSequence);
+		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, code);
 
 		// Creating the metadata and creating the section.
-		final Section section = new Section(header, body, codeSnippet);
+		final Section section = new Section(header, body, code);
 		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, section);
 		return section;
 	}
@@ -119,22 +119,22 @@ public final class RegexController
 
 
 	/**
-	 * Parses the given String multiple times with different regular expressions and creates a {@link CodeSnippet} instance from the found matches.
+	 * Parses the given String multiple times with different regular expressions and creates a {@link Code} instance from the found matches.
 	 *
 	 * @param charSequence The input {@link String} which is parsed within the method.
 	 *
-	 * @return A {@link CodeSnippet} instance, that could be generated from the given {@link String}.
+	 * @return A {@link Code} instance, that could be generated from the given {@link String}.
 	 */
-	private static CodeSnippet getSnippetFromCharSequence (final String charSequence)
+	private static Code getSnippetFromCharSequence (final String charSequence)
 	{
 		// Cleanes the sequence of all documentations and tabs / newlines etc.
 		String cleansedSequence = charSequence.replaceAll(DOCUMENTATION_SINGLE_LINE_REGEX, "");
 		cleansedSequence = STRING_FORMAT.apply(cleansedSequence);
 
 		// Creating the snippet instance and returning the result.
-		final CodeSnippet codeSnippet = new CodeSnippet(cleansedSequence);
-		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, codeSnippet);
-		return codeSnippet;
+		final Code code = new Code(cleansedSequence);
+		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, code);
+		return code;
 	}
 
 

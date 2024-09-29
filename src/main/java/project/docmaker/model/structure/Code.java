@@ -22,17 +22,17 @@ import static project.docmaker.utility.MiscConstants.MARKDOWN;
  * @since 11.09.2024
  */
 @NoLogger
-public record CodeSnippet(String content) implements MarkdownStructure
+public record Code(String content) implements MarkdownStructure
 {
 
 	/**
-	 * {@link MessageFormat} pattern, which is used, when the {@link CodeSnippet#toString()} method gets called
+	 * {@link MessageFormat} pattern, which is used, when the {@link Code#toString()} method gets called
 	 */
-	private static final String TEXT_DISPLAY_PATTERN = CodeSnippet.class.getSimpleName() + "[snippet={0}]";
+	private static final String TEXT_DISPLAY_PATTERN = Code.class.getSimpleName() + "[snippet={0}]";
 
 
 	/**
-	 * {@link MessageFormat} pattern, which is used, when the {@link CodeSnippet#toMarkdown()} method gets called
+	 * {@link MessageFormat} pattern, which is used, when the {@link Code#toMarkdown()} method gets called
 	 */
 	@Language (MARKDOWN)
 	private static final String MARKDOWN_PATTERN = "### _Code-Snippet:_ ``{0}``\r\n";

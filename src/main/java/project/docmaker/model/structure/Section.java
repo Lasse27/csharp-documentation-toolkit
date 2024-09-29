@@ -3,6 +3,7 @@ package project.docmaker.model.structure;
 
 import project.docmaker.utility.mlogger.NoLogger;
 
+import java.io.File;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,7 +11,7 @@ import java.util.stream.Collectors;
 
 
 @NoLogger
-public record Section(Header header, Body body, CodeSnippet codeSnippet)
+public record Section(Header header, Body body, Code code, File file)
 {
 
 	/**
@@ -29,7 +30,7 @@ public record Section(Header header, Body body, CodeSnippet codeSnippet)
 		final Collection<String> objectInformation = new ArrayList<>();
 		objectInformation.add("Class: " + this.getClass().getSimpleName());
 		objectInformation.add("Header: " + this.header);
-		objectInformation.add("Code: " + this.codeSnippet);
+		objectInformation.add("Code: " + this.code);
 
 		// Add summaries using Stream
 		objectInformation.addAll(this.body.summaries().stream().map(summary -> "Summary: " + summary).collect(Collectors.toList()));
@@ -53,6 +54,6 @@ public record Section(Header header, Body body, CodeSnippet codeSnippet)
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.header, this.body, this.codeSnippet);
+		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.header, this.body, this.code);
 	}
 }

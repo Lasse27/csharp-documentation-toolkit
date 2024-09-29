@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @author Lasse-Leander Hillen
  * @see Body
- * @see CodeSnippet
+ * @see Code
  * @see Header
  * @see FunctionalInterface
  * @since 11.09.2024

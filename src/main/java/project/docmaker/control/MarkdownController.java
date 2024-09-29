@@ -35,7 +35,7 @@ public class MarkdownController
 				fileWriter.append(section.header().toMarkdown());
 				fileWriter.append(MiscConstants.NEW_LINE);
 				fileWriter.append(section.body().toMarkdown());
-				fileWriter.append(section.codeSnippet().toMarkdown());
+				fileWriter.append(section.code().toMarkdown());
 				fileWriter.append(MiscConstants.NEW_LINE).append("---").append(MiscConstants.NEW_LINE);
 			}
 		}
