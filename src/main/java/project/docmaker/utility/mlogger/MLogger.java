@@ -48,12 +48,14 @@ public final class MLogger
 	private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(TIME, Locale.GERMANY).withZone(ZoneId.systemDefault());
 
 
+
 	/**
 	 * Private constructor to prohibit instantiation of the class, since it's supposed to be a static class.
 	 */
 	private MLogger ()
 	{
 	}
+
 
 
 	/**
@@ -65,20 +67,21 @@ public final class MLogger
 	 * @param mLoggerMode The desired {@link MLoggerMode}.
 	 * @param message     The message that's about to get logged.
 	 */
-	public static void logLn (final MLoggerMode mLoggerMode, final String message)
+	public static void logLn (final @NotNull MLoggerMode mLoggerMode, final String message)
 	{
 		final StringBuilder loggingBuilder = new StringBuilder();
 		if (mLoggerMode.enableTimestamps())
 		{
 			loggingBuilder.append(MessageFormat.format(LOG_SECTION_FORMAT, EMPTY_STR, FORMATTER.format(Instant.now()), EMPTY_STR));
 		}
-		if (! mLoggerMode.name().equals(EMPTY_STR))
+		if (!mLoggerMode.name().equals(EMPTY_STR))
 		{
 			loggingBuilder.append(MessageFormat.format(LOG_SECTION_FORMAT, mLoggerMode.consoleColor()
 					.toString(), mLoggerMode.name(), ConsoleColor.NORM));
 		}
 		System.out.println(loggingBuilder.append(message));
 	}
+
 
 
 	/**
@@ -93,6 +96,7 @@ public final class MLogger
 	{
 		logLn(MLoggerMode.INFORMATION, message);
 	}
+
 
 
 	/**
@@ -111,6 +115,7 @@ public final class MLogger
 	}
 
 
+
 	/**
 	 * Logs a message in the specified {@link MLoggerMode}.
 	 * <br>
@@ -121,10 +126,11 @@ public final class MLogger
 	 * @param messageFormat The {@link MessageFormat} that's about to get logged.
 	 * @param formats       The formats that'll be put into the message.
 	 */
-	public static void logLnf (final MLoggerMode mLoggerMode, final MessageFormat messageFormat, final Object... formats)
+	public static void logLnf (final MLoggerMode mLoggerMode, final @NotNull MessageFormat messageFormat, final Object... formats)
 	{
 		logLn(mLoggerMode, messageFormat.format(formats));
 	}
+
 
 
 	/**
@@ -141,4 +147,40 @@ public final class MLogger
 		logLnf(MLoggerMode.INFORMATION, message, formats);
 	}
 
+
+
+	public static void logEx (final @NotNull Exception exception)
+	{
+		MLogger.logSeparator();
+		MLogger.logLnf(MLoggerMode.ERROR, MessageFormat.format("{0}: {1}", exception.getClass().getSimpleName(), exception.getLocalizedMessage()));
+		if (exception.getCause() != null)
+		{
+			final Throwable inner = exception.getCause();
+			MLogger.logLnf(MLoggerMode.ERROR, MessageFormat.format("{0}: {1}", inner.getClass().getSimpleName(), inner.getLocalizedMessage()));
+		}
+		logStackTrace(exception.getStackTrace());
+		MLogger.logSeparator();
+	}
+
+
+
+	private static void logStackTrace (final StackTraceElement @NotNull [] stackTraceElements)
+	{
+		MLogger.logLnf(MLoggerMode.ERROR, "Printing exception stacktrace:");
+		String module = EMPTY_STR;
+		for (final StackTraceElement element : stackTraceElements)
+		{
+			if (!element.getModuleName().equals(module))
+			{
+				module = element.getModuleName();
+				MLogger.logLnf(MLoggerMode.ERROR, "[Module: {0}]", module);
+			}
+			MLogger.logLnf(MLoggerMode.ERROR, "\t\t{0}", element.toString());
+		}
+	}
+
+	public static void logSeparator ()
+	{
+		MLogger.logLn(MLoggerMode.VERBOSE, "-------------------------------------");
+	}
 }

@@ -3,7 +3,6 @@ package project.docmaker.model.structure;
 
 import project.docmaker.utility.mlogger.NoLogger;
 
-import java.io.File;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,7 +10,7 @@ import java.util.stream.Collectors;
 
 
 @NoLogger
-public record Section(Header header, Body body, Code code, File file)
+public record Section(Header header, Body body, Code code)
 {
 
 	/**

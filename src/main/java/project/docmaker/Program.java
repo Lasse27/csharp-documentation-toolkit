@@ -7,8 +7,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import project.docmaker.utility.mlogger.MLogger;
+import project.docmaker.utility.mlogger.MLoggerMode;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 
 public class Program extends Application
@@ -16,20 +18,41 @@ public class Program extends Application
 
 	public static void main (final String[] args) throws IOException
 	{
-		MLogger.logLn((STR."\{Application.class.getSimpleName()} launched!"));
+		MLogger.logSeparator();
+		MLogger.logLn(MLoggerMode.INFORMATION, "Application started");
+		MLogger.logLn(MLoggerMode.INFORMATION, STR."Args: \{Arrays.deepToString(args)}");
 		Application.launch(args);
+
 	}
+
 
 
 	@Override
 	public void start (final Stage stage) throws IOException
 	{
-		final FXMLLoader fxmlLoader = new FXMLLoader(Program.class.getResource("Wireframing.fxml"));
-		final Scene scene = new Scene(fxmlLoader.load());
-		stage.setScene(scene);
+		try
+		{
+			final FXMLLoader fxmlLoader = new FXMLLoader(Program.class.getResource("Wireframing.fxml"));
+			Program.initStage(stage, fxmlLoader);
+			MLogger.logLnf(MLoggerMode.INFORMATION, "Showing on master stage: {0}", fxmlLoader.getController().getClass().getSimpleName());
+			MLogger.logSeparator();
+		}
+		catch (final Exception exception)
+		{
+			MLogger.logEx(exception);
+			System.exit(1);
+		}
+
+	}
+
+
+
+	private static void initStage (final Stage stage, final FXMLLoader fxmlLoader) throws IOException
+	{
+		stage.setScene(new Scene(fxmlLoader.load()));
 		stage.setResizable(false);
 		stage.sizeToScene();
-		stage.initStyle(StageStyle.UNDECORATED);
+		stage.initStyle(StageStyle.TRANSPARENT);
 		stage.show();
 	}
 

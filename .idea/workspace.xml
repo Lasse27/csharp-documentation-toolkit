@@ -9,16 +9,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Tried out gluon build and changed the UI but didn't work and removed old umb code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/ablauf.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/StringUtilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/CodeSnippet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Code.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/MarkdownStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/MarkdownStructure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Section.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Wireframing.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Wireframing.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/csfileregex.reg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/csfileregex.reg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/stylesheets/stylesheet_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/stylesheets/stylesheet_dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testmarkdown.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/testmarkdown.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +56,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Lasse27"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Lasse27/cs-docmaker",
+    "accountId": "f7b3fd35-2f7d-4a14-9df4-d1a23a6d098f"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationExecutor.java" root0="FORCE_HIGHLIGHTING" />
@@ -68,6 +84,13 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -88,52 +111,52 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.GluonStart.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Standard Configuration.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;INTRODUCE_CONSTANT_NONNLS&quot;: &quot;true&quot;,
-    &quot;JUnit.RegexControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-resources-plugin:2.6:testResources].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_Documentation_Toolkit [com.gluonhq:gluonfx-maven-plugin:1.0.24:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_Documentation_Toolkit [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_Documentation_Toolkit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
-    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last.edited.regexp&quot;: &quot;public class UserAuthentificator : Execitpr, wiajda, woadkaw, ana{\n    private static final Logger _Logger = new Logger();\n\n    public String toString()\n    {\n        super.toString();\n    }\n}&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lh/IdeaProjects/CSharpDocumentationToolkit&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.371063&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.GluonStart.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.Standard Configuration.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
+    "INTRODUCE_CONSTANT_NONNLS": "true",
+    "JUnit.RegexControllerTest.executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:help].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-resources-plugin:2.6:testResources].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:help].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test].executor": "Run",
+    "Maven.CS_Documentation_Toolkit [com.gluonhq:gluonfx-maven-plugin:1.0.24:run].executor": "Run",
+    "Maven.CS_Documentation_Toolkit [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor": "Run",
+    "Maven.CS_Documentation_Toolkit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "OverrideImplement.generate.javadoc": "true",
+    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last.edited.regexp": "public class UserAuthentificator : Execitpr, wiajda, woadkaw, ana{\n    private static final Logger _Logger = new Logger();\n\n    public String toString()\n    {\n        super.toString();\n    }\n}",
+    "last_opened_file_path": "C:/Users/Lasse/AppData/Local/SceneBuilder/SceneBuilder.exe",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.371063",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="project.docmaker.utility.logging" />
@@ -212,8 +235,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.10-graalvm-jdk-17.0.10-4caba194b151-6d8b2ca1" />
-        <option value="jdk-17.0.9-jbr-17.0.9-4caba194b151-51f1b679" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -248,6 +271,7 @@
       <workItem from="1727421645181" duration="227000" />
       <workItem from="1727421930466" duration="19812000" />
       <workItem from="1727444909829" duration="3361000" />
+      <workItem from="1727526358421" duration="1487000" />
       <workItem from="1727617809757" duration="1867000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">

@@ -12,8 +12,10 @@ import project.docmaker.utility.LoggingConstants;
 import project.docmaker.utility.StringFormat;
 import project.docmaker.utility.mlogger.MLogger;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,12 +34,27 @@ public final class RegexController
 	private static final StringFormat STRING_FORMAT = new StringFormat(FormatOption.NORMALIZE, FormatOption.REMOVE_MARKS);
 
 
+
 	/**
 	 * Private constructor since controller class isn't supposed to be initialized ever.
 	 */
 	private RegexController ()
 	{
 	}
+
+
+
+	private static  List<Section> getSectionsFromFile (final File file)
+	{
+//		// Reading the file and returning the file content
+//		Matcher matcher = new
+//
+//		//
+
+
+		return new ArrayList<>();
+	}
+
 
 
 	/**
@@ -61,6 +78,7 @@ public final class RegexController
 		MLogger.logLnf(INFORMATION, "Matcher has found {0} for Pattern: {1}", matches.size(), DOCUMENTATION_CODE_PATTERN);
 		return matches;
 	}
+
 
 
 	/**
@@ -94,6 +112,7 @@ public final class RegexController
 	}
 
 
+
 	/**
 	 * Parses the given String multiple times with different regular expressions and creates a {@link Header} instance from the found matches.
 	 *
@@ -118,6 +137,7 @@ public final class RegexController
 	}
 
 
+
 	/**
 	 * Parses the given String multiple times with different regular expressions and creates a {@link Code} instance from the found matches.
 	 *
@@ -138,6 +158,7 @@ public final class RegexController
 	}
 
 
+
 	private static Collection<Summary> getSummariesFromCharSequence (final CharSequence charSequence)
 	{
 		final Matcher summaryMatcher = SUMMARY_PATTERN.matcher(charSequence);
@@ -148,6 +169,7 @@ public final class RegexController
 		}
 		return summaryCollection;
 	}
+
 
 
 	private static Collection<Return> getReturnsFromCharSequence (final CharSequence sequence)
@@ -162,6 +184,7 @@ public final class RegexController
 	}
 
 
+
 	private static Collection<Parameter> getParametersFromCharSequence (final CharSequence sequence)
 	{
 		final Pattern paramPattern = Pattern.compile("///\\s*<param name=\"([^\"]+)\">([\\s\\S]*?)</param>");
@@ -173,6 +196,7 @@ public final class RegexController
 		}
 		return parameterCollection;
 	}
+
 
 
 	private static boolean areaContainsClassDoc (final CharSequence area)
