@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import org.jetbrains.annotations.NotNull;
 import project.docmaker.utility.mlogger.MLogger;
 
 import java.net.URL;
@@ -41,18 +42,6 @@ public class MasterFormPresenter implements Initializable
 
 
 	/**
-	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
-	 *
-	 * @return A formatted {@link String} which represents the object in its current state.
-	 */
-	@Override
-	public String toString ()
-	{
-		return super.toString();
-	}
-
-
-	/**
 	 * Called to initialize a controller after its root element has been completely processed.
 	 *
 	 * @param location  The location used to resolve relative paths for the root object, or {@code null} if the location isn't known.
@@ -66,7 +55,7 @@ public class MasterFormPresenter implements Initializable
 
 
 	@FXML
-	private void onMenuBarDragged (final MouseEvent mouseEvent)
+	private void onMenuBarDragged (final @NotNull MouseEvent mouseEvent)
 	{
 		final Window window = ((Node) mouseEvent.getSource()).getParent().getScene().getWindow();
 		window.setY(mouseEvent.getScreenY() - this.screenY);
@@ -75,23 +64,23 @@ public class MasterFormPresenter implements Initializable
 
 
 	@FXML
-	void onMinimizeMenuButtonClicked (final ActionEvent event)
+	void onMinimizeMenuButtonClicked (final @NotNull ActionEvent actionEvent)
 	{
-		final Stage stage = (Stage) ((Node) event.getSource()).getParent().getScene().getWindow();
+		final Stage stage = (Stage) ((Node) actionEvent.getSource()).getParent().getScene().getWindow();
 		stage.setIconified(true);
 	}
 
 
 	@FXML
-	void onCloseMenuButtonClicked (final ActionEvent event)
+	void onCloseMenuButtonClicked (final @NotNull ActionEvent actionEvent)
 	{
-		final Stage stage = (Stage) ((Node) event.getSource()).getParent().getScene().getWindow();
+		final Stage stage = (Stage) ((Node) actionEvent.getSource()).getParent().getScene().getWindow();
 		stage.close();
 	}
 
 
 	@FXML
-	void onMenuBarPressed (final MouseEvent mouseEvent)
+	void onMenuBarPressed (final @NotNull MouseEvent mouseEvent)
 	{
 		this.screenX = mouseEvent.getSceneX();
 		this.screenY = mouseEvent.getSceneY();

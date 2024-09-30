@@ -59,11 +59,11 @@ public class Program extends Application
 	{
 		try
 		{
-			final FXMLLoader fxmlLoader = new FXMLLoader(Program.class.getResource("Wireframing.fxml"));
+			final FXMLLoader fxmlLoader = new FXMLLoader(Program.class.getResource("MasterForm.fxml"));
 			stage.setScene(new Scene(fxmlLoader.load()));
 			stage.setResizable(false);
 			stage.sizeToScene();
-			stage.initStyle(StageStyle.TRANSPARENT);
+			stage.initStyle(StageStyle.UNDECORATED);
 			stage.show();
 			MLogger.logLnf(MLoggerMode.INFORMATION, "Showing on master stage: {0}", fxmlLoader.getController().getClass().getSimpleName());
 		}

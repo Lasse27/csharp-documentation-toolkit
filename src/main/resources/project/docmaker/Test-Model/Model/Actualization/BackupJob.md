@@ -4,6 +4,7 @@
 ### Summary:
 ```The <see cref="BackupJob"/> struct represents a job-dataclass that contains relevant information to start the backup process.```
 
+
 ### Code:
 ```cs
 /// <summary>
@@ -78,6 +79,7 @@ public struct BackupJob : IJob
 ### Summary:
 ```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
 
+
 ### Code:
 ```cs
 /// <summary>
@@ -93,6 +95,7 @@ public readonly IList<DirectoryInfo> Workstations;
 ### Summary:
 ```The <see cref="IDictionary{TKey, TValue}"/> of <see cref="DirectoryInfo"/> that contains the target workstations with their backup folders.```
 
+
 ### Code:
 ```cs
 /// <summary>
@@ -107,6 +110,7 @@ public readonly IDictionary<DirectoryInfo, DirectoryInfo> BackupFolders;
 
 ### Summary:
 ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
+
 
 ### Code:
 ```cs
@@ -127,6 +131,7 @@ public readonly IDictionary<DirectoryInfo, List<FileInfo>> AffectedFiles;
 #### workstations: ```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
 #### backupFolders: ```The <see cref="IDictionary{TKey, TValue}"/> of <see cref="DirectoryInfo"/> that contains the target workstations with their backup folders.```
 #### affectedFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
+
 
 ### Code:
 ```cs
@@ -149,6 +154,7 @@ public BackupJob (IList<DirectoryInfo> workstations, IDictionary<DirectoryInfo, 
 ## public string GetJobOverview 
 
 
+
 ### Code:
 ```cs
 /// <inheritdoc/>
@@ -157,6 +163,7 @@ public string GetJobOverview () => $"{this.GetType()}
 
 ---
 ## private string GetDebuggerDisplay () 
+
 
 
 ### Code:
@@ -169,6 +176,7 @@ private string GetDebuggerDisplay () => this.ToString();
 ## public override bool Equals (object obj) 
 
 
+
 ### Code:
 ```cs
 /// <inheritdoc/>
@@ -179,6 +187,7 @@ public override bool Equals (object obj) => base.Equals(obj);
 ## public override int GetHashCode () 
 
 
+
 ### Code:
 ```cs
 /// <inheritdoc/>
@@ -187,6 +196,7 @@ public override int GetHashCode () => base.GetHashCode();
 
 ---
 ## public override string ToString () 
+
 
 
 ### Code:

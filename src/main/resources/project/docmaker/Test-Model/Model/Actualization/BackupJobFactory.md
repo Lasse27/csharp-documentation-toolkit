@@ -4,6 +4,7 @@
 ### Summary:
 ```The <see cref="BackupJobFactory"/> class works as part of the factory pattern and provides generation methods for instances  of the <see cref="BackupJob"/> struct. Class is mainly used to hide the validation of the generation parameters.```
 
+
 ### Code:
 ```cs
 /// <summary>
@@ -114,6 +115,7 @@ public static class BackupJobFactory
 ### Returns:
 A new <see cref="ActualizationJob"/> instance if all parameters were validated.
 
+
 ### Code:
 ```cs
 /// <summary>
@@ -159,6 +161,7 @@ public static BackupJob CreateJob (CheckedItemCollection workstationPaths, Check
 ### Returns:
 A <see cref="Dictionary{TKey, TValue}"/> of the workstations and their corresponding backup folder.
 
+
 ### Code:
 ```cs
 /// <summary>
@@ -196,6 +199,7 @@ private static IDictionary<DirectoryInfo, DirectoryInfo> GetBackupFolders (IList
 
 ### Returns:
 A <see cref="Dictionary{TKey, TValue}"/> of the workstations and their affected files.
+
 
 ### Code:
 ```cs

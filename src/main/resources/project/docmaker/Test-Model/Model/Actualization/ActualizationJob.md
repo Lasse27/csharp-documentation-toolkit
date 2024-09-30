@@ -4,6 +4,7 @@
 ### Summary:
 ```The <see cref="ActualizationJob"/> struct represents a job-dataclass that contains relevant information to start the actualization process.```
 
+
 ### Code:
 ```cs
 /// <summary>
@@ -84,6 +85,7 @@ public struct ActualizationJob : IJob
 ### Summary:
 ```The <see cref="DirectoryInfo"/> that contains the files that are supposed to be inserted with the update.```
 
+
 ### Code:
 ```cs
 /// <summary>
@@ -98,6 +100,7 @@ public readonly DirectoryInfo UpdateDirectory;
 
 ### Summary:
 ```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
+
 
 ### Code:
 ```cs
@@ -114,6 +117,7 @@ public readonly IList<DirectoryInfo> Workstations;
 ### Summary:
 ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the update.```
 
+
 ### Code:
 ```cs
 /// <summary>
@@ -128,6 +132,7 @@ public readonly IList<FileInfo> UpdateFiles;
 
 ### Summary:
 ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
+
 
 ### Code:
 ```cs
@@ -149,6 +154,7 @@ public readonly IDictionary<DirectoryInfo, List<FileInfo>> AffectedFiles;
 #### workstations: ```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
 #### updateFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the update.```
 #### affectedFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
+
 
 ### Code:
 ```cs
@@ -172,6 +178,7 @@ public ActualizationJob (DirectoryInfo updateDirectory, IList<DirectoryInfo> wor
 ## public string GetJobOverview 
 
 
+
 ### Code:
 ```cs
 /// <inheritdoc/>
@@ -180,6 +187,7 @@ public string GetJobOverview () => $"{this.GetType()}
 
 ---
 ## public override bool Equals (object obj) 
+
 
 
 ### Code:
@@ -192,6 +200,7 @@ public override bool Equals (object obj) => base.Equals(obj);
 ## public override int GetHashCode () 
 
 
+
 ### Code:
 ```cs
 /// <inheritdoc/>
@@ -202,6 +211,7 @@ public override int GetHashCode () => base.GetHashCode();
 ## public override string ToString () 
 
 
+
 ### Code:
 ```cs
 /// <inheritdoc/>
@@ -210,6 +220,7 @@ public override string ToString () => base.ToString();
 
 ---
 ## private string GetDebuggerDisplay () 
+
 
 
 ### Code:

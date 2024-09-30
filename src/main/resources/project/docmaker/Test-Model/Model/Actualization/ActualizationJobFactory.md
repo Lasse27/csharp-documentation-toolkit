@@ -4,6 +4,7 @@
 ### Summary:
 ```The <see cref="ActualizationJobFactory"/> class works as part of the factory pattern and provides generation methods for instances  of the <see cref="ActualizationJob"/> struct. Class is mainly used to hide the validation of the generation parameters.```
 
+
 ### Code:
 ```cs
 /// <summary>
@@ -101,6 +102,7 @@ public static class ActualizationJobFactory
 ### Returns:
 A new <see cref="ActualizationJob"/> instance if all parameters were validated.
 
+
 ### Code:
 ```cs
 /// <summary>
@@ -157,6 +159,7 @@ public static ActualizationJob CreateJob (string updatePath, CheckedItemCollecti
 
 ### Returns:
 A <see cref="IDictionary{TKey, TValue}"/> that contains the workstation with its affected files as <see cref="KeyValuePair{TKey, TValue}"/>
+
 
 ### Code:
 ```cs

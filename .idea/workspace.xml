@@ -8,25 +8,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Giant changes to the look of the console and the &quot;backend&quot; of the gui">
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Played around with Contract and NotNull Annotations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationPattern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Code.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/MarkdownStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/MarkdownStructure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Section.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/ConstantInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/ConstantInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/MiscConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/MiscConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/ConsoleColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/ConsoleColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLoggable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLoggable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/stringutils/StringFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/stringutils/StringFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJobFactory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJobFactory.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJob.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJob.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJobFactory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJobFactory.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Wireframing.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +268,7 @@
       <workItem from="1727697467066" duration="67000" />
       <workItem from="1727697545073" duration="249000" />
       <workItem from="1727697804725" duration="6249000" />
-      <workItem from="1727704231270" duration="1349000" />
+      <workItem from="1727704231270" duration="2764000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -616,7 +606,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727704041263</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Played around with Contract and NotNull Annotations">
+      <option name="closed" value="true" />
+      <created>1727705709991</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1727705709991</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +670,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change: changed the formatting of the generated Markdown code.&#10;&#10;Build:&#10;added a few new methods so that documentation tags are now generated in groups and not as standalone.&#10;Added a new datatype to provide better handling of the documentation tags." />
     <MESSAGE value="Fix: error in module-info.java fixed" />
     <MESSAGE value="Change: Reworked the Section-Class" />
     <MESSAGE value="Add: Added the code for the abstract body class" />
@@ -697,7 +694,8 @@
     <MESSAGE value="Lotta staff" />
     <MESSAGE value="Finished rework of the regular expressions and cleaned the old methods from the RegexController" />
     <MESSAGE value="Giant changes to the look of the console and the &quot;backend&quot; of the gui" />
-    <option name="LAST_COMMIT_MESSAGE" value="Giant changes to the look of the console and the &quot;backend&quot; of the gui" />
+    <MESSAGE value="Played around with Contract and NotNull Annotations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Played around with Contract and NotNull Annotations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

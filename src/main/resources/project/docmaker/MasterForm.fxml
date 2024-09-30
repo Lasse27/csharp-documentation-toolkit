@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane cache="true" cacheHint="QUALITY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="788.0" prefWidth="1280.0" style="-fx-border-width: 2; -fx-border-color: rgb(76, 96, 175);" styleClass="container-brightest" stylesheets="@stylesheets/stylesheet_dark.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.docmaker.MasterFormPresenter">
+    <center>
+        <VBox alignment="TOP_CENTER" cache="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="733.0" prefWidth="1096.0" spacing="10.0" styleClass="container-brightest" stylesheets="@stylesheets/stylesheet_dark.css" BorderPane.alignment="TOP_CENTER">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <VBox minWidth="-Infinity" prefHeight="343.0" prefWidth="775.0">
+                <children>
+                    <AnchorPane prefHeight="34.0" prefWidth="252.0" style="-fx-background-color: rgb(89, 113, 203);" styleClass="container-bright-rounded">
+                        <children>
+                            <Label layoutX="14.0" layoutY="9.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: rgb(89, 113, 203);" styleClass="text-field" stylesheets="@stylesheets/stylesheet_dark.css" text="Auswahl der Quellcode-Dateien:" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0" />
+                        </children>
+                        <VBox.margin>
+                            <Insets bottom="5.0" />
+                        </VBox.margin>
+                    </AnchorPane>
+                    <HBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="36.0" prefWidth="781.0" spacing="10.0">
+                        <children>
+                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <children>
+                                  <TextField layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="734.0" promptText="Datei oder Verzeichnispfad" style="-fx-background-color: rgb(89, 113, 203);" styleClass="container-bright-rounded" stylesheets="@stylesheets/stylesheet_dark.css">
+                              <cursor>
+                                 <Cursor fx:constant="DEFAULT" />
+                              </cursor></TextField>
+                                  <Button layoutX="737.0" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="37.0" style="-fx-background-color: rgb(89, 113, 203);" styleClass="container-bright-rounded" stylesheets="@stylesheets/stylesheet_dark.css" text="...">
+                                      <font>
+                                          <Font name="System Bold" size="14.0" />
+                                      </font>
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                                  </Button>
+                        </children>
+                     </AnchorPane>
+                        </children>
+                        <VBox.margin>
+                            <Insets bottom="5.0" />
+                        </VBox.margin>
+                    </HBox>
+                    <TreeView prefHeight="274.0" prefWidth="775.0" />
+                </children>
+            <VBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </VBox.margin>
+            </VBox>
+         <VBox minWidth="-Infinity" prefHeight="345.0" prefWidth="775.0">
+            <children>
+               <AnchorPane prefHeight="34.0" prefWidth="252.0" style="-fx-background-color: rgb(89, 113, 203);" styleClass="container-bright-rounded">
+                  <children>
+                     <Label layoutX="14.0" layoutY="9.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: rgb(89, 113, 203);" styleClass="text-field" stylesheets="@stylesheets/stylesheet_dark.css" text="Auswahl des Zielverzeichnisses:" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0" />
+                  </children>
+                  <VBox.margin>
+                     <Insets bottom="5.0" />
+                  </VBox.margin>
+               </AnchorPane>
+               <HBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="36.0" prefWidth="781.0" spacing="10.0">
+                  <children>
+                     <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <children>
+                           <TextField layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="734.0" promptText="Datei oder Verzeichnispfad" style="-fx-background-color: rgb(89, 113, 203);" styleClass="container-bright-rounded" stylesheets="@stylesheets/stylesheet_dark.css">
+                              <cursor>
+                                 <Cursor fx:constant="DEFAULT" />
+                              </cursor>
+                           </TextField>
+                           <Button layoutX="737.0" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="37.0" style="-fx-background-color: rgb(89, 113, 203);" styleClass="container-bright-rounded" stylesheets="@stylesheets/stylesheet_dark.css" text="...">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                              <cursor>
+                                 <Cursor fx:constant="HAND" />
+                              </cursor>
+                           </Button>
+                        </children>
+                     </AnchorPane>
+                  </children>
+                  <VBox.margin>
+                     <Insets bottom="5.0" />
+                  </VBox.margin>
+               </HBox>
+               <TreeView prefHeight="296.0" prefWidth="775.0" />
+            </children>
+            <VBox.margin>
+               <Insets left="10.0" right="10.0" />
+            </VBox.margin>
+         </VBox>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+        </VBox>
+    </center>
+    <left>
+        <VBox fx:id="finishedJobsVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="260.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="container-brightest" stylesheets="@stylesheets/stylesheet_dark.css">
+            <children>
+                <AnchorPane prefHeight="27.0" prefWidth="253.0" style="-fx-background-color: rgb(89, 113, 203);" styleClass="container-bright-rounded">
+                    <children>
+                        <Label layoutX="14.0" layoutY="9.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: rgb(89, 113, 203);" styleClass="text-field" stylesheets="@stylesheets/stylesheet_dark.css" text="Abgeschlossene Jobs:" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0" />
+                    </children>
+                </AnchorPane>
+                <TreeView prefHeight="619.0" prefWidth="253.0" style="-fx-border-radius: 8; -fx-background-radius: 8;" stylesheets="@stylesheets/stylesheet_dark.css" VBox.vgrow="ALWAYS">
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </TreeView>
+            </children>
+            <BorderPane.margin>
+                <Insets right="5.0" top="5.0" />
+            </BorderPane.margin>
+            <padding>
+                <Insets left="5.0" />
+            </padding>
+        </VBox>
+    </left>
+    <right>
+        <VBox prefHeight="622.0" prefWidth="209.0" style="-fx-background-radius: 8; -fx-border-radius: 8;" styleClass="container-brightest" stylesheets="@stylesheets/stylesheet_dark.css">
+            <children>
+                <AnchorPane prefHeight="30.0" prefWidth="215.0" style="-fx-background-color: rgb(89, 113, 203);" styleClass="container-bright-rounded">
+                    <children>
+                        <Label layoutX="14.0" layoutY="9.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: rgb(89, 113, 203);" styleClass="text-field" stylesheets="@stylesheets/stylesheet_dark.css" text="Job-Warteschlange" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0" />
+                    </children>
+                </AnchorPane>
+                <TreeView prefHeight="582.0" prefWidth="202.0" VBox.vgrow="ALWAYS">
+                    <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                    </VBox.margin>
+                </TreeView>
+            </children>
+            <BorderPane.margin>
+                <Insets left="5.0" top="5.0" />
+            </BorderPane.margin>
+            <padding>
+                <Insets right="5.0" />
+            </padding>
+        </VBox>
+    </right>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+    <cursor>
+        <Cursor fx:constant="DEFAULT" />
+    </cursor>
+   <top>
+      <HBox onMouseDragged="#onMenuBarDragged" onMousePressed="#onMenuBarPressed" prefHeight="45.0" prefWidth="1276.0" styleClass="container-brightest-rounded" BorderPane.alignment="CENTER">
+         <children>
+                <AnchorPane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#onMenuBarDragged" onMousePressed="#onMenuBarPressed" prefHeight="42.0" prefWidth="255.0" styleClass="container-brightest" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label alignment="CENTER" graphicTextGap="10.0" layoutY="8.0" prefHeight="42.0" prefWidth="256.0" styleClass="container-brightest" stylesheets="@stylesheets/stylesheet_dark.css" text="C#-Documentation-Toolkit" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font name="Segoe UI Semibold" size="16.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@imgs/green_check.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Label>
+                    </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+                </AnchorPane>
+                <Button fx:id="htmlGenerationMenuButton" contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="268.0" style="-fx-border-color: grey;" stylesheets="@stylesheets/stylesheet_dark.css" text="HTML-Generation" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="DISAPPEAR" />
+                    </cursor>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+                </Button>
+                <Button fx:id="markdownGenerationMenuButton" contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="252.0" style="-fx-border-color: grey;" stylesheets="@stylesheets/stylesheet_dark.css" text="Markdown-Generation" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+                </Button>
+                <Button fx:id="settingsMenuButton" contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="243.0" style="-fx-border-color: grey;" stylesheets="@stylesheets/stylesheet_dark.css" text="Einstellungen" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+                </Button>
+                <Button fx:id="aboutMenuButton" contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" style="-fx-border-color: grey;" stylesheets="@stylesheets/stylesheet_dark.css" text="About" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+                </Button>
+                <Button fx:id="minimizeMenuButton" contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" onAction="#onMinimizeMenuButtonClicked" prefHeight="40.0" prefWidth="40.0" style="-fx-border-color: grey;" stylesheets="@stylesheets/stylesheet_dark.css" text="_" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+                </Button>
+                <Button fx:id="closeMenuButton" contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" onAction="#onCloseMenuButtonClicked" prefHeight="40.0" prefWidth="40.0" style="-fx-border-color: grey;" stylesheets="@stylesheets/stylesheet_dark.css" text="X" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+                </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="3.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="45.0" prefWidth="1276.0" styleClass="container-brightest-rounded" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="htmlGenerationMenuButton1" contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" prefHeight="37.0" prefWidth="389.0" style="-fx-border-color: grey;" stylesheets="@stylesheets/stylesheet_dark.css" text="HTML-Generation" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DISAPPEAR" />
+               </cursor>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="markdownGenerationMenuButton1" contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" prefHeight="37.0" prefWidth="424.0" style="-fx-border-color: grey;" stylesheets="@stylesheets/stylesheet_dark.css" text="Markdown-Generation" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="settingsMenuButton1" contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" prefHeight="37.0" prefWidth="427.0" style="-fx-border-color: grey;" stylesheets="@stylesheets/stylesheet_dark.css" text="Einstellungen" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
