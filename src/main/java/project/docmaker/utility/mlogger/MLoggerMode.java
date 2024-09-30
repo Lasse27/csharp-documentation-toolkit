@@ -6,7 +6,6 @@ import org.jetbrains.annotations.NotNull;
 import java.text.MessageFormat;
 
 
-@NoLogger
 public record MLoggerMode(String name, ConsoleColor consoleColor, boolean enableTimestamps)
 {
 	/**

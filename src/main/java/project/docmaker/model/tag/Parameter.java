@@ -1,12 +1,9 @@
 package project.docmaker.model.tag;
 
 
-import project.docmaker.utility.mlogger.NoLogger;
-
 import java.text.MessageFormat;
 
 
-@NoLogger
 public record Parameter(String name, String content)
 {
 

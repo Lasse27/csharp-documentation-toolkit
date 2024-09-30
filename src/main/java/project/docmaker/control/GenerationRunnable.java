@@ -11,9 +11,7 @@ import project.docmaker.utility.mlogger.MLogger;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -21,26 +19,26 @@ import static project.docmaker.utility.mlogger.MLoggerMode.ERROR;
 import static project.docmaker.utility.mlogger.MLoggerMode.INFORMATION;
 
 
-public final class GenerationExecutor implements Runnable
+public final class GenerationRunnable implements Runnable
 {
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Parameter#toString()} method gets called
 	 */
-	public static final String TEXT_DISPLAY_PATTERN = GenerationExecutor.class.getSimpleName() + "[job={0}]";
+	public static final String TEXT_DISPLAY_PATTERN = GenerationRunnable.class.getSimpleName() + "[job={0}]";
 
 	/**
-	 * The {@link GenerationJob} that contains the necessary information for the execution of the {@link GenerationExecutor}.
+	 * The {@link GenerationJob} that contains the necessary information for the execution of the {@link GenerationRunnable}.
 	 */
 	private final GenerationJob job;
 
 
 	/**
-	 * Initializes a new instance of {@link GenerationExecutor} and sets all necessary attributes.
+	 * Initializes a new instance of {@link GenerationRunnable} and sets all necessary attributes.
 	 *
-	 * @param job The {@link GenerationJob} that contains the necessary information for the execution of the {@link GenerationExecutor}.
+	 * @param job The {@link GenerationJob} that contains the necessary information for the execution of the {@link GenerationRunnable}.
 	 */
-	public GenerationExecutor (final GenerationJob job)
+	public GenerationRunnable (final GenerationJob job)
 	{
 		this.job = job;
 	}
@@ -60,12 +58,16 @@ public final class GenerationExecutor implements Runnable
 			final File[] sourceFiles = this.collectSourceFiles();
 
 			// Creating all the Markdown files in the target directory
-			this.CreateMarkdownFiles(sourceFiles);
+			this.createMarkdownFiles(sourceFiles);
 		}
 		catch (final IOException ex)
 		{
 			MLogger.logLn(ERROR, "Error occurred");
 			new Alert(Alert.AlertType.ERROR, ex.getLocalizedMessage(), ButtonType.OK).showAndWait();
+		}
+		catch (final IllegalAccessException e)
+		{
+			throw new RuntimeException(e);
 		}
 	}
 
@@ -95,7 +97,7 @@ public final class GenerationExecutor implements Runnable
 	 *
 	 * @throws IOException Throws an exception if one of the files couldn't be read.
 	 */
-	private void CreateMarkdownFiles (final File[] files) throws IOException
+	private void createMarkdownFiles (final File[] files) throws IOException, IllegalAccessException
 	{
 		for (final File file : files)
 		{

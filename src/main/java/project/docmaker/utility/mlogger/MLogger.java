@@ -20,7 +20,6 @@ import java.util.Locale;
  * @see MLoggerMode
  * @since 27.09.2024
  */
-@NoLogger
 public final class MLogger
 {
 	/**
@@ -48,14 +47,12 @@ public final class MLogger
 	private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(TIME, Locale.GERMANY).withZone(ZoneId.systemDefault());
 
 
-
 	/**
 	 * Private constructor to prohibit instantiation of the class, since it's supposed to be a static class.
 	 */
 	private MLogger ()
 	{
 	}
-
 
 
 	/**
@@ -74,14 +71,13 @@ public final class MLogger
 		{
 			loggingBuilder.append(MessageFormat.format(LOG_SECTION_FORMAT, EMPTY_STR, FORMATTER.format(Instant.now()), EMPTY_STR));
 		}
-		if (!mLoggerMode.name().equals(EMPTY_STR))
+		if (! mLoggerMode.name().equals(EMPTY_STR))
 		{
 			loggingBuilder.append(MessageFormat.format(LOG_SECTION_FORMAT, mLoggerMode.consoleColor()
 					.toString(), mLoggerMode.name(), ConsoleColor.NORM));
 		}
 		System.out.println(loggingBuilder.append(message));
 	}
-
 
 
 	/**
@@ -96,7 +92,6 @@ public final class MLogger
 	{
 		logLn(MLoggerMode.INFORMATION, message);
 	}
-
 
 
 	/**
@@ -115,7 +110,6 @@ public final class MLogger
 	}
 
 
-
 	/**
 	 * Logs a message in the specified {@link MLoggerMode}.
 	 * <br>
@@ -130,7 +124,6 @@ public final class MLogger
 	{
 		logLn(mLoggerMode, messageFormat.format(formats));
 	}
-
 
 
 	/**
@@ -148,10 +141,8 @@ public final class MLogger
 	}
 
 
-
 	public static void logEx (final @NotNull Exception exception)
 	{
-		MLogger.logSeparator();
 		MLogger.logLnf(MLoggerMode.ERROR, MessageFormat.format("{0}: {1}", exception.getClass().getSimpleName(), exception.getLocalizedMessage()));
 		if (exception.getCause() != null)
 		{
@@ -159,9 +150,7 @@ public final class MLogger
 			MLogger.logLnf(MLoggerMode.ERROR, MessageFormat.format("{0}: {1}", inner.getClass().getSimpleName(), inner.getLocalizedMessage()));
 		}
 		logStackTrace(exception.getStackTrace());
-		MLogger.logSeparator();
 	}
-
 
 
 	private static void logStackTrace (final StackTraceElement @NotNull [] stackTraceElements)
@@ -170,7 +159,7 @@ public final class MLogger
 		String module = EMPTY_STR;
 		for (final StackTraceElement element : stackTraceElements)
 		{
-			if (!element.getModuleName().equals(module))
+			if (! element.getModuleName().equals(module))
 			{
 				module = element.getModuleName();
 				MLogger.logLnf(MLoggerMode.ERROR, "[Module: {0}]", module);
@@ -179,8 +168,18 @@ public final class MLogger
 		}
 	}
 
-	public static void logSeparator ()
+
+	public static void logMLoggable (final MLoggerMode mLoggerMode, final MLoggable mLoggable)
 	{
-		MLogger.logLn(MLoggerMode.VERBOSE, "-------------------------------------");
+		for (final String stringPart : mLoggable.toStringCollection())
+		{
+			MLogger.logLn(mLoggerMode, stringPart);
+		}
+	}
+
+
+	public static void logMLoggable (final MLoggable mLoggable)
+	{
+		MLogger.logMLoggable(MLoggerMode.INFORMATION, mLoggable);
 	}
 }

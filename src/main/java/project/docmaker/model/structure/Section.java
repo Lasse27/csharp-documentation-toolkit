@@ -1,22 +1,25 @@
 package project.docmaker.model.structure;
 
 
-import project.docmaker.utility.mlogger.NoLogger;
+import org.jetbrains.annotations.NotNull;
+import project.docmaker.utility.mlogger.MLoggable;
+import project.docmaker.utility.stringutils.StringController;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+import static project.docmaker.utility.stringutils.StringController.TAB;
 
-@NoLogger
-public record Section(Header header, Body body, Code code)
+
+public record Section(Header header, Body body, Code code) implements MarkdownStructure, MLoggable
 {
 
 	/**
-	 * {@link MessageFormat} pattern, which is used, when the {@link Section#toString()} method gets called
+	 * {@link MessageFormat} pattern, which is used, when the {@link Header#toString()} method gets called
 	 */
-	private static final String TEXT_DISPLAY_PATTERN = Section.class.getSimpleName() + "[header={0}, body={1}, codesnippet={2}]";
+	private static final String TEXT_DISPLAY_PATTERN = "{0} @ {1}";
 
 
 	/**
@@ -24,35 +27,46 @@ public record Section(Header header, Body body, Code code)
 	 *
 	 * @return A {@link Collection} of {@link String} which represents the object in its current state.
 	 */
-	public Collection<String> toStringCollection ()
+	@Override
+	public @NotNull Collection<String> toStringCollection ()
 	{
 		final Collection<String> objectInformation = new ArrayList<>();
-		objectInformation.add("Class: " + this.getClass().getSimpleName());
-		objectInformation.add("Header: " + this.header);
-		objectInformation.add("Code: " + this.code);
-
-		// Add summaries using Stream
-		objectInformation.addAll(this.body.summaries().stream().map(summary -> "Summary: " + summary).collect(Collectors.toList()));
-
-		// Add parameters using Stream
-		objectInformation.addAll(this.body.parameters().stream().map(parameter -> "Parameter: " + parameter).collect(Collectors.toList()));
-
-		// Add returns using Stream
-		objectInformation.addAll(this.body.returns().stream().map(returns -> "Returns: " + returns).collect(Collectors.toList()));
-
+		objectInformation.add("Instance: " + this.toString());
+		objectInformation.addAll(this.header.toStringCollection().stream().map(c -> TAB + c).collect(Collectors.toList()));
+		objectInformation.addAll(this.body.toStringCollection().stream().map(c -> TAB + c).collect(Collectors.toList()));
+		objectInformation.addAll(this.code.toStringCollection().stream().map(c -> TAB + c).collect(Collectors.toList()));
 		return objectInformation;
-
 	}
 
 
 	/**
-	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
-	 *
-	 * @return A formatted {@link String} which represents the object in its current state.
+	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.header, this.body, this.code);
+		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.getClass().getSimpleName(), Integer.toHexString(this.hashCode()));
+	}
+
+
+	/**
+	 * Generates and returns a formatted {@link String} which represents the instance in its current state and as a Markdown string.
+	 *
+	 * @return A formatted {@link String} which represents the instance in its current state and as a Markdown string.
+	 */
+	@Override
+	public @NotNull String toMarkdown ()
+	{
+		final StringBuilder stringBuilder = new StringBuilder();
+		if (this.header == Header.EMPTY)
+		{
+			return "";
+		}
+		stringBuilder.append(this.header.toMarkdown());
+		stringBuilder.append(StringController.NEW_LINE);
+		stringBuilder.append(this.body.toMarkdown());
+		stringBuilder.append(this.code().toMarkdown());
+		stringBuilder.append(StringController.NEW_LINE).append("---").append(StringController.NEW_LINE);
+		return stringBuilder.toString();
 	}
 }

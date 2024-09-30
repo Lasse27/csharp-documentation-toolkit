@@ -7,10 +7,13 @@ import project.docmaker.model.tag.Parameter;
 import project.docmaker.model.tag.Return;
 import project.docmaker.model.tag.Summary;
 import project.docmaker.utility.MiscConstants;
-import project.docmaker.utility.mlogger.NoLogger;
+import project.docmaker.utility.mlogger.MLoggable;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Collection;
+
+import static project.docmaker.utility.stringutils.StringController.TAB;
 
 
 /**
@@ -26,49 +29,48 @@ import java.util.Collection;
  * @see MarkdownStructure
  * @since 11.09.2024
  */
-@NoLogger
-public record Body(Collection<Summary> summaries, Collection<Parameter> parameters, Collection<Return> returns) implements MarkdownStructure
+public record Body(Collection<Summary> summaries, Collection<Parameter> parameters, Collection<Return> returns) implements MarkdownStructure,
+		MLoggable
 {
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toString()} method gets called
 	 */
-	private static final String TEXT_DISPLAY_PATTERN = Body.class.getSimpleName() + "[summaries={0}, parameters={1}, returns={2}]";
+	private static final String TEXT_DISPLAY_PATTERN = "{0} @ {1}";
+
+	/**
+	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
+	 */
+	@Language (MiscConstants.MARKDOWN)
+	private static final String SUMMARY_MARKDOWN_HEADER = "### Summary:\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
-	private static final String SUMMARY_MARKDOWN_HEADER = "### _Summary:_\r\n";
+	private static final String SUMMARY_MARKDOWN_PATTERN = "```{0}```\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
-	private static final String SUMMARY_MARKDOWN_PATTERN = "{0}\r\n";
+	private static final String PARAMETER_MARKDOWN_HEADER = "### Parameters:\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
-	private static final String PARAMETER_MARKDOWN_HEADER = "### _Parameters:_\r\n";
+	private static final String PARAMETER_MARKDOWN_PATTERN = "#### {0}: ```{1}```\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
-	private static final String PARAMETER_MARKDOWN_PATTERN = "#### _{0}:_ ``{1}``\r\n";
-
-
-	/**
-	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
-	 */
-	@Language (MiscConstants.MARKDOWN)
-	private static final String RETURNS_MARKDOWN_HEADER = "### _Returns:_\r\n";
+	private static final String RETURNS_MARKDOWN_HEADER = "### Returns:\r\n";
 
 
 	/**
@@ -90,6 +92,7 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 		{
 			stringBuilder.append(SUMMARY_MARKDOWN_HEADER);
 			this.summaries.stream().map(summary -> MessageFormat.format(SUMMARY_MARKDOWN_PATTERN, summary.content())).forEach(stringBuilder::append);
+			stringBuilder.append("\r\n");
 		}
 
 		if (! this.parameters.isEmpty())
@@ -97,12 +100,14 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 			stringBuilder.append(PARAMETER_MARKDOWN_HEADER);
 			this.parameters.stream().map(parameter -> MessageFormat.format(PARAMETER_MARKDOWN_PATTERN, parameter.name(), parameter.content()))
 					.forEach(stringBuilder::append);
+			stringBuilder.append("\r\n");
 		}
 
 		if (! this.returns.isEmpty())
 		{
 			stringBuilder.append(RETURNS_MARKDOWN_HEADER);
 			this.returns.stream().map(returns -> MessageFormat.format(RETURNS_MARKDOWN_PATTERN, returns.content())).forEach(stringBuilder::append);
+			stringBuilder.append("\r\n");
 		}
 
 
@@ -111,13 +116,28 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 
 
 	/**
-	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
+	 * Generates and returns a {@link Collection} of {@link String} which represents the instance in its current state.
 	 *
-	 * @return A formatted {@link String} which represents the object in its current state.
+	 * @return A {@link Collection} of {@link String} which represents the object in its current state.
+	 */
+	@Override
+	public Collection<String> toStringCollection ()
+	{
+		final Collection<String> stringCollection = new ArrayList<>();
+		stringCollection.add("Instance: " + this.toString());
+		stringCollection.add(TAB + "Summaries: " + this.summaries);
+		stringCollection.add(TAB + "Parameters: " + this.parameters);
+		stringCollection.add(TAB + "Returns: " + this.returns);
+		return stringCollection;
+	}
+
+
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public String toString ()
 	{
-		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.summaries, this.parameters, this.returns);
+		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.getClass().getSimpleName(), Integer.toHexString(this.hashCode()));
 	}
 }

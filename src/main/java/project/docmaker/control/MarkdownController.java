@@ -1,47 +1,43 @@
 package project.docmaker.control;
 
 
-import project.docmaker.model.structure.Header;
 import project.docmaker.model.structure.Section;
-import project.docmaker.utility.MiscConstants;
+import project.docmaker.utility.mlogger.MLogger;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Collection;
 
 
-public class MarkdownController
+/**
+ *
+ */
+public final class MarkdownController
 {
+	/**
+	 * Private constructor since controller class isn't supposed to be initialized ever.
+	 */
 	private MarkdownController ()
 	{
 	}
 
 
-	public static void createMarkdownFile (final File targetFile, final Collection<Section> sections)
+	/**
+	 * @param targetFile
+	 * @param sections
+	 */
+	public static void createMarkdownFile (final File targetFile, final Iterable<Section> sections)
 	{
-		if (sections.isEmpty())
-		{
-			return;
-		}
 		try (final FileWriter fileWriter = new FileWriter(targetFile))
 		{
 			for (final Section section : sections)
 			{
-				if (section.header() == Header.EMPTY)
-				{
-					continue;
-				}
-				fileWriter.append(section.header().toMarkdown());
-				fileWriter.append(MiscConstants.NEW_LINE);
-				fileWriter.append(section.body().toMarkdown());
-				fileWriter.append(section.code().toMarkdown());
-				fileWriter.append(MiscConstants.NEW_LINE).append("---").append(MiscConstants.NEW_LINE);
+				fileWriter.append(section.toMarkdown());
 			}
 		}
 		catch (final IOException ex)
 		{
-			throw new RuntimeException(ex);
+			MLogger.logEx(ex);
 		}
 	}
 }

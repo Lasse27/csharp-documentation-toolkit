@@ -10,7 +10,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import project.docmaker.utility.mlogger.MLogger;
-import project.docmaker.utility.mlogger.MLoggerMode;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -62,7 +61,7 @@ public class MasterFormPresenter implements Initializable
 	@Override
 	public void initialize (final URL location, final ResourceBundle resources)
 	{
-		MLogger.logLn(MLoggerMode.INFORMATION, "Initializing MasterFormPresenter");
+		MLogger.logLn("Initializing MasterFormPresenter");
 	}
 
 

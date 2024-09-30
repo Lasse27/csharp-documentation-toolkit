@@ -1,17 +1,10 @@
-package project.docmaker.utility;
+package project.docmaker.utility.stringutils;
 
-
-import project.docmaker.utility.mlogger.NoLogger;
 
 import java.text.MessageFormat;
 import java.util.Arrays;
-import java.util.Locale;
-import java.util.StringTokenizer;
-
-import static project.docmaker.utility.MiscConstants.EMPTY_STRING;
 
 
-@NoLogger
 public record StringFormat(FormatOption... options)
 {
 
@@ -21,38 +14,6 @@ public record StringFormat(FormatOption... options)
 	private static final String TEXT_DISPLAY_PATTERN = StringFormat.class.getSimpleName() + "[options={0}]";
 
 
-	private static String removeMarks (final String input)
-	{
-		return input.replaceAll("/{3}", EMPTY_STRING).strip();
-	}
-
-
-	private static String upperString (final String input)
-	{
-		return input.toUpperCase(Locale.ROOT);
-	}
-
-
-	private static String lowerString (final String input)
-	{
-
-		return input.toLowerCase(Locale.ROOT);
-	}
-
-
-	private static String normalizeString (final String input)
-	{
-		final String configured = input.trim().replaceAll(" +", " ");
-		final StringTokenizer tokenizer = new StringTokenizer(configured);
-		final StringBuilder stringBuilder = new StringBuilder();
-		while (tokenizer.hasMoreTokens())
-		{
-			stringBuilder.append(" ").append(tokenizer.nextToken());
-		}
-		return stringBuilder.toString();
-	}
-
-
 	public String apply (final String input)
 	{
 		String adjustedString = input;
@@ -60,10 +21,10 @@ public record StringFormat(FormatOption... options)
 		{
 			switch (option)
 			{
-				case NORMALIZE -> adjustedString = StringFormat.normalizeString(adjustedString);
-				case REMOVE_MARKS -> adjustedString = StringFormat.removeMarks(adjustedString);
-				case TO_LOWER -> adjustedString = StringFormat.lowerString(adjustedString);
-				case TO_UPPER -> adjustedString = StringFormat.upperString(adjustedString);
+				case NORMALIZE -> adjustedString = StringController.normalizeString(adjustedString);
+				case REMOVE_MARKS -> adjustedString = StringController.removeMarks(adjustedString);
+				case TO_LOWER -> adjustedString = StringController.lowerString(adjustedString);
+				case TO_UPPER -> adjustedString = StringController.upperString(adjustedString);
 			}
 		}
 		return adjustedString;
@@ -88,9 +49,9 @@ public record StringFormat(FormatOption... options)
 
 		REMOVE_MARKS,
 
-		TO_UPPER,
+		TO_LOWER,
 
-		TO_LOWER;
+		TO_UPPER;
 
 
 		/**

@@ -17,4 +17,5 @@ module project.cs_documentationmaker {
 	exports project.docmaker.control;
 	exports project.docmaker.model.structure;
 	exports project.docmaker.model.tag;
+	exports project.docmaker.utility.mlogger;
 }

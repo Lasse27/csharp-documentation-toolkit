@@ -1,8 +1,6 @@
 package project.docmaker.model.generation;
 
 
-import project.docmaker.utility.mlogger.NoLogger;
-
 import java.text.MessageFormat;
 
 
@@ -19,7 +17,6 @@ import java.text.MessageFormat;
  * @see GenerationJob
  * @since 12.09.2024
  */
-@NoLogger
 public record GenerationPattern(String sourceFolderPath, String targetFolderPath)
 {
 

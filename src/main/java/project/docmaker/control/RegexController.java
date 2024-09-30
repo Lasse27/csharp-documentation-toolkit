@@ -1,6 +1,7 @@
 package project.docmaker.control;
 
 
+import org.jetbrains.annotations.NotNull;
 import project.docmaker.model.structure.Body;
 import project.docmaker.model.structure.Code;
 import project.docmaker.model.structure.Header;
@@ -8,9 +9,8 @@ import project.docmaker.model.structure.Section;
 import project.docmaker.model.tag.Parameter;
 import project.docmaker.model.tag.Return;
 import project.docmaker.model.tag.Summary;
-import project.docmaker.utility.LoggingConstants;
-import project.docmaker.utility.StringFormat;
 import project.docmaker.utility.mlogger.MLogger;
+import project.docmaker.utility.stringutils.StringFormat;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,12 +22,16 @@ import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static project.docmaker.utility.MiscConstants.EMPTY_STRING;
 import static project.docmaker.utility.RegexConstants.*;
-import static project.docmaker.utility.StringFormat.FormatOption;
 import static project.docmaker.utility.mlogger.MLoggerMode.DEBUG;
+import static project.docmaker.utility.mlogger.MLoggerMode.VERBOSE;
+import static project.docmaker.utility.stringutils.StringController.EMPTY_STRING;
+import static project.docmaker.utility.stringutils.StringFormat.FormatOption;
 
 
+/**
+ *
+ */
 public final class RegexController
 {
 
@@ -54,7 +58,7 @@ public final class RegexController
 	 *
 	 * @throws IOException Throws an exception if the file wasn't readable.
 	 */
-	public static List<Section> getSectionsFromFile (final File file) throws IOException
+	public static @NotNull List<Section> getSectionsFromFile (final @NotNull File file) throws IOException
 	{
 		// Reading the file and matching the regular expression
 		final Matcher matcher = CS_SECTION_PATTERN.matcher(Files.readString(file.toPath()));
@@ -62,13 +66,10 @@ public final class RegexController
 
 		// Creating the output list
 		final List<Section> sections = new ArrayList<>();
-		int counter = 0;
 		while (matcher.find())
 		{
-			counter++;
-			MLogger.logSeparator();
-			MLogger.logLnf(DEBUG, "Processing match - {0}", String.valueOf(counter));
-			sections.add(RegexController.createSectionFromMatch(matcher));
+			MLogger.logLnf(DEBUG, "Processing match - {0}", sections.size());
+			sections.add(RegexController.createSectionFromMatch(matcher, file));
 		}
 
 		// Returning the output list
@@ -76,26 +77,91 @@ public final class RegexController
 	}
 
 
-	private static Section createSectionFromMatch (final MatchResult matchResult)
+	private static @NotNull Section createSectionFromMatch (final MatchResult matchResult, final File file) throws IOException
 	{
-		// Creating/logging the header of the section
+		final Header header = getHeaderFromMatchResult(matchResult);
+
+		// Collecting the tags from the documentation and creating/logging the body of the section
+		final Body body = getBodyFromMatchResult(matchResult);
+
+		// Collecting the code snippet of the section
+		final Code code = getCodeFromMatchResult(matchResult, file);
+
+		// Creating/logging the section.
+		MLogger.logLn(DEBUG, "Creating new section instance");
+		final Section section = new Section(header, body, code);
+		MLogger.logMLoggable(DEBUG, section);
+		MLogger.logLn(VERBOSE, "----------------------------------------------------------------");
+		return section;
+	}
+
+
+	@NotNull
+	private static Header getHeaderFromMatchResult (final MatchResult matchResult)
+	{
 		final String keywords = STRING_FORMAT.apply(matchResult.group("KEYWORDS") != null ? matchResult.group("KEYWORDS") : EMPTY_STRING);
 		final String description = STRING_FORMAT.apply(matchResult.group("DESCRIPTION") != null ? matchResult.group("DESCRIPTION") : EMPTY_STRING);
 		final String annotation = STRING_FORMAT.apply(matchResult.group("ANNOTATION") != null ? matchResult.group("ANNOTATION") : EMPTY_STRING);
-		final Header header = new Header(annotation, keywords, description);
-		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, header);
+		return new Header(annotation, keywords, description);
+	}
 
-		// Collecting the tags from the documentation and creating/logging the body of the section
+
+	@NotNull
+	private static Body getBodyFromMatchResult (final MatchResult matchResult)
+	{
 		final Collection<Summary> summaryCollection = RegexController.getSummariesFromCharSequence(matchResult.group("DOCUMENTATION"));
 		final Collection<Parameter> parameterCollection = RegexController.getParametersFromCharSequence(matchResult.group("DOCUMENTATION"));
 		final Collection<Return> returnCollection = RegexController.getReturnsFromCharSequence(matchResult.group("DOCUMENTATION"));
-		final Body body = new Body(summaryCollection, parameterCollection, returnCollection);
-		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, body);
+		return new Body(summaryCollection, parameterCollection, returnCollection);
+	}
 
-		// Creating/logging the section.
-		final Section section = new Section(header, body, new Code(""));
-		MLogger.logLnf(DEBUG, LoggingConstants.INSTANCE_CREATED_PTN, section);
-		return section;
+
+	@NotNull
+	private static Code getCodeFromMatchResult (final MatchResult matchResult, final File file) throws IOException
+	{
+		final String codebase = Files.readString(file.toPath());
+		final int endIndex = RegexController.getEndOfCodeSnippet(matchResult, codebase);
+		final String codeSnippet = codebase.substring(matchResult.start(), endIndex);
+		return new Code(codeSnippet.stripIndent());
+	}
+
+
+	private static int getEndOfCodeSnippet (final MatchResult matchResult, final String codebase)
+	{
+		// Substring of the original match gets reduced to just the description which is used to find the method in the file
+		final Matcher matcher = Pattern.compile(matchResult.group("DESCRIPTION"), Pattern.LITERAL).matcher(codebase);
+		int startindex = 0;
+
+		if (matcher.find())
+		{
+			startindex = matcher.start();
+		}
+		final char[] tokens = codebase.substring(startindex).toCharArray();
+
+		// Once found, the index of the last section-brace gets returned
+		int braces = 0;
+		int endoffset = 0;
+		for (final char token : tokens)
+		{
+			endoffset++;
+			if (token == '{')
+			{
+				braces++;
+			}
+			else if (token == ';' && braces == 0)
+			{
+				break;
+			}
+			else if (token == '}')
+			{
+				braces--;
+				if (braces == 0)
+				{
+					break;
+				}
+			}
+		}
+		return startindex + endoffset;
 	}
 
 

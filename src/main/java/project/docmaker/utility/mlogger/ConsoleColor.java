@@ -20,7 +20,6 @@ package project.docmaker.utility.mlogger;
  * @author Vincent Wolf, Lasse-Leander Hillen, Timothy Hoegen-Jupp, Alexander Goethel
  * @version 1.0.0
  */
-@NoLogger
 public enum ConsoleColor
 {
 	/**
