@@ -29,9 +29,6 @@ import static project.docmaker.utility.stringutils.StringController.EMPTY_STRING
 import static project.docmaker.utility.stringutils.StringFormat.FormatOption;
 
 
-/**
- *
- */
 public final class RegexController
 {
 
@@ -58,6 +55,7 @@ public final class RegexController
 	 *
 	 * @throws IOException Throws an exception if the file wasn't readable.
 	 */
+
 	public static @NotNull List<Section> getSectionsFromFile (final @NotNull File file) throws IOException
 	{
 		// Reading the file and matching the regular expression
@@ -96,8 +94,7 @@ public final class RegexController
 	}
 
 
-	@NotNull
-	private static Header getHeaderFromMatchResult (final MatchResult matchResult)
+	private static @NotNull Header getHeaderFromMatchResult (final @NotNull MatchResult matchResult)
 	{
 		final String keywords = STRING_FORMAT.apply(matchResult.group("KEYWORDS") != null ? matchResult.group("KEYWORDS") : EMPTY_STRING);
 		final String description = STRING_FORMAT.apply(matchResult.group("DESCRIPTION") != null ? matchResult.group("DESCRIPTION") : EMPTY_STRING);
@@ -106,8 +103,7 @@ public final class RegexController
 	}
 
 
-	@NotNull
-	private static Body getBodyFromMatchResult (final MatchResult matchResult)
+	private static @NotNull Body getBodyFromMatchResult (final @NotNull MatchResult matchResult)
 	{
 		final Collection<Summary> summaryCollection = RegexController.getSummariesFromCharSequence(matchResult.group("DOCUMENTATION"));
 		final Collection<Parameter> parameterCollection = RegexController.getParametersFromCharSequence(matchResult.group("DOCUMENTATION"));
@@ -116,8 +112,7 @@ public final class RegexController
 	}
 
 
-	@NotNull
-	private static Code getCodeFromMatchResult (final MatchResult matchResult, final File file) throws IOException
+	private static @NotNull Code getCodeFromMatchResult (final MatchResult matchResult, final @NotNull File file) throws IOException
 	{
 		final String codebase = Files.readString(file.toPath());
 		final int endIndex = RegexController.getEndOfCodeSnippet(matchResult, codebase);
@@ -126,7 +121,7 @@ public final class RegexController
 	}
 
 
-	private static int getEndOfCodeSnippet (final MatchResult matchResult, final String codebase)
+	private static int getEndOfCodeSnippet (final @NotNull MatchResult matchResult, final String codebase)
 	{
 		// Substring of the original match gets reduced to just the description which is used to find the method in the file
 		final Matcher matcher = Pattern.compile(matchResult.group("DESCRIPTION"), Pattern.LITERAL).matcher(codebase);
@@ -165,7 +160,7 @@ public final class RegexController
 	}
 
 
-	private static Collection<Summary> getSummariesFromCharSequence (final CharSequence charSequence)
+	private static @NotNull Collection<Summary> getSummariesFromCharSequence (final CharSequence charSequence)
 	{
 		final Matcher summaryMatcher = SUMMARY_PATTERN.matcher(charSequence);
 		final Collection<Summary> summaryCollection = new ArrayList<>();
@@ -177,7 +172,7 @@ public final class RegexController
 	}
 
 
-	private static Collection<Return> getReturnsFromCharSequence (final CharSequence sequence)
+	private static @NotNull Collection<Return> getReturnsFromCharSequence (final CharSequence sequence)
 	{
 		final Matcher returnsMatcher = RETURN_PATTERN.matcher(sequence);
 		final Collection<Return> returnCollection = new ArrayList<>();
@@ -189,7 +184,7 @@ public final class RegexController
 	}
 
 
-	private static Collection<Parameter> getParametersFromCharSequence (final CharSequence sequence)
+	private static @NotNull Collection<Parameter> getParametersFromCharSequence (final CharSequence sequence)
 	{
 		final Pattern paramPattern = Pattern.compile("///\\s*<param name=\"([^\"]+)\">([\\s\\S]*?)</param>");
 		final Matcher paramMatcher = paramPattern.matcher(sequence);

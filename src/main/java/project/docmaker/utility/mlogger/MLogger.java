@@ -11,9 +11,9 @@ import java.util.Locale;
 
 
 /**
- * The {@code Logger} class provides a logging utility with different modes of log messages, which are all formatted in their respective way. The
- * provided levels are {@link MLoggerMode#DEBUG}, {@link MLoggerMode#INFORMATION}, {@link MLoggerMode#WARNING} and {@link MLoggerMode#ERROR} and
- * represent the different types of logging messages.
+ * The {@code Logger} class provides a logging utility with different modes of log messages, which are all formatted in their respective way. The provided levels are
+ * {@link MLoggerMode#DEBUG}, {@link MLoggerMode#INFORMATION}, {@link MLoggerMode#WARNING} and {@link MLoggerMode#ERROR} and represent the different types of logging
+ * messages.
  *
  * @author Vincent Wolf, Lasse-Leander Hillen
  * @version 2.0.0
@@ -58,8 +58,7 @@ public final class MLogger
 	/**
 	 * Logs a message in the specified {@link MLoggerMode}.
 	 * <br>
-	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least at the same depth as the desired
-	 * log level.
+	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least at the same depth as the desired log level.
 	 *
 	 * @param mLoggerMode The desired {@link MLoggerMode}.
 	 * @param message     The message that's about to get logged.
@@ -83,8 +82,7 @@ public final class MLogger
 	/**
 	 * Logs a message in the {@link MLoggerMode#INFORMATION} mode.
 	 * <br>
-	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least at the same depth as the desired
-	 * log level.
+	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least at the same depth as the desired log level.
 	 *
 	 * @param message The message that's about to get logged.
 	 */
@@ -97,8 +95,7 @@ public final class MLogger
 	/**
 	 * Logs a message in the specified {@link MLoggerMode}.
 	 * <br>
-	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least at the same depth as the desired
-	 * log level.
+	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least at the same depth as the desired log level.
 	 *
 	 * @param mLoggerMode The desired {@link MLoggerMode}.
 	 * @param message     The formatted message that's about to get logged.
@@ -113,8 +110,7 @@ public final class MLogger
 	/**
 	 * Logs a message in the specified {@link MLoggerMode}.
 	 * <br>
-	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least at the same depth as the desired
-	 * log level.
+	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least at the same depth as the desired log level.
 	 *
 	 * @param mLoggerMode   The desired {@link MLoggerMode}.
 	 * @param messageFormat The {@link MessageFormat} that's about to get logged.
@@ -129,8 +125,7 @@ public final class MLogger
 	/**
 	 * Logs a message in the {@link MLoggerMode#INFORMATION} mode.
 	 * <br>
-	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least at the same depth as the desired
-	 * log level.
+	 * The message only actually gets logged into the console if the log depth of the program is deeper or at least at the same depth as the desired log level.
 	 *
 	 * @param message The formatted message that's about to get logged.
 	 * @param formats The formats that'll be put into the message.

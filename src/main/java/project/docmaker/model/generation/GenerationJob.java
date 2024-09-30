@@ -1,6 +1,9 @@
 package project.docmaker.model.generation;
 
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.text.MessageFormat;
 
@@ -12,8 +15,9 @@ public record GenerationJob(File sourceFile, File targetFile)
 	 *
 	 * @return A formatted {@link String} which represents the object in its current state.
 	 */
+	@Contract (pure = true)
 	@Override
-	public String toString ()
+	public @NotNull String toString ()
 	{
 		return MessageFormat.format("GenerationJob'{'sourceFile={0}, targetFile={1}'}'", this.sourceFile, this.targetFile);
 	}

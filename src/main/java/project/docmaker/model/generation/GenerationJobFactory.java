@@ -1,18 +1,20 @@
 package project.docmaker.model.generation;
 
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.nio.file.Path;
 
 
 public final class GenerationJobFactory
 {
-	private GenerationJobFactory ()
-	{
-	}
+	private GenerationJobFactory () {}
 
 
-	public static GenerationJob createJob (final GenerationPattern pattern)
+	@Contract ("_ -> new")
+	public static @NotNull GenerationJob createJob (final GenerationPattern pattern)
 	{
 		// Validating and creating the sourceFile
 		if (pattern.sourceFolderPath() == null || pattern.sourceFolderPath().isBlank())

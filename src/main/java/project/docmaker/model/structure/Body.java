@@ -13,12 +13,10 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static project.docmaker.utility.stringutils.StringController.TAB;
-
 
 /**
- * The record {@code Body} represents a {@link MarkdownStructure} that acts like the body of each Markdown section. It contains the description of the
- * section as well as several collections of different parameters that can be found in C#-Documentation.
+ * The record {@code Body} represents a {@link MarkdownStructure} that acts like the body of each Markdown section. It contains the description of the section as well as
+ * several collections of different parameters that can be found in C#-Documentation.
  *
  * @param parameters The {@link Collection} of {@link Summary} that resembles the summary of the {@code Body}.
  * @param returns    The {@link Collection} of {@link Return} that resembles the returns of the {@code Body}.
@@ -29,8 +27,7 @@ import static project.docmaker.utility.stringutils.StringController.TAB;
  * @see MarkdownStructure
  * @since 11.09.2024
  */
-public record Body(Collection<Summary> summaries, Collection<Parameter> parameters, Collection<Return> returns) implements MarkdownStructure,
-		MLoggable
+public record Body(Collection<Summary> summaries, Collection<Parameter> parameters, Collection<Return> returns) implements MarkdownStructure, MLoggable
 {
 
 	/**
@@ -42,42 +39,42 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
-	private static final String SUMMARY_MARKDOWN_HEADER = "### Summary:\r\n";
+	private static final String SUMMARY_MD_HEADER = "### Summary:\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
-	private static final String SUMMARY_MARKDOWN_PATTERN = "```{0}```\r\n";
+	private static final String SUMMARY_MD = "```{0}```\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
-	private static final String PARAMETER_MARKDOWN_HEADER = "### Parameters:\r\n";
+	private static final String PARAMETER_MD_HEADER = "### Parameters:\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
-	private static final String PARAMETER_MARKDOWN_PATTERN = "#### {0}: ```{1}```\r\n";
+	private static final String PARAMS_MD = "#### {0}: ```{1}```\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
-	private static final String RETURNS_MARKDOWN_HEADER = "### Returns:\r\n";
+	private static final String RETURNS_MD_HEADER = "### Returns:\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
-	private static final String RETURNS_MARKDOWN_PATTERN = "{0}\r\n";
+	private static final String RETURNS_MD = "{0}\r\n";
 
 
 	/**
@@ -90,44 +87,37 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 
 		if (! this.summaries.isEmpty())
 		{
-			stringBuilder.append(SUMMARY_MARKDOWN_HEADER);
-			this.summaries.stream().map(summary -> MessageFormat.format(SUMMARY_MARKDOWN_PATTERN, summary.content())).forEach(stringBuilder::append);
+			stringBuilder.append(SUMMARY_MD_HEADER);
+			this.summaries.stream().map(summary -> MessageFormat.format(SUMMARY_MD, summary.content())).forEach(stringBuilder::append);
 			stringBuilder.append("\r\n");
 		}
-
 		if (! this.parameters.isEmpty())
 		{
-			stringBuilder.append(PARAMETER_MARKDOWN_HEADER);
-			this.parameters.stream().map(parameter -> MessageFormat.format(PARAMETER_MARKDOWN_PATTERN, parameter.name(), parameter.content()))
-					.forEach(stringBuilder::append);
+			stringBuilder.append(PARAMETER_MD_HEADER);
+			this.parameters.stream().map(param -> MessageFormat.format(PARAMS_MD, param.name(), param.content())).forEach(stringBuilder::append);
 			stringBuilder.append("\r\n");
 		}
-
 		if (! this.returns.isEmpty())
 		{
-			stringBuilder.append(RETURNS_MARKDOWN_HEADER);
-			this.returns.stream().map(returns -> MessageFormat.format(RETURNS_MARKDOWN_PATTERN, returns.content())).forEach(stringBuilder::append);
+			stringBuilder.append(RETURNS_MD_HEADER);
+			this.returns.stream().map(returns -> MessageFormat.format(RETURNS_MD, returns.content())).forEach(stringBuilder::append);
 			stringBuilder.append("\r\n");
 		}
-
-
 		return stringBuilder.toString();
 	}
 
 
 	/**
-	 * Generates and returns a {@link Collection} of {@link String} which represents the instance in its current state.
-	 *
-	 * @return A {@link Collection} of {@link String} which represents the object in its current state.
+	 * {@inheritDoc}
 	 */
 	@Override
-	public Collection<String> toStringCollection ()
+	public @NotNull Collection<String> toStringCollection ()
 	{
 		final Collection<String> stringCollection = new ArrayList<>();
-		stringCollection.add("Instance: " + this.toString());
-		stringCollection.add(TAB + "Summaries: " + this.summaries);
-		stringCollection.add(TAB + "Parameters: " + this.parameters);
-		stringCollection.add(TAB + "Returns: " + this.returns);
+		stringCollection.add(MessageFormat.format("Instance: {0}", this.toString()));
+		stringCollection.add(MessageFormat.format("\tSummaries: {0}", this.summaries));
+		stringCollection.add(MessageFormat.format("\tParameters: {0}", this.parameters));
+		stringCollection.add(MessageFormat.format("\tReturns: {0}", this.returns));
 		return stringCollection;
 	}
 
@@ -136,7 +126,7 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String toString ()
+	public @NotNull String toString ()
 	{
 		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.getClass().getSimpleName(), Integer.toHexString(this.hashCode()));
 	}

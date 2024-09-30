@@ -4,7 +4,6 @@ package project.docmaker.utility.mlogger;
 import java.util.ArrayList;
 import java.util.Collection;
 
-
 public interface MLoggable
 {
 	/**

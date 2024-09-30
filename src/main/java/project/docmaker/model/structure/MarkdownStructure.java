@@ -5,8 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 
 /**
- * The interface {@code MarkdownStructure} is implemented as an {@link FunctionalInterface} that only provides a method and resembles a single
- * structure within a section of the Markdown document.
+ * The interface {@code MarkdownStructure} is implemented as an {@link FunctionalInterface} that only provides a method and resembles a single structure within a section of
+ * the Markdown document.
  *
  * @author Lasse-Leander Hillen
  * @see Body
@@ -23,6 +23,6 @@ interface MarkdownStructure
 	 *
 	 * @return A formatted {@link String} which represents the instance in its current state and as a Markdown string.
 	 */
-	@NotNull
-	String toMarkdown ();
+
+	@NotNull String toMarkdown ();
 }

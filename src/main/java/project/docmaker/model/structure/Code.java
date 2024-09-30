@@ -12,14 +12,13 @@ import java.util.Objects;
 
 import static project.docmaker.utility.MiscConstants.MARKDOWN;
 import static project.docmaker.utility.stringutils.StringController.EMPTY_STRING;
-import static project.docmaker.utility.stringutils.StringController.TAB;
 
 
 /**
- * The record {@code CodeSnippet} represents a {@link MarkdownStructure} that acts like a code snippet at the end of each Markdown section. It's
- * supposed to contain the class/method or field description and should never be more than one line long.
+ * The record {@code Code} represents a {@link MarkdownStructure} that acts like a code snippet at the end of each Markdown section. It's supposed to contain the class/method
+ * or field description and should never be more than one line long.
  *
- * @param content The code-sequence that's displayed in the {@code CodeSnippet}.
+ * @param content The code-sequence that's displayed in the {@code Code}.
  *
  * @author Lasse-Leander Hillen
  * @see Record
@@ -53,16 +52,17 @@ public record Code(String content) implements MarkdownStructure, MLoggable
 
 
 	/**
-	 * Generates and returns a {@link Collection} of {@link String} which represents the instance in its current state.
-	 *
-	 * @return A {@link Collection} of {@link String} which represents the object in its current state.
+	 * {@inheritDoc}
 	 */
 	@Override
 	public @NotNull Collection<String> toStringCollection ()
 	{
 		final Collection<String> stringCollection = new ArrayList<>();
-		stringCollection.add("Instance: " + this.toString());
-		stringCollection.add(TAB + "Content: " + (! Objects.equals(this.content, EMPTY_STRING) ? "Exists" : "Doesn't exist"));
+		stringCollection.add(MessageFormat.format("Instance: {0}", this.toString()));
+
+		final String content = ! Objects.equals(this.content, EMPTY_STRING) ? "Exists" : "Doesn't exist";
+		stringCollection.add(MessageFormat.format("\tContent: {0}", content));
+
 		return stringCollection;
 	}
 
@@ -71,7 +71,7 @@ public record Code(String content) implements MarkdownStructure, MLoggable
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String toString ()
+	public @NotNull String toString ()
 	{
 		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.getClass().getSimpleName(), Integer.toHexString(this.hashCode()));
 	}

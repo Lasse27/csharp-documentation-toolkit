@@ -17,8 +17,8 @@ import java.util.Arrays;
 
 
 /**
- * The main class of the application. This class launches the GUI window the user will interact with to. The class which inherits from
- * {@link Application} is responsible for loading any {@code .fxml} files.
+ * The main class of the application. This class launches the GUI window the user will interact with to. The class which inherits from {@link Application} is responsible for
+ * loading any {@code .fxml} files.
  *
  * @author Vincent Wolf, Lasse-Leander Hillen
  * @version 1.0.0
@@ -29,8 +29,8 @@ public class Program extends Application
 {
 
 	/**
-	 * Starts the JavaFX framework by invoking the launch method from the {@link Application} class. It isn't required to explicitly declare the main
-	 * method, as the runtime environment will automatically invoke it anyway in a JavaFX project. Declaring it explicitly doesn't hurt though.
+	 * Starts the JavaFX framework by invoking the launch method from the {@link Application} class. It isn't required to explicitly declare the main method, as the runtime
+	 * environment will automatically invoke it anyway in a JavaFX project. Declaring it explicitly doesn't hurt though.
 	 *
 	 * @param args Contains the JVM arguments which have been passed into the program at the start.
 	 *
@@ -40,11 +40,9 @@ public class Program extends Application
 	{
 		MLogger.logLn("Application started");
 		MLogger.logLnf("Starting arguments: {0}", Arrays.deepToString(args));
-		Platform.runLater(
-				new GenerationRunnable(
-						GenerationJobFactory.createJob(
-								new GenerationPattern("src/main/resources/project/docmaker/Test-Model/Model/Actualization",
-										"src/main/resources/project/docmaker/Test-Model/Model/Actualization"))));
+		Platform.runLater(new GenerationRunnable(GenerationJobFactory.createJob(new GenerationPattern(
+				"src/main/resources/project/docmaker/Test-Model/Model/Actualization",
+				"src/main/resources/project/docmaker/Test-Model/Model/Actualization"))));
 		Application.launch(args);
 	}
 

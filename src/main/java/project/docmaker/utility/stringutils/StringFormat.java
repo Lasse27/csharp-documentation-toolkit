@@ -1,6 +1,9 @@
 package project.docmaker.utility.stringutils;
 
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.text.MessageFormat;
 import java.util.Arrays;
 
@@ -37,7 +40,7 @@ public record StringFormat(FormatOption... options)
 	 * @return A formatted {@link String} which represents the object in its current state.
 	 */
 	@Override
-	public String toString ()
+	public @NotNull String toString ()
 	{
 		return MessageFormat.format(TEXT_DISPLAY_PATTERN, Arrays.toString(this.options));
 	}
@@ -65,8 +68,9 @@ public record StringFormat(FormatOption... options)
 		 *
 		 * @return A formatted {@link String} which represents the object in its current state.
 		 */
+		@Contract (pure = true)
 		@Override
-		public String toString ()
+		public @NotNull String toString ()
 		{
 			return MessageFormat.format(TEXT_DISPLAY_PATTERN, this);
 		}

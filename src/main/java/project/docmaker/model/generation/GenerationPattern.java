@@ -1,12 +1,15 @@
 package project.docmaker.model.generation;
 
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.text.MessageFormat;
 
 
 /**
- * The record {@code GenerationPattern} represents a Pattern, that can be used to create instances of {@link GenerationJob} with the
- * {@link GenerationJobFactory} class. A {@code GenerationPattern} is normally created by collecting the user inputs from the GUI.
+ * The record {@code GenerationPattern} represents a Pattern, that can be used to create instances of {@link GenerationJob} with the {@link GenerationJobFactory} class. A
+ * {@code GenerationPattern} is normally created by collecting the user inputs from the GUI.
  *
  * @param sourceFolderPath The path that contains the C#-Files that are supposed to be converted to Markdown.
  * @param targetFolderPath The path of the folder, that'll contain the generated Markdown documents.
@@ -31,8 +34,9 @@ public record GenerationPattern(String sourceFolderPath, String targetFolderPath
 	 *
 	 * @return A formatted {@link String} which represents the object in its current state.
 	 */
+	@Contract (pure = true)
 	@Override
-	public String toString ()
+	public @NotNull String toString ()
 	{
 		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.sourceFolderPath, this.targetFolderPath);
 	}

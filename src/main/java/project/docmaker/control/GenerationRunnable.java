@@ -3,6 +3,8 @@ package project.docmaker.control;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 import project.docmaker.model.generation.GenerationJob;
 import project.docmaker.model.structure.Section;
 import project.docmaker.model.tag.Parameter;
@@ -45,9 +47,8 @@ public final class GenerationRunnable implements Runnable
 
 
 	/**
-	 * {@inheritDoc} Executes the {@link GenerationJob} that contains the necessary information for the generation. Displays an alert on the
-	 * screen if
-	 * the generation has failed.
+	 * {@inheritDoc} Executes the {@link GenerationJob} that contains the necessary information for the generation. Displays an alert on the screen if the generation has
+	 * failed.
 	 */
 	@Override
 	public void run ()
@@ -79,7 +80,7 @@ public final class GenerationRunnable implements Runnable
 	 *
 	 * @throws FileNotFoundException Throws an exception if the folder of the job is empty or no file ends with .cs
 	 */
-	private File[] collectSourceFiles () throws FileNotFoundException
+	private File @NotNull [] collectSourceFiles () throws FileNotFoundException
 	{
 		final String[] sourceFileStrings = this.job.sourceFile().list((file, fileName) -> fileName.endsWith(".cs"));
 		if (sourceFileStrings == null || sourceFileStrings.length == 0)
@@ -97,7 +98,7 @@ public final class GenerationRunnable implements Runnable
 	 *
 	 * @throws IOException Throws an exception if one of the files couldn't be read.
 	 */
-	private void createMarkdownFiles (final File[] files) throws IOException, IllegalAccessException
+	private void createMarkdownFiles (final File @NotNull [] files) throws IOException, IllegalAccessException
 	{
 		for (final File file : files)
 		{
@@ -117,8 +118,9 @@ public final class GenerationRunnable implements Runnable
 	 *
 	 * @return A formatted {@link String} which represents the object in its current state.
 	 */
+	@Contract (pure = true)
 	@Override
-	public String toString ()
+	public @NotNull String toString ()
 	{
 		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.job);
 	}

@@ -14,8 +14,8 @@ import static project.docmaker.utility.stringutils.StringController.TAB;
 
 
 /**
- * The record {@code Header} represents a {@link MarkdownStructure} that acts like a the header of each Markdown section. It's split into a descriptor
- * {@link String} that contains the modifier of the section and a content {@link String} that contains the name of the section.
+ * The record {@code Header} represents a {@link MarkdownStructure} that acts like a the header of each Markdown section. It's split into a descriptor {@link String} that
+ * contains the modifier of the section and a content {@link String} that contains the name of the section.
  *
  * @param content    Content {@link String} that contains the name of the section.
  * @param descriptor Descriptor {@link String} that contains the modifier of the section
@@ -61,7 +61,7 @@ public record Header(String annotation, String descriptor, String content) imple
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Collection<String> toStringCollection ()
+	public @NotNull Collection<String> toStringCollection ()
 	{
 		final Collection<String> stringCollection = new ArrayList<>();
 		stringCollection.add("Instance: " + this.toString());
@@ -76,7 +76,7 @@ public record Header(String annotation, String descriptor, String content) imple
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String toString ()
+	public @NotNull String toString ()
 	{
 		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.getClass().getSimpleName(), Integer.toHexString(this.hashCode()));
 	}
