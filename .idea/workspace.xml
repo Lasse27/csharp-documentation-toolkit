@@ -8,21 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Tried out gluon build and changed the UI but didn't work and removed old umb code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/StringUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Worked on the regex methods">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Section.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Wireframing.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Wireframing.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/csfileregex.reg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/csfileregex.reg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/stylesheets/stylesheet_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/stylesheets/stylesheet_dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testmarkdown.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/testmarkdown.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/RegexConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/RegexConstants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +32,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="CSS File" />
         <option value="Class" />
         <option value="Record" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -56,18 +49,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Lasse27"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Lasse27&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Lasse27/cs-docmaker",
-    "accountId": "f7b3fd35-2f7d-4a14-9df4-d1a23a6d098f"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Lasse27/cs-docmaker&quot;,
+    &quot;accountId&quot;: &quot;f7b3fd35-2f7d-4a14-9df4-d1a23a6d098f&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationExecutor.java" root0="FORCE_HIGHLIGHTING" />
@@ -84,13 +77,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -128,6 +114,10 @@
     "Maven.CS_Documentation_Toolkit [com.gluonhq:gluonfx-maven-plugin:1.0.24:run].executor": "Run",
     "Maven.CS_Documentation_Toolkit [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor": "Run",
     "Maven.CS_Documentation_Toolkit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [clean].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [test].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [validate].executor": "Run",
     "OverrideImplement.generate.javadoc": "true",
     "Repository.Attach.Annotations": "true",
     "Repository.Attach.JavaDocs": "true",
@@ -138,10 +128,12 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
+    "ignore.preview.features.used": "true",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
     "last.edited.regexp": "public class UserAuthentificator : Execitpr, wiajda, woadkaw, ana{\n    private static final Logger _Logger = new Logger();\n\n    public String toString()\n    {\n        super.toString();\n    }\n}",
+    "last_directory_selection": "C:/Users/lh/IdeaProjects/CSharpDocumentationToolkit/src/test/java",
     "last_opened_file_path": "C:/Users/Lasse/AppData/Local/SceneBuilder/SceneBuilder.exe",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -149,11 +141,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.371063",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "Errors",
+    "settings.editor.selected.configurable": "project.propCompiler",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -176,8 +168,8 @@
       <recent name="C:\Users\lh\IdeaProjects\cs-docmaker\src\main\resources\project\docmaker" />
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
-      <recent name="project.docmaker.utility.constant.MiscConstants" />
       <recent name="project.docmaker.control.RegexControllerTest" />
+      <recent name="project.docmaker.utility.constant.MiscConstants" />
       <recent name="project.docmaker.utility.constant.RegexConstants" />
       <recent name="project.docmaker.utility.constant.LoggingConstants" />
     </key>
@@ -185,11 +177,11 @@
       <recent name="project.docmaker.control" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="project.docmaker.utility.mlogger" />
       <recent name="project.docmaker.control" />
+      <recent name="project.docmaker.utility.mlogger" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Standard Configuration">
+  <component name="RunManager" selected="JUnit.RegexControllerTest">
     <configuration name="GluonStart" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="project.docmaker.HelloFXML" />
       <module name="CSharpDocumentationToolkit" />
@@ -235,8 +227,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
       </set>
     </attachedChunks>
   </component>
@@ -273,6 +264,7 @@
       <workItem from="1727444909829" duration="3361000" />
       <workItem from="1727526358421" duration="1487000" />
       <workItem from="1727617809757" duration="1867000" />
+      <workItem from="1727685035699" duration="1896000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />

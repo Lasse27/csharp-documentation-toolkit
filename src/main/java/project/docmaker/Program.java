@@ -6,9 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import project.docmaker.control.RegexController;
 import project.docmaker.utility.mlogger.MLogger;
 import project.docmaker.utility.mlogger.MLoggerMode;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -20,9 +22,8 @@ public class Program extends Application
 	{
 		MLogger.logSeparator();
 		MLogger.logLn(MLoggerMode.INFORMATION, "Application started");
-		MLogger.logLn(MLoggerMode.INFORMATION, STR."Args: \{Arrays.deepToString(args)}");
+		MLogger.logLnf(MLoggerMode.INFORMATION,  Arrays.deepToString(args));
 		Application.launch(args);
-
 	}
 
 
@@ -36,6 +37,7 @@ public class Program extends Application
 			Program.initStage(stage, fxmlLoader);
 			MLogger.logLnf(MLoggerMode.INFORMATION, "Showing on master stage: {0}", fxmlLoader.getController().getClass().getSimpleName());
 			MLogger.logSeparator();
+			RegexController.getSectionsFromFile(new File("src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJobFactory.cs"));
 		}
 		catch (final Exception exception)
 		{

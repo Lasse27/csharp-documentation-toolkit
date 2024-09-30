@@ -23,32 +23,39 @@ public interface RegexConstants
 	@NonNls String REG_EXP = "RegExp";
 
 
-	@Language (REG_EXP)
-	String DOCUMENTATION_CODE_REGEX = "///([\\s\\S]*?)([{;}])";
-
-	Pattern DOCUMENTATION_CODE_PATTERN = Pattern.compile(DOCUMENTATION_CODE_REGEX, Pattern.MULTILINE);
-
-
-	@Language (REG_EXP)
-	String DOCUMENTATION_SINGLE_LINE_REGEX = "/{3}(.*)";
-
-	Pattern DOCUMENTATION_SINGLE_LINE_PATTERN = Pattern.compile(DOCUMENTATION_SINGLE_LINE_REGEX, Pattern.MULTILINE);
-
-
-	@Language (REG_EXP)
-	String CLASS_WITHOUT_DOC = "((?:(?:public|private|internal|class|static|struct|record|readonly|sealed)\\s+){1,5})(.*?)([();{])";
-
-	Pattern CLASS_WITHOUT_DOC_REGEX = Pattern.compile(CLASS_WITHOUT_DOC, Pattern.MULTILINE);
-
-
+	/**
+	 *
+	 */
 	@Language (REG_EXP)
 	String SUMMARY_REGEX = "<summary>([\\s\\S]*?)</summary>";
 
+	/**
+	 *
+	 */
 	Pattern SUMMARY_PATTERN = Pattern.compile(SUMMARY_REGEX);
 
+	/**
+	 *
+	 */
 	@Language (REG_EXP)
 	String RETURN_REGEX = "<returns>([\\s\\S]*?)</returns>";
 
+	/**
+	 *
+	 */
 	Pattern RETURN_PATTERN = Pattern.compile(RETURN_REGEX);
+
+	/**
+	 *
+	 */
+	@Language (REG_EXP)
+	String REGEX_CS_SECTION = "(?<DOCUMENTATION>///[\\w\\W]+?)(?<ANNOTATION>\\[[\\w\\W]*])*[\\r\\n]*(?<KEYWORDS>" +
+	                          "(?:public\\s+|private\\s+|static\\s+|readonly\\s+|protected\\s+|override\\s+|struct\\s+|class\\s+|interface\\s+)+)" +
+	                          "(?<DESCRIPTION>.*?)(?==|\\{|\\W*?\\{|;)";
+
+	/**
+	 *
+	 */
+	Pattern CS_SECTION_PATTERN = Pattern.compile(REGEX_CS_SECTION);
 }
 

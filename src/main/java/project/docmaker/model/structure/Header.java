@@ -22,13 +22,13 @@ import java.text.MessageFormat;
  * @since 11.09.2024
  */
 @NoLogger
-public record Header(String descriptor, String content) implements MarkdownStructure
+public record Header(String annotation, String descriptor, String content) implements MarkdownStructure
 {
 
 	/**
 	 * An empty {@link Header} instance that contains placeholder attributes and can be used to fill missing matches.
 	 */
-	public static final Header EMPTY = new Header("{Empty}", "{Empty}");
+	public static final Header EMPTY = new Header("{Empty}","{Empty}", "{Empty}");
 
 
 	/**

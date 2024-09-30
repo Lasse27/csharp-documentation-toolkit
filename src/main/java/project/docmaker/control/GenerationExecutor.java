@@ -79,7 +79,7 @@ public final class GenerationExecutor implements Runnable
 	 */
 	private File[] collectSourceFiles () throws FileNotFoundException
 	{
-		final String[] sourceFileStrings = this.job.sourceFile().list((_, fileName) -> fileName.endsWith(".cs"));
+		final String[] sourceFileStrings = this.job.sourceFile().list((file, fileName) -> fileName.endsWith(".cs"));
 		if (sourceFileStrings == null || sourceFileStrings.length == 0)
 		{
 			throw new FileNotFoundException("The source directory was empty or no .cs file could be found."); // TODO: Own type
@@ -100,16 +100,12 @@ public final class GenerationExecutor implements Runnable
 		for (final File file : files)
 		{
 			// Collecting the sections from the source code of the file
-			final Collection<Section> sections = new ArrayList<>();
-			for (final CharSequence doc : RegexController.findDocumentations(Files.readString(file.toPath())))
-			{
-				sections.add(RegexController.getSectionFromString((String) doc));
-			}
+			final Collection<Section> sections = RegexController.getSectionsFromFile(file);
 
 			// Creating the target Markdown file
 			final String targetFileName = file.getName().replaceFirst("[.][^.]+$", ".md");
 			MarkdownController.createMarkdownFile(new File(this.job.targetFile(), targetFileName), sections);
-			MLogger.logLn(INFORMATION, STR."\{targetFileName} created...");
+			MLogger.logLnf(INFORMATION, "{0} created...", targetFileName);
 		}
 	}
 
