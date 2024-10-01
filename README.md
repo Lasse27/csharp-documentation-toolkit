@@ -32,69 +32,36 @@ bewusst allgemein gehalten, sodass jeder, der es nützlich findet, es einsetzen 
 Ein grundlegendes UML-Diagramm zur Darstellung der Code-Struktur wird in Kürze hier hinzugefügt.
 Ausgabebeispiel (Markdown)
 
-# Ausgabebeispiel - Unformatiert
+# Ausgabebeispiel
 
-    # _public static bool TryParse_
-    
-    ### _Summary:_
-    Tries to parse an ss:// URL into a Server object.
-    ### _Parameters:_
-    #### _url:_ ``The ss:// URL to parse.``
-    #### _server:_ ``A Server object represented by the URL.  A new empty Server object if the URL is invalid.``
-    ### _Returns:_
-    True for success. False for failure.
-    ### _Code-Snippet:_ ``public static bool TryParse(string url, [NotNullWhen(true)] out Server? server) {``
-    
-    ---
-    # _public static bool TryParse_
-    
-    ### _Summary:_
-    Tries to parse an ss:// URL into a Server object.
-    ### _Parameters:_
-    #### _uri:_ ``The ss:// URL to parse.``
-    #### _server:_ ``A Server object represented by the URL.  A new empty Server object if the URL is invalid.``
-    ### _Returns:_
-    True for success. False for failure.
-    ### _Code-Snippet:_ ``public static bool TryParse(Uri uri, [NotNullWhen(true)] out Server? server) {``
-    
-    ---
+## public ActualizationJob (DirectoryInfo updateDirectory, IList<DirectoryInfo> workstations, IList<FileInfo> updateFiles, IDictionary<DirectoryInfo, List<FileInfo>> affectedFiles 
 
-# _public static bool TryParse_
 
-### _Summary:_
+### Summary:
+```Standard constructor, which initalizes a new instance of <see cref="ActualizationJob"/> and sets all the necessary attributes.```
 
-Tries to parse an ss:// URL into a Server object.
+### Parameters:
+##### updateDirectory: ```The <see cref="DirectoryInfo"/> that contains the files that are supposed to be inserted with the update.```
+##### workstations: ```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
+##### updateFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the update.```
+##### affectedFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
 
-### _Parameters:_
 
-#### _url:_ ``The ss:// URL to parse.``
-
-#### _server:_ ``A Server object represented by the URL. A new empty Server object if the URL is invalid.``
-
-### _Returns:_
-
-True for success. False for failure.
-
-### _Code-Snippet:_ ``public static bool TryParse(string url, [NotNullWhen(true)] out Server? server) {``
-
----
-
-# _public static bool TryParse_
-
-### _Summary:_
-
-Tries to parse an ss:// URL into a Server object.
-
-### _Parameters:_
-
-#### _uri:_ ``The ss:// URL to parse.``
-
-#### _server:_ ``A Server object represented by the URL. A new empty Server object if the URL is invalid.``
-
-### _Returns:_
-
-True for success. False for failure.
-
-### _Code-Snippet:_ ``public static bool TryParse(Uri uri, [NotNullWhen(true)] out Server? server) {``
-
+### Code:
+```cs
+/// <summary>
+/// Standard constructor, which initalizes a new instance of <see cref="ActualizationJob"/> and sets all the necessary attributes.
+/// </summary>
+/// <param name="updateDirectory"> The <see cref="DirectoryInfo"/> that contains the files that are supposed to be inserted with the update. </param>
+/// <param name="workstations"> The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update. </param>
+/// <param name="updateFiles"> The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the update. </param>
+/// <param name="affectedFiles"> The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating. </param>
+public ActualizationJob (DirectoryInfo updateDirectory, IList<DirectoryInfo> workstations, IList<FileInfo> updateFiles, IDictionary<DirectoryInfo, List<FileInfo>> affectedFiles)
+{
+	this.UpdateDirectory = updateDirectory ?? throw new System.ArgumentNullException(nameof(updateDirectory));
+	this.Workstations = workstations ?? throw new System.ArgumentNullException(nameof(workstations));
+	this.UpdateFiles = updateFiles ?? throw new System.ArgumentNullException(nameof(updateFiles));
+	this.AffectedFiles = affectedFiles ?? throw new System.ArgumentNullException(nameof(affectedFiles));
+}
+```
 ---
