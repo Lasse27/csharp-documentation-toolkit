@@ -1,4 +1,4 @@
-# C#-Documentation Maker
+# C#-Documentation-Toolkit
 
 Dieses Repository stellt ein persönliches Projekt zur Entwicklung eines Dokumentationstools für C# dar, das ähnlich wie
 JavaDoc funktioniert. Ziel des Projekts ist es, eine Software zu erstellen, die aus C#-Quellcode mit
