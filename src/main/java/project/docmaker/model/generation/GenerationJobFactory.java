@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.nio.file.Path;
+import java.time.Instant;
 
 
 public final class GenerationJobFactory
@@ -32,6 +33,6 @@ public final class GenerationJobFactory
 		final File targetPath = Path.of(pattern.targetFolderPath()).toFile();
 
 		// Creating and returning the instance with validated attributes
-		return new GenerationJob(sourcePath, targetPath);
+		return new GenerationJob(Instant.now(), sourcePath, targetPath);
 	}
 }

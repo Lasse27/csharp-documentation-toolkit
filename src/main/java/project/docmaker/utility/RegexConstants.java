@@ -3,6 +3,7 @@ package project.docmaker.utility;
 
 import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NonNls;
+import project.docmaker.utility.mlogger.ConstantInterface;
 
 import java.util.regex.Pattern;
 

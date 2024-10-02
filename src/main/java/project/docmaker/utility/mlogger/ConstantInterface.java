@@ -1,4 +1,4 @@
-package project.docmaker.utility;
+package project.docmaker.utility.mlogger;
 
 
 import java.lang.annotation.Inherited;

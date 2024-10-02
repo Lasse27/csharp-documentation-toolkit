@@ -1,90 +1,38 @@
-.button {
-    -fx-background-color: rgb(76, 96, 175);
-    -fx-font-size: 16;
-    -fx-font-family: "Segoe UI Semibold";
-}
-
-.button > .text {
-    -fx-fill: WHITE;
-}
-
-.button:hover {
-    -fx-cursor: hand;
-    -fx-background-color: rgb(89, 113, 203);
-}
-
-.button:pressed {
-    -fx-cursor: auto;
-    -fx-background-color: rgb(108, 141, 255);
-}
-
-.container {
-    -fx-background-color: rgb(56, 69, 126);
-    -fx-border-color: rgb(56, 69, 126);
-}
-
-.container-rounded {
-    -fx-background-color: rgb(56, 69, 126);
-    -fx-border-color: rgb(56, 69, 126);
-    -fx-border-radius: 8;
-    -fx-background-radius: 8;
-}
-
-.container-bright {
-    -fx-background-color: rgb(76, 96, 175);
-    -fx-border-color: rgb(76, 96, 175);
-}
-
-.container-bright-rounded {
-    -fx-background-color: rgb(76, 96, 175);
-    -fx-border-color: rgb(76, 96, 175);
-    -fx-border-radius: 8;
-    -fx-background-radius: 8;
-}
-
-.container-brightest {
-    -fx-background-color: rgb(108, 141, 255);
-    -fx-border-color: rgb(108, 141, 255);
-}
-
-.container-brightest-rounded {
-    -fx-background-color: rgb(108, 141, 255);
-    -fx-border-color: rgb(108, 141, 255);
-    -fx-border-radius: 8;
-    -fx-background-radius: 8;
-}
-
-.label-standard {
-    -fx-font-size: 16;
-    -fx-font-family: "Segoe UI Semibold";
-}
-
-.label-standard > .text {
-    -fx-fill: WHITE;
-}
-
-.tree-view {
-    -fx-background-color: rgb(76, 96, 175);
-    -fx-background-radius: 8;
-    -fx-border-color: rgb(76, 96, 175);
-    -fx-border-radius: 8;
-    /* There is some oddness if padding is in em values rather than pixels,
-    in particular, the left border of the control doesn't show. */
-    -fx-padding: 1; /* 0.083333em; */
-}
-
-.tree-view .tree-cell {
-    -fx-background-color: rgb(89, 126, 255);
+.root {
+    -fx-base: #242424 ;
+    -fx-control-inner-background: derive(-fx-base,20%);
+    -fx-control-inner-background-alt: derive(-fx-control-inner-background,-10%);
+    -fx-accent: #006689;
+    -fx-focus-color: #036E83;
+    -fx-faint-focus-color: #036E8322;
 }
 
 .text-field {
-    -fx-background-color: rgb(108, 141, 255);
-    -fx-border-color: rgb(76, 96, 175);
-    -fx-border-radius: 8;
-    -fx-background-radius: 8;
+    -fx-prompt-text-fill: lightgray;
+    -fx-border-color: #242424;
+    -fx-background-color: #242424;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+
+}
+
+.text-field .text {
     -fx-text-fill: white;
-    -fx-prompt-text-fill: rgba(255, 255, 255, 0.42);
-    -fx-font-size: 14;
+}
+
+.text-field:empty .text {
+    -fx-effect: null ;
+}
+
+.label {
+    -fx-border-color: #242424;
+    -fx-background-color: #242424;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+}
+
+.label > .text {
+    -fx-text-fill: white;
     -fx-font-family: "Segoe UI Semibold";
-    -fx-animated: true;
+    -fx-font-size: 16;
 }

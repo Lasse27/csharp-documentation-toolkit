@@ -8,44 +8,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="More work on the UI and small other changes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/argparser/ArgumentParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/argparser/JVMArgument.java" afterDir="false" />
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Changed code formatting between methods and fields and added a jvm-argument-parser">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/view/GenerationJobTreeItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/view/JobTreeItemFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/view/green_check.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/GenerationRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/MarkdownController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/control/RegexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationPattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationPattern.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Code.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/MarkdownStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/MarkdownStructure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Section.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Parameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Parameter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Return.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Return.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Summary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/tag/Summary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/ConstantInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/ConstantInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/LoggingConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/LoggingConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/MiscConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/MiscConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/ConstantInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/ConstantInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/LoggingConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/LoggingMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/MarkdownConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/MiscConstants.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/RegexConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/RegexConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/ConsoleColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/ConsoleColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLoggable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLoggable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLoggerMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLoggerMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/stringutils/StringController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/stringutils/StringController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/stringutils/StringFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/stringutils/StringFormat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterForm.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJobFactory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJobFactory.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJob.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJob.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJobFactory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJobFactory.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/stylesheets/stylesheet_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/stylesheets/stylesheet_dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testmarkdown.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/testmarkdown.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,9 +53,9 @@
         <option value="Interface" />
         <option value="CSS File" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Record" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -133,6 +121,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Conf [-enableGUI true -logDepth INFORMATION].executor&quot;: &quot;Run&quot;,
     &quot;Application.Conf [-enableGUI true].executor&quot;: &quot;Run&quot;,
     &quot;Application.GluonStart.executor&quot;: &quot;Run&quot;,
     &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
@@ -168,7 +157,7 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last.edited.regexp&quot;: &quot;public class UserAuthentificator : Execitpr, wiajda, woadkaw, ana{\n    private static final Logger _Logger = new Logger();\n\n    public String toString()\n    {\n        super.toString();\n    }\n}&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/lh/IdeaProjects/CSharpDocumentationToolkit/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lasse/AppData/Local/SceneBuilder/SceneBuilder.exe&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lh/IdeaProjects/CSharpDocumentationToolkit/src/main/resources/project/docmaker/view&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -195,6 +184,7 @@
       <recent name="project.docmaker.model.section" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lh\IdeaProjects\CSharpDocumentationToolkit\src\main\resources\project\docmaker\view" />
       <recent name="C:\Users\lh\IdeaProjects\cs-docmaker\src\main\resources\project\docmaker" />
       <recent name="C:\Users\lh\IdeaProjects\cs-docmaker\src\main\java\project\docmaker" />
     </key>
@@ -218,13 +208,13 @@
       <recent name="project.docmaker.utility.mlogger" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Conf [-enableGUI true]">
-    <configuration name="Conf [-enableGUI true]" type="Application" factoryName="Application">
+  <component name="RunManager" selected="Application.Conf [-enableGUI true -logDepth INFORMATION]">
+    <configuration name="Conf [-enableGUI true -logDepth INFORMATION]" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="project.docmaker.Program" />
       <module name="CSharpDocumentationToolkit" />
-      <option name="PROGRAM_PARAMETERS" value="-enableGUI true" />
+      <option name="PROGRAM_PARAMETERS" value="-enableGUI true -logDepth DEBUG" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -252,7 +242,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Conf [-enableGUI true]" />
+      <item itemvalue="Application.Conf [-enableGUI true -logDepth INFORMATION]" />
       <item itemvalue="Application.GluonStart" />
       <item itemvalue="JUnit.RegexControllerTest" />
     </list>
@@ -310,7 +300,8 @@
       <workItem from="1727787408493" duration="2499000" />
       <workItem from="1727854043820" duration="1861000" />
       <workItem from="1727855963102" duration="4078000" />
-      <workItem from="1727860114762" duration="8020000" />
+      <workItem from="1727860114762" duration="14030000" />
+      <workItem from="1727876853828" duration="1971000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -664,7 +655,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727707468037</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Changed code formatting between methods and fields and added a jvm-argument-parser">
+      <option name="closed" value="true" />
+      <created>1727869624344</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1727869624344</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -720,7 +719,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change: Reworked the Section-Class" />
     <MESSAGE value="Add: Added the code for the abstract body class" />
     <MESSAGE value="Add: Added the code for the abstract header class and changed class structure" />
     <MESSAGE value="Change: Changed some classes to records since they only hold/group information" />
@@ -745,7 +743,8 @@
     <MESSAGE value="Giant changes to the look of the console and the &quot;backend&quot; of the gui" />
     <MESSAGE value="Played around with Contract and NotNull Annotations" />
     <MESSAGE value="More work on the UI and small other changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="More work on the UI and small other changes" />
+    <MESSAGE value="Changed code formatting between methods and fields and added a jvm-argument-parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed code formatting between methods and fields and added a jvm-argument-parser" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

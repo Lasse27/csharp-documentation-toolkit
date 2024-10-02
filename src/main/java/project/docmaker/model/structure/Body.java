@@ -1,12 +1,10 @@
 package project.docmaker.model.structure;
 
 
-import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NotNull;
 import project.docmaker.model.tag.Parameter;
 import project.docmaker.model.tag.Return;
 import project.docmaker.model.tag.Summary;
-import project.docmaker.utility.MiscConstants;
 import project.docmaker.utility.mlogger.MLoggable;
 
 import java.text.MessageFormat;
@@ -39,43 +37,37 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
-	@Language (MiscConstants.MARKDOWN)
-	private static final String SUMMARY_MD_HEADER = "### Summary:\r\n";
+	private static final String SUMMARY_MD_HEADER = "#### Summary:\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
-	@Language (MiscConstants.MARKDOWN)
-	private static final String SUMMARY_MD = "- ```{0}```\r\n";
+	private static final String SUMMARY_MD = "```{0}```\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
-	@Language (MiscConstants.MARKDOWN)
-	private static final String PARAMETER_MD_HEADER = "### Parameters:\r\n";
+	private static final String PARAMETER_MD_HEADER = "#### Parameters:\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
-	@Language (MiscConstants.MARKDOWN)
 	private static final String PARAMS_MD = "- {0}: ```{1}```\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
-	@Language (MiscConstants.MARKDOWN)
-	private static final String RETURNS_MD_HEADER = "### Returns:\r\n";
+	private static final String RETURNS_MD_HEADER = "#### Returns:\r\n";
 
 
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
-	@Language (MiscConstants.MARKDOWN)
-	private static final String RETURNS_MD = "{0}\r\n";
+	private static final String RETURNS_MD = " ```{0}``` \r\n";
 
 
 

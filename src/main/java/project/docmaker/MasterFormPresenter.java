@@ -6,13 +6,22 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import org.jetbrains.annotations.NotNull;
+import project.docmaker.model.generation.GenerationJob;
 import project.docmaker.utility.mlogger.MLogger;
+import project.docmaker.view.JobTreeItemFactory;
 
+import java.io.File;
 import java.net.URL;
+import java.time.Instant;
 import java.util.ResourceBundle;
 
 
@@ -26,27 +35,39 @@ public class MasterFormPresenter implements Initializable
 
 
 	@FXML
-	private Button aboutMenuButton;
+	private TreeView<String> finishedJobsTreeView;
 
 
 	@FXML
-	private Button closeMenuButton;
+	private Button htmlGenerationMenuButton1;
 
 
 	@FXML
-	private Button htmlGenerationMenuButton;
+	private Button markdownGenerationMenuButton1;
 
 
 	@FXML
-	private Button markdownGenerationMenuButton;
+	private TreeView<?> queuedJobsTreeView;
 
 
 	@FXML
-	private Button minimizeMenuButton;
+	private Button settingsMenuButton1;
 
 
 	@FXML
-	private Button settingsMenuButton;
+	private TreeView<?> sourceFilesTreeView;
+
+
+	@FXML
+	private TextField sourceFolderTextBox;
+
+
+	@FXML
+	private HBox targetFolderTextBox;
+
+
+	@FXML
+	private TreeView<?> targetFolderTreeView;
 
 
 
@@ -60,6 +81,12 @@ public class MasterFormPresenter implements Initializable
 	public void initialize (final URL location, final ResourceBundle resources)
 	{
 		MLogger.logLn("Initializing MasterFormPresenter");
+		final TreeItem<String> root = new TreeItem<>("Abgeschlossene Jobs");
+		root.setExpanded(true);
+		root.getChildren().add(JobTreeItemFactory.createItem(new GenerationJob(Instant.now(),
+			new File("src/main/resources/project/docmaker/Test-Model/Model/Actualization"),
+			new File("src/main/resources/project/docmaker/Test-Model/Model/Actualization"))));
+		this.finishedJobsTreeView.setRoot(root);
 	}
 
 

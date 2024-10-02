@@ -3,7 +3,6 @@ package project.docmaker.utility.mlogger;
 
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
-import project.docmaker.utility.stringutils.StringController;
 
 import java.text.MessageFormat;
 
@@ -64,22 +63,19 @@ public enum MLoggerMode
 	private static final String TEXT_FORMAT = "{0} @ {1} ({2}) [name={3}, consoleColor={4}, enableTimestamps={5}]";
 
 
-	private static final int PREFIX_LEN = 5;
-
-
 	private final ConsoleColor consoleColor;
 
 
 	private final boolean enableTimestamps;
 
 
-	private String name;
+	private final String name;
 
 
 
-	MLoggerMode (final @NotNull String name, final ConsoleColor consoleColor, final boolean enableTimestamps)
+	MLoggerMode (final @NotNull String name, final @NotNull ConsoleColor consoleColor, final boolean enableTimestamps)
 	{
-		this.name = name.length() > PREFIX_LEN ? name.substring(0, PREFIX_LEN) : StringController.paddedRightString(name, PREFIX_LEN);
+		this.name = name;
 		this.consoleColor = consoleColor;
 		this.enableTimestamps = enableTimestamps;
 	}
@@ -95,14 +91,6 @@ public enum MLoggerMode
 	public String getName ()
 	{
 		return this.name;
-	}
-
-
-
-	@Contract (mutates = "this")
-	private void setName (final String name)
-	{
-		this.name = name;
 	}
 
 
@@ -142,7 +130,7 @@ public enum MLoggerMode
 	public @NotNull String toString ()
 	{
 		return MessageFormat.format(TEXT_FORMAT, this.getClass()
-			                                         .getSimpleName(), Integer.toHexString(this.hashCode()), this.name(), this.name, this.consoleColor,
+			                                         .getSimpleName(), Integer.toHexString(this.hashCode()), this.name(), this.name, this.consoleColor.name(),
 			this.enableTimestamps);
 	}
 }

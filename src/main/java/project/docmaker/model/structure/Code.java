@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
 
-import static project.docmaker.utility.MiscConstants.MARKDOWN;
 import static project.docmaker.utility.stringutils.StringController.EMPTY_STRING;
 
 
@@ -37,8 +36,7 @@ public record Code(String content) implements MarkdownStructure, MLoggable
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Code#toMarkdown()} method gets called
 	 */
-	@Language (MARKDOWN)
-	private static final String MARKDOWN_PATTERN = "### Code:\r\n```cs\r\n{0}\r\n```\r\n";
+	private static final String MARKDOWN_PATTERN = "#### Code:\r\n```cs\r\n{0}\r\n```\r\n";
 
 
 

@@ -2,18 +2,23 @@ package project.docmaker;
 
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import project.docmaker.control.GenerationRunnable;
+import project.docmaker.model.generation.GenerationJob;
 import project.docmaker.utility.argparser.ArgumentParser;
 import project.docmaker.utility.argparser.JVMArgument;
+import project.docmaker.utility.mlogger.LoggingMessages;
 import project.docmaker.utility.mlogger.MLogger;
 
+import java.io.File;
+import java.time.Instant;
 import java.util.Map;
 
-import static project.docmaker.utility.mlogger.MLoggerMode.DEBUG;
-import static project.docmaker.utility.mlogger.MLoggerMode.INFORMATION;
+import static project.docmaker.utility.mlogger.MLoggerMode.*;
 
 
 /**
@@ -29,6 +34,13 @@ public class Program extends Application
 {
 
 	/**
+	 * The URL to the FXML-file of the Masterform.
+	 */
+	private static final String MASTERFORM_FXML_URL = "MasterForm.fxml";
+
+
+
+	/**
 	 * Starts the JavaFX framework by invoking the launch method from the {@link Application} class. It isn't required to explicitly declare the main method, as the runtime
 	 * environment will automatically invoke it anyway in a JavaFX project. Declaring it explicitly doesn't hurt though.
 	 *
@@ -38,7 +50,6 @@ public class Program extends Application
 	 */
 	public static void main (final String[] args)
 	{
-		MLogger.logLn(INFORMATION, "Program started.");
 		handleJVMArguments(args);
 	}
 
@@ -46,15 +57,23 @@ public class Program extends Application
 
 	private static void handleJVMArguments (final String[] args)
 	{
-		MLogger.logLn(DEBUG, "Available JVM-Arguments:");
-		for (final JVMArgument jvmArgument : JVMArgument.values())
-		{
-			MLogger.logLn(DEBUG, jvmArgument.toString());
-		}
+		// Collecting the starting arguments from the String[].
 		final Map<JVMArgument, String> startingArguments = ArgumentParser.parse(args);
 
-		if (startingArguments.get(JVMArgument.ENABLE_GUI).equals("true"))
+		// Setting the logging level
+		final String depth = startingArguments.getOrDefault(JVMArgument.LOG_DEPTH, INFORMATION.name());
+		MLogger.setDepth(valueOf(depth));
+		MLogger.logLnf(DEBUG, LoggingMessages.LOGGING_DEPTH_CHANGED_PTN, MLogger.getDepth().toString());
+
+		// Enabling the UI
+		if (startingArguments.getOrDefault(JVMArgument.ENABLE_GUI, String.valueOf(false)).equals(String.valueOf(true)))
 		{
+			MLogger.logLn(DEBUG, LoggingMessages.APPLICATION_LAUNCHED_MSG);
+
+			Platform.runLater(new GenerationRunnable(new GenerationJob(Instant.now(),
+				new File("src/main/resources/project/docmaker/Test-Model/Model/Actualization"),
+				new File("src/main/resources/project/docmaker/Test-Model/Model/Actualization"))));
+
 			Application.launch(args);
 		}
 	}
@@ -73,13 +92,13 @@ public class Program extends Application
 	{
 		try
 		{
-			final FXMLLoader fxmlLoader = new FXMLLoader(Program.class.getResource("MasterForm.fxml"));
+			final FXMLLoader fxmlLoader = new FXMLLoader(Program.class.getResource(MASTERFORM_FXML_URL));
 			stage.setScene(new Scene(fxmlLoader.load()));
 			stage.setResizable(false);
 			stage.sizeToScene();
 			stage.initStyle(StageStyle.UNDECORATED);
 			stage.show();
-			MLogger.logLnf(INFORMATION, "Showing on master stage: {0}", fxmlLoader.getController().getClass().getSimpleName());
+			MLogger.logLnf(INFORMATION, LoggingMessages.SCENE_CHANGED_PTN, fxmlLoader.getController().getClass().getSimpleName());
 		}
 		catch (final Exception exception)
 		{

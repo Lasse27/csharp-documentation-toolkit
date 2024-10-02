@@ -1,11 +1,11 @@
-## public static class BackupJobFactory
+### public static class BackupJobFactory 
 
-### Summary:
 
-- ```The <see cref="BackupJobFactory"/> class works as part of the factory pattern and provides generation methods for instances  of the <see cref="BackupJob"/> struct. Class is mainly used to hide the validation of the generation parameters.```
+#### Summary:
+```The <see cref="BackupJobFactory"/> class works as part of the factory pattern and provides generation methods for instances  of the <see cref="BackupJob"/> struct. Class is mainly used to hide the validation of the generation parameters.```
 
-### Code:
 
+#### Code:
 ```cs
 /// <summary>
 /// The <see cref="BackupJobFactory"/> class works as part of the factory pattern and provides generation methods for instances
@@ -102,24 +102,21 @@ public static class BackupJobFactory
 ```
 
 ---
+### public static BackupJob CreateJob (CheckedItemCollection workstationPaths, CheckedItemCollection filePaths 
 
-## public static BackupJob CreateJob (CheckedItemCollection workstationPaths, CheckedItemCollection filePaths
 
-### Summary:
+#### Summary:
+```Creates a new instance of <see cref="BackupJob"/> by validating the passed filepaths and collecting the needed files from the collections.```
 
-- ```Creates a new instance of <see cref="BackupJob"/> by validating the passed filepaths and collecting the needed files from the collections.```
-
-### Parameters:
-
+#### Parameters:
 - workstationPaths: ```A <see cref="CheckedItemCollection"/> that contains the paths of the target workstations.```
 - filePaths: ```A <see cref="CheckedItemCollection"/> that contains the selected files from the update directory.```
 
-### Returns:
+#### Returns:
+ ```A new <see cref="ActualizationJob"/> instance if all parameters were validated.``` 
 
-A new <see cref="ActualizationJob"/> instance if all parameters were validated.
 
-### Code:
-
+#### Code:
 ```cs
 /// <summary>
 /// Creates a new instance of <see cref="BackupJob"/> by validating the passed filepaths and collecting the needed files from the collections.
@@ -152,23 +149,20 @@ public static BackupJob CreateJob (CheckedItemCollection workstationPaths, Check
 ```
 
 ---
+### private static IDictionary<DirectoryInfo, DirectoryInfo> GetBackupFolders (IList<DirectoryInfo> workstations 
 
-## private static IDictionary<DirectoryInfo, DirectoryInfo> GetBackupFolders (IList<DirectoryInfo> workstations
 
-### Summary:
+#### Summary:
+```Generates a <see cref="Dictionary{TKey, TValue}"/> of the workstations and their corresponding backup folder.```
 
-- ```Generates a <see cref="Dictionary{TKey, TValue}"/> of the workstations and their corresponding backup folder.```
-
-### Parameters:
-
+#### Parameters:
 - workstations: ```A <see cref="IList{T}"/> that contains the target workstations.```
 
-### Returns:
+#### Returns:
+ ```A <see cref="Dictionary{TKey, TValue}"/> of the workstations and their corresponding backup folder.``` 
 
-A <see cref="Dictionary{TKey, TValue}"/> of the workstations and their corresponding backup folder.
 
-### Code:
-
+#### Code:
 ```cs
 /// <summary>
 /// Generates a <see cref="Dictionary{TKey, TValue}"/> of the workstations and their corresponding backup folder.
@@ -193,24 +187,21 @@ private static IDictionary<DirectoryInfo, DirectoryInfo> GetBackupFolders (IList
 ```
 
 ---
+### private static IDictionary<DirectoryInfo, List<FileInfo>> GetAffectedFiles (IList<DirectoryInfo> workstations, List<string> fileStrings 
 
-## private static IDictionary<DirectoryInfo, List<FileInfo>> GetAffectedFiles (IList<DirectoryInfo> workstations, List<string> fileStrings
 
-### Summary:
+#### Summary:
+```Generates a <see cref="Dictionary{TKey, TValue}"/> of the workstations and their affected files.```
 
-- ```Generates a <see cref="Dictionary{TKey, TValue}"/> of the workstations and their affected files.```
-
-### Parameters:
-
+#### Parameters:
 - workstations: ```A <see cref="IList{T}"/> that contains the target workstations.```
 - fileStrings: ```A <see cref="IList{T}"/> that contains the selected files as strings.```
 
-### Returns:
+#### Returns:
+ ```A <see cref="Dictionary{TKey, TValue}"/> of the workstations and their affected files.``` 
 
-A <see cref="Dictionary{TKey, TValue}"/> of the workstations and their affected files.
 
-### Code:
-
+#### Code:
 ```cs
 /// <summary>
 /// Generates a <see cref="Dictionary{TKey, TValue}"/> of the workstations and their affected files.

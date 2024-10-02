@@ -50,6 +50,9 @@ public final class MLogger
 	private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(TIME, Locale.GERMANY).withZone(ZoneId.systemDefault());
 
 
+	private static MLoggerMode depth = MLoggerMode.INFORMATION;
+
+
 
 	/**
 	 * Private constructor to prohibit instantiation of the class, since it's supposed to be a static class.
@@ -68,16 +71,20 @@ public final class MLogger
 	 */
 	public static void logLn (final @NotNull MLoggerMode mLoggerMode, final String message)
 	{
-		final StringBuilder loggingBuilder = new StringBuilder();
-		if (mLoggerMode.hasEnabledTimestamps())
+		if (mLoggerMode.ordinal() >= depth.ordinal())
 		{
-			loggingBuilder.append(MessageFormat.format(LOG_SECTION_FORMAT, EMPTY_STR, FORMATTER.format(Instant.now()), EMPTY_STR));
+			final StringBuilder loggingBuilder = new StringBuilder();
+
+			if (mLoggerMode.hasEnabledTimestamps())
+			{
+				loggingBuilder.append(MessageFormat.format(LOG_SECTION_FORMAT, EMPTY_STR, FORMATTER.format(Instant.now()), EMPTY_STR));
+			}
+			if (!mLoggerMode.getName().equals(EMPTY_STR))
+			{
+				loggingBuilder.append(MessageFormat.format(LOG_SECTION_FORMAT, mLoggerMode.getConsoleColor().toString(), mLoggerMode.getName(), ConsoleColor.NORM));
+			}
+			System.out.println(loggingBuilder.append(message));
 		}
-		if (!mLoggerMode.getName().equals(EMPTY_STR))
-		{
-			loggingBuilder.append(MessageFormat.format(LOG_SECTION_FORMAT, mLoggerMode.getConsoleColor().toString(), mLoggerMode.getName(), ConsoleColor.NORM));
-		}
-		System.out.println(loggingBuilder.append(message));
 	}
 
 
@@ -186,5 +193,19 @@ public final class MLogger
 	public static void logMLoggable (final MLoggable mLoggable)
 	{
 		MLogger.logMLoggable(MLoggerMode.INFORMATION, mLoggable);
+	}
+
+
+
+	public static void setDepth (final MLoggerMode mLoggerMode)
+	{
+		MLogger.depth = mLoggerMode;
+	}
+
+
+
+	public static MLoggerMode getDepth ()
+	{
+		return depth;
 	}
 }

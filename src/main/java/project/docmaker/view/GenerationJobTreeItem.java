@@ -1,19 +1,18 @@
-package project.docmaker.model.generation;
+package project.docmaker.view;
 
 
+import javafx.scene.control.TreeItem;
 import org.jetbrains.annotations.NotNull;
+import project.docmaker.model.generation.GenerationJob;
 
-import java.io.File;
-import java.text.MessageFormat;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 
-public record GenerationJob(Instant instant, File sourceFile, File targetFile)
+public final class GenerationJobTreeItem extends TreeItem<String>
 {
-
 	/**
 	 * {@link String} constant representing the format of the displayed timestamp.
 	 */
@@ -28,15 +27,22 @@ public record GenerationJob(Instant instant, File sourceFile, File targetFile)
 	private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(TIME, Locale.GERMANY).withZone(ZoneId.systemDefault());
 
 
+	private final Instant date;
 
-	/**
-	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
-	 *
-	 * @return A formatted {@link String} which represents the object in its current state.
-	 */
+
+
+	public GenerationJobTreeItem (final @NotNull GenerationJob generationJob)
+	{
+		this.date = generationJob.instant();
+		this.getChildren().add(new TreeItem<>(generationJob.targetFile().toString()));
+		this.getChildren().add(new TreeItem<>(generationJob.sourceFile().toString()));
+	}
+
+
+
 	@Override
 	public @NotNull String toString ()
 	{
-		return MessageFormat.format("GenerationJob [{0}]", FORMATTER.format(this.instant));
+		return "GenerationJob" + FORMATTER.format(this.date);
 	}
 }

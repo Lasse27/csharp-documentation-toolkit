@@ -1,9 +1,7 @@
 package project.docmaker.model.structure;
 
 
-import org.intellij.lang.annotations.Language;
 import org.jetbrains.annotations.NotNull;
-import project.docmaker.utility.MiscConstants;
 import project.docmaker.utility.mlogger.MLoggable;
 
 import java.text.MessageFormat;
@@ -25,13 +23,6 @@ import java.util.Collection;
  */
 public record Header(String annotation, String descriptor, String content) implements MarkdownStructure, MLoggable
 {
-
-	/**
-	 * An empty {@link Header} instance that contains placeholder attributes and can be used to fill missing matches.
-	 */
-	public static final Header EMPTY = new Header("{Empty}", "{Empty}", "{Empty}");
-
-
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Header#toString()} method gets called
 	 */
@@ -41,8 +32,7 @@ public record Header(String annotation, String descriptor, String content) imple
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Header#toMarkdown()} method gets called
 	 */
-	@Language (MiscConstants.MARKDOWN)
-	private static final String MARKDOWN_PATTERN = "## {0} {1} \n\n";
+	private static final String MARKDOWN_PATTERN = "### {0} {1} \n\n";
 
 
 
