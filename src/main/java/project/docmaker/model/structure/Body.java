@@ -35,6 +35,7 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 	 */
 	private static final String TEXT_DISPLAY_PATTERN = "{0} @ {1}";
 
+
 	/**
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
@@ -46,7 +47,7 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
-	private static final String SUMMARY_MD = "```{0}```\r\n";
+	private static final String SUMMARY_MD = "- ```{0}```\r\n";
 
 
 	/**
@@ -60,7 +61,7 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 	 * {@link MessageFormat} pattern, which is used, when the {@link Body#toMarkdown()} method gets called
 	 */
 	@Language (MiscConstants.MARKDOWN)
-	private static final String PARAMS_MD = "#### {0}: ```{1}```\r\n";
+	private static final String PARAMS_MD = "- {0}: ```{1}```\r\n";
 
 
 	/**
@@ -77,6 +78,7 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 	private static final String RETURNS_MD = "{0}\r\n";
 
 
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -85,19 +87,19 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 	{
 		final StringBuilder stringBuilder = new StringBuilder();
 
-		if (! this.summaries.isEmpty())
+		if (!this.summaries.isEmpty())
 		{
 			stringBuilder.append(SUMMARY_MD_HEADER);
 			this.summaries.stream().map(summary -> MessageFormat.format(SUMMARY_MD, summary.content())).forEach(stringBuilder::append);
 			stringBuilder.append("\r\n");
 		}
-		if (! this.parameters.isEmpty())
+		if (!this.parameters.isEmpty())
 		{
 			stringBuilder.append(PARAMETER_MD_HEADER);
 			this.parameters.stream().map(param -> MessageFormat.format(PARAMS_MD, param.name(), param.content())).forEach(stringBuilder::append);
 			stringBuilder.append("\r\n");
 		}
-		if (! this.returns.isEmpty())
+		if (!this.returns.isEmpty())
 		{
 			stringBuilder.append(RETURNS_MD_HEADER);
 			this.returns.stream().map(returns -> MessageFormat.format(RETURNS_MD, returns.content())).forEach(stringBuilder::append);
@@ -105,6 +107,7 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 		}
 		return stringBuilder.toString();
 	}
+
 
 
 	/**
@@ -120,6 +123,7 @@ public record Body(Collection<Summary> summaries, Collection<Parameter> paramete
 		stringCollection.add(MessageFormat.format("\tReturns: {0}", this.returns));
 		return stringCollection;
 	}
+
 
 
 	/**

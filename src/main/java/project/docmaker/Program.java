@@ -2,18 +2,18 @@ package project.docmaker;
 
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import project.docmaker.control.GenerationRunnable;
-import project.docmaker.model.generation.GenerationJobFactory;
-import project.docmaker.model.generation.GenerationPattern;
+import project.docmaker.utility.argparser.ArgumentParser;
+import project.docmaker.utility.argparser.JVMArgument;
 import project.docmaker.utility.mlogger.MLogger;
-import project.docmaker.utility.mlogger.MLoggerMode;
 
-import java.util.Arrays;
+import java.util.Map;
+
+import static project.docmaker.utility.mlogger.MLoggerMode.DEBUG;
+import static project.docmaker.utility.mlogger.MLoggerMode.INFORMATION;
 
 
 /**
@@ -38,13 +38,27 @@ public class Program extends Application
 	 */
 	public static void main (final String[] args)
 	{
-		MLogger.logLn("Application started");
-		MLogger.logLnf("Starting arguments: {0}", Arrays.deepToString(args));
-		Platform.runLater(new GenerationRunnable(GenerationJobFactory.createJob(new GenerationPattern(
-				"src/main/resources/project/docmaker/Test-Model/Model/Actualization",
-				"src/main/resources/project/docmaker/Test-Model/Model/Actualization"))));
-		Application.launch(args);
+		MLogger.logLn(INFORMATION, "Program started.");
+		handleJVMArguments(args);
 	}
+
+
+
+	private static void handleJVMArguments (final String[] args)
+	{
+		MLogger.logLn(DEBUG, "Available JVM-Arguments:");
+		for (final JVMArgument jvmArgument : JVMArgument.values())
+		{
+			MLogger.logLn(DEBUG, jvmArgument.toString());
+		}
+		final Map<JVMArgument, String> startingArguments = ArgumentParser.parse(args);
+
+		if (startingArguments.get(JVMArgument.ENABLE_GUI).equals("true"))
+		{
+			Application.launch(args);
+		}
+	}
+
 
 
 	/**
@@ -65,7 +79,7 @@ public class Program extends Application
 			stage.sizeToScene();
 			stage.initStyle(StageStyle.UNDECORATED);
 			stage.show();
-			MLogger.logLnf(MLoggerMode.INFORMATION, "Showing on master stage: {0}", fxmlLoader.getController().getClass().getSimpleName());
+			MLogger.logLnf(INFORMATION, "Showing on master stage: {0}", fxmlLoader.getController().getClass().getSimpleName());
 		}
 		catch (final Exception exception)
 		{

@@ -13,6 +13,7 @@ public record Return(String content)
 	private static final String TEXT_DISPLAY_PATTERN = Return.class.getSimpleName() + "[content={0}]";
 
 
+
 	/**
 	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
 	 *

@@ -8,6 +8,5 @@ public interface MiscConstants
 {
 
 
-	@NonNls
-	String MARKDOWN = "Markdown";
+	@NonNls String MARKDOWN = "Markdown";
 }

@@ -23,6 +23,5 @@ interface MarkdownStructure
 	 *
 	 * @return A formatted {@link String} which represents the instance in its current state and as a Markdown string.
 	 */
-
 	@NotNull String toMarkdown ();
 }

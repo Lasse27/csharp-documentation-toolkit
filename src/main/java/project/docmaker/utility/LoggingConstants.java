@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NonNls;
 
 
 /**
- * The interface {@code LoggingConstants} contains mainly mlogger messages for the output in the console.
+ * The interface {@code LoggingConstants} contains mainly logger messages for the output in the console.
  *
  * @author Lasse-Leander Hillen
  * @since 07.09.2024
@@ -16,6 +16,5 @@ public interface LoggingConstants
 	/**
 	 * Logging message for a creation of an instance.
 	 */
-	@NonNls
-	String INSTANCE_CREATED_PTN = "Created instance: {0}";
+	@NonNls String INSTANCE_CREATED_PTN = "Created instance: {0}";
 }

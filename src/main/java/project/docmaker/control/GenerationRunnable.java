@@ -29,10 +29,12 @@ public final class GenerationRunnable implements Runnable
 	 */
 	public static final String TEXT_DISPLAY_PATTERN = GenerationRunnable.class.getSimpleName() + "[job={0}]";
 
+
 	/**
 	 * The {@link GenerationJob} that contains the necessary information for the execution of the {@link GenerationRunnable}.
 	 */
 	private final GenerationJob job;
+
 
 
 	/**
@@ -44,6 +46,7 @@ public final class GenerationRunnable implements Runnable
 	{
 		this.job = job;
 	}
+
 
 
 	/**
@@ -73,6 +76,7 @@ public final class GenerationRunnable implements Runnable
 	}
 
 
+
 	/**
 	 * Gets all source code files from the source directory.
 	 *
@@ -89,6 +93,7 @@ public final class GenerationRunnable implements Runnable
 		}
 		return Arrays.stream(sourceFileStrings).map(file -> new File(this.job.sourceFile(), file)).toArray(File[]::new);
 	}
+
 
 
 	/**
@@ -113,13 +118,14 @@ public final class GenerationRunnable implements Runnable
 	}
 
 
+
 	/**
 	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
 	 *
 	 * @return A formatted {@link String} which represents the object in its current state.
 	 */
-	@Contract (pure = true)
 	@Override
+	@Contract (pure = true)
 	public @NotNull String toString ()
 	{
 		return MessageFormat.format(TEXT_DISPLAY_PATTERN, this.job);

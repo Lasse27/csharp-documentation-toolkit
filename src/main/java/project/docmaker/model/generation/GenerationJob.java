@@ -1,7 +1,6 @@
 package project.docmaker.model.generation;
 
 
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -10,12 +9,12 @@ import java.text.MessageFormat;
 
 public record GenerationJob(File sourceFile, File targetFile)
 {
+
 	/**
 	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
 	 *
 	 * @return A formatted {@link String} which represents the object in its current state.
 	 */
-	@Contract (pure = true)
 	@Override
 	public @NotNull String toString ()
 	{

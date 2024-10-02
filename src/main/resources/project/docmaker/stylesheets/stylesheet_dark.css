@@ -56,7 +56,6 @@
 
 .label-standard {
     -fx-font-size: 16;
-    -fx-font-smoothing-type: grey;
     -fx-font-family: "Segoe UI Semibold";
 }
 
@@ -65,136 +64,26 @@
 }
 
 .tree-view {
-    -fx-background-color: rgb(108, 141, 255);
-
+    -fx-background-color: rgb(76, 96, 175);
+    -fx-background-radius: 8;
+    -fx-border-color: rgb(76, 96, 175);
+    -fx-border-radius: 8;
     /* There is some oddness if padding is in em values rather than pixels,
     in particular, the left border of the control doesn't show. */
     -fx-padding: 1; /* 0.083333em; */
 }
 
-.tree-view:focused {
-    -fx-background-color: rgb(108, 141, 255);
-    -fx-background-insets: -1.4, 0, 1;
-    -fx-background-radius: 1.4, 0, 0;
-
-    /* There is some oddness if padding is in em values rather than pixels,
-    in particular, the left border of the control doesn't show. */
-    -fx-padding: 1; /* 0.083333em; */
-}
-
-.tree-view .scroll-bar:vertical {
-    -fx-background-insets: 0, 0 0 0 1;
-    -fx-padding: 0.0 0.0 0.0 0.0;
-}
-
-.tree-view .scroll-bar:horizontal {
-    -fx-background-insets: 0, 1 0 0 0;
-    -fx-padding: 0.0 0.0 0.0 0.0;
-}
-
-.tree-view:disabled {
-    -fx-opacity: -fx-disabled-opacity;
-}
-
-.tree-view .corner {
-    -fx-background-color: -fx-box-border, -fx-base;
-    -fx-background-insets: 0, 1 0 0 1;
-}
-
-.tree-cell {
-    -fx-background-color: rgb(186, 203, 253);
-    -fx-padding: 0.25em; /* 3 */
-    -fx-text-fill: -fx-text-inner-color;
-    -fx-indent: 10;
-}
-
-.tree-cell .label {
-    -fx-padding: 0.0em 0.0em 0.0em 0.25em; /* 0 0 0 3 */
-}
-
-
-.tree-view:focused .tree-cell:focused {
-    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, -fx-control-inner-background;
-    -fx-background-insets: 0, 1, 2;
-}
-
-.tree-view:focused .tree-cell:filled:focused:selected {
-    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, -fx-selection-bar;
-    -fx-background-insets: 0, 1, 2;
-    -fx-background: -fx-accent;
-    -fx-text-fill: -fx-selection-bar-text;
-}
-
-.tree-view:focused .tree-cell:filled:selected, .tree-view:focused .tree-cell:filled:selected:hover {
-    -fx-background: -fx-accent;
-    -fx-background-color: -fx-selection-bar;
-    -fx-text-fill: -fx-selection-bar-text;
-}
-
-.tree-view:focused .tree-cell:filled:focused:selected:hover {
-    -fx-background: -fx-accent;
-    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, -fx-selection-bar;
-    -fx-background-insets: 0, 1, 2;
-    -fx-text-fill: -fx-selection-bar-text;
-}
-
-/* When the TreeView is _not_ focused, we show alternate selection colors */
-.tree-cell:filled:selected:focused, .tree-cell:filled:selected {
-    -fx-background-color: lightgray;
-    -fx-text-fill: -fx-selection-bar-text;
-}
-
-.tree-cell:filled:selected:focused:disabled, .tree-cell:filled:selected:disabled {
-    -fx-opacity: -fx-disabled-opacity;
-}
-
-.tree-cell .tree-disclosure-node {
-    /** put a bit of padding around the disclosure node to make the clicking region larger */
-    -fx-padding: 4 2 4 8;
-    -fx-background-color: transparent;
-}
-
-.tree-cell .tree-disclosure-node:disabled {
-    -fx-opacity: -fx-disabled-opacity;
-}
-
-.tree-cell .tree-disclosure-node .arrow {
-    -fx-background-color: -fx-mark-color;
-    -fx-padding: 0.333333em; /* 4 */
-    -fx-shape: "M 0 -4 L 8 0 L 0 4 z";
-}
-
-.tree-cell:expanded .tree-disclosure-node .arrow {
-    -fx-rotate: 90;
-}
-
-.tree-cell:filled:selected .tree-disclosure-node .arrow {
-    -fx-background-color: -fx-selection-bar-text;
-}
-
-.tree-cell:filled:hover {
-    -fx-background-color: -fx-cell-hover-color;
-    -fx-text-fill: -fx-text-inner-color;
-}
-
-.tree-cell:filled:hover .tree-disclosure-node .arrow {
-    -fx-background-color: -fx-mark-color;
-}
-
-.tree-view:focused .tree-cell:filled:focused:hover {
-    -fx-background-color: -fx-focus-color, -fx-cell-focus-inner-border, -fx-cell-hover-color;
-    -fx-background-insets: 0, 1, 2;
-    -fx-text-fill: -fx-text-inner-color;
-}
-
-.tree-cell:filled:selected:hover .tree-disclosure-node .arrow {
-    -fx-background-color: -fx-selection-bar-text;
+.tree-view .tree-cell {
+    -fx-background-color: rgb(89, 126, 255);
 }
 
 .text-field {
     -fx-background-color: rgb(108, 141, 255);
+    -fx-border-color: rgb(76, 96, 175);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
     -fx-text-fill: white;
-    -fx-prompt-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.42);
     -fx-font-size: 14;
     -fx-font-family: "Segoe UI Semibold";
     -fx-animated: true;

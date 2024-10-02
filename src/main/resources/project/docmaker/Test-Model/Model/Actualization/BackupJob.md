@@ -1,11 +1,11 @@
-## public struct BackupJob : IJob 
-
+## public struct BackupJob : IJob
 
 ### Summary:
-```The <see cref="BackupJob"/> struct represents a job-dataclass that contains relevant information to start the backup process.```
 
+- ```The <see cref="BackupJob"/> struct represents a job-dataclass that contains relevant information to start the backup process.```
 
 ### Code:
+
 ```cs
 /// <summary>
 /// The <see cref="BackupJob"/> struct represents a job-dataclass that contains relevant information to start the backup process.
@@ -73,14 +73,15 @@ public struct BackupJob : IJob
 ```
 
 ---
-## public readonly IList<DirectoryInfo> Workstations 
 
+## public readonly IList<DirectoryInfo> Workstations
 
 ### Summary:
-```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
 
+- ```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
 
 ### Code:
+
 ```cs
 /// <summary>
 /// The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.
@@ -89,14 +90,15 @@ public readonly IList<DirectoryInfo> Workstations;
 ```
 
 ---
-## public readonly IDictionary<DirectoryInfo, DirectoryInfo> BackupFolders 
 
+## public readonly IDictionary<DirectoryInfo, DirectoryInfo> BackupFolders
 
 ### Summary:
-```The <see cref="IDictionary{TKey, TValue}"/> of <see cref="DirectoryInfo"/> that contains the target workstations with their backup folders.```
 
+- ```The <see cref="IDictionary{TKey, TValue}"/> of <see cref="DirectoryInfo"/> that contains the target workstations with their backup folders.```
 
 ### Code:
+
 ```cs
 /// <summary>
 /// The <see cref="IDictionary{TKey, TValue}"/> of <see cref="DirectoryInfo"/> that contains the target workstations with their backup folders.
@@ -105,14 +107,15 @@ public readonly IDictionary<DirectoryInfo, DirectoryInfo> BackupFolders;
 ```
 
 ---
-## public readonly IDictionary<DirectoryInfo, List<FileInfo>> AffectedFiles 
 
+## public readonly IDictionary<DirectoryInfo, List<FileInfo>> AffectedFiles
 
 ### Summary:
-```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
 
+- ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
 
 ### Code:
+
 ```cs
 /// <summary>
 /// The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.
@@ -121,19 +124,23 @@ public readonly IDictionary<DirectoryInfo, List<FileInfo>> AffectedFiles;
 ```
 
 ---
-## public BackupJob (IList<DirectoryInfo> workstations, IDictionary<DirectoryInfo, DirectoryInfo> backupFolders, IDictionary<DirectoryInfo, List<FileInfo>> affectedFiles 
 
+## public BackupJob (IList<DirectoryInfo> workstations, IDictionary<DirectoryInfo, DirectoryInfo> backupFolders, IDictionary<DirectoryInfo, List<FileInfo>> affectedFiles
 
 ### Summary:
-```Standard constructor, which initalizes a new instance of <see cref="BackupJob"/> and sets all the necessary attributes.```
+
+- ```Standard constructor, which initalizes a new instance of <see cref="BackupJob"/> and sets all the necessary attributes.```
 
 ### Parameters:
-#### workstations: ```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
-#### backupFolders: ```The <see cref="IDictionary{TKey, TValue}"/> of <see cref="DirectoryInfo"/> that contains the target workstations with their backup folders.```
-#### affectedFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
 
+- workstations: ```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
+-
+backupFolders: ```The <see cref="IDictionary{TKey, TValue}"/> of <see cref="DirectoryInfo"/> that contains the target workstations with their backup folders.```
+-
+affectedFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
 
 ### Code:
+
 ```cs
 /// <summary>
 /// Standard constructor, which initalizes a new instance of <see cref="BackupJob"/> and sets all the necessary attributes.
@@ -151,55 +158,55 @@ public BackupJob (IList<DirectoryInfo> workstations, IDictionary<DirectoryInfo, 
 ```
 
 ---
-## public string GetJobOverview 
 
-
+## public string GetJobOverview
 
 ### Code:
+
 ```cs
 /// <inheritdoc/>
 public string GetJobOverview () => $"{this.GetType()}
 ```
 
 ---
-## private string GetDebuggerDisplay () 
 
-
+## private string GetDebuggerDisplay ()
 
 ### Code:
+
 ```cs
 /// <inheritdoc/>
 private string GetDebuggerDisplay () => this.ToString();
 ```
 
 ---
-## public override bool Equals (object obj) 
 
-
+## public override bool Equals (object obj)
 
 ### Code:
+
 ```cs
 /// <inheritdoc/>
 public override bool Equals (object obj) => base.Equals(obj);
 ```
 
 ---
-## public override int GetHashCode () 
 
-
+## public override int GetHashCode ()
 
 ### Code:
+
 ```cs
 /// <inheritdoc/>
 public override int GetHashCode () => base.GetHashCode();
 ```
 
 ---
-## public override string ToString () 
 
-
+## public override string ToString ()
 
 ### Code:
+
 ```cs
 /// <inheritdoc/>
 public override string ToString () => base.ToString();

@@ -29,6 +29,7 @@ public record GenerationPattern(String sourceFolderPath, String targetFolderPath
 	private static final String TEXT_DISPLAY_PATTERN = GenerationPattern.class.getSimpleName() + "[sourceFolderPath={0}, targetFolderPath={1}]";
 
 
+
 	/**
 	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
 	 *

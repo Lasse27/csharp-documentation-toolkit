@@ -41,6 +41,7 @@ public record Code(String content) implements MarkdownStructure, MLoggable
 	private static final String MARKDOWN_PATTERN = "### Code:\r\n```cs\r\n{0}\r\n```\r\n";
 
 
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -49,6 +50,7 @@ public record Code(String content) implements MarkdownStructure, MLoggable
 	{
 		return MessageFormat.format(MARKDOWN_PATTERN, this.content);
 	}
+
 
 
 	/**
@@ -60,11 +62,12 @@ public record Code(String content) implements MarkdownStructure, MLoggable
 		final Collection<String> stringCollection = new ArrayList<>();
 		stringCollection.add(MessageFormat.format("Instance: {0}", this.toString()));
 
-		final String content = ! Objects.equals(this.content, EMPTY_STRING) ? "Exists" : "Doesn't exist";
+		final String content = !Objects.equals(this.content, EMPTY_STRING) ? "Exists" : "Doesn't exist";
 		stringCollection.add(MessageFormat.format("\tContent: {0}", content));
 
 		return stringCollection;
 	}
+
 
 
 	/**

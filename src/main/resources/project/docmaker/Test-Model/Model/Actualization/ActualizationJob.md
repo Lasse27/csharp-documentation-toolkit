@@ -1,11 +1,11 @@
-## public struct ActualizationJob : IJob 
-
+## public struct ActualizationJob : IJob
 
 ### Summary:
-```The <see cref="ActualizationJob"/> struct represents a job-dataclass that contains relevant information to start the actualization process.```
 
+- ```The <see cref="ActualizationJob"/> struct represents a job-dataclass that contains relevant information to start the actualization process.```
 
 ### Code:
+
 ```cs
 /// <summary>
 /// The <see cref="ActualizationJob"/> struct represents a job-dataclass that contains relevant information to start the actualization process.
@@ -79,14 +79,15 @@ public struct ActualizationJob : IJob
 ```
 
 ---
-## public readonly DirectoryInfo UpdateDirectory 
 
+## public readonly DirectoryInfo UpdateDirectory
 
 ### Summary:
-```The <see cref="DirectoryInfo"/> that contains the files that are supposed to be inserted with the update.```
 
+- ```The <see cref="DirectoryInfo"/> that contains the files that are supposed to be inserted with the update.```
 
 ### Code:
+
 ```cs
 /// <summary>
 /// The <see cref="DirectoryInfo"/> that contains the files that are supposed to be inserted with the update.
@@ -95,14 +96,15 @@ public readonly DirectoryInfo UpdateDirectory;
 ```
 
 ---
-## public readonly IList<DirectoryInfo> Workstations 
 
+## public readonly IList<DirectoryInfo> Workstations
 
 ### Summary:
-```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
 
+- ```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
 
 ### Code:
+
 ```cs
 /// <summary>
 /// The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.
@@ -111,14 +113,15 @@ public readonly IList<DirectoryInfo> Workstations;
 ```
 
 ---
-## public readonly IList<FileInfo> UpdateFiles 
 
+## public readonly IList<FileInfo> UpdateFiles
 
 ### Summary:
-```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the update.```
 
+- ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the update.```
 
 ### Code:
+
 ```cs
 /// <summary>
 /// The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the update.
@@ -127,14 +130,15 @@ public readonly IList<FileInfo> UpdateFiles;
 ```
 
 ---
-## public readonly IDictionary<DirectoryInfo, List<FileInfo>> AffectedFiles 
 
+## public readonly IDictionary<DirectoryInfo, List<FileInfo>> AffectedFiles
 
 ### Summary:
-```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
 
+- ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
 
 ### Code:
+
 ```cs
 /// <summary>
 /// The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.
@@ -143,20 +147,23 @@ public readonly IDictionary<DirectoryInfo, List<FileInfo>> AffectedFiles;
 ```
 
 ---
-## public ActualizationJob (DirectoryInfo updateDirectory, IList<DirectoryInfo> workstations, IList<FileInfo> updateFiles, IDictionary<DirectoryInfo, List<FileInfo>> affectedFiles 
 
+## public ActualizationJob (DirectoryInfo updateDirectory, IList<DirectoryInfo> workstations, IList<FileInfo> updateFiles, IDictionary<DirectoryInfo, List<FileInfo>> affectedFiles
 
 ### Summary:
-```Standard constructor, which initalizes a new instance of <see cref="ActualizationJob"/> and sets all the necessary attributes.```
+
+- ```Standard constructor, which initalizes a new instance of <see cref="ActualizationJob"/> and sets all the necessary attributes.```
 
 ### Parameters:
-#### updateDirectory: ```The <see cref="DirectoryInfo"/> that contains the files that are supposed to be inserted with the update.```
-#### workstations: ```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
-#### updateFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the update.```
-#### affectedFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
 
+- updateDirectory: ```The <see cref="DirectoryInfo"/> that contains the files that are supposed to be inserted with the update.```
+- workstations: ```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
+- updateFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the update.```
+-
+affectedFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
 
 ### Code:
+
 ```cs
 /// <summary>
 /// Standard constructor, which initalizes a new instance of <see cref="ActualizationJob"/> and sets all the necessary attributes.
@@ -175,55 +182,55 @@ public ActualizationJob (DirectoryInfo updateDirectory, IList<DirectoryInfo> wor
 ```
 
 ---
-## public string GetJobOverview 
 
-
+## public string GetJobOverview
 
 ### Code:
+
 ```cs
 /// <inheritdoc/>
 public string GetJobOverview () => $"{this.GetType()}
 ```
 
 ---
-## public override bool Equals (object obj) 
 
-
+## public override bool Equals (object obj)
 
 ### Code:
+
 ```cs
 /// <inheritdoc/>
 public override bool Equals (object obj) => base.Equals(obj);
 ```
 
 ---
-## public override int GetHashCode () 
 
-
+## public override int GetHashCode ()
 
 ### Code:
+
 ```cs
 /// <inheritdoc/>
 public override int GetHashCode () => base.GetHashCode();
 ```
 
 ---
-## public override string ToString () 
 
-
+## public override string ToString ()
 
 ### Code:
+
 ```cs
 /// <inheritdoc/>
 public override string ToString () => base.ToString();
 ```
 
 ---
-## private string GetDebuggerDisplay () 
 
-
+## private string GetDebuggerDisplay ()
 
 ### Code:
+
 ```cs
 /// <inheritdoc/>
 private string GetDebuggerDisplay () => this.ToString();

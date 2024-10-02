@@ -49,8 +49,9 @@ public interface RegexConstants
 	 *
 	 */
 	@Language (REG_EXP)
-	String REGEX_CS_SECTION = "(?<DOCUMENTATION>\\t*///[\\w\\W]+?)(?<ANNOTATION>\\[[\\w\\W]*])*[\\r\\n]*(?<KEYWORDS>" +
-	                          "(?:public\\s+|private\\s+|static\\s+|readonly\\s+|protected\\s+|override\\s+|struct\\s+|class\\s+|interface\\s+)+)" +
+	String REGEX_CS_SECTION = "(?<DOCUMENTATION>\\t*///[\\w\\W]+?)" +
+	                          "(?<ANNOTATION>\\[[\\w\\W]*])*[\\r\\n]*" +
+	                          "(?<KEYWORDS>(?:public\\s+|private\\s+|static\\s+|readonly\\s+|protected\\s+|override\\s+|struct\\s+|class\\s+|interface\\s+)+)" +
 	                          "(?<DESCRIPTION>.*?)(?==|\\{|\\W*?\\{|;)";
 
 	/**

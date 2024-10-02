@@ -1,11 +1,11 @@
-## public static class ActualizationJobFactory 
-
+## public static class ActualizationJobFactory
 
 ### Summary:
-```The <see cref="ActualizationJobFactory"/> class works as part of the factory pattern and provides generation methods for instances  of the <see cref="ActualizationJob"/> struct. Class is mainly used to hide the validation of the generation parameters.```
 
+- ```The <see cref="ActualizationJobFactory"/> class works as part of the factory pattern and provides generation methods for instances  of the <see cref="ActualizationJob"/> struct. Class is mainly used to hide the validation of the generation parameters.```
 
 ### Code:
+
 ```cs
 /// <summary>
 /// The <see cref="ActualizationJobFactory"/> class works as part of the factory pattern and provides generation methods for instances
@@ -88,22 +88,25 @@ public static class ActualizationJobFactory
 ```
 
 ---
-## public static ActualizationJob CreateJob (string updatePath, CheckedItemCollection workstationPaths, CheckedItemCollection filePaths 
 
+## public static ActualizationJob CreateJob (string updatePath, CheckedItemCollection workstationPaths, CheckedItemCollection filePaths
 
 ### Summary:
-```Creates a new instance of <see cref="ActualizationJob"/> by validating the passed filepaths and collecting the needed files from the collections.```
+
+- ```Creates a new instance of <see cref="ActualizationJob"/> by validating the passed filepaths and collecting the needed files from the collections.```
 
 ### Parameters:
-#### updatePath: ```The string path of the update directory, that contains the files that are inserted with the update.```
-#### workstationPaths: ```A <see cref="CheckedItemCollection"/> that contains the paths of the target workstations.```
-#### filePaths: ```A <see cref="CheckedItemCollection"/> that contains the selected files from the update directory.```
+
+- updatePath: ```The string path of the update directory, that contains the files that are inserted with the update.```
+- workstationPaths: ```A <see cref="CheckedItemCollection"/> that contains the paths of the target workstations.```
+- filePaths: ```A <see cref="CheckedItemCollection"/> that contains the selected files from the update directory.```
 
 ### Returns:
+
 A new <see cref="ActualizationJob"/> instance if all parameters were validated.
 
-
 ### Code:
+
 ```cs
 /// <summary>
 /// Creates a new instance of <see cref="ActualizationJob"/> by validating the passed filepaths and collecting the needed files from the collections.
@@ -147,21 +150,24 @@ public static ActualizationJob CreateJob (string updatePath, CheckedItemCollecti
 ```
 
 ---
-## private static IDictionary<DirectoryInfo, List<FileInfo>> GetAffectedFiles (IList<DirectoryInfo> workstations, IList<FileInfo> updateFiles 
 
+## private static IDictionary<DirectoryInfo, List<FileInfo>> GetAffectedFiles (IList<DirectoryInfo> workstations, IList<FileInfo> updateFiles
 
 ### Summary:
-```Collects the affected files from the workstations by comparing the local filenames with the filenames of the update directory.```
+
+- ```Collects the affected files from the workstations by comparing the local filenames with the filenames of the update directory.```
 
 ### Parameters:
-#### workstations: ```A <see cref="List{T}"/> of <see cref="DirectoryInfo"/> representing the workstations.```
-#### updateFiles: ```A <see cref="List{T}"/> of <see cref="DirectoryInfo"/> representing the update files.```
+
+- workstations: ```A <see cref="List{T}"/> of <see cref="DirectoryInfo"/> representing the workstations.```
+- updateFiles: ```A <see cref="List{T}"/> of <see cref="DirectoryInfo"/> representing the update files.```
 
 ### Returns:
+
 A <see cref="IDictionary{TKey, TValue}"/> that contains the workstation with its affected files as <see cref="KeyValuePair{TKey, TValue}"/>
 
-
 ### Code:
+
 ```cs
 /// <summary>
 /// Collects the affected files from the workstations by comparing the local filenames with the filenames of the update directory.

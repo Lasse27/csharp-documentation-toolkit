@@ -38,12 +38,14 @@ public final class RegexController
 	private static final StringFormat STRING_FORMAT = new StringFormat(FormatOption.NORMALIZE, FormatOption.REMOVE_MARKS);
 
 
+
 	/**
 	 * Private constructor since controller class isn't supposed to be initialized ever.
 	 */
 	private RegexController ()
 	{
 	}
+
 
 
 	/**
@@ -75,6 +77,7 @@ public final class RegexController
 	}
 
 
+
 	private static @NotNull Section createSectionFromMatch (final MatchResult matchResult, final File file) throws IOException
 	{
 		final Header header = getHeaderFromMatchResult(matchResult);
@@ -94,6 +97,7 @@ public final class RegexController
 	}
 
 
+
 	private static @NotNull Header getHeaderFromMatchResult (final @NotNull MatchResult matchResult)
 	{
 		final String keywords = STRING_FORMAT.apply(matchResult.group("KEYWORDS") != null ? matchResult.group("KEYWORDS") : EMPTY_STRING);
@@ -101,6 +105,7 @@ public final class RegexController
 		final String annotation = STRING_FORMAT.apply(matchResult.group("ANNOTATION") != null ? matchResult.group("ANNOTATION") : EMPTY_STRING);
 		return new Header(annotation, keywords, description);
 	}
+
 
 
 	private static @NotNull Body getBodyFromMatchResult (final @NotNull MatchResult matchResult)
@@ -112,6 +117,7 @@ public final class RegexController
 	}
 
 
+
 	private static @NotNull Code getCodeFromMatchResult (final MatchResult matchResult, final @NotNull File file) throws IOException
 	{
 		final String codebase = Files.readString(file.toPath());
@@ -119,6 +125,7 @@ public final class RegexController
 		final String codeSnippet = codebase.substring(matchResult.start(), endIndex);
 		return new Code(codeSnippet.stripIndent());
 	}
+
 
 
 	private static int getEndOfCodeSnippet (final @NotNull MatchResult matchResult, final String codebase)
@@ -160,6 +167,7 @@ public final class RegexController
 	}
 
 
+
 	private static @NotNull Collection<Summary> getSummariesFromCharSequence (final CharSequence charSequence)
 	{
 		final Matcher summaryMatcher = SUMMARY_PATTERN.matcher(charSequence);
@@ -172,6 +180,7 @@ public final class RegexController
 	}
 
 
+
 	private static @NotNull Collection<Return> getReturnsFromCharSequence (final CharSequence sequence)
 	{
 		final Matcher returnsMatcher = RETURN_PATTERN.matcher(sequence);
@@ -182,6 +191,7 @@ public final class RegexController
 		}
 		return returnCollection;
 	}
+
 
 
 	private static @NotNull Collection<Parameter> getParametersFromCharSequence (final CharSequence sequence)

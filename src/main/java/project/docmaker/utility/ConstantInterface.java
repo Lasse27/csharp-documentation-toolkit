@@ -11,5 +11,4 @@ import java.lang.annotation.Inherited;
  * @since 07.09.2024
  */
 @Inherited
-public @interface ConstantInterface
-{}
+public @interface ConstantInterface {}

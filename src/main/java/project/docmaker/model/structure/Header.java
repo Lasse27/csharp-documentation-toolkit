@@ -10,11 +10,9 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static project.docmaker.utility.stringutils.StringController.TAB;
-
 
 /**
- * The record {@code Header} represents a {@link MarkdownStructure} that acts like a the header of each Markdown section. It's split into a descriptor {@link String} that
+ * The record {@code Header} represents a {@link MarkdownStructure} that acts like the header of each Markdown section. It's split into a descriptor {@link String} that
  * contains the modifier of the section and a content {@link String} that contains the name of the section.
  *
  * @param content    Content {@link String} that contains the name of the section.
@@ -47,6 +45,7 @@ public record Header(String annotation, String descriptor, String content) imple
 	private static final String MARKDOWN_PATTERN = "## {0} {1} \n\n";
 
 
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -57,6 +56,7 @@ public record Header(String annotation, String descriptor, String content) imple
 	}
 
 
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -64,12 +64,13 @@ public record Header(String annotation, String descriptor, String content) imple
 	public @NotNull Collection<String> toStringCollection ()
 	{
 		final Collection<String> stringCollection = new ArrayList<>();
-		stringCollection.add("Instance: " + this.toString());
-		stringCollection.add(TAB + "Annotations: " + this.annotation);
-		stringCollection.add(TAB + "Descriptor: " + this.descriptor);
-		stringCollection.add(TAB + "Content: " + this.content);
+		stringCollection.add(MessageFormat.format("Instance: {0}", this.toString()));
+		stringCollection.add(MessageFormat.format("\tAnnotations: {0}", this.annotation));
+		stringCollection.add(MessageFormat.format("\tDescriptor: {0}", this.descriptor));
+		stringCollection.add(MessageFormat.format("\tContent: {0}", this.content));
 		return stringCollection;
 	}
+
 
 
 	/**

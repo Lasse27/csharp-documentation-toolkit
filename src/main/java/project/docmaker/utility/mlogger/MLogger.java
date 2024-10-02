@@ -28,17 +28,20 @@ public final class MLogger
 	@NotNull
 	private static final String EMPTY_STR = "";
 
+
 	/**
 	 * {@link String} constant representing the format for each logging section.
 	 */
 	@NotNull
 	private static final String LOG_SECTION_FORMAT = "{0}[{1}]{2} ";
 
+
 	/**
 	 * {@link String} constant representing the format of the displayed timestamp.
 	 */
 	@NotNull
 	private static final String TIME = "dd.MM.yyyy HH:mm:ss:SSS";
+
 
 	/**
 	 * {@link DateTimeFormatter} constant representing the DateTimeFormatter used to format the timestamp.
@@ -47,12 +50,12 @@ public final class MLogger
 	private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(TIME, Locale.GERMANY).withZone(ZoneId.systemDefault());
 
 
+
 	/**
 	 * Private constructor to prohibit instantiation of the class, since it's supposed to be a static class.
 	 */
-	private MLogger ()
-	{
-	}
+	private MLogger () {}
+
 
 
 	/**
@@ -66,17 +69,17 @@ public final class MLogger
 	public static void logLn (final @NotNull MLoggerMode mLoggerMode, final String message)
 	{
 		final StringBuilder loggingBuilder = new StringBuilder();
-		if (mLoggerMode.enableTimestamps())
+		if (mLoggerMode.hasEnabledTimestamps())
 		{
 			loggingBuilder.append(MessageFormat.format(LOG_SECTION_FORMAT, EMPTY_STR, FORMATTER.format(Instant.now()), EMPTY_STR));
 		}
-		if (! mLoggerMode.name().equals(EMPTY_STR))
+		if (!mLoggerMode.getName().equals(EMPTY_STR))
 		{
-			loggingBuilder.append(MessageFormat.format(LOG_SECTION_FORMAT, mLoggerMode.consoleColor()
-					.toString(), mLoggerMode.name(), ConsoleColor.NORM));
+			loggingBuilder.append(MessageFormat.format(LOG_SECTION_FORMAT, mLoggerMode.getConsoleColor().toString(), mLoggerMode.getName(), ConsoleColor.NORM));
 		}
 		System.out.println(loggingBuilder.append(message));
 	}
+
 
 
 	/**
@@ -90,6 +93,7 @@ public final class MLogger
 	{
 		logLn(MLoggerMode.INFORMATION, message);
 	}
+
 
 
 	/**
@@ -107,6 +111,7 @@ public final class MLogger
 	}
 
 
+
 	/**
 	 * Logs a message in the specified {@link MLoggerMode}.
 	 * <br>
@@ -120,6 +125,7 @@ public final class MLogger
 	{
 		logLn(mLoggerMode, messageFormat.format(formats));
 	}
+
 
 
 	/**
@@ -136,6 +142,7 @@ public final class MLogger
 	}
 
 
+
 	public static void logEx (final @NotNull Exception exception)
 	{
 		MLogger.logLnf(MLoggerMode.ERROR, MessageFormat.format("{0}: {1}", exception.getClass().getSimpleName(), exception.getLocalizedMessage()));
@@ -148,13 +155,14 @@ public final class MLogger
 	}
 
 
+
 	private static void logStackTrace (final StackTraceElement @NotNull [] stackTraceElements)
 	{
 		MLogger.logLnf(MLoggerMode.ERROR, "Printing exception stacktrace:");
 		String module = EMPTY_STR;
 		for (final StackTraceElement element : stackTraceElements)
 		{
-			if (! element.getModuleName().equals(module))
+			if (!element.getModuleName().equals(module))
 			{
 				module = element.getModuleName();
 				MLogger.logLnf(MLoggerMode.ERROR, "[Module: {0}]", module);
@@ -164,13 +172,15 @@ public final class MLogger
 	}
 
 
-	public static void logMLoggable (final MLoggerMode mLoggerMode, final MLoggable mLoggable)
+
+	public static void logMLoggable (final MLoggerMode mLoggerMode, final @NotNull MLoggable mLoggable)
 	{
 		for (final String stringPart : mLoggable.toStringCollection())
 		{
 			MLogger.logLn(mLoggerMode, stringPart);
 		}
 	}
+
 
 
 	public static void logMLoggable (final MLoggable mLoggable)

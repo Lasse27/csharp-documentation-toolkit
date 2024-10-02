@@ -13,6 +13,7 @@ public final class GenerationJobFactory
 	private GenerationJobFactory () {}
 
 
+
 	@Contract ("_ -> new")
 	public static @NotNull GenerationJob createJob (final GenerationPattern pattern)
 	{

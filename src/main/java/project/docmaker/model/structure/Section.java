@@ -21,6 +21,7 @@ public record Section(Header header, Body body, Code code) implements MarkdownSt
 	private static final String TEXT_DISPLAY_PATTERN = "{0} @ {1}";
 
 
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -35,6 +36,7 @@ public record Section(Header header, Body body, Code code) implements MarkdownSt
 		objectInformation.addAll(this.code.toStringCollection().stream().map(descriptorString -> TAB + descriptorString).toList());
 		return objectInformation;
 	}
+
 
 
 	/**
@@ -57,6 +59,7 @@ public record Section(Header header, Body body, Code code) implements MarkdownSt
 		stringBuilder.append("---").append(StringController.NEW_LINE);
 		return stringBuilder.toString();
 	}
+
 
 
 	/**

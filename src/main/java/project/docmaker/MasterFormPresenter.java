@@ -18,27 +18,36 @@ import java.util.ResourceBundle;
 
 public class MasterFormPresenter implements Initializable
 {
+
 	private double screenX = 0;
 
+
 	private double screenY = 0;
+
 
 	@FXML
 	private Button aboutMenuButton;
 
+
 	@FXML
 	private Button closeMenuButton;
+
 
 	@FXML
 	private Button htmlGenerationMenuButton;
 
+
 	@FXML
 	private Button markdownGenerationMenuButton;
+
 
 	@FXML
 	private Button minimizeMenuButton;
 
+
 	@FXML
 	private Button settingsMenuButton;
+
 
 
 	/**
@@ -54,6 +63,7 @@ public class MasterFormPresenter implements Initializable
 	}
 
 
+
 	@FXML
 	private void onMenuBarDragged (final @NotNull MouseEvent mouseEvent)
 	{
@@ -61,6 +71,7 @@ public class MasterFormPresenter implements Initializable
 		window.setY(mouseEvent.getScreenY() - this.screenY);
 		window.setX(mouseEvent.getScreenX() - this.screenX);
 	}
+
 
 
 	@FXML
@@ -71,12 +82,14 @@ public class MasterFormPresenter implements Initializable
 	}
 
 
+
 	@FXML
 	void onCloseMenuButtonClicked (final @NotNull ActionEvent actionEvent)
 	{
 		final Stage stage = (Stage) ((Node) actionEvent.getSource()).getParent().getScene().getWindow();
 		stage.close();
 	}
+
 
 
 	@FXML

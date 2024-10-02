@@ -13,6 +13,7 @@ public record Parameter(String name, String content)
 	private static final String TEXT_DISPLAY_PATTERN = Parameter.class.getSimpleName() + "[name={0}, content={1}]";
 
 
+
 	/**
 	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
 	 *

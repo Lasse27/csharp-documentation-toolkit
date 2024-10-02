@@ -17,6 +17,7 @@ public record StringFormat(FormatOption... options)
 	private static final String TEXT_DISPLAY_PATTERN = StringFormat.class.getSimpleName() + "[options={0}]";
 
 
+
 	public String apply (final String input)
 	{
 		String adjustedString = input;
@@ -34,6 +35,7 @@ public record StringFormat(FormatOption... options)
 	}
 
 
+
 	/**
 	 * Generates and returns a formatted {@link String} which represents the instance in its current state.
 	 *
@@ -44,6 +46,7 @@ public record StringFormat(FormatOption... options)
 	{
 		return MessageFormat.format(TEXT_DISPLAY_PATTERN, Arrays.toString(this.options));
 	}
+
 
 
 	public enum FormatOption
@@ -61,6 +64,7 @@ public record StringFormat(FormatOption... options)
 		 * {@link MessageFormat} pattern, which is used, when the {@link FormatOption#toString()} method gets called
 		 */
 		private static final String TEXT_DISPLAY_PATTERN = FormatOption.class.getSimpleName() + "[value={0}]";
+
 
 
 		/**

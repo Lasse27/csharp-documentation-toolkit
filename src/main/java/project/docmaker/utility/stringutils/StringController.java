@@ -13,19 +13,27 @@ public final class StringController
 
 	public static final String TRIPLE_SLASH = "///";
 
+
 	public static final String CARRIAGE_RETURN = "\r";
+
 
 	public static final String TAB = "\t";
 
+
 	public static final String NEW_LINE = "\n";
+
 
 	public static final String MINUS = "-";
 
+
 	public static final String EMPTY_STRING = "";
+
 
 	public static final String WHITESPACE = " ";
 
+
 	private static final Locale LOCALE = Locale.GERMANY;
+
 
 
 	/**
@@ -34,6 +42,7 @@ public final class StringController
 	private StringController ()
 	{
 	}
+
 
 
 	/**
@@ -48,6 +57,7 @@ public final class StringController
 	}
 
 
+
 	/**
 	 * @param input
 	 *
@@ -60,6 +70,7 @@ public final class StringController
 	}
 
 
+
 	/**
 	 * @param input
 	 *
@@ -70,6 +81,7 @@ public final class StringController
 	{
 		return input.toLowerCase(LOCALE);
 	}
+
 
 
 	/**
@@ -92,6 +104,7 @@ public final class StringController
 	}
 
 
+
 	/**
 	 * @param input
 	 *
@@ -108,6 +121,19 @@ public final class StringController
 		}
 		return stringBuilder.toString().trim();
 	}
+
+
+
+	public static @NotNull String paddedRightString (final @NotNull String input, final int targetLength)
+	{
+		final StringBuilder output = new StringBuilder(input);
+		while (output.length() < targetLength)
+		{
+			output.append(WHITESPACE);
+		}
+		return output.toString();
+	}
+
 
 
 	@Contract (pure = true)
