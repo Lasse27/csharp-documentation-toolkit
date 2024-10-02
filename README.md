@@ -34,34 +34,5 @@ Ausgabebeispiel (Markdown)
 
 # Ausgabebeispiel
 
-## public ActualizationJob (DirectoryInfo updateDirectory, IList<DirectoryInfo> workstations, IList<FileInfo> updateFiles, IDictionary<DirectoryInfo, List<FileInfo>> affectedFiles 
+![grafik](https://github.com/user-attachments/assets/d788c237-5f1b-4df9-8db2-be65737505d6)
 
-
-### Summary:
-```Standard constructor, which initalizes a new instance of <see cref="ActualizationJob"/> and sets all the necessary attributes.```
-
-### Parameters:
-##### updateDirectory: ```The <see cref="DirectoryInfo"/> that contains the files that are supposed to be inserted with the update.```
-##### workstations: ```The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update.```
-##### updateFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the update.```
-##### affectedFiles: ```The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating.```
-
-
-### Code:
-```cs
-/// <summary>
-/// Standard constructor, which initalizes a new instance of <see cref="ActualizationJob"/> and sets all the necessary attributes.
-/// </summary>
-/// <param name="updateDirectory"> The <see cref="DirectoryInfo"/> that contains the files that are supposed to be inserted with the update. </param>
-/// <param name="workstations"> The <see cref="IList{T}"/> of <see cref="DirectoryInfo"/> that contains the target workstations of the update. </param>
-/// <param name="updateFiles"> The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the update. </param>
-/// <param name="affectedFiles"> The <see cref="IList{T}"/> of <see cref="FileInfo"/> that contains the files of the workstations, that will be affected by updating. </param>
-public ActualizationJob (DirectoryInfo updateDirectory, IList<DirectoryInfo> workstations, IList<FileInfo> updateFiles, IDictionary<DirectoryInfo, List<FileInfo>> affectedFiles)
-{
-	this.UpdateDirectory = updateDirectory ?? throw new System.ArgumentNullException(nameof(updateDirectory));
-	this.Workstations = workstations ?? throw new System.ArgumentNullException(nameof(workstations));
-	this.UpdateFiles = updateFiles ?? throw new System.ArgumentNullException(nameof(updateFiles));
-	this.AffectedFiles = affectedFiles ?? throw new System.ArgumentNullException(nameof(affectedFiles));
-}
-```
----
