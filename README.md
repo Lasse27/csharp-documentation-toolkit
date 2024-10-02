@@ -1,16 +1,16 @@
-# C#-Documentation-Toolkit
+## C#-Documentation-Toolkit
 
 Dieses Repository stellt ein persönliches Projekt zur Entwicklung eines Dokumentationstools für C# dar, das ähnlich wie
 JavaDoc funktioniert. Ziel des Projekts ist es, eine Software zu erstellen, die aus C#-Quellcode mit
 Dokumentationskommentaren automatisch lesbare Dateien, wie z.B. Markdown oder HTML, generiert. Der Fokus liegt dabei
 nicht nur auf der Funktionalität, sondern auch darauf, ein klar strukturiertes und verständliches Projekt zu entwickeln.
 
-# Zielgruppe
+### Zielgruppe
 
 Das Tool richtet sich an alle, die C#-Projekte dokumentieren möchten, egal ob Anfänger oder erfahrene Entwickler. Es ist
 bewusst allgemein gehalten, sodass jeder, der es nützlich findet, es einsetzen kann.
 
-# Umsetzung
+### Umsetzung
 
 - **Programmiersprache**: Die Implementierung erfolgt in Java, da mir der Umgang mit regulären Ausdrücken und den zugehörigen Klassen (Regex, Pattern,
   Matcher) in Java bereits vertraut ist. Außerdem wird Java in meiner Ausbildung eingesetzt.
@@ -27,12 +27,12 @@ bewusst allgemein gehalten, sodass jeder, der es nützlich findet, es einsetzen 
   Eigenprojekt betrieben wird. Perfomance-Optimierungen sind derzeit nicht die oberste Priorität, da der Fokus auf einem leicht nachvollziehbaren und
   gut organisierten Projekt liegt.
 
-# UML-Diagramm
+### UML-Diagramm
 
 Ein grundlegendes UML-Diagramm zur Darstellung der Code-Struktur wird in Kürze hier hinzugefügt.
 Ausgabebeispiel (Markdown)
 
-# Ausgabebeispiel
+### Ausgabebeispiel
 
 ![grafik](https://github.com/user-attachments/assets/d788c237-5f1b-4df9-8db2-be65737505d6)
 
