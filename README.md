@@ -7,8 +7,7 @@ nicht nur auf der Funktionalität, sondern auch darauf, ein klar strukturiertes 
 
 ### Zielgruppe
 
-Das Tool richtet sich an alle, die C#-Projekte dokumentieren möchten, egal ob Anfänger oder erfahrene Entwickler. Es ist
-bewusst allgemein gehalten, sodass jeder, der es nützlich findet, es einsetzen kann.
+Das Repository ist mehr oder weniger nur ein Eigenprojekt und richtet sich daher an niemanden direkt. Jeder kann das Projekt forken oder kopieren und kann es für sich selbst ausprobieren. Packages werden nicht erstellt.
 
 ### Umsetzung
 
@@ -26,11 +25,16 @@ bewusst allgemein gehalten, sodass jeder, der es nützlich findet, es einsetzen 
 - **Fokus des Projekts**: Ein Hauptaspekt des Projekts liegt auf der Verständlichkeit und einer sauberen Strukturierung des Codes, da es als
   Eigenprojekt betrieben wird. Perfomance-Optimierungen sind derzeit nicht die oberste Priorität, da der Fokus auf einem leicht nachvollziehbaren und
   gut organisierten Projekt liegt.
+  
+### Grafische Benutzeroberfläche
+
+![grafik](https://github.com/user-attachments/assets/cfcac86d-f762-4528-a352-99b2a1608c86)
 
 ### UML-Diagramm
 
-Ein grundlegendes UML-Diagramm zur Darstellung der Code-Struktur wird in Kürze hier hinzugefügt.
-Ausgabebeispiel (Markdown)
+Ein grundlegendes UML-Diagramm zur Darstellung der Code-Struktur.
+
+![Program_structure](https://github.com/user-attachments/assets/e6e9af06-e531-4888-92e4-4fada9cbedf0)
 
 ### Ausgabebeispiel
 
