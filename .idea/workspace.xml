@@ -8,36 +8,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Added some more readability by adding logging constants and reworked the UI into darkmode because its better :D">
-      <change afterPath="$PROJECT_DIR$/app_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/serialize/Configuration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/serialize/InstantAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/serialize/JsonFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/serialize/JsonFileAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/app_config.json" afterDir="false" />
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Added config support to the program">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program_structure.puml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/DBTransfer/DBTransferJob.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/DBTransfer/DBTransferJobFactory.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/DBTransfer/DBTransferResources.Designer.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/LoggingMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/LoggingMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/view/GenerationJobTreeItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/view/JobTreeItemFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/fxml/JobTreeItemFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterForm.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/RoboCopyJob.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJobFactory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJobFactory.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJob.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJob.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJobFactory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJobFactory.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/csfileregex.regex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/stylesheets/stylesheet_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/stylesheets/stylesheet_dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation_2.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testmarkdown.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/view/green_check.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +50,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -129,75 +108,75 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Conf [-enableGUI true -logDepth DEBUG].executor&quot;: &quot;Run&quot;,
-    &quot;Application.Conf [-enableGUI true -logDepth INFORMATION].executor&quot;: &quot;Run&quot;,
-    &quot;Application.Conf [-enableGUI true].executor&quot;: &quot;Run&quot;,
-    &quot;Application.GluonStart.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Standard Configuration.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;INTRODUCE_CONSTANT_NONNLS&quot;: &quot;true&quot;,
-    &quot;JUnit.RegexControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-resources-plugin:2.6:testResources].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_Documentation_Toolkit [com.gluonhq:gluonfx-maven-plugin:1.0.24:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_Documentation_Toolkit [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CS_Documentation_Toolkit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [javafx:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-jar-plugin:3.3.0:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-jar-plugin:3.3.0:test-jar].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-resources-plugin:3.3.1:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-site-plugin:3.12.1:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.CSharpDocumentationToolkit [verify].executor&quot;: &quot;Run&quot;,
-    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last.edited.regexp&quot;: &quot;public class UserAuthentificator : Execitpr, wiajda, woadkaw, ana{\n    private static final Logger _Logger = new Logger();\n\n    public String toString()\n    {\n        super.toString();\n    }\n}&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/lh/IdeaProjects/CSharpDocumentationToolkit/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lh/IdeaProjects/CSharpDocumentationToolkit/src/main/resources/project/docmaker/view&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.371063&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Conf [-enableGUI true -logDepth DEBUG].executor": "Run",
+    "Application.Conf [-enableGUI true -logDepth INFORMATION].executor": "Run",
+    "Application.Conf [-enableGUI true].executor": "Run",
+    "Application.GluonStart.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.Standard Configuration.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
+    "INTRODUCE_CONSTANT_NONNLS": "true",
+    "JUnit.RegexControllerTest.executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:clean].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-clean-plugin:2.5:help].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-resources-plugin:2.6:testResources].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:help].executor": "Run",
+    "Maven.CS_DocumentationMaker [org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test].executor": "Run",
+    "Maven.CS_Documentation_Toolkit [com.gluonhq:gluonfx-maven-plugin:1.0.24:run].executor": "Run",
+    "Maven.CS_Documentation_Toolkit [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor": "Run",
+    "Maven.CS_Documentation_Toolkit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [clean].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [compile].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [deploy].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [install].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [javafx:run].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-jar-plugin:3.3.0:help].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-jar-plugin:3.3.0:test-jar].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-resources-plugin:3.3.1:help].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-site-plugin:3.12.1:help].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [package].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [site].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [test].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [validate].executor": "Run",
+    "Maven.CSharpDocumentationToolkit [verify].executor": "Run",
+    "OverrideImplement.generate.javadoc": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.preview.features.used": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last.edited.regexp": "public class UserAuthentificator : Execitpr, wiajda, woadkaw, ana{\n    private static final Logger _Logger = new Logger();\n\n    public String toString()\n    {\n        super.toString();\n    }\n}",
+    "last_directory_selection": "C:/Users/lh/IdeaProjects/CSharpDocumentationToolkit/src/test/java",
+    "last_opened_file_path": "C:/Users/lh/IdeaProjects/CSharpDocumentationToolkit/src/main/java/project/docmaker",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.371063",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>
@@ -377,7 +356,7 @@
       <workItem from="1728287889247" duration="3612000" />
       <workItem from="1728291551692" duration="348000" />
       <workItem from="1728291938053" duration="9630000" />
-      <workItem from="1728301750499" duration="9352000" />
+      <workItem from="1728301750499" duration="10969000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -747,7 +726,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727879166750</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Added config support to the program">
+      <option name="closed" value="true" />
+      <created>1728311413864</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1728311413864</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -803,7 +790,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add: Added the code for the abstract header class and changed class structure" />
     <MESSAGE value="Change: Changed some classes to records since they only hold/group information" />
     <MESSAGE value="Change: Changed some more classes to records and added the metadata class" />
     <MESSAGE value="Add: Added some javadoc messages and added an ConstantInterface.java annotation interface" />
@@ -828,7 +814,8 @@
     <MESSAGE value="More work on the UI and small other changes" />
     <MESSAGE value="Changed code formatting between methods and fields and added a jvm-argument-parser" />
     <MESSAGE value="Added some more readability by adding logging constants and reworked the UI into darkmode because its better :D" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some more readability by adding logging constants and reworked the UI into darkmode because its better :D" />
+    <MESSAGE value="Added config support to the program" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added config support to the program" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -845,7 +832,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/project/docmaker/Program.java</url>
-          <line>142</line>
+          <line>147</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
