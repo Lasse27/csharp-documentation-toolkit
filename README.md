@@ -32,8 +32,9 @@ Das Repository ist mehr oder weniger nur ein Eigenprojekt und richtet sich daher
 
 ### UML-Diagramm
 
-Ein grundlegendes UML-Diagramm zur Darstellung der Code-Struktur wird in Kürze hier hinzugefügt.
-Ausgabebeispiel (Markdown)
+Ein grundlegendes UML-Diagramm zur Darstellung der Code-Struktur.
+
+![Program_structure](https://github.com/user-attachments/assets/e6e9af06-e531-4888-92e4-4fada9cbedf0)
 
 ### Ausgabebeispiel
 
