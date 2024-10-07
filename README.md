@@ -7,8 +7,7 @@ nicht nur auf der Funktionalität, sondern auch darauf, ein klar strukturiertes 
 
 ### Zielgruppe
 
-Das Tool richtet sich an alle, die C#-Projekte dokumentieren möchten, egal ob Anfänger oder erfahrene Entwickler. Es ist
-bewusst allgemein gehalten, sodass jeder, der es nützlich findet, es einsetzen kann.
+Das Repository ist mehr oder weniger nur ein Eigenprojekt und richtet sich daher an niemanden direkt. Jeder kann das Projekt forken oder kopieren und kann es für sich selbst ausprobieren. Packages werden nicht erstellt.
 
 ### Umsetzung
 
