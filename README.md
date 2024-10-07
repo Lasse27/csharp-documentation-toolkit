@@ -26,6 +26,10 @@ bewusst allgemein gehalten, sodass jeder, der es nützlich findet, es einsetzen 
 - **Fokus des Projekts**: Ein Hauptaspekt des Projekts liegt auf der Verständlichkeit und einer sauberen Strukturierung des Codes, da es als
   Eigenprojekt betrieben wird. Perfomance-Optimierungen sind derzeit nicht die oberste Priorität, da der Fokus auf einem leicht nachvollziehbaren und
   gut organisierten Projekt liegt.
+  
+### Grafische Benutzeroberfläche
+
+![grafik](https://github.com/user-attachments/assets/cfcac86d-f762-4528-a352-99b2a1608c86)
 
 ### UML-Diagramm
 
