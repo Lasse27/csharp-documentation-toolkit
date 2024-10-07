@@ -3,18 +3,26 @@ package project.docmaker;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.WindowEvent;
+import org.jetbrains.annotations.NotNull;
 import project.docmaker.control.GenerationRunnable;
 import project.docmaker.model.generation.GenerationJob;
 import project.docmaker.utility.argparser.ArgumentParser;
 import project.docmaker.utility.argparser.JVMArgument;
 import project.docmaker.utility.mlogger.LoggingMessages;
 import project.docmaker.utility.mlogger.MLogger;
+import project.docmaker.utility.serialize.Configuration;
+import project.docmaker.utility.serialize.JsonFile;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.Instant;
 import java.util.Map;
 
@@ -39,6 +47,10 @@ public class Program extends Application
 	private static final String MASTERFORM_FXML_URL = "MasterForm.fxml";
 
 
+	private static final File CONFIGURATION_FILE = new File("C:\\Users\\lh\\Desktop\\app_config.json");
+
+
+	public static final Configuration CONFIGURATION = Program.loadProgramConfiguration();
 
 	/**
 	 * Starts the JavaFX framework by invoking the launch method from the {@link Application} class. It isn't required to explicitly declare the main method, as the runtime
@@ -51,6 +63,26 @@ public class Program extends Application
 	public static void main (final String[] args)
 	{
 		handleJVMArguments(args);
+	}
+
+
+
+	private static Configuration loadProgramConfiguration ()
+	{
+		try
+		{
+			if (!Files.exists(Path.of("app_config.json")))
+			{
+				Configuration.toJsonFile(new Configuration(), new File("app_config.json"));
+			}
+			return Configuration.fromJsonFile(new File("app_config.json"));
+		}
+		catch (final IOException e)
+		{
+			MLogger.logLn("Exception occurred while reading Configuration \u2192 Exiting program.");
+			System.exit(1);
+			return null;
+		}
 	}
 
 
@@ -68,16 +100,10 @@ public class Program extends Application
 		// Enabling the UI
 		if (startingArguments.getOrDefault(JVMArgument.ENABLE_GUI, String.valueOf(false)).equals(String.valueOf(true)))
 		{
-			MLogger.logLn(DEBUG, LoggingMessages.APPLICATION_LAUNCHED_MSG);
-
-			Platform.runLater(new GenerationRunnable(new GenerationJob(Instant.now(),
-				new File("src/main/resources/project/docmaker/Test-Model/Model/Actualization"),
-				new File("src/main/resources/project/docmaker/Test-Model/Model/Actualization"))));
-
-			Application.launch(args);
+			MLogger.logLnf(INFORMATION, LoggingMessages.APPLICATION_LAUNCHED_MSG);
 		}
+		Application.launch(args);
 	}
-
 
 
 	/**
@@ -97,13 +123,28 @@ public class Program extends Application
 			stage.setResizable(false);
 			stage.sizeToScene();
 			stage.initStyle(StageStyle.UNDECORATED);
+			stage.setOnCloseRequest(windowEvent -> handleCloseRequest(stage, windowEvent));
 			stage.show();
-			MLogger.logLnf(INFORMATION, LoggingMessages.SCENE_CHANGED_PTN, fxmlLoader.getController().getClass().getSimpleName());
+			MLogger.logLnf(INFORMATION, LoggingMessages.SCENE_CHANGED_PTN, fxmlLoader.getLocation());
 		}
 		catch (final Exception exception)
 		{
 			MLogger.logEx(exception);
 			System.exit(1);
+		}
+	}
+
+
+
+	private static void handleCloseRequest (final Stage stage, final @NotNull WindowEvent windowEvent)
+	{
+		try
+		{
+			Configuration.toJsonFile(Program.CONFIGURATION, new File("src/main/resources/project/docmaker/app_config.json"));
+		}
+		catch (final IOException e)
+		{
+			MLogger.logEx(e);
 		}
 	}
 }

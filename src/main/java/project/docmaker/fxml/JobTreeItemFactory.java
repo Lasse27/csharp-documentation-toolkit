@@ -1,4 +1,4 @@
-package project.docmaker.view;
+package project.docmaker.fxml;
 
 
 import javafx.scene.control.TreeItem;

@@ -3,6 +3,7 @@ package project.docmaker.model.generation;
 
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
+import project.docmaker.utility.serialize.JsonFile;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -23,14 +24,14 @@ public final class GenerationJobFactory
 		{
 			throw new IllegalArgumentException("Source folder path is null or empty");
 		}
-		final File sourcePath = Path.of(pattern.sourceFolderPath()).toFile();
+		final JsonFile sourcePath = new JsonFile(pattern.sourceFolderPath());
 
 		// Validating and creating the targetFile
 		if (pattern.targetFolderPath() == null || pattern.targetFolderPath().isBlank())
 		{
 			throw new IllegalArgumentException("Target folder path is null or empty");
 		}
-		final File targetPath = Path.of(pattern.targetFolderPath()).toFile();
+		final JsonFile targetPath = new JsonFile(pattern.targetFolderPath());
 
 		// Creating and returning the instance with validated attributes
 		return new GenerationJob(Instant.now(), sourcePath, targetPath);

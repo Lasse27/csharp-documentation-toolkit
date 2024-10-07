@@ -1,1 +1,0 @@
-(?<DOCUMENTATION>\/\/\/[\w\W]+?)(?<ANNOTATION>\[[\w\W]*\])*[\r\n]*(?<KEYWORDS>(?:public\s+|private\s+|static\s+|readonly\s+|protected\s+|override\s+|struct\s+|class|interface\s+)+)(?<DESCRIPTION>.*?)(?==|\{|\W*?\{|;)

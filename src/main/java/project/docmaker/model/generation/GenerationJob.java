@@ -2,6 +2,7 @@ package project.docmaker.model.generation;
 
 
 import org.jetbrains.annotations.NotNull;
+import project.docmaker.utility.serialize.JsonFile;
 
 import java.io.File;
 import java.text.MessageFormat;
@@ -11,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 
-public record GenerationJob(Instant instant, File sourceFile, File targetFile)
+public record GenerationJob(Instant instant, JsonFile sourceFile, JsonFile targetFile)
 {
 
 	/**

@@ -13,7 +13,11 @@
     -fx-background-color: #242424;
     -fx-border-radius: 3;
     -fx-background-radius: 3;
+    -fx-font-size: 14;
+}
 
+.tree-view {
+    -fx-font-size: 14;
 }
 
 .text-field .text {

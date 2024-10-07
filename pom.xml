@@ -6,8 +6,9 @@
 
     <groupId>project</groupId>
     <artifactId>CSharpDocumentationToolkit</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.0</version>
     <name>CS_DocumentationMaker</name>
+    <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,6 +16,15 @@
     </properties>
 
     <dependencies>
+
+
+        <!--  Gson: Java to JSON conversion -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.11.0</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -57,16 +67,6 @@
 
     <build>
         <plugins>
-
-            <plugin>
-                <groupId>com.gluonhq</groupId>
-                <artifactId>gluonfx-maven-plugin</artifactId>
-                <version>1.0.24</version>
-                <configuration>
-                    <mainClass>project.cs_documentationmaker/project.docmaker.Program</mainClass>
-                </configuration>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -77,6 +77,7 @@
                     <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -86,8 +87,8 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>project.cs_documentationmaker/project.docmaker.Program
-                            </mainClass>
+                            <mainClass>project.cs_documentationmaker/project.docmaker.Program</mainClass>
+                            <executable>C:\Users\lh\.jdks\openjdk-23\bin\java</executable>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

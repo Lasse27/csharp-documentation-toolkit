@@ -38,12 +38,12 @@
                         <children>
                             <AnchorPane prefHeight="36.0" prefWidth="852.0">
                                 <children>
-                                    <TextField fx:id="sourceFolderTextBox" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="820.0" promptText="Datei oder Verzeichnispfad" styleClass="text-field" stylesheets="@stylesheets/stylesheet_dark.css">
+                                    <TextField fx:id="sourceFolderTextBox" editable="false" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="816.0" promptText="Datei oder Verzeichnispfad" styleClass="text-field" stylesheets="@stylesheets/stylesheet_dark.css">
                                         <cursor>
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <Button layoutX="826.0" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="37.0" stylesheets="@stylesheets/stylesheet_dark.css" text="...">
+                                    <Button layoutX="820.0" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onSourceFolderPickerClicked" prefHeight="35.0" prefWidth="37.0" stylesheets="@stylesheets/stylesheet_dark.css" text="...">
                                         <font>
                                             <Font name="System Bold" size="14.0" />
                                         </font>
@@ -77,16 +77,16 @@
                             <Insets bottom="5.0" />
                         </VBox.margin>
                     </AnchorPane>
-                    <HBox fx:id="targetFolderTextBox" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="36.0" prefWidth="858.0" spacing="10.0">
+                    <HBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="36.0" prefWidth="858.0" spacing="10.0">
                         <children>
                             <AnchorPane prefHeight="36.0" prefWidth="858.0">
                                 <children>
-                                    <TextField layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="817.0" promptText="Datei oder Verzeichnispfad" styleClass="text-field" stylesheets="@stylesheets/stylesheet_dark.css">
+                                    <TextField fx:id="targetFolderTextBox" editable="false" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="817.0" promptText="Datei oder Verzeichnispfad" styleClass="text-field" stylesheets="@stylesheets/stylesheet_dark.css">
                                         <cursor>
                                             <Cursor fx:constant="HAND" />
                                         </cursor>
                                     </TextField>
-                                    <Button layoutX="821.0" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="37.0" stylesheets="@stylesheets/stylesheet_dark.css" text="...">
+                                    <Button layoutX="821.0" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onTargetFolderPickerClicked" prefHeight="35.0" prefWidth="37.0" stylesheets="@stylesheets/stylesheet_dark.css" text="...">
                                         <font>
                                             <Font name="System Bold" size="14.0" />
                                         </font>
@@ -244,7 +244,7 @@
     <bottom>
         <HBox prefHeight="45.0" prefWidth="1276.0" styleClass="container-brightest-rounded" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="htmlGenerationMenuButton1" contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" prefHeight="39.0" prefWidth="621.0" stylesheets="@stylesheets/stylesheet_dark.css" text="HTML-Generation" textFill="WHITE">
+                <Button fx:id="htmlGenerationMenuButton1" contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" onAction="#onClearAllClicked" prefHeight="39.0" prefWidth="621.0" stylesheets="@stylesheets/stylesheet_dark.css" text="Alles leeren" textFill="WHITE">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -255,7 +255,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </HBox.margin>
                 </Button>
-                <Button fx:id="settingsMenuButton1" contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" prefHeight="39.0" prefWidth="615.0" stylesheets="@stylesheets/stylesheet_dark.css" text="Einstellungen" textFill="WHITE">
+                <Button contentDisplay="TEXT_ONLY" focusTraversable="false" mnemonicParsing="false" onAction="#onGenerateNewJobClicked" prefHeight="39.0" prefWidth="615.0" stylesheets="@stylesheets/stylesheet_dark.css" text="Neuen Job erstellen" textFill="WHITE">
                     <font>
                         <Font size="18.0" />
                     </font>

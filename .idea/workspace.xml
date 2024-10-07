@@ -8,32 +8,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Changed code formatting between methods and fields and added a jvm-argument-parser">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/view/GenerationJobTreeItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/view/JobTreeItemFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/view/green_check.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="073bbb8a-0bf1-4b21-93bd-bb1d92b27158" name="Changes" comment="Added some more readability by adding logging constants and reworked the UI into darkmode because its better :D">
+      <change afterPath="$PROJECT_DIR$/app_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/serialize/Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/serialize/InstantAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/serialize/JsonFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/serialize/JsonFileAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/app_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/MasterFormPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/generation/GenerationJobFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Body.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Code.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/ConstantInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/ConstantInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/LoggingConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/LoggingMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/MarkdownConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/MiscConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/RegexConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/RegexConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLoggerMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/MLoggerMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/LoggingMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/LoggingMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/view/GenerationJobTreeItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/docmaker/view/JobTreeItemFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/docmaker/fxml/JobTreeItemFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/MasterForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/RoboCopyJob.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJob.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJobFactory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/ActualizationJobFactory.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJob.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJob.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJobFactory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/Test-Model/Model/Actualization/BackupJobFactory.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/csfileregex.regex" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/stylesheets/stylesheet_dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/docmaker/stylesheets/stylesheet_dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testdocumentation_2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/testmarkdown.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/docmaker/view/green_check.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +93,6 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Header.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/MarkdownStructure.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/model/structure/Section.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/utility/ConstantInterface.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/utility/RegexConstants.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/utility/argparser/JVMArgument.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/project/docmaker/utility/mlogger/ConsoleColor.java" root0="FORCE_HIGHLIGHTING" />
@@ -98,6 +101,14 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="openjdk-23" />
+        <option name="workspaceImportForciblyTurnedOn" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -121,6 +132,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Conf [-enableGUI true -logDepth DEBUG].executor&quot;: &quot;Run&quot;,
     &quot;Application.Conf [-enableGUI true -logDepth INFORMATION].executor&quot;: &quot;Run&quot;,
     &quot;Application.Conf [-enableGUI true].executor&quot;: &quot;Run&quot;,
     &quot;Application.GluonStart.executor&quot;: &quot;Run&quot;,
@@ -138,13 +150,27 @@
     &quot;Maven.CS_Documentation_Toolkit [org.apache.maven.plugins:maven-install-plugin:3.1.1:help].executor&quot;: &quot;Run&quot;,
     &quot;Maven.CS_Documentation_Toolkit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
     &quot;Maven.CSharpDocumentationToolkit [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [javafx:run].executor&quot;: &quot;Run&quot;,
     &quot;Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-jar-plugin:3.3.0:help].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-jar-plugin:3.3.0:test-jar].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-resources-plugin:3.3.1:help].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [org.apache.maven.plugins:maven-site-plugin:3.12.1:help].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [site].executor&quot;: &quot;Run&quot;,
     &quot;Maven.CSharpDocumentationToolkit [test].executor&quot;: &quot;Run&quot;,
     &quot;Maven.CSharpDocumentationToolkit [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CSharpDocumentationToolkit [verify].executor&quot;: &quot;Run&quot;,
     &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -164,11 +190,11 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.371063&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -208,8 +234,8 @@
       <recent name="project.docmaker.utility.mlogger" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Conf [-enableGUI true -logDepth INFORMATION]">
-    <configuration name="Conf [-enableGUI true -logDepth INFORMATION]" type="Application" factoryName="Application">
+  <component name="RunManager" selected="Application.Conf [-enableGUI true -logDepth DEBUG]">
+    <configuration name="Conf [-enableGUI true -logDepth DEBUG]" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="project.docmaker.Program" />
@@ -241,10 +267,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CSharpDocumentationToolkit [javafx:run]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings">
+          <MavenRunnerSettings>
+            <option name="delegateBuildToMaven" value="false" />
+            <option name="environmentProperties">
+              <map />
+            </option>
+            <option name="jreName" value="openjdk-23" />
+            <option name="mavenProperties">
+              <map />
+            </option>
+            <option name="passParentEnv" value="true" />
+            <option name="runMavenInBackground" value="true" />
+            <option name="skipTests" value="false" />
+            <option name="vmOptions" value="" />
+          </MavenRunnerSettings>
+        </option>
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Application.Conf [-enableGUI true -logDepth INFORMATION]" />
+      <item itemvalue="Application.Conf [-enableGUI true -logDepth DEBUG]" />
       <item itemvalue="Application.GluonStart" />
       <item itemvalue="JUnit.RegexControllerTest" />
+      <item itemvalue="Maven.CSharpDocumentationToolkit [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
@@ -301,7 +373,11 @@
       <workItem from="1727854043820" duration="1861000" />
       <workItem from="1727855963102" duration="4078000" />
       <workItem from="1727860114762" duration="14030000" />
-      <workItem from="1727876853828" duration="1971000" />
+      <workItem from="1727876853828" duration="2409000" />
+      <workItem from="1728287889247" duration="3612000" />
+      <workItem from="1728291551692" duration="348000" />
+      <workItem from="1728291938053" duration="9630000" />
+      <workItem from="1728301750499" duration="9352000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -663,7 +739,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727869624344</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Added some more readability by adding logging constants and reworked the UI into darkmode because its better :D">
+      <option name="closed" value="true" />
+      <created>1727879166750</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1727879166750</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -719,7 +803,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add: Added the code for the abstract body class" />
     <MESSAGE value="Add: Added the code for the abstract header class and changed class structure" />
     <MESSAGE value="Change: Changed some classes to records since they only hold/group information" />
     <MESSAGE value="Change: Changed some more classes to records and added the metadata class" />
@@ -744,7 +827,29 @@
     <MESSAGE value="Played around with Contract and NotNull Annotations" />
     <MESSAGE value="More work on the UI and small other changes" />
     <MESSAGE value="Changed code formatting between methods and fields and added a jvm-argument-parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed code formatting between methods and fields and added a jvm-argument-parser" />
+    <MESSAGE value="Added some more readability by adding logging constants and reworked the UI into darkmode because its better :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some more readability by adding logging constants and reworked the UI into darkmode because its better :D" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/project/docmaker/utility/serialize/Configuration.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/project/docmaker/utility/serialize/Configuration.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/project/docmaker/Program.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

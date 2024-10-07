@@ -16,7 +16,7 @@ public interface LoggingMessages
 	/**
 	 * Logging message for a creation of an instance.
 	 */
-	@NonNls String APPLICATION_LAUNCHED_MSG = "Launched the Application.";
+	@NonNls String APPLICATION_LAUNCHED_MSG = "Launching the main application.";
 
 	/**
 	 * Logging message for the change of the scene in the main stage.
